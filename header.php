@@ -24,23 +24,29 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ucsc-underscore' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
+	<header id="masthead" class="site-header main-header">
+		<div class="site-branding row names">
 			<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<div class="secondary-name">
+				<h1 class="site-title title-medium"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<a class="mobile-menu" href="#mainNav"></a>
+				</div>
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<div class="secondary-name">
+				<p class="site-title title-medium"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<a class="mobile-menu" href="#mainNav"></a>
+				</div>
 				<?php
 			endif;
 			$ucsc_underscore_description = get_bloginfo( 'description', 'display' );
 			if ( $ucsc_underscore_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $ucsc_underscore_description; /* WPCS: xss ok. */ ?></p>
+				<!-- <p class="site-description"><?php echo $ucsc_underscore_description; /* WPCS: xss ok. */ ?></p> -->
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
@@ -50,6 +56,8 @@
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
 				'menu_id'        => 'primary-menu',
+				'menu_class'	=>	'main-navigation',
+				'items_wrap'	=>	'<ul id="MENU-ID" class="MENU-CLASS">%3$s</ul>',
 			) );
 			?>
 		</nav><!-- #site-navigation -->
