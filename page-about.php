@@ -57,7 +57,7 @@ get_header();
     <h2>See <span>Also</span></h2>
     <div id="seeAlso">
         <ul>
-            <li><a href="../support-us/deans-council.html">Dean's Council, Physical and Biological Sciences</a></li>
+            <li><a href="../su26pport-us/deans-council.html">Dean's Council, Physical and Biological Sciences</a></li>
         </ul>
     </div>
 </div>
