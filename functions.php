@@ -161,3 +161,23 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Jason's Functions
+ */
+
+function bb_custom_site_title() {
+	echo str_replace("&amp;","<span>&amp;</span>", get_bloginfo('name'));
+    
+}
+
+add_filter( 'body_class','my_body_classes' );
+function my_body_classes( $classes ) {
+	if (is_page('about')){
+		$classes[] = 'left-column';
+		$classes[] = 'dept';
+	}
+    
+     
+    return $classes;
+     
+}

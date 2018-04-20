@@ -31,14 +31,14 @@
 			if ( is_front_page() && is_home() ) :
 				?>
 				<div class="secondary-name">
-				<h1 class="site-title title-medium"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title title-medium"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bb_custom_site_title(); ?></a></h1>
 				<a class="mobile-menu" href="#mainNav"></a>
 				</div>
 				<?php
 			else :
 				?>
 				<div class="secondary-name">
-				<p class="site-title title-medium"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="site-title title-medium"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bb_custom_site_title(); ?></a></p>
 				<a class="mobile-menu" href="#mainNav"></a>
 				</div>
 				<?php
