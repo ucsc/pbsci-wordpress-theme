@@ -1,0 +1,46 @@
+ /*Top Row Search*/
+ 
+ .page-top .widget_search:last-child {
+     margin-right: 0;
+ }
+ 
+ .page-top .widget_search {
+     display: block;
+     margin-left: 20px;
+     width: 250px;
+     margin-bottom: 4px;
+ }
+ 
+ .page-top .widget_search input {
+     font-size: 15px;
+     font-size: 1.5rem;
+     line-height: 160%;
+     padding: 4px 8px;
+     border: none;
+ }
+ /*Search Form*/
+ 
+ .page-top .search-form {
+     position: relative;
+ }
+ 
+ .page-top .search-form>input {
+     padding-left: 40px;
+ }
+ 
+ .page-top .search-form input[type="submit"] {
+     background: none !important;
+     border: none;
+     clip: inherit;
+     color: #00458c;
+     display: inline-block;
+     content: "\f002";
+     font: 28px/1 dashicons;
+     height: 38px;
+     padding: 0 10px 0 4px;
+     position: absolute;
+     left: 2px;
+     top: 0px;
+     vertical-align: top;
+     width: 38px;
+ }
