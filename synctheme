@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rsync -rvz --progress --delete --dry-run --exclude-from=/home/jason/public_html/gutenberg/wp-content/themes/ucsc-underscores/rsync-exclude.txt ~/public_html/gutenberg/wp-content/themes/ucsc-underscores/ ~/public_html/sw-wordpres/wp-content/themes/ucsc-underscores/

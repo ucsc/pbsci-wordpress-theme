@@ -1,0 +1,8 @@
+.git/
+.gitignore
+.vscode/
+node_modules/
+synctheme
+pull-content
+push-content
+rsync-exclude.txt
