@@ -11,7 +11,7 @@
  *
  * @package UC_Santa_Cruz
  */
-get_template_part('template-parts/header','top');
+
 get_header();
 ?>
 
