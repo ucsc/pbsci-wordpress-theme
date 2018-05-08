@@ -181,26 +181,26 @@ function my_body_classes( $classes ) {
 
 /* custom widget area*/
 
-function bb_register_custom_sidebars(){
-	/** Register Home Page widget areas */
+// function bb_register_custom_sidebars(){
+// 	/** Register Home Page widget areas */
 	
-	register_sidebar( array(
+// 	register_sidebar( array(
 	
-		'id'			=> 'top-row-search',
+// 		'id'			=> 'top-row-search',
 	
-		'name'			=> __( 'Top Row Search Widget'),
+// 		'name'			=> __( 'Top Row Search Widget'),
 	
-		'description'	=> __( 'This is the search widget for the header top row.'),
-		// 'before_widget' => '<li id="%1$s" class="search widget %2$s">',
-		// 'after_widget' => '</li>',
+// 		'description'	=> __( 'This is the search widget for the header top row.'),
+// 		// 'before_widget' => '<li id="%1$s" class="search widget %2$s">',
+// 		// 'after_widget' => '</li>',
 	
-	) );
-	}
+// 	) );
+// 	}
 	
-	add_action ('widgets_init','bb_register_custom_sidebars');
+// 	add_action ('widgets_init','bb_register_custom_sidebars');
 
-	function add_id_and_classes_to_page_menu( $ulclass ) {
-		return preg_replace( '/<ul>/', '<ul id="mainNav" class="hasqsg">', $ulclass, 1 );
-	  }
-	  add_filter( 'wp_page_menu', 'add_id_and_classes_to_page_menu' );
+function add_id_and_classes_to_page_menu( $ulclass ) {
+	return preg_replace( '/<ul>/', '<ul id="mainNav" class="hasqsg">', $ulclass, 1 );
+	}
+add_filter( 'wp_page_menu', 'add_id_and_classes_to_page_menu' );
 	
