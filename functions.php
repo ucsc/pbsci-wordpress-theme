@@ -131,6 +131,11 @@ function ucsc_underscore_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	// Enqueue main FlexSlider script
+	wp_enqueue_script( 'ucsc-underscore-flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array('jquery'), '20151215', true );
+
+	// Enqueue custom FlexSlider script
+	wp_enqueue_script( 'ucsc-underscore-flexslider-home', get_template_directory_uri() . '/js/home-slider.js', array('jquery'), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'ucsc_underscore_scripts' );
 
