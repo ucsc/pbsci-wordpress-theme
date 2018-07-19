@@ -104,18 +104,135 @@ add_action( 'after_setup_theme', 'ucsc_underscore_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function ucsc_underscore_widgets_init() {
+	/**
+	 * Home Page Top Panel Sidebars (three)
+	 */
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'ucsc-underscore' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'ucsc-underscore' ),
+		'name'          => esc_html__( 'Home Panel Top: Left Sidebar', 'ucsc-underscore' ),
+		'id'            => 'sidebar-home-top-left',
+		'description'   => esc_html__( 'Home page top panel left sidebar.', 'ucsc-underscore' ),
+		'before_widget' => '<section id="news" class="widget %2$s block news-block">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Home Panel Top: Center Sidebar', 'ucsc-underscore' ),
+		'id'            => 'sidebar-home-top-center',
+		'description'   => esc_html__( 'Home page top panel center sidebar.', 'ucsc-underscore' ),
+		'before_widget' => '<section id="news" class="widget %2$s block news-block">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title block-header">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Home Panel Top: Right Sidebar', 'ucsc-underscore' ),
+		'id'            => 'sidebar-home-top-right',
+		'description'   => esc_html__( 'Home page top panel right sidebar.', 'ucsc-underscore' ),
+		'before_widget' => '<section id="news" class="widget %2$s block news-block">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	/** 
+	 * Home Page Second Panel Sidebars (three)
+	 */
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Home Panel Two: Left Sidebar', 'ucsc-underscore' ),
+		'id'            => 'sidebar-home-two-left',
+		'description'   => esc_html__( 'Home page second panel left sidebar.', 'ucsc-underscore' ),
+		'before_widget' => '<section id="news" class="widget %2$s block news-block">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Home Panel Two: Center Sidebar', 'ucsc-underscore' ),
+		'id'            => 'sidebar-home-two-center',
+		'description'   => esc_html__( 'Home page second panel center sidebar.', 'ucsc-underscore' ),
+		'before_widget' => '<section id="news" class="widget %2$s block news-block">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title block-header">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Home Panel Two: Right Sidebar', 'ucsc-underscore' ),
+		'id'            => 'sidebar-home-two-right',
+		'description'   => esc_html__( 'Home page second panel right sidebar.', 'ucsc-underscore' ),
+		'before_widget' => '<section id="news" class="widget %2$s block news-block">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	/** 
+	 * Home Page Bottom Panel Sidebars (Four)
+	 */
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Home Panel Bottom: First Sidebar', 'ucsc-underscore' ),
+		'id'            => 'sidebar-home-bottom-one',
+		'description'   => esc_html__( 'Home page bottom panel first sidebar.', 'ucsc-underscore' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title block-header">',
+		'after_title'   => '</h4>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Home Panel Bottom: Second Sidebar', 'ucsc-underscore' ),
+		'id'            => 'sidebar-home-bottom-two',
+		'description'   => esc_html__( 'Home page bottom panel second sidebar.', 'ucsc-underscore' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title block-header">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Home Panel Bottom: Third Sidebar', 'ucsc-underscore' ),
+		'id'            => 'sidebar-home-bottom-three',
+		'description'   => esc_html__( 'Home page bottom panel third sidebar.', 'ucsc-underscore' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title block-header">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Home Panel Bottom: Fourth Sidebar', 'ucsc-underscore' ),
+		'id'            => 'sidebar-home-bottom-four',
+		'description'   => esc_html__( 'Home page bottom panel fourth sidebar.', 'ucsc-underscore' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title block-header">',
+		'after_title'   => '</h4>',
+	) );
+
 }
 add_action( 'widgets_init', 'ucsc_underscore_widgets_init' );
 
+/**
+ * Deregister WordPress JQuery and register Google JQuery library
+ */
+
+function ucsc_underscore_modify_jquery(){
+    if (!is_admin()){
+ // deregister WordPress JQuery
+    wp_deregister_script('jquery');
+    //register and enqueue jquery
+    wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', null, true); // register the external file  
+        wp_enqueue_script('jquery'); // enqueue the external file
+}
+}
+
+add_action('init','ucsc_underscore_modify_jquery');
 /**
  * Enqueue scripts and styles.
  */
