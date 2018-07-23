@@ -108,6 +108,16 @@ function ucsc_underscore_widgets_init() {
 	 * Home Page Top Panel Sidebars (three)
 	 */
 	register_sidebar( array(
+		'name'          => esc_html__( 'Primary Sidebar', 'ucsc-underscore' ),
+		'id'            => 'sidebar-primary',
+		'description'   => esc_html__( 'Primary left sidebar.', 'ucsc-underscore' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
 		'name'          => esc_html__( 'Home Panel Top: Left Sidebar', 'ucsc-underscore' ),
 		'id'            => 'sidebar-home-top-left',
 		'description'   => esc_html__( 'Home page top panel left sidebar.', 'ucsc-underscore' ),

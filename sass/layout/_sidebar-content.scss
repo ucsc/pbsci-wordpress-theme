@@ -1,22 +1,24 @@
 .content-area {
-	float: right;
-	margin: 0 0 0 (-$size__site-sidebar);
-	width: $size__site-main;
+    float: right;
+    margin: 0 0 0 (-$size__site-sidebar);
+    width: $size__site-main;
 }
 
 .site-main {
-	margin: 0 0 0 $size__site-sidebar;
+    margin: 0 0 0 $size__site-sidebar;
+    padding-left: 20px;
 }
 
 .site-content .widget-area {
-	float: left;
-	overflow: hidden;
-	width: $size__site-sidebar;
+    float: left;
+    overflow: hidden;
+    width: $size__site-sidebar;
+    // margin-right:
 }
 
 .site-footer {
-	clear: both;
-	width: $size__site-main;
+    clear: both;
+    width: $size__site-main;
 }
 
 @import "no-sidebar";

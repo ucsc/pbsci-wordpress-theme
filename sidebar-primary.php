@@ -7,11 +7,15 @@
  * @package UC_Santa_Cruz
  */
 
-if ( ! is_active_sidebar( 'sidebar-home-bottom-one' ) ) {
-	return;
-}
+// if ( ! is_active_sidebar( 'sidebar-home-bottom-one' ) ) {
+// 	return;
+// }
 ?>
 
 <aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-primary' ); ?>
+	<?php echo '<div class="wrap">';
+     if ( is_active_sidebar( 'sidebar-home-bottom-one' ) ) : 
+     dynamic_sidebar( 'sidebar-home-bottom-one' ); 
+ endif;
+echo '</div>'; ?>
 </aside><!-- #secondary -->
