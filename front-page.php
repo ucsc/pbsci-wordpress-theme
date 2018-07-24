@@ -15,7 +15,7 @@
 get_header();
 
 echo '<div id="primary" class="content-area"><main id="main" class="site-main"><div class="row">';
-    get_template_part('template-parts/slider');
+    get_template_part('template-parts/slider','home');
 echo '</div></main><!-- #main -->';
 
 get_template_part('template-parts/homepanel','top');

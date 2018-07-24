@@ -5,8 +5,10 @@
 }
 
 .site-main {
-    margin: 0 0 0 $size__site-sidebar;
-    padding-left: 20px;
+    .page-template-left-sidebar & {
+        margin: 0 0 0 $size__site-sidebar;
+        padding-left: 20px;
+    }
 }
 
 .site-content .widget-area {

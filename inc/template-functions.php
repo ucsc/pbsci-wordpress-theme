@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions which enhance the theme by hooking into WordPress
+ * Functions that enhance the theme by hooking into WordPress
  *
  * @package UC_Santa_Cruz
  */

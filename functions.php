@@ -42,6 +42,21 @@ if ( ! function_exists( 'ucsc_underscore_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+		/**
+		 * Add new image sizes
+		 */
+		add_image_size('slider', 1080, 348, TRUE);
+
+		/**
+		 * Register new image sizes for Add Media modal
+		 */
+		add_filter('image_size_names_choose','ucsc_underscore_custom_sizes');
+		function ucsc_underscore_custom_sizes ($sizes) {
+			return array_merge($sizes, array(
+				'slider' => __('Slider Image'),
+			));
+		}
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'ucsc-underscore' ),
