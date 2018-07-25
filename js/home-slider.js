@@ -4,6 +4,9 @@ $(window).on('load', function() {
         animation: "fade",
         start: function(slider) {
             $('body').removeClass('loading');
-        }
+        },
+        directionNav: false,
+        slideshowSpeed: 5000,
+        pauseOnHover: true,
     });
 });
