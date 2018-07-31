@@ -11,6 +11,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<!-- breadcrumbs -->
+		<div class="breadcrumbs">
+			<p>
+			<?php if (function_exists('yoast_breadcrumb')){
+				yoast_breadcrumb();
+			}?>
+			</p>
+		</div>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 

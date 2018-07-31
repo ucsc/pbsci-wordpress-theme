@@ -278,6 +278,9 @@ function ucsc_underscore_scripts() {
 
 	// Enqueue custom FlexSlider script
 	wp_enqueue_script( 'ucsc-underscore-flexslider-home', get_template_directory_uri() . '/js/home-slider.js', array('jquery'), false, true );
+
+	// Enqueue custom Localist widget script
+	wp_enqueue_script( 'localist-widget-fix', get_template_directory_uri() . '/js/localist-widget-fix.js', '',null, false );
 }
 add_action( 'wp_enqueue_scripts', 'ucsc_underscore_scripts' );
 
