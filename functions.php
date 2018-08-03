@@ -277,12 +277,30 @@ function ucsc_underscore_scripts() {
 	wp_enqueue_script( 'ucsc-underscore-flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array('jquery'), '20151215', true );
 
 	// Enqueue custom FlexSlider script
-	wp_enqueue_script( 'ucsc-underscore-flexslider-home', get_template_directory_uri() . '/js/home-slider.js', array('jquery'), false, true );
+    wp_enqueue_script( 'ucsc-underscore-flexslider-home', get_template_directory_uri() . '/js/home-slider.js', array('jquery'), false, true );
+    
+    // Set up script option variables
+    // global $slide_animation;
+    $animation_options = get_option( 'ucsc_underscore_theme_options','slide_animate' );
+     
+    if (in_array("fade", $animation_options)) {
+        $slide_animation = 'fade';
+    }
+    elseif (in_array("slide", $animation_options)) {
+        $slide_animation = 'slide';
+    }
+
+    //Localize script so we can pass variables into it
+    wp_localize_script('ucsc-underscore-flexslider-home','flexslider_vars',array(
+		'animation' => __($slide_animation, 'ucsc-underscore'),
+	));
 
 	// Enqueue custom Localist widget script
-	wp_enqueue_script( 'localist-widget-fix', get_template_directory_uri() . '/js/localist-widget-fix.js', '',null, false );
+	wp_enqueue_script( 'localist-widget-fix', get_template_directory_uri() . '/js/localist-widget-fix.js', '',null, true );
 }
 add_action( 'wp_enqueue_scripts', 'ucsc_underscore_scripts' );
+
+
 
 /**
  * Implement the Custom Header feature.

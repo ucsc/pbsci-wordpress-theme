@@ -14,5 +14,5 @@
     var newDate = split.join(' ');
 
     document.querySelector('.lw_event_item_dates').innerHTML = newDate;
-    console.log(split);
+    //console.log(split);
 })();

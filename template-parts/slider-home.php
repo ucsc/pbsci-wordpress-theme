@@ -1,25 +1,52 @@
 <?php
-// echo '<div class="carousel">';
-// echo '<div class="slides">';
-// echo '<div class="slide">';
-// echo '<a href="https://news.ucsc.edu/2018/03/sfbay-toxins.html">';
-// echo '<div class="slide-body layout-left color-green">';
-// echo '<div class="slide-title">Toxic Shellfish</div>';
-// echo '<p class="slide-teaser">&quotThe SF bay is acting as a big mixing bowl where toxins from both fresh and marine water are found together.&quot -Raphael Kudela, Professor of Ocean Health</p>';
-// echo '</div>';
-// echo '<img alt="Four kinds of algal toxins found in San Francisco Bay shellfish" src="https://pbsci.ucsc.edu/images/harmful-algae.jpg" width="780">';
-// echo '</a>';
-// echo '</div>'; 
-// echo '</div>';
-// echo '</div>';
+$slide_options = get_option( 'ucsc_underscore_theme_options','slide_count' );
+
+if (in_array("one", $slide_options)) {
+    $slides = "1";
+}
+elseif (in_array("two", $slide_options)) {
+    $slides = "2";
+}
+elseif (in_array("three", $slide_options)) {
+    $slides = "3";
+}
+elseif (in_array("four", $slide_options)) {
+    $slides = "4";
+}
+elseif (in_array("three", $slide_options)) {
+    $slides = "3";
+}
+elseif (in_array("four", $slide_options)) {
+    $slides = "4";
+}
+elseif (in_array("five", $slide_options)) {
+    $slides = "5";
+}
+elseif (in_array("six", $slide_options)) {
+    $slides = "6";
+}
+elseif (in_array("seven", $slide_options)) {
+    $slides = "7";
+}
+elseif (in_array("eight", $slide_options)) {
+    $slides = "8";
+}
+elseif (in_array("nine", $slide_options)) {
+    $slides = "9";
+}
+elseif (in_array("ten", $slide_options)) {
+    $slides = "10";
+}
+
 //Flexslider Begin
 echo '<div class="flexslider">';
 echo   '<ul class="slides">';
 // Call Slider post
 $args = array (
     'post_type' => 'slider',
-    'posts_per_page' => 3,
-    'orderby' => 'rand',
+    'posts_per_page' => $slides,
+    'orderby' => 'date',
+    'order' => 'DESC',
     'tax_query' => array(
         array(
             'taxonomy' => 'slider-location',
@@ -62,4 +89,6 @@ wp_reset_postdata();
 endwhile; endif;
 echo   '</ul>';
 echo '</div>';
+print_r($slide_animation);
+
 ?>
