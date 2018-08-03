@@ -89,6 +89,6 @@ wp_reset_postdata();
 endwhile; endif;
 echo   '</ul>';
 echo '</div>';
-print_r($slide_animation);
+print_r($slides);
 
 ?>
