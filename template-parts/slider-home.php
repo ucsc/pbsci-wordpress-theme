@@ -1,5 +1,5 @@
 <?php
-$slide_options = get_option( 'ucsc_underscore_theme_options','slide_count' );
+$slide_options = get_option( 'ucsc_theme_options','slide_count' );
 
 if (in_array("one", $slide_options)) {
     $slides = "1";
@@ -89,6 +89,6 @@ wp_reset_postdata();
 endwhile; endif;
 echo   '</ul>';
 echo '</div>';
-print_r($slides);
+// print_r($slides);
 
 ?>
