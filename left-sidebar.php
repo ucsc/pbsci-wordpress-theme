@@ -16,8 +16,19 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
+			$slug = get_post_field('post_name',get_post());
+			if( $slug === 'academics' ) :
+				get_template_part( 'template-parts/content', $slug );
+			elseif( $slug === 'departments' ) :
+				get_template_part( 'template-parts/content', $slug );
+			elseif( $slug === 'programs' ) :
+				get_template_part( 'template-parts/content', $slug );
+		  else :
+				//get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/content', 'page' );
+		  endif;
 
-			get_template_part( 'template-parts/content', 'page' );
+
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
