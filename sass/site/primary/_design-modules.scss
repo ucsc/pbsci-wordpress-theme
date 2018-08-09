@@ -1,0 +1,45 @@
+/*--------------------------------------------------------------
+### Academic Panels
+--------------------------------------------------------------*/
+
+.panel-row {
+    width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+### Tabs for Single Major Template
+--------------------------------------------------------------*/
+
+.major-tabs {
+    ul {
+        margin: 0 0 15px 0;
+        list-style-type: none;
+        li {
+            float: left;
+            list-style-type: none;
+            margin: 0 0.3em 1em 0;
+            a {
+                text-decoration: none;
+                border: 1px solid #e3dfd5;
+                background-color: #f2f1eb;
+                padding: 0.4em 0.9em;
+                text-transform: uppercase;
+                border-radius: 4px;
+                display: block;
+                color: #2e2d29;
+                &:hover,
+                &:focus {
+                    border: 1px solid #9d9573;
+                    background-color: #f2f1eb;
+                    color: #8c1515;
+                }
+            }
+            &.active a {
+                border: 1px solid #8c1515;
+                background-color: #8c1515;
+                color: #fff;
+            }
+        }
+    }
+}

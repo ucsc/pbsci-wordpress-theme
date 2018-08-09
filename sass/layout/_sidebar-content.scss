@@ -5,7 +5,8 @@
 }
 
 .site-main {
-    .page-template-left-sidebar & {
+    .page-template-left-sidebar &,
+    .single & {
         margin: 0 0 0 $size__site-sidebar;
         padding-left: 20px;
     }
