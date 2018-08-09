@@ -67,8 +67,9 @@
             return $value;
             }
         $major_tabs = get_post_meta( get_the_ID(), '_ucsc_major_components_multicheckbox', true );
-        $major_tabs_two = array_map("tabconvert",$major_tabs);
         if ($major_tabs !=''){
+        $major_tabs_two = array_map("tabconvert",$major_tabs);
+       
             echo '<div class="major-tabs">';
             echo '<ul role="tablist">';
             foreach ($major_tabs as $index => $major_tab) {
