@@ -162,7 +162,7 @@ function ucsc_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 
-	/** 
+	/**
 	 * Home Page Second Panel Sidebars (three)
 	 */
 
@@ -196,7 +196,7 @@ function ucsc_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 
-	/** 
+	/**
 	 * Home Page Bottom Panel Sidebars (Four)
 	 */
 
@@ -252,7 +252,7 @@ function ucsc_modify_jquery(){
  // deregister WordPress JQuery
     wp_deregister_script('jquery');
     //register and enqueue jquery
-    wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', null, true); // register the external file  
+    wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', null, true); // register the external file
         wp_enqueue_script('jquery'); // enqueue the external file
 }
 }
@@ -278,17 +278,17 @@ function ucsc_scripts() {
 
 	// Enqueue custom FlexSlider script
     wp_enqueue_script( 'ucsc-underscore-flexslider-home', get_template_directory_uri() . '/js/home-slider.js', array('jquery'), false, true );
-    
+
     // Set up script option variables
     // global $slide_animation;
-    $animation_options = get_option( 'ucsc_theme_options','slide_animate' );
-     
-    if (in_array("fade", $animation_options)) {
-        $slide_animation = 'fade';
-    }
-    elseif (in_array("slide", $animation_options)) {
-        $slide_animation = 'slide';
-    }
+    // $animation_options = get_option( 'ucsc_theme_options','slide_animate' );
+//
+    // if (in_array("fade", $animation_options)) {
+        // $slide_animation = 'fade';
+    // }
+    // elseif (in_array("slide", $animation_options)) {
+        // $slide_animation = 'slide';
+    // }
 
     //Localize script so we can pass variables into it
     wp_localize_script('ucsc-underscore-flexslider-home','flexslider_vars',array(
@@ -345,10 +345,24 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /**
  * Jason's Functions
  */
+ /* Theme Options -- Admin Page */
+ if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme Options',
+		'menu_title' 	=> 'Theme Options',
+		'menu_slug' 	=> 'theme-options',
+		'capability' 	=> 'edit_posts',
+		'icon_url' => 'dashicons-palmtree',
+		'redirect' 	=> false
+	));
+
+
+}
 /* add <span> elements around ampersand in title */
 function bb_custom_site_title() {
 	echo str_replace("&amp;","<span>&amp;</span>", get_bloginfo('name'));
-    
+
 }
 /* add body class to 'about' page */
 add_filter( 'body_class','my_body_classes' );
@@ -356,7 +370,7 @@ function my_body_classes( $classes ) {
 	if (is_page('about')){
 		$classes[] = 'left-column';
 		$classes[] = 'dept';
-	}   
+	}
     return $classes;
 }
 
@@ -364,24 +378,23 @@ function my_body_classes( $classes ) {
 
 // function bb_register_custom_sidebars(){
 // 	/** Register Home Page widget areas */
-	
+
 // 	register_sidebar( array(
-	
+
 // 		'id'			=> 'top-row-search',
-	
+
 // 		'name'			=> __( 'Top Row Search Widget'),
-	
+
 // 		'description'	=> __( 'This is the search widget for the header top row.'),
 // 		// 'before_widget' => '<li id="%1$s" class="search widget %2$s">',
 // 		// 'after_widget' => '</li>',
-	
+
 // 	) );
 // 	}
-	
+
 // 	add_action ('widgets_init','bb_register_custom_sidebars');
 
 function add_id_and_classes_to_page_menu( $ulclass ) {
 	return preg_replace( '/<ul>/', '<ul id="mainNav" class="hasqsg">', $ulclass, 1 );
 	}
 add_filter( 'wp_page_menu', 'add_id_and_classes_to_page_menu' );
-	
