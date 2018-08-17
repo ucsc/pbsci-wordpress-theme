@@ -7,7 +7,7 @@
  * @package UC_Santa_Cruz
  */
 
-if ( ! function_exists( 'ucsc_underscore_setup' ) ) :
+if ( ! function_exists( 'ucsc_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,7 +15,7 @@ if ( ! function_exists( 'ucsc_underscore_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function ucsc_underscore_setup() {
+	function ucsc_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -50,8 +50,8 @@ if ( ! function_exists( 'ucsc_underscore_setup' ) ) :
 		/**
 		 * Register new image sizes for Add Media modal
 		 */
-		add_filter('image_size_names_choose','ucsc_underscore_custom_sizes');
-		function ucsc_underscore_custom_sizes ($sizes) {
+		add_filter('image_size_names_choose','ucsc_custom_sizes');
+		function ucsc_custom_sizes ($sizes) {
 			return array_merge($sizes, array(
 				'slider' => __('Slider Image'),
 			));
@@ -75,7 +75,7 @@ if ( ! function_exists( 'ucsc_underscore_setup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'ucsc_underscore_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'ucsc_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
@@ -96,7 +96,7 @@ if ( ! function_exists( 'ucsc_underscore_setup' ) ) :
 		) );
 	}
 endif;
-add_action( 'after_setup_theme', 'ucsc_underscore_setup' );
+add_action( 'after_setup_theme', 'ucsc_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -105,20 +105,20 @@ add_action( 'after_setup_theme', 'ucsc_underscore_setup' );
  *
  * @global int $content_width
  */
-function ucsc_underscore_content_width() {
+function ucsc_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'ucsc_underscore_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'ucsc_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'ucsc_underscore_content_width', 0 );
+add_action( 'after_setup_theme', 'ucsc_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function ucsc_underscore_widgets_init() {
+function ucsc_widgets_init() {
 	/**
 	 * Home Page Top Panel Sidebars (three)
 	 */
@@ -241,13 +241,13 @@ function ucsc_underscore_widgets_init() {
 	) );
 
 }
-add_action( 'widgets_init', 'ucsc_underscore_widgets_init' );
+add_action( 'widgets_init', 'ucsc_widgets_init' );
 
 /**
  * Deregister WordPress JQuery and register Google JQuery library
  */
 
-function ucsc_underscore_modify_jquery(){
+function ucsc_modify_jquery(){
     if (!is_admin()){
  // deregister WordPress JQuery
     wp_deregister_script('jquery');
@@ -257,11 +257,11 @@ function ucsc_underscore_modify_jquery(){
 }
 }
 
-add_action('init','ucsc_underscore_modify_jquery');
+add_action('init','ucsc_modify_jquery');
 /**
  * Enqueue scripts and styles.
  */
-function ucsc_underscore_scripts() {
+function ucsc_scripts() {
 	wp_enqueue_style( 'roboto-condensed-garamond', 'https://fonts.googleapis.com/css?family=EB+Garamond:400,500,700|Roboto+Condensed:300,400,700|Roboto:300,400,500,700', array(), false );
 	wp_enqueue_style( 'ucsc-main-style', 'https://static.ucsc.edu/_responsive/css/ucsc.css?t=20180412082400' );
 	wp_enqueue_style( 'ucsc-underscore-style', get_stylesheet_uri() );
@@ -281,7 +281,7 @@ function ucsc_underscore_scripts() {
     
     // Set up script option variables
     // global $slide_animation;
-    $animation_options = get_option( 'ucsc_underscore_theme_options','slide_animate' );
+    $animation_options = get_option( 'ucsc_theme_options','slide_animate' );
      
     if (in_array("fade", $animation_options)) {
         $slide_animation = 'fade';
@@ -298,8 +298,21 @@ function ucsc_underscore_scripts() {
 	// Enqueue custom Localist widget script
 	wp_enqueue_script( 'localist-widget-fix', get_template_directory_uri() . '/js/localist-widget-fix.js', '',null, true );
 }
-add_action( 'wp_enqueue_scripts', 'ucsc_underscore_scripts' );
+add_action( 'wp_enqueue_scripts', 'ucsc_scripts' );
 
+/**
+ * Enqueue admin scripts and styles.
+ */
+function ucsc_admin_scripts($hook) {
+	global $post;
+	if ($hook == 'post-new.php'||'post.php'){
+		if ('major' === $post->post_type) {
+			wp_enqueue_script('ucsc-major-metabox-selector', get_template_directory_uri().'/js/majors-metabox-selector.js');
+		}
+
+	}
+}
+// add_action( 'admin_enqueue_scripts', 'ucsc_admin_scripts', 10, 1 );
 
 
 /**

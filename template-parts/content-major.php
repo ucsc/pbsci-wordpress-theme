@@ -67,6 +67,7 @@
             return $value;
             }
         $major_tabs = get_post_meta( get_the_ID(), '_ucsc_major_components_multicheckbox', true );
+        
         if ($major_tabs !=''){
         $major_tabs_two = array_map("tabconvert",$major_tabs);
        
@@ -79,31 +80,49 @@
               echo '</div>';
               echo '<div style="clear:both"></div>';
         }
-        $major_components = get_post_meta( get_the_ID(), '_ucsc_major_components_group', true );
-        echo '<div><ul>';
-        foreach ((array) $major_components as $key => $entry){
-            $component = $content = '';
 
-            if (isset($entry['major_component_checkbox'])){
-                $component = esc_html($entry['major_component_checkbox']);
-            }
+            if (in_array("bachelors", $major_tabs)) {
+                $overview = get_post_meta( get_the_ID(), '_ucsc_bachelors_wysiwyg', true );
+                } else {
+                    echo 'nope';
+                }
+                global $post;
+                $bachelors = get_post_meta( get_the_ID(), '_ucsc_major-components', true );
+                $meta = get_post_meta($post->ID);
+            echo '<pre>';
+            var_dump($overview);
+            echo '</pre>';
 
-            if (isset($entry['major_component_text'])){
-                $content = wpautop($entry['major_component_text']);
-                // $content = esc_html($entry['major_component_wysiwyg']);
-            }
+            echo '<pre>';
+            var_dump($meta);
+            echo '</pre>';
 
-            echo '<li>';
-            echo '<span>'.$component.'</span>';
-            echo '<span>'.$content.'</span>';
-            echo '</li>';
+        /**
+         * 
+         * Lots of coding here. Loop to retrieve repeatable 
+         * fields. Don't want to lose it.
+         */
+        // $major_components = get_post_meta( get_the_ID(), '_ucsc_major_components_group', true );
+        // echo '<div><ul>';
+        // foreach ((array) $major_components as $key => $entry){
+        //     $component = $content = '';
+
+        //     if (isset($entry['major_component_checkbox'])){
+        //         $component = esc_html($entry['major_component_checkbox']);
+        //     }
+
+        //     if (isset($entry['major_component_text'])){
+        //         $content = wpautop($entry['major_component_text']);
+        //         // $content = esc_html($entry['major_component_wysiwyg']);
+        //     }
+
+        //     echo '<li>';
+        //     echo '<span>'.$component.'</span>';
+        //     echo '<span>'.$content.'</span>';
+        //     echo '</li>';
             
-        }
-        echo '</ul></div>';
-        
-        echo '<pre>';
-        var_dump($major_components);
-        echo '</pre>';
+        // }
+        // echo '</ul></div>';
 
         /**
          * BEGINNING OF ORIGINAL UNDERSCORES CODE
