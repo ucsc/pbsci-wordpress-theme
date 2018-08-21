@@ -68,12 +68,12 @@
             echo '<div id="major-tabs" class="major-tabs">';
             echo '<ul role="tablist">';
             foreach ($major_tabs as $index => $major_tab) {
-                echo '<li id="'.$major_tab.'-tab" class="tab-link" role="presentation"><a href="#" data-rel="'.$major_tab.'"role="tab">'.$major_tabs_two[$index].'</a></li>';
+                echo '<li id="'.$major_tab.'-tab"  role="presentation"><a href="#" class="tab-link" data-rel="'.$major_tab.'"role="tab">'.$major_tabs_two[$index].'</a></li>';
               }
               echo '</ul>';
               echo '</div>';
               echo '<div style="clear:both"></div>';
-        // }
+
               echo '<div class="majorcontainers">';
             if (in_array("overview", $major_tabs)) {
                 echo '<div id="overview" class="tab-content">'.get_field('overview').'</div>';
@@ -99,14 +99,14 @@
                 }
             echo '</div>';
             }
-                $meta = get_post_meta($post->ID);
-            echo '<pre>';
-            var_dump($major_tabs);
-            echo '</pre>';
-
-            echo '<pre>';
-            var_dump($meta);
-            echo '</pre>';
+            // $meta = get_post_meta($post->ID);
+            // echo '<pre>';
+            // var_dump($major_tabs);
+            // echo '</pre>';
+//
+            // echo '<pre>';
+            // var_dump($meta);
+            // echo '</pre>';
 
         /**
          *
