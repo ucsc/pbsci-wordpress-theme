@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		
+
         <?php get_template_part( 'template-parts/breadcrumbs', 'all' ); ?>
 		<?php the_title( '<h1 class="entry-title programs">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
@@ -32,9 +32,9 @@
         //Set up the parts
         $program_image = get_the_post_thumbnail($post_id, 'thumbnail');
         $program_title = get_the_title();
-        $program_subtitle = get_post_meta(get_the_ID(), '_ucsc_program_subtitle_text', true);
-        $program_blurb = wpautop(get_post_meta(get_the_ID(), '_ucsc_program_blurb_wysiwyg', true));
-        $program_departments = get_post_meta(get_the_ID(), '_ucsc_attached_cmb2_attached_department', true);
+        $program_subtitle = get_field('program_subtitle');
+        $program_blurb = get_field('program_blurb');
+        $program_departments = get_field('department_link');
         $program_majors = get_post_meta(get_the_ID(), '_ucsc_attached_cmb2_attached_majors', true);
         $postid = get_the_ID();
 
@@ -62,12 +62,12 @@
         }
             echo '</ul>';
             echo '</div>';
-            
+
         }
         if ($program_subtitle !=''){
             echo '<p>'.$program_subtitle.'</p>';
         }
- 
+
         $options_args = array (
             'taxonomy' => 'academic-options',
             'hide_empty' => true,
@@ -84,7 +84,7 @@
             echo '</ul>';
             echo '</div>';
         }
-        
+
         echo '</div>';
         echo '<div class="panel-blurb">'.$program_blurb.'</div>';
         // echo '</div>';//end Program Content
@@ -106,8 +106,8 @@
         }
         echo '</div>';
         echo '<button class="panel-more-button">More</button>';
-        
-        
+
+
         echo '</div>'; //end Program Footer
         echo '</div>';//end Program Row
         wp_reset_postdata();

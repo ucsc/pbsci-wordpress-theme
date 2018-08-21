@@ -54,19 +54,20 @@ $slider_query = new WP_Query ($args);
 if($slider_query->have_posts()): while ($slider_query->have_posts()):$slider_query->the_post();
 
 //Set up the parts
-$slider_headline = get_post_meta( get_the_ID(), '_ucscpbsci_text', true );
-$slider_teaser = get_post_meta( get_the_ID(), '_ucscpbsci_textareasmall', true );
+// $slider_headline = get_post_meta( get_the_ID(), '_ucscpbsci_text', true );
+$slider_headline = get_field('slide_title_headline');
+$slider_teaser = get_field('slide_teaser');
 $slider_image = get_the_post_thumbnail($post_id,'slider');
 $slider_copy = '<div class="slide-title">'.$slider_headline.'</div><p class="slide-teaser">'.$slider_teaser.'</p>';
-$slider_url = get_post_meta( get_the_ID(), '_ucscpbsci_url', true );
+$slider_url = get_field('slide_url');
 $slider_url_sanitized = esc_url($slider_url);
-$slider_layout = get_post_meta( get_the_ID(), '_ucscpbsci_layout_chooser', true );
-$slider_background = get_post_meta( get_the_ID(), '_ucscpbsci_background_chooser', true );
+$slider_layout = get_field('slide_layout');
+$slider_background = get_field('slide_background_color');
 $sl_space = " ";
 $slide_body = "slide-body";
 
 if ($slider_background == 'blue'): $background_class = "color-blue";
-elseif ($slider_background == 'gold'): $background_class = "color-gold";
+elseif ($slider_background == 'Gold'): $background_class = "color-gold";
 elseif ($slider_background == 'green'): $background_class = "color-green";
 elseif ($slider_background == 'light-blue'): $background_class = "color-light-blue";
 elseif ($slider_background == 'lime'): $background_class = "color-lime";
@@ -84,6 +85,6 @@ wp_reset_postdata();
 endwhile; endif;
 echo   '</ul>';
 echo '</div>';
-// print_r($slides);
+var_dump($slider_background);
 
 ?>
