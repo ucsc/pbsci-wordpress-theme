@@ -18,14 +18,14 @@
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
-        
+
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
 				<?php
 				ucsc_underscore_posted_on();
                 ucsc_underscore_posted_by();
-                
+
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -40,23 +40,17 @@
             if ($value==="overview") {
                 return "Overview";
                 }
-            if ($value==="bachelors"){
-                return "Bachelor's";
-                }
-            if ($value==="bachelors"){
+            if ($value==="ba"){
                 return "Bachelor's";
                 }
             if ($value==="minor"){
                 return "Minor";
                 }
-            if ($value==="masters"){
+            if ($value==="ma"){
                 return "Master's";
                 }
-            if ($value==="doctoral"){
+            if ($value==="phd"){
                 return "Doctoral";
-                }
-            if ($value==="masters"){
-                return "Master's";
                 }
             if ($value==="faculty"){
                 return "Faculty";
@@ -66,40 +60,57 @@
                 }
             return $value;
             }
-        $major_tabs = get_post_meta( get_the_ID(), '_ucsc_major_components_multicheckbox', true );
-        
+        $major_tabs = get_field('major_components');
+
         if ($major_tabs !=''){
         $major_tabs_two = array_map("tabconvert",$major_tabs);
-       
-            echo '<div class="major-tabs">';
+
+            echo '<div id="major-tabs" class="major-tabs">';
             echo '<ul role="tablist">';
             foreach ($major_tabs as $index => $major_tab) {
-                echo '<li id="'.$major_tab.'-tab" role="presentation" class="active"><a href="#'.$major_tab.'-container" role="tab">'.$major_tabs_two[$index].'</a></li>';
+                echo '<li id="'.$major_tab.'-tab"  role="presentation"><a href="#" class="tab-link" data-rel="'.$major_tab.'"role="tab">'.$major_tabs_two[$index].'</a></li>';
               }
               echo '</ul>';
               echo '</div>';
               echo '<div style="clear:both"></div>';
-        }
 
-            if (in_array("bachelors", $major_tabs)) {
-                $overview = get_post_meta( get_the_ID(), '_ucsc_bachelors_wysiwyg', true );
-                } else {
-                    echo 'nope';
+              echo '<div class="majorcontainers">';
+            if (in_array("overview", $major_tabs)) {
+                echo '<div id="overview" class="tab-content">'.get_field('overview').'</div>';
                 }
-                global $post;
-                $bachelors = get_post_meta( get_the_ID(), '_ucsc_major-components', true );
-                $meta = get_post_meta($post->ID);
-            echo '<pre>';
-            var_dump($overview);
-            echo '</pre>';
 
-            echo '<pre>';
-            var_dump($meta);
-            echo '</pre>';
+            if (in_array("ba", $major_tabs)) {
+                echo '<div id="ba" class="tab-content">'.get_field('bachelor_degree').'</div>';
+                }
+            if (in_array("ma", $major_tabs)) {
+                echo '<div id="ma" class="tab-content">'.get_field('master_degree').'</div>';
+                }
+            if (in_array("phd", $major_tabs)) {
+                echo '<div id="phd" class="tab-content">'.get_field('doctoral_degree').'</div>';
+                }
+            if (in_array("minor", $major_tabs)) {
+                echo '<div id="minor" class="tab-content">'.get_field('minor').'</div>';
+                }
+            if (in_array("faculty", $major_tabs)) {
+                echo '<div id="faculty" class="tab-content">'.get_field('faculty').'</div>';
+                }
+            if (in_array("courses", $major_tabs)) {
+                echo '<div id="courses" class="tab-content">'.get_field('courses').'</div>';
+                }
+            echo '</div>';
+            }
+            // $meta = get_post_meta($post->ID);
+            // echo '<pre>';
+            // var_dump($major_tabs);
+            // echo '</pre>';
+//
+            // echo '<pre>';
+            // var_dump($meta);
+            // echo '</pre>';
 
         /**
-         * 
-         * Lots of coding here. Loop to retrieve repeatable 
+         *
+         * Lots of coding here. Loop to retrieve repeatable
          * fields. Don't want to lose it.
          */
         // $major_components = get_post_meta( get_the_ID(), '_ucsc_major_components_group', true );
@@ -120,7 +131,7 @@
         //     echo '<span>'.$component.'</span>';
         //     echo '<span>'.$content.'</span>';
         //     echo '</li>';
-            
+
         // }
         // echo '</ul></div>';
 

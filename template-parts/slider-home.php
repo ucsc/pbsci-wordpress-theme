@@ -38,7 +38,7 @@ echo '<div class="flexslider">';
 echo   '<ul class="slides">';
 // Call Slider post
 $args = array (
-    'post_type' => 'slider',
+    'post_type' => 'slide',
     'posts_per_page' => $slides,
     'orderby' => 'date',
     'order' => 'DESC',
@@ -54,14 +54,15 @@ $slider_query = new WP_Query ($args);
 if($slider_query->have_posts()): while ($slider_query->have_posts()):$slider_query->the_post();
 
 //Set up the parts
-$slider_headline = get_post_meta( get_the_ID(), '_ucscpbsci_text', true );
-$slider_teaser = get_post_meta( get_the_ID(), '_ucscpbsci_textareasmall', true );
+// $slider_headline = get_post_meta( get_the_ID(), '_ucscpbsci_text', true );
+$slider_headline = get_field('slide_title_headline');
+$slider_teaser = get_field('slide_teaser');
 $slider_image = get_the_post_thumbnail($post_id,'slider');
 $slider_copy = '<div class="slide-title">'.$slider_headline.'</div><p class="slide-teaser">'.$slider_teaser.'</p>';
-$slider_url = get_post_meta( get_the_ID(), '_ucscpbsci_url', true );
+$slider_url = get_field('slide_url');
 $slider_url_sanitized = esc_url($slider_url);
-$slider_layout = get_post_meta( get_the_ID(), '_ucscpbsci_layout_chooser', true );
-$slider_background = get_post_meta( get_the_ID(), '_ucscpbsci_background_chooser', true );
+$slider_layout = get_field('slide_layout');
+$slider_background = get_field('slide_background_color');
 $sl_space = " ";
 $slide_body = "slide-body";
 
@@ -84,6 +85,20 @@ wp_reset_postdata();
 endwhile; endif;
 echo   '</ul>';
 echo '</div>';
-// print_r($slides);
+
+// debug
+        $meta = get_post_meta($post->ID);
+                echo '<pre>';
+                var_dump($slider_background);
+                echo '</pre>';
+
+                echo '<pre>';
+                var_dump($slider_layout);
+                echo '</pre>';
+
+                echo '<pre>';
+                var_dump($layout_class);
+                echo '</pre>';
+        // end debug
 
 ?>

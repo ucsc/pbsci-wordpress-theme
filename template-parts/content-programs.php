@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		
+
         <?php get_template_part( 'template-parts/breadcrumbs', 'all' ); ?>
 		<?php the_title( '<h1 class="entry-title programs">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
@@ -32,62 +32,59 @@
         //Set up the parts
         $program_image = get_the_post_thumbnail($post_id, 'thumbnail');
         $program_title = get_the_title();
-        $program_subtitle = get_post_meta(get_the_ID(), '_ucsc_program_subtitle_text', true);
-        $program_blurb = wpautop(get_post_meta(get_the_ID(), '_ucsc_program_blurb_wysiwyg', true));
-        $program_departments = get_post_meta(get_the_ID(), '_ucsc_attached_cmb2_attached_department', true);
-        $program_majors = get_post_meta(get_the_ID(), '_ucsc_attached_cmb2_attached_majors', true);
+        $program_subtitle = get_field('program_subtitle');
+        $program_blurb = get_field('program_blurb');
+        $program_departments = get_field('department_link');
+        $program_majors = get_field('major_link');
+        $degrees_offered = get_field_object('degrees_offered');
+        $degrees = $degrees_offered['value'];
+        $academic_options = get_field('additional_academic_options');
         $postid = get_the_ID();
-
+        // debug
+        // $meta = get_post_meta($post->ID);
+                // echo '<pre>';
+                // var_dump($academic_options);
+                // echo '</pre>';
+//
+                // echo '<pre>';
+                // var_dump($meta);
+                // echo '</pre>';
+        // end debug
 
         // Construct the parts
-        echo '<div class="panel-row">';
-        echo '<div class="panel-image">'.$program_image.'</div>';
-        // echo '<div class="panel-content">';
-        echo '<div class="panel-header">';
+        echo '<!-- Panel Row Begin --><div class="panel-row">';
+        echo '<!-- Panel Image Begin --><div class="panel-image">'.$program_image.'</div><!-- Panel Image End -->';
+        echo '<!-- Panel Content Begin --><div class="panel-content">';
+        echo '<!-- Panel Header Begin --><div class="panel-header">';
         echo '<h3>'.$program_title.'</h3>';
-        $degree_args = array (
-            'taxonomy' => 'degrees-offered',
-            'hide_empty' => true,
-            // 'fields' => 'names',
-            'object_ids' => array($postid),
-        );
-        $degrees = new WP_Term_Query($degree_args);
-        if (!empty($degrees->terms)){
-            echo '<div class="panel-degrees-offered">';
+        // Loops through ACF Checkbox
+        if($degrees):
+            echo '<!-- Panel Degrees Offered Begin --><div class="panel-degrees-offered">';
             echo '<ul>';
-            foreach ($degrees->terms as $degree){
-                if ($degree->name != ''){
-                echo '<li>'.$degree->name.'</li>';
-            }
-        }
+            foreach($degrees as $degree):
+                echo '<li>'.$degree.'</li>';
+            endforeach;
             echo '</ul>';
-            echo '</div>';
-            
-        }
+            echo '</div><!-- Panel Degrees Offered End -->';
+        endif;
+        echo '</div><!-- Panel Header End -->';
         if ($program_subtitle !=''){
             echo '<p>'.$program_subtitle.'</p>';
         }
- 
-        $options_args = array (
-            'taxonomy' => 'academic-options',
-            'hide_empty' => true,
-            // 'fields' => 'names',
-            'object_ids' => array($postid),
-        );
-        $options = new WP_Term_Query($options_args);
-        if ($options && !is_wp_error($options)){
-            echo '<div class="panel-academic-options">';
+
+        if ($academic_options):
+            echo '<!-- Panel Academic Options Begin --><div class="panel-academic-options">';
             echo '<ul>';
-            foreach ($options->terms as $option){
-                echo '<li>'.$option->name.'</li>';
-            }
+            foreach($academic_options as $option):
+                echo '<li>'.$option.'</li>';
+            endforeach;
             echo '</ul>';
-            echo '</div>';
-        }
-        
-        echo '</div>';
-        echo '<div class="panel-blurb">'.$program_blurb.'</div>';
-        // echo '</div>';//end Program Content
+            echo '</div><!-- Panel Academic Options End -->';
+        endif;
+        echo '</div><!-- Panel Content End -->';//end Program Content
+
+        echo '<!-- Panel Blurb Begin --><div class="panel-blurb">'.$program_blurb.'</div><!-- Panel Blurb End -->';
+
         echo '<div class="panel-footer">';
         echo '<div class="panel-department-link">';
         foreach ($program_departments as $department){
@@ -106,10 +103,10 @@
         }
         echo '</div>';
         echo '<button class="panel-more-button">More</button>';
-        
-        
-        echo '</div>'; //end Program Footer
-        echo '</div>';//end Program Row
+
+
+        echo '</div><!-- end Program Footer -->'; //end Program Footer
+        echo '</div><!-- Panel Row End -->';//end Program Row
         wp_reset_postdata();
         endwhile; endif;
 		wp_link_pages( array(
@@ -141,4 +138,5 @@
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
+
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -54,7 +54,7 @@
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ucsc-underscore' ); ?></button>
 			<?php
 			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
+				'theme_location' => 'primary',
 				'menu_id'        => 'primary-menu',
 				'menu_class'	=>	'main-navigation',
 				'items_wrap'	=>	'<ul id="MENU-ID" class="MENU-CLASS">%3$s</ul>',

@@ -1,0 +1,51 @@
+.panel-row {
+    width: 100%;
+    border: 1px solid green;
+}
+
+.panel-image,
+.panel-content {
+    float: left;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.panel-image {
+    width: 22%;
+}
+
+.panel-header {
+    h3 {
+        float: left;
+    }
+    .panel-degrees-offered {
+        float: left;
+    }
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.panel-content {
+    width: 78%;
+}
+
+.panel-degrees-offered,
+.panel-academic-options {
+    ul {
+        text-align: center;
+        li {
+            display: inline-block;
+            margin: 5px;
+        }
+    }
+}
+
+.panel-blurb {
+    margin: 0.75em;
+}
