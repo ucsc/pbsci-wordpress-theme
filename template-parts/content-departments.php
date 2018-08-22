@@ -26,8 +26,29 @@
 	<?php get_template_part( 'template-parts/academics', 'subpages' ); ?>
 	<div class="entry-content">
 		<?php
-		the_content();
+		// Call Departments post
+        $args = array (
+            'post_type' => 'department',
+            'orderby' => 'title',
+            'order' => 'ASC',
+            );
+        $department_query = new WP_Query ($args);
+        if($department_query->have_posts()): while ($department_query->have_posts()):$department_query->the_post();
 
+		//Set up the parts
+
+		// debug
+        $meta = get_post_meta($post->ID);
+                // echo '<pre>';
+                // var_dump($academic_options);
+                // echo '</pre>';
+//
+                echo '<pre>';
+                var_dump($meta);
+                echo '</pre>';
+        // end debug
+		wp_reset_postdata();
+	endwhile; endif;
 		wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ucsc-underscore' ),
 			'after'  => '</div>',
