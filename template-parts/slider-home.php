@@ -38,7 +38,7 @@ echo '<div class="flexslider">';
 echo   '<ul class="slides">';
 // Call Slider post
 $args = array (
-    'post_type' => 'slider',
+    'post_type' => 'slide',
     'posts_per_page' => $slides,
     'orderby' => 'date',
     'order' => 'DESC',
@@ -67,7 +67,7 @@ $sl_space = " ";
 $slide_body = "slide-body";
 
 if ($slider_background == 'blue'): $background_class = "color-blue";
-elseif ($slider_background == 'Gold'): $background_class = "color-gold";
+elseif ($slider_background == 'gold'): $background_class = "color-gold";
 elseif ($slider_background == 'green'): $background_class = "color-green";
 elseif ($slider_background == 'light-blue'): $background_class = "color-light-blue";
 elseif ($slider_background == 'lime'): $background_class = "color-lime";
@@ -85,6 +85,20 @@ wp_reset_postdata();
 endwhile; endif;
 echo   '</ul>';
 echo '</div>';
-var_dump($slider_background);
+
+// debug
+        $meta = get_post_meta($post->ID);
+                echo '<pre>';
+                var_dump($slider_background);
+                echo '</pre>';
+
+                echo '<pre>';
+                var_dump($slider_layout);
+                echo '</pre>';
+
+                echo '<pre>';
+                var_dump($layout_class);
+                echo '</pre>';
+        // end debug
 
 ?>
