@@ -2,6 +2,10 @@
 .gitignore
 .vscode/
 node_modules/
+sass/
+package.json
+package-lock.json
+gulpfile.js
 synctheme
 pull-content
 push-content
