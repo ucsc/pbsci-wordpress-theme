@@ -89,53 +89,32 @@
     }
 }
 
-.page-template-left-sidebar {
-    .widget_nav_menu {
-        ul {
-            list-style: none;
-            margin: 0 0 2em 0;
+.widget_nav_menu {
+    ul {
+        list-style: none;
+        margin: 0 0 2em 0;
+        padding: 0;
+        &:first-child {
+            margin-top: 0.3em;
+        }
+        li {
             padding: 0;
-            &:first-child {
-                margin-top: 0.3em;
+            margin: 0;
+            &:first-child>a {
+                border-top: 1px solid #ddd;
             }
-            li {
-                padding: 0;
-                margin: 0;
-                &:first-child>a {
-                    border-top: 1px solid #ddd;
-                }
-                &.current-menu-item {
-                    a {
-                        display: block;
-                        background: #003c6c;
-                        color: #fff;
-                    }
-                }
-                &>a {
+            &.current-menu-item {
+                a {
                     display: block;
-                    padding: 0.5em 0 0.5em 1em;
-                    border-bottom: 1px solid #ddd;
+                    background: #003c6c;
+                    color: #fff;
                 }
+            }
+            &>a {
+                display: block;
+                padding: 0.5em 0 0.5em 1em;
+                border-bottom: 1px solid #ddd;
             }
         }
-        // li {
-        // padding: 0;
-        // margin: 0;
-        // height: 41px;
-        // &:first-child>a {
-        // border-top: 1px solid #ddd;
-        // }
-        // &.current-menu-item {
-        // a {
-        // display: block;
-        // background: #003c6c;
-        // color: #fff;
-        // }
-        // }
-        // &>a {
-        // padding: 0.5em 0 0.5em 1em;
-        // border-bottom: 1px solid #ddd;
-        // }
-        // }
     }
 }
