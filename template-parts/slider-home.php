@@ -87,18 +87,18 @@ echo   '</ul>';
 echo '</div>';
 
 // debug
-        $meta = get_post_meta($post->ID);
-                echo '<pre>';
-                var_dump($slider_background);
-                echo '</pre>';
-
-                echo '<pre>';
-                var_dump($slider_layout);
-                echo '</pre>';
-
-                echo '<pre>';
-                var_dump($layout_class);
-                echo '</pre>';
+        // $meta = get_post_meta($post->ID);
+                // echo '<pre>';
+                // var_dump($slider_background);
+                // echo '</pre>';
+//
+                // echo '<pre>';
+                // var_dump($slider_layout);
+                // echo '</pre>';
+//
+                // echo '<pre>';
+                // var_dump($layout_class);
+                // echo '</pre>';
         // end debug
 
 ?>
