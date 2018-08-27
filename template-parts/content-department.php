@@ -38,10 +38,6 @@
         //get the parts
         $department_blurb = get_field('department_blurb');
         $department_location = get_field('department_location');
-        $department_phone = get_field('department_phone_number');
-        $department_graduate_phone = get_field('department_graduate_phone_number');
-        $department_undergraduate_phone = get_field('department_undergraduate_phone_number');
-        $department_fax = get_field('department_fax_number');
         $department_website = get_field('department_website');
         $department_address_university_street_address = get_field('department_address_university_street_address');
         $department_address_dept_name = get_field('department_address_dept_name');
@@ -49,50 +45,32 @@
         $department_address_city = get_field('department_address_city');
         $department_address_state = get_field('department_address_state');
         $department_address_zip = get_field('department_address_zip');
+        $department_phone_numbers = get_field('department_phone_numbers');
         $meta = get_post_meta($post->ID);
 
-        //manipulate the parts
-        function ucsc_format_dept_phone($department_phone){
-            if(  preg_match( '/^\+\d(\d{3})(\d{3})(\d{4})$/', $department_phone,  $matches ) ){
+        //Filter phone number output
+        function ucsc_format_dept_phone(&$args){
+            if(  preg_match( '/^\+\d(\d{3})(\d{3})(\d{4})$/', $args,  $matches ) ){
             $result = '(' . $matches[1] . ') ' .$matches[2] . '-' . $matches[3];
             return $result;
             }
         }
-        function ucsc_format_grad_dept_phone($department_graduate_phone){
-            if(  preg_match( '/^\+\d(\d{3})(\d{3})(\d{4})$/', $department_graduate_phone,  $matches ) ){
-            $result = '(' . $matches[1] . ') ' .$matches[2] . '-' . $matches[3];
-            return $result;
-            }
-        }
-        function ucsc_format_undergrad_dept_phone($department_undergraduate_phone){
-            if(  preg_match( '/^\+\d(\d{3})(\d{3})(\d{4})$/', $department_undergraduate_phone,  $matches ) ){
-            $result = '(' . $matches[1] . ') ' .$matches[2] . '-' . $matches[3];
-            return $result;
-            }
-        }
-        function ucsc_format_fax($department_fax){
-            if(  preg_match( '/^\+\d(\d{3})(\d{3})(\d{4})$/', $department_fax,  $matches ) ){
-            $result = '(' . $matches[1] . ') ' .$matches[2] . '-' . $matches[3];
-            return $result;
-            }
-        }
-
         //build the parts
         echo $department_blurb;
-        if ($department_phone !=""){
-            echo '<p>Telephone: '.ucsc_format_dept_phone($department_phone).'</p>';
-        }
 
-        if ($department_graduate_phone !=""){
-            echo '<p>Graduate Telephone: '.ucsc_format_grad_dept_phone($department_graduate_phone).'</p>';
-        }
+        if (have_rows('department_phone_numbers')): while (have_rows('department_phone_numbers')):the_row();
+        $department_phone_line = get_sub_field('phone_line');
+        $department_phone_number = get_sub_field('phone_number');
+        echo '<p>';
+        if ($department_phone_line):
+            echo '<span>'.$department_phone_line.': </span>';
+        endif;
+        if ($department_phone_number):
+            echo '<span>'.ucsc_format_dept_phone($department_phone_number).'</span>';
+        endif;
+        endwhile;
+        endif;
 
-        if ($department_undergraduate_phone !=""){
-            echo '<p>Undergraduate Telephone: '.ucsc_format_undergrad_dept_phone($department_undergraduate_phone).'</p>';
-        }
-        if ($department_fax !=""){
-            echo '<p>Fax: '.ucsc_format_fax($department_fax).'</p>';
-        }
 
         echo '<p class="department-location">Department Location: '.$department_location.'</p>';
         echo '<p><a href="'.$department_website.'">Department Website</a></p>';
@@ -104,11 +82,10 @@
         echo '<p>MS: '.$department_address_mail_stop.'</p>';
         }
         echo '<p>'.$department_address_city.', '.$department_address_state.'&nbsp;'.$department_address_zip.'</p>';
-        //debug
+        // debug
         // echo '<pre>';
-        // var_dump($department_undergraduate_phone);
+        // var_dump($department_phone_numbers);
         // echo '</pre>';
-//
         // echo '<pre>';
         // var_dump($meta);
         // echo '</pre>';

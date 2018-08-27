@@ -1,0 +1,271 @@
+{
+    "key": "group_5b79d8b9bd504",
+    "title": "Departments",
+    "fields": [
+        {
+            "key": "field_5b79d8d8a4ca1",
+            "label": "Department Blurb",
+            "name": "department_blurb",
+            "type": "wysiwyg",
+            "instructions": "Enter a short description of the department here",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5b79d939a4ca2",
+            "label": "Department Location",
+            "name": "department_location",
+            "type": "text",
+            "instructions": "Enter the campus location of this department",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b80326f370db",
+            "label": "Department Phone Numbers",
+            "name": "department_phone_numbers",
+            "type": "repeater",
+            "instructions": "Use this repeating field to enter the department's phone numbers (Main, Fax, etc.).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5b8077ef4208d",
+                    "label": "Phone Line",
+                    "name": "phone_line",
+                    "type": "text",
+                    "instructions": "Enter the name of the phone line here (Main, Cell, Fax, etc.).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Enter line name",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5b8078424208e",
+                    "label": "Phone Number",
+                    "name": "phone_number",
+                    "type": "intl_tel_input",
+                    "instructions": "Enter the number for this phone line.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "separateDialCode": 0,
+                    "allowDropdown": 0,
+                    "initialCountry": "auto",
+                    "excludeCountries": "",
+                    "onlyCountries": "US",
+                    "preferredCountries": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5b79da0da4ca4",
+            "label": "Department Website",
+            "name": "department_website",
+            "type": "url",
+            "instructions": "Enter the Department website url",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5b79da3ba4ca5",
+            "label": "Department Address",
+            "name": "department_address",
+            "type": "group",
+            "instructions": "Enter the address of this department",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5b79dba6a4ca6",
+                    "label": "Dept. Name",
+                    "name": "dept_name",
+                    "type": "text",
+                    "instructions": "Enter the department name here.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5b79dbbaa4ca7",
+                    "label": "Mail Stop",
+                    "name": "mail_stop",
+                    "type": "text",
+                    "instructions": "Enter the department's mail stop here (if applicable).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5b7de3d1467c3",
+                    "label": "University Street Address",
+                    "name": "university_street_address",
+                    "type": "text",
+                    "instructions": "Enter the street address",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "1156 High Street",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5b79dbc6a4ca8",
+                    "label": "City",
+                    "name": "city",
+                    "type": "text",
+                    "instructions": "Change if different than displayed.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Santa Cruz",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5b79dbd5a4ca9",
+                    "label": "State",
+                    "name": "state",
+                    "type": "text",
+                    "instructions": "Change if different than displayed",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "CA",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5b79dbdfa4caa",
+                    "label": "Zip",
+                    "name": "zip",
+                    "type": "number",
+                    "instructions": "Change if different than displayed.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 95060,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "department"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1535150435
+}
