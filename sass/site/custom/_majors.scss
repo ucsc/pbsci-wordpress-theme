@@ -23,12 +23,12 @@
                 &:focus {
                     border: 1px solid #9d9573;
                     background-color: #f2f1eb;
-                    color: #8c1515;
+                    color: $ucsc--primary-blue;
                 }
             }
             &.active a {
-                border: 1px solid #8c1515;
-                background-color: #8c1515;
+                border: 1px solid $ucsc--primary-blue;
+                background-color: $ucsc--primary-blue;
                 color: #fff;
             }
         }
