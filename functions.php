@@ -306,21 +306,6 @@ function ucsc_scripts() {
 add_action( 'wp_enqueue_scripts', 'ucsc_scripts' );
 
 /**
- * Enqueue admin scripts and styles.
- */
-function ucsc_admin_scripts($hook) {
-	global $post;
-	if ($hook == 'post-new.php'||'post.php'){
-		if ('major' === $post->post_type) {
-			wp_enqueue_script('ucsc-major-metabox-selector', get_template_directory_uri().'/js/majors-metabox-selector.js');
-		}
-
-	}
-}
-// add_action( 'admin_enqueue_scripts', 'ucsc_admin_scripts', 10, 1 );
-
-
-/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
@@ -400,6 +385,6 @@ function my_body_classes( $classes ) {
 // 	add_action ('widgets_init','bb_register_custom_sidebars');
 
 function add_id_and_classes_to_page_menu( $ulclass ) {
-	return preg_replace( '/<ul>/', '<ul id="mainNav" class="hasqsg">', $ulclass, 1 );
+	return preg_replace( '/<ul>/', '<ul id="mainNav" class="hasqsg nav-menu">', $ulclass, 1 );
 	}
 add_filter( 'wp_page_menu', 'add_id_and_classes_to_page_menu' );

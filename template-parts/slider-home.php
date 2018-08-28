@@ -80,11 +80,11 @@ elseif ($slider_layout == 'top'): $layout_class = "layout-top";
 elseif ($slider_layout == 'bottom'): $layout_class = "layout-bottom";
 endif;
 
-echo '<li><a href="'.$slider_url_sanitized.'"><div class="'.$slide_body." ".$layout_class." ".$background_class.'">'.$slider_copy.'</div>'.$slider_image.'</a></li>';
+echo '<li><div class="slide"><a href="'.$slider_url_sanitized.'"><div class="'.$slide_body." ".$layout_class." ".$background_class.'">'.$slider_copy.'</div>'.$slider_image.'</a></div></li>';
 wp_reset_postdata();
 endwhile; endif;
 echo   '</ul>';
-echo '</div>';
+// echo '</div>';
 
 // debug
         // $meta = get_post_meta($post->ID);
