@@ -1,5 +1,4 @@
 <?php
-// $slide_options = get_option( 'ucsc_theme_options','slide_count' );
 $slide_options = get_field('number_of_slides','option');
 
 if ($slide_options == "one"){

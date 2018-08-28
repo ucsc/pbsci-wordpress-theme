@@ -279,16 +279,15 @@ function ucsc_scripts() {
 	// Enqueue custom FlexSlider script
     wp_enqueue_script( 'ucsc-underscore-flexslider-home', get_template_directory_uri() . '/js/home-slider.js', array('jquery'), false, true );
 
-    // Set up script option variables
-    // global $slide_animation;
-    // $animation_options = get_option( 'ucsc_theme_options','slide_animate' );
-//
-    // if (in_array("fade", $animation_options)) {
-        // $slide_animation = 'fade';
-    // }
-    // elseif (in_array("slide", $animation_options)) {
-        // $slide_animation = 'slide';
-    // }
+    // Set up flex slider script option variables
+    global $slide_animation;
+    $animation_options = get_field( 'slide_animation','option' );
+	if ($animation_options == "fade"){
+		$slide_animation = "fade";
+	}
+	elseif ($animation_options == "slide"){
+		$slide_animation = "slide";
+	}
 
     //Localize script so we can pass variables into it
     wp_localize_script('ucsc-underscore-flexslider-home','flexslider_vars',array(
