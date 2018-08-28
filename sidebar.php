@@ -7,7 +7,7 @@
  * @package UC_Santa_Cruz
  */
 
-if ( ! is_active_sidebar( 'sidebar-home-bottom-one' ) ) {
+if ( ! is_active_sidebar( 'sidebar-primary' ) ) {
 	return;
 }
 ?>
