@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Left Sidebar Page Template
- * 
+ *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package UC_Santa_Cruz
@@ -22,6 +22,8 @@ get_header();
 			elseif( $slug === 'departments' ) :
 				get_template_part( 'template-parts/content', $slug );
 			elseif( $slug === 'programs' ) :
+				get_template_part( 'template-parts/content', $slug );
+			elseif( $slug === 'degrees' ) :
 				get_template_part( 'template-parts/content', $slug );
 		  else :
 				//get_template_part( 'template-parts/content', get_post_format() );

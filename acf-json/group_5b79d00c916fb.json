@@ -39,7 +39,14 @@
                 "bs": "Bachelor of Science",
                 "ma": "Master of Arts",
                 "ms": "Master of Science",
-                "phd": "Doctor of Philosophy"
+                "phd": "Doctor of Philosophy",
+                "undergradminor": "Undergraduate Minor",
+                "gradminor": "Graduate Minor",
+                "gradcert": "Graduate Certificate",
+                "undergradhonors": "Undergraduate Honors",
+                "gradhonors": "Graduate Honors",
+                "jointmajor": "Joint Majors",
+                "c": "Courses"
             },
             "allow_custom": 0,
             "default_value": [],
@@ -49,11 +56,11 @@
             "save_custom": 0
         },
         {
-            "key": "field_5b7adc099c3d3",
-            "label": "Additional Academic Options",
-            "name": "additional_academic_options",
-            "type": "checkbox",
-            "instructions": "Select additional academic options",
+            "key": "field_5bbe7dc8076b9",
+            "label": "Overview",
+            "name": "overview",
+            "type": "wysiwyg",
+            "instructions": "Enter the degree overview here.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -61,29 +68,157 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "undergradminor": "Undergraduate Minor",
-                "gradminor": "Graduate Minor",
-                "gradcert": "Graduate Certificate",
-                "undergradhonors": "Undergraduate Honors",
-                "gradhonors": "Graduate Honors",
-                "jointmajor": "Joint Majors"
-            },
-            "allow_custom": 0,
-            "default_value": [],
-            "layout": "horizontal",
-            "toggle": 0,
-            "return_format": "label",
-            "save_custom": 0
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
-            "key": "field_5b79d06c23cef",
-            "label": "Program Blurb",
-            "name": "program_blurb",
+            "key": "field_5bbe7e53076ba",
+            "label": "Bachelor Degree",
+            "name": "bachelor_degree",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b7ad8159c3d2",
+                        "operator": "==",
+                        "value": "ba"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5b7ad8159c3d2",
+                        "operator": "==",
+                        "value": "bs"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5bbe7f2c076bc",
+            "label": "Master Degree",
+            "name": "master_degree",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b7ad8159c3d2",
+                        "operator": "==",
+                        "value": "ma"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5b7ad8159c3d2",
+                        "operator": "==",
+                        "value": "ms"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5bbe7f8b076be",
+            "label": "Doctoral Degree",
+            "name": "doctoral_degree",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b7ad8159c3d2",
+                        "operator": "==",
+                        "value": "phd"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5bbe843c9ac26",
+            "label": "Minor",
+            "name": "minor",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b7ad8159c3d2",
+                        "operator": "==",
+                        "value": "undergradminor"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5b7ad8159c3d2",
+                        "operator": "==",
+                        "value": "gradminor"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5bbe84a19ac29",
+            "label": "Courses",
+            "name": "courses",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b7ad8159c3d2",
+                        "operator": "==",
+                        "value": "c"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -119,31 +254,6 @@
             "min": "",
             "max": 1,
             "return_format": "object"
-        },
-        {
-            "key": "field_5b7c527588813",
-            "label": "Major Link",
-            "name": "major_link",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "major"
-            ],
-            "taxonomy": [],
-            "filters": [
-                "search"
-            ],
-            "elements": "",
-            "min": "",
-            "max": "",
-            "return_format": "object"
         }
     ],
     "location": [
@@ -152,6 +262,13 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "program"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "degree"
             }
         ]
     ],
@@ -163,5 +280,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1535411587
+    "modified": 1539301347
 }
