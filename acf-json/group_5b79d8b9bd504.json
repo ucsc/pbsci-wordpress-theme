@@ -30,7 +30,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -49,7 +49,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -101,6 +101,24 @@
             ]
         },
         {
+            "key": "field_5bc11edb5ad6d",
+            "label": "Department Email",
+            "name": "department_email",
+            "type": "email",
+            "instructions": "Enter the department's email",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "sammy@ucsc.edu",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_5b79da0da4ca4",
             "label": "Department Website",
             "name": "department_website",
@@ -109,7 +127,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -267,5 +285,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1535411559
+    "modified": 1539383294
 }

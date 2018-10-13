@@ -114,12 +114,13 @@
 
         echo '<div class="panel-footer">';
         echo '<div class="panel-department-link">';
+        if($program_departments){
         foreach ($program_departments as $department){
             // $dept_post = get_post($department);
             // $dept_title = $dept_post->post_title;
             $dept_link = esc_url(get_permalink($department));
             echo '<a href="'.$dept_link.'">Department Info</a>';
-        }
+        }}
         echo '</div>';
         echo '<div class="panel-major-link">';
             // var_dump($department);

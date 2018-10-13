@@ -298,7 +298,7 @@ function ucsc_scripts() {
 	wp_enqueue_script( 'localist-widget-fix', get_template_directory_uri() . '/js/localist-widget-fix.js', '',null, true );
 
 	// Enqueue custom Majors front end script
-	if ( is_singular() && ('major' === get_post_type())) {
+	if ( is_singular() && ('degree' === get_post_type())) {
 		wp_enqueue_script( 'majors-front', get_template_directory_uri() . '/js/majors-front.js', '',null, true );
 	}
 }

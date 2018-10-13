@@ -38,50 +38,52 @@
 
         $degrees_offered = get_field_object('degrees_offered');
         $degrees = $degrees_offered['value'];
+        // var_dump($degrees);
         if ($degrees !=''){
             echo '<div id="major-tabs" class="major-tabs">';
             echo '<ul role="tablist">';
-            if(in_array('ba', $degrees)|| in_array('bs', $degrees)):
-                echo '<li id="'.$major_tab.'-tab"  role="presentation"><a href="#" class="tab-link" data-rel="'.$major_tab.'"role="tab">'.$major_tabs_two[$index].'</a></li>';
+            echo '<li id="overview-tab"  role="presentation"><a href="#" class="tab-link" data-rel="overview"role="tab">Overview</a></li>';
+            if(in_array('ba', $degrees) || in_array('bs', $degrees)){
+                echo '<li id="ba-tab"  role="presentation"><a href="#" class="tab-link" data-rel="ba" role="tab">Bachelor\'s</a></li>';
+            }
+            if(in_array('ma', $degrees) || in_array('ms', $degrees)):
+                echo '<li id="ma-tab"  role="presentation"><a href="#" class="tab-link" data-rel="ma" role="tab">Master\'s</a></li>';
             endif;
-
+            if(in_array('phd', $degrees)):
+                echo '<li id="phd-tab"  role="presentation"><a href="#" class="tab-link" data-rel="phd" role="tab">Doctoral</a></li>';
+            endif;
+            if(in_array('undergradminor', $degrees) || in_array('gradminor', $degrees)):
+                echo '<li id="minor-tab"  role="presentation"><a href="#" class="tab-link" data-rel="minor" role="tab">Minor</a></li>';
+            endif;
+            if(in_array('c', $degrees)):
+                echo '<li id="courses-tab"  role="presentation"><a href="#" class="tab-link" data-rel="courses" role="tab">Courses</a></li>';
+            endif;
               echo '</ul>';
               echo '</div>';
               echo '<div style="clear:both"></div>';
 
               echo '<div class="majorcontainers">';
-            if (in_array("overview", $major_tabs)) {
-                echo '<div id="overview" class="tab-content">'.get_field('overview').'</div>';
-                }
-
-            if (in_array("ba", $major_tabs)) {
+              echo '<div id="overview" class="tab-content">'.get_field('overview').'</div>';
+              if(in_array('ba', $degrees) || in_array('bs', $degrees)) {
                 echo '<div id="ba" class="tab-content">'.get_field('bachelor_degree').'</div>';
-                }
-            if (in_array("ma", $major_tabs)) {
+               }
+            if(in_array('ma', $degrees) || in_array('ms', $degrees)) {
                 echo '<div id="ma" class="tab-content">'.get_field('master_degree').'</div>';
                 }
-            if (in_array("phd", $major_tabs)) {
+            if (in_array("phd", $degrees)) {
                 echo '<div id="phd" class="tab-content">'.get_field('doctoral_degree').'</div>';
                 }
-            if (in_array("minor", $major_tabs)) {
+            if(in_array('undergradminor', $degrees) || in_array('gradminor', $degrees)){
                 echo '<div id="minor" class="tab-content">'.get_field('minor').'</div>';
                 }
-            if (in_array("faculty", $major_tabs)) {
-                echo '<div id="faculty" class="tab-content">'.get_field('faculty').'</div>';
-                }
-            if (in_array("courses", $major_tabs)) {
+            // if (in_array("faculty", $major_tabs)) {
+            //     echo '<div id="faculty" class="tab-content">'.get_field('faculty').'</div>';
+            //     }
+            if (in_array("c", $degrees)) {
                 echo '<div id="courses" class="tab-content">'.get_field('courses').'</div>';
                 }
             echo '</div>';
             }
-            // $meta = get_post_meta($post->ID);
-            // echo '<pre>';
-            // var_dump($major_tabs);
-            // echo '</pre>';
-//
-            // echo '<pre>';
-            // var_dump($meta);
-            // echo '</pre>';
 
         /**
          *
