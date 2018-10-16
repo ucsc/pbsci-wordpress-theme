@@ -33,3 +33,12 @@
     background: $color;
     background: rgba($color, $opacity);
 }
+
+// Flexbox
+@mixin flex {
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}

@@ -53,10 +53,14 @@
 
         // Construct the parts
         echo '<!-- Panel Row Begin --><div class="panel-row">';
+
+        if($program_image){
         echo '<!-- Panel Image Begin --><div class="panel-image">'.$program_image.'</div><!-- Panel Image End -->';
+        // echo '<!-- Panel Image Begin -->'.$program_image.'<!-- Panel Image End -->';
+        }
         echo '<!-- Panel Content Begin --><div class="panel-content">';
         echo '<!-- Panel Header Begin --><div class="panel-header">';
-        echo '<h3>'.$program_title.'</h3>';
+        echo '<h3 class="">'.$program_title.'</h3>';
         // Get values from  ACF Checkbox
         if($degrees):
             echo '<!-- Panel Degrees Offered Begin --><div class="panel-degrees-offered">';
