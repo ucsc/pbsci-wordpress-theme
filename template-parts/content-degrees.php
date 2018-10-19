@@ -30,7 +30,8 @@
         if($program_query->have_posts()): while ($program_query->have_posts()):$program_query->the_post();
 
         //Set up the parts
-        $program_image = get_the_post_thumbnail($post_id, 'thumbnail');
+        $program_image = get_the_post_thumbnail($post_id,'thumbnail');
+        // $program_image = ucsc_underscore_post_thumbnail();
         $program_title = get_the_title();
         $program_subtitle = get_field('program_subtitle');
         $program_blurb = get_the_excerpt();
@@ -64,7 +65,7 @@
         // Get values from  ACF Checkbox
         if($degrees):
             echo '<!-- Panel Degrees Offered Begin --><div class="panel-degrees-offered">';
-            echo '<ul>';
+            echo '<ul class="panel-list">';
             if(in_array('ba', $degrees)):
                 echo '<li>ba</li>';
             endif;
@@ -90,7 +91,7 @@
 
         if ($degrees):
             echo '<!-- Panel Academic Options Begin --><div class="panel-academic-options">';
-            echo '<ul>';
+            echo '<ul class="panel-list">';
             if(in_array('undergradminor', $degrees)):
                 echo '<li>Undergraduate Minor</li>';
             endif;

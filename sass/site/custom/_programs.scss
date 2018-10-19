@@ -1,107 +1,115 @@
-        .panel-row {
-            // width: 100%;
-            border: 1px solid green;
-            margin-bottom: 20px;
-            @include flex;
-            flex-flow: row wrap;
-            &>* {
-                @media only screen and (max-width: 860px) {
-                    // flex: 1 100%;
-                    // @include media ($breakpoint__screen-size--smaller) {
-                    flex: 1 100%;
-                }
-            }
-        }
-        
-        // .panel-row>* {
-        //     flex: 1 100%
-        // }
-        .panel-image {
+.panel-list {
+    margin: 0;
+    text-align: left;
+    li {
+        display: inline-block;
+        margin: 0 5px;
+    }
+}
+
+.panel-row {
+    // width: 100%;
+    border: 1px solid green;
+    margin-bottom: 20px;
+    @include flex;
+    flex-flow: row wrap;
+    &>* {
+        flex: 1 100%;
+    }
+    .panel-image {
+        // flex: 1 100%;
+        @media only screen and (min-width: $screen-size--small) {
             width: auto;
             -webkit-box-flex: 0!important;
             -webkit-flex: none!important;
             -ms-flex: none!important;
             flex: none!important;
-            @media only screen and (max-width: 646px) {
-                flex: 1 100% !important;
-            }
         }
-        
-        .panel-content {
+    }
+}
+
+.panel-content {
+    // flex: 1;
+    @include flex;
+    flex-flow: row wrap;
+    &>* {
+        flex: 1 100%;
+    }
+    @media only screen and (min-width: $screen-size--small) {
+        flex: 1;
+    }
+    .panel-header {
+        // flex: 1;
+        @include flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        &>* {
+            flex: 1 100%;
+        }
+        @media only screen and (min-width: $screen-size--small) {
             flex: 1;
-            @include flex;
-            flex-flow: row wrap;
-            .panel-header {
-                flex: 1;
-                @include flex;
-                flex-flow: row wrap;
-                justify-content: flex-start;
-                h3 {
-                    margin: 0 15px 0 0;
-                    @media only screen and (max-width: 860px) {
-                        margin: 0;
-                    }
-                    @media only screen and (max-width: 646px) {
-                        flex: 0 1 100%;
-                    }
-                }
-                .panel-degrees-offered {
-                    @media only screen and (max-width: 646px) {
-                        flex: 0 1 100%;
-                    }
-                }
-            }
-            p {
-                flex: 0 1 100%;
-            }
-            .panel-academic-options {
-                flex: 0 1 100%;
-            }
         }
-        
-        .panel-degrees-offered,
-        .panel-academic-options {
-            ul {
-                margin: 0;
-                text-align: center;
-                li {
-                    display: inline-block;
-                    margin: 0 5px;
-                }
-            }
-        }
-        
-        .panel-academic-options {
-            ul {
-                @media only screen and (max-width: 860px) {
-                    text-align: left;
-                    columns: 2;
-                    -webkit-columns: 2;
-                    -moz-columns: 2;
-                }
-            }
-        }
-        
-        .panel-blurb,
-        .panel-content {
-            margin: 0.75em;
-        }
-        
-        .panel-blurb {
+        h3 {
+            margin: 0;
             flex: 0 1 100%;
-        }
-        
-        .panel-footer {
-            flex: 1;
-            @include flex;
-            flex-flow: row wrap;
-            .panel-department-link {
-                // flex: 1;
-            }
-            .panel-major-link {
-                // flex: 1;
-            }
-            .panel-more-button {
-                // flex: 1;
+            @media only screen and (min-width: $screen-size--small) {
+                margin: 0 15px 0 0;
+                flex: 0 2 auto;
             }
         }
+        .panel-degrees-offered {
+            flex: 0 1 100%;
+            @media only screen and (min-width: $screen-size--small) {
+                flex: 0 1 auto;
+                .panel-list {
+                    text-align: center;
+                }
+            }
+            // .panel-list {
+            //     @media only screen and (max-width: 646px) {
+            //         text-align: left;
+            //     }
+            // }
+        }
+    }
+    p {
+        flex: 0 1 100%;
+    }
+    .panel-academic-options {
+        flex: 0 1 100%;
+        .panel-list {
+            columns: 2;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+            @media only screen and (min-width: $screen-size--small) {
+                columns: auto;
+                -webkit-columns: auto;
+                -moz-columns: auto;
+            }
+        }
+    }
+}
+
+.panel-blurb,
+.panel-content {
+    margin: 0.75em;
+}
+
+.panel-blurb {
+    flex: 0 1 100%;
+}
+
+.panel-footer {
+    flex: 1;
+    @include flex;
+    flex-flow: row wrap;
+    .panel-department-link {
+        // flex: 1;
+    }
+    .panel-major-link {
+        // flex: 1;
+    }
+    .panel-more-button {
+        // flex: 1;
+    }
+}
