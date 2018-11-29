@@ -80,7 +80,7 @@ gulp.task('postcss', function() {
 
 });
 
-gulp.task('css:minify', ['postcss'], function() {
+gulp.task('css:minify', gulp.series('postcss'), function() {
     return gulp.src('style.css')
         // Error handling
         .pipe(plumber({
@@ -97,7 +97,7 @@ gulp.task('css:minify', ['postcss'], function() {
         }))
 });
 
-gulp.task('sass:lint', ['css:minify'], function() {
+gulp.task('sass:lint', gulp.series('css:minify'), function() {
     gulp.src([
             'sass/style.scss',
             '!sass/base/html5-reset/_normalize.scss',
@@ -114,11 +114,11 @@ gulp.task('sass:lint', ['css:minify'], function() {
  *******************/
 
 gulp.task('watch', function() {
-    gulp.watch('sass/**/*.scss', ['styles']);
+    gulp.watch('sass/**/*.scss', gulp.series('styles'));
 });
 
 /**
  * Individual tasks.
  */
 // gulp.task('scripts', [''])
-gulp.task('styles', ['sass:lint']);
+gulp.task('styles', gulp.series('sass:lint'));

@@ -252,8 +252,27 @@
             ],
             "elements": "",
             "min": "",
-            "max": 1,
+            "max": 3,
             "return_format": "object"
+        },
+        {
+            "key": "field_5bce3914e7e77",
+            "label": "",
+            "name": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -261,7 +280,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "program"
+                "value": "post"
             }
         ],
         [
@@ -280,5 +299,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1539301347
+    "modified": 1540241762
 }

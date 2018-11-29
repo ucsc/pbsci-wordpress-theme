@@ -17,7 +17,7 @@
         "bourbon": "^4.2.6",
         "bourbon-neat": "^3.0.0",
         "css-mqpacker": "^5.0.1",
-        "gulp": "^3.9.1",
+        "gulp": "^4.0.0",
         "gulp-cssnano": "^2.1.2",
         "gulp-notify": "^2.2.0",
         "gulp-plumber": "^1.1.0",

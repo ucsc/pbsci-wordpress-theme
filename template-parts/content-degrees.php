@@ -118,22 +118,24 @@
         echo '<!-- Panel Blurb Begin --><div class="panel-blurb">'.$program_blurb.'</div><!-- Panel Blurb End -->';
 
         echo '<div class="panel-footer">';
-        echo '<div class="panel-department-link">';
+        // echo '<div class="panel-department-link">';
         if($program_departments){
         foreach ($program_departments as $department){
-            // $dept_post = get_post($department);
-            // $dept_title = $dept_post->post_title;
+            $dept_post = get_post($department);
+            $dept_title = $dept_post->post_title;
             $dept_link = esc_url(get_permalink($department));
-            echo '<a href="'.$dept_link.'">Department Info</a>';
+            echo '<div class="panel-department-link">';
+            echo '<a href="'.$dept_link.'">'.$dept_title.' Department Info</a>';
+            echo '</div>';
         }}
-        echo '</div>';
+        // echo '</div>';
         echo '<div class="panel-major-link">';
             // var_dump($department);
             // var_dump($dept_link);
             echo '<a href="'.esc_url(get_permalink()).'">Degree Requirements</a>';
 
         echo '</div>';
-        echo '<button class="panel-more-button">More</button>';
+        echo '<div class="panel-more-button"><button>More</button></div>';
 
 
         echo '</div><!-- end Program Footer -->'; //end Program Footer

@@ -90,6 +90,7 @@
     .panel-footer {
         flex: 1;
         @include flex;
+        align-items: center;
         flex-flow: row wrap;
         .panel-department-link {
             flex: 1;
@@ -98,7 +99,12 @@
             flex: 1;
         }
         .panel-more-button {
-            flex: 1;
+            // flex: 1;
+        }
+        .panel-department-link,
+        .panel-major-link,
+        .panel-more-button {
+            padding: 1em;
         }
     }
 }
