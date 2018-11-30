@@ -13,9 +13,11 @@ var gulp = require('gulp'),
     sassLint = require('gulp-sass-lint'),
 
     // Utilities
+    livereload = require('gulp-livereload'),
     rename = require('gulp-rename'),
     notify = require('gulp-notify'),
     plumber = require('gulp-plumber');
+
 
 /*************
  * Utilities
@@ -66,6 +68,8 @@ gulp.task('postcss', function() {
         errLogToConsole: true,
         outputStyle: 'expanded' // Options: nested, expanded, compact, compressed
     }))
+    // livereload
+    .pipe(livereload())
 
     .pipe(postcss([
         autoprefixer({
@@ -77,6 +81,7 @@ gulp.task('postcss', function() {
     .pipe(sourcemaps.write())
 
     .pipe(gulp.dest('./'));
+
 
 });
 
@@ -95,6 +100,7 @@ gulp.task('css:minify', gulp.series('postcss'), function() {
         .pipe(notify({
             message: 'Styles are built.'
         }))
+
 });
 
 gulp.task('sass:lint', gulp.series('css:minify'), function() {
@@ -114,6 +120,7 @@ gulp.task('sass:lint', gulp.series('css:minify'), function() {
  *******************/
 
 gulp.task('watch', function() {
+    livereload.listen();
     gulp.watch('sass/**/*.scss', gulp.series('styles'));
 });
 

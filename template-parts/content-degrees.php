@@ -135,7 +135,7 @@
             echo '<a href="'.esc_url(get_permalink()).'">Degree Requirements</a>';
 
         echo '</div>';
-        echo '<div class="panel-more-button"><button>More</button></div>';
+        echo '<div class="panel-more-button"><button class="panel-toggle">More</button></div>';
 
 
         echo '</div><!-- end Program Footer -->'; //end Program Footer

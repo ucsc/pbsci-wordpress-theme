@@ -12,9 +12,13 @@
     margin: 0.75em;
 }
 
+.panel-blurb {
+    display: none;
+}
+
 .panel-row {
     // width: 100%;
-    border: 1px solid green;
+    border: 1px solid red;
     margin-bottom: 20px;
     @include flex;
     flex-flow: row wrap;
@@ -88,7 +92,7 @@
         flex: 0 1 100%;
     }
     .panel-footer {
-        flex: 1;
+        flex: 0 1 100%;
         @include flex;
         align-items: center;
         flex-flow: row wrap;
