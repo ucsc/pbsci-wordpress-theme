@@ -1,9 +1,28 @@
 .panel-list {
-    margin: 0;
+    margin: 5px 0 0;
+    margin: 0.313em 0 0;
     text-align: left;
     li {
         display: inline-block;
         margin: 0 5px;
+        margin: 0 0.313em;
+        border-radius: 50%;
+        color: #fff;
+        &.ba {
+            background: green;
+        }
+        &.bs {
+            background: red;
+        }
+        &.ma {
+            background: blue;
+        }
+        &.ms {
+            background: orange;
+        }
+        &.phd {
+            background: purple;
+        }
     }
 }
 
