@@ -1,11 +1,20 @@
-$(document).ready(function(){
-    $(".panel-blurb").slideUp();
-    $(".panel-toggle").click(function(){
-        $(".panel-blurb").slideToggle("slow");
-    });
-});
+ $(document).ready(function() {
+   $('#panelblurb').hide();
 
-// $(".panel-blurb").slideUp();
-// $(".panel-toggle").click(function(){
-//     $(this).next(".panel-blurb").slideToggle("slow");
-//   });
+   $('.panel-toggle').click(function() {
+           var id = $(this).attr('id');
+           var elem = $('#' + id).text();
+           if (elem == "More"){
+              $('#' + id).text("Less");
+              $('#panelblurb' + id).slideDown();
+           } else {
+            $('#' + id).text("More");
+            $('#panelblurb' + id).slideUp();
+           }
+
+
+         //   alert(elem);
+      //   return false;
+        });
+
+   });

@@ -17,7 +17,7 @@
 	</header><!-- .entry-header -->
 
 	<?php ucsc_underscore_post_thumbnail(); ?>
-    <?php get_template_part( 'template-parts/academics', 'subpages' ); ?>
+
 	<div class="entry-content">
 		<?php
         // Call Programs post
@@ -56,7 +56,10 @@
         echo '<!-- Panel Row Begin --><div class="panel-row">';
 
         if($program_image){
-        echo '<!-- Panel Image Begin --><div class="panel-image">'.$program_image.'</div><!-- Panel Image End -->';
+        echo '<!-- Panel Image Begin --><div class="panel-image">';
+        // ucsc_underscore_post_thumbnail($post_id,'thumbnail');
+        echo $program_image;
+        echo '</div><!-- Panel Image End -->';
         // echo '<!-- Panel Image Begin -->'.$program_image.'<!-- Panel Image End -->';
         }
         echo '<!-- Panel Content Begin --><div class="panel-content">';
@@ -67,19 +70,19 @@
             echo '<!-- Panel Degrees Offered Begin --><div class="panel-degrees-offered">';
             echo '<ul class="panel-list">';
             if(in_array('ba', $degrees)):
-                echo '<li>ba</li>';
+                echo '<li class="ba">ba</li>';
             endif;
             if(in_array('bs', $degrees)):
-                echo '<li>bs</li>';
+                echo '<li class="bs">bs</li>';
             endif;
             if(in_array('ma', $degrees)):
-                echo '<li>ma</li>';
+                echo '<li class="ma">ma</li>';
             endif;
             if(in_array('ms', $degrees)):
-                echo '<li>ms</li>';
+                echo '<li class="ms">ms</li>';
             endif;
             if(in_array('phd', $degrees)):
-                echo '<li>phd</li>';
+                echo '<li class="phd">phd</li>';
             endif;
             echo '</ul>';
             echo '</div><!-- Panel Degrees Offered End -->';
@@ -115,7 +118,7 @@
         endif;
         echo '</div><!-- Panel Content End -->';//end Program Content
 
-        echo '<!-- Panel Blurb Begin --><div class="panel-blurb">'.$program_blurb.'</div><!-- Panel Blurb End -->';
+        echo '<!-- Panel Blurb Begin --><div id="panelblurb'.$postid.'"class="panel-blurb">'.$program_blurb.'</div><!-- Panel Blurb End -->';
 
         echo '<div class="panel-footer">';
         // echo '<div class="panel-department-link">';
@@ -135,7 +138,7 @@
             echo '<a href="'.esc_url(get_permalink()).'">Degree Requirements</a>';
 
         echo '</div>';
-        echo '<div class="panel-more-button"><button class="panel-toggle">More</button></div>';
+        echo '<div class="panel-more-button"><button class="panel-toggle" id="'.$postid.'">More</button></div>';
 
 
         echo '</div><!-- end Program Footer -->'; //end Program Footer
