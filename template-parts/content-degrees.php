@@ -19,7 +19,9 @@
 	<?php ucsc_underscore_post_thumbnail(); ?>
 
 	<div class="entry-content">
-		<?php
+        <?php
+        //AJAX Search
+        get_template_part( 'template-parts/degrees', 'search' );
         // Call Programs post
         $args = array (
             'post_type' => 'degree',
@@ -53,6 +55,7 @@
         // end debug
 
         // Construct the parts
+
         echo '<!-- Panel Row Begin --><div class="panel-row">';
 
         if($program_image){

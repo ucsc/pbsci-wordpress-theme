@@ -390,3 +390,80 @@ function add_id_and_classes_to_page_menu( $ulclass ) {
 	return preg_replace( '/<ul>/', '<ul id="mainNav" class="hasqsg nav-menu">', $ulclass, 1 );
 	}
 add_filter( 'wp_page_menu', 'add_id_and_classes_to_page_menu' );
+
+// Scripts for Ajax Filter Search
+
+function ucsc_ajax_filter_search_scripts() {
+    wp_enqueue_script( 'ucsc_ajax_filter_search', get_stylesheet_directory_uri(). '/js/degrees-ajax.js', array(), '1.0', true );
+    wp_localize_script( 'ucsc_ajax_filter_search', 'ajax_url', admin_url('admin-ajax.php') );
+}
+
+// Ajax Callback
+
+add_action('wp_ajax_ucsc_ajax_filter_search', 'ucsc_ajax_filter_search_callback');
+add_action('wp_ajax_nopriv_ucsc_ajax_filter_search', 'ucsc_ajax_filter_search_callback');
+
+function ucsc_ajax_filter_search_callback() {
+
+    header("Content-Type: application/json");
+
+    $meta_query = array('relation' => 'AND');
+
+    if(isset($_GET['degrees_offered'])) {
+        $degrees_offered = sanitize_text_field( $_GET['degrees_offered'] );
+        $meta_query[] = array(
+            'key' => 'degrees_offered',
+            'value' => $degrees_offered,
+            'compare' => '='
+        );
+    }
+
+    $args = array(
+        'post_type' => 'degree',
+        'posts_per_page' => -1,
+        'meta_query' => $meta_query,
+        // 'tax_query' => $tax_query
+    );
+
+    if(isset($_GET['search'])) {
+        $search = sanitize_text_field( $_GET['search'] );
+        $search_query = new WP_Query( array(
+            'post_type' => 'degree',
+            'posts_per_page' => -1,
+            'meta_query' => $meta_query,
+            // 'tax_query' => $tax_query,
+            's' => $search
+        ) );
+    } else {
+        $search_query = new WP_Query( $args );
+    }
+
+    if ( $search_query->have_posts() ) {
+
+        $result = array();
+
+        while ( $search_query->have_posts() ) {
+            $search_query->the_post();
+
+            $result[] = array(
+                "id" => get_the_ID(),
+                "title" => get_the_title(),
+                "content" => get_the_content(),
+                "permalink" => get_permalink(),
+                "year" => get_field('year'),
+                "rating" => get_field('rating'),
+                "director" => get_field('director'),
+                "language" => get_field('language'),
+                "genre" => $cats,
+                "poster" => wp_get_attachment_url(get_post_thumbnail_id($post->ID),'full')
+            );
+        }
+        wp_reset_query();
+
+        echo json_encode($result);
+
+    } else {
+        // no posts found
+    }
+    wp_die();
+}
