@@ -409,11 +409,11 @@ function ucsc_ajax_filter_search_callback() {
 
     $meta_query = array('relation' => 'AND');
 
-    if(isset($_GET['degrees_offered'])) {
-        $degrees_offered = sanitize_text_field( $_GET['degrees_offered'] );
+    if(isset($_GET['degreesoffered'])) {
+        $degreesoffered = sanitize_text_field( $_GET['degreesoffered'] );
         $meta_query[] = array(
-            'key' => 'degrees_offered',
-            'value' => $degrees_offered,
+            'key' => 'degreesoffered',
+            'value' => $degreesoffered,
             'compare' => '='
         );
     }
@@ -449,13 +449,14 @@ function ucsc_ajax_filter_search_callback() {
                 "id" => get_the_ID(),
                 "title" => get_the_title(),
                 "content" => get_the_content(),
-                "permalink" => get_permalink(),
-                "year" => get_field('year'),
-                "rating" => get_field('rating'),
-                "director" => get_field('director'),
-                "language" => get_field('language'),
-                "genre" => $cats,
-                "poster" => wp_get_attachment_url(get_post_thumbnail_id($post->ID),'full')
+				"permalink" => get_permalink(),
+
+                "degreesoffered" => get_field('degrees_offered'),
+                // "rating" => get_field('rating'),
+                // "director" => get_field('director'),
+                // "language" => get_field('language'),
+                // "genre" => $cats,
+                // "poster" => wp_get_attachment_url(get_post_thumbnail_id($post->ID),'full')
             );
         }
         wp_reset_query();

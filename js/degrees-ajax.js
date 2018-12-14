@@ -2,65 +2,65 @@ $ = jQuery;
 
 var mafs = $("#ucsc-ajax-filter-search");
 var mafsForm = mafs.find("form");
-
+var degreesoffered = [];
+var clearBtn = $("#reset");
 mafsForm.submit(function(e){
     e.preventDefault();
+    $('input[name="degreesoffered"]:checked').each(function(){
+        degreesoffered.push(this.value);
+    });
 
+    //debug
     console.log("form submitted");
-
-    if(mafsForm.find("#search").val().length !== 0) {
-        var search = mafsForm.find("#search").val();
-    }
-    if(mafsForm.find("#ba").val().length !== 0) {
-        var ba = mafsForm.find("#ba").val();
-    }
-    if(mafsForm.find("#bs").val().length !== 0) {
-        var bs = mafsForm.find("#bs").val();
-    }
-    if(mafsForm.find("#undergradminor").val().length !== 0) {
-        var ugminor = mafsForm.find("#undergradminor").val();
-    }
-    if(mafsForm.find("#undergradhonors").val().length !== 0) {
-        var ughonors = mafsForm.find("#undergradhonors").val();
-    }
-    if(mafsForm.find("#jointmajor").val().length !== 0) {
-        var jointmajor = mafsForm.find("#jointmajor").val();
-    }
-    if(mafsForm.find("#ma").val().length !== 0) {
-        var ma = mafsForm.find("#ma").val();
-    }
-    if(mafsForm.find("#ms").val().length !== 0) {
-        var ms = mafsForm.find("#ms").val();
-    }
-    if(mafsForm.find("#gradminor").val().length !== 0) {
-        var gradminor = mafsForm.find("#gradminor").val();
-    }
-    if(mafsForm.find("#gradhonors").val().length !== 0) {
-        var gradhonors = mafsForm.find("#gradhonors").val();
-    }
-    if(mafsForm.find("#gradcert").val().length !== 0) {
-        var gradcert = mafsForm.find("#gradcert").val();
-    }
-    if(mafsForm.find("#phd").val().length !== 0) {
-        var phd = mafsForm.find("#phd").val();
-    }
+    alert("Number of degrees checked: "+degreesoffered.length+"\n"+"And, they are: "+degreesoffered);
+    //end debug
 
     var data = {
         action : "ucsc_ajax_filter_search",
         search : search,
-        ba : ba,
-        bs : bs,
-        undergradminor : undergradminor,
-        undergradhonors : undergradhonors,
-        jointmajor : jointmajor,
-        ma : ma,
-        ms : ms,
-        gradminor : gradminor,
-        gradcert : gradcert,
-        gradhonors : gradhonors,
-        phd : phd,
-
+        degreesoffered : degreesoffered,
     }
+
+    $.ajax({
+        url : ajax_url,
+        data : data,
+        success : function(response) {
+            mafs.find("ul").empty();
+            if(response) {
+                for(var i = 0 ;  i < response.length ; i++) {
+                     var html  = "<li id='movie-" + response[i].id + "'>";
+                         html += "  <a href='" + response[i].permalink + "' title='" + response[i].title + "'>";
+                         html += "      <img src='" + response[i].poster + "' alt='" + response[i].title + "' />";
+                         html += "      <div class='movie-info'>";
+                         html += "          <h4>" + response[i].title + "</h4>";
+                         html += "          <p>Year: " + response[i].year + "</p>";
+                         html += "          <p>Rating: " + response[i].rating + "</p>";
+                         html += "          <p>Language: " + response[i].language + "</p>";
+                         html += "          <p>Director: " + response[i].director + "</p>";
+                         html += "          <p>Genre: " + response[i].genre + "</p>";
+                         html += "      </div>";
+                         html += "  </a>";
+                         html += "</li>";
+                     mafs.find("ul").append(html);
+                }
+            } else {
+                var html  = "<li class='no-result'>No matching movies found. Try a different filter or search keyword</li>";
+                mafs.find("ul").append(html);
+            }
+        }
+    });
 
 // we will add codes above this line later
 });
+
+clearBtn.onclick = function(){
+    // e.preventDefault();
+    mafsForm.reset();
+    degreesOffered.value = "";
+    //debug
+    // console.log("form submitted");
+    // console.log("Number of degrees checked: "+degreesOffered.length+"\n"+"And, they are: "+degreesOffered);
+    //end debug
+
+}
+
