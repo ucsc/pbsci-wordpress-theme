@@ -1,3 +1,0 @@
-#!/bin/bash
-
-rsync -rvz --progress --delete --exclude-from=/home/jason/public_html/lando-test/wp-content/themes/ucsc-wordpress/rsync-exclude.txt ~/public_html/lando-test/wp-content/themes/ucsc-wordpress/ ~/public_html/ucsc-pbsci/wp-content/themes/ucsc-wordpress/
