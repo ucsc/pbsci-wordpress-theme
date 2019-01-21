@@ -1,0 +1,62 @@
+[class^="columns-"] {
+    width: 100%;
+    background-color: green;
+    @media only screen and (min-width: $screen-size--small) {
+        float: left;
+        margin-right: $columns__margin;
+        // &:last-of-type {
+        //     margin-right: 0;
+        // }
+    }
+}
+
+.columns-2 {
+    @media only screen and (min-width: $screen-size--small) {
+        @include column-width(2);
+        &:nth-child(even) {
+            margin-right: 0!important;
+        }
+    }
+}
+
+.columns-3 {
+    @media only screen and (min-width: $screen-size--small) {
+        @include column-width(3);
+    }
+}
+
+.columns-4 {
+    @media only screen and (min-width: $screen-size--small) {
+        @include column-width(4);
+    }
+}
+
+.columns-5 {
+    @media only screen and (min-width: $screen-size--small) {
+        @include column-width(5);
+    }
+}
+
+.columns-6 {
+    @media only screen and (min-width: $screen-size--small) {
+        @include column-width(6);
+    }
+}
+
+.columns-7 {
+    @media only screen and (min-width: $screen-size--small) {
+        @include column-width(7);
+    }
+}
+
+.columns-8 {
+    @media only screen and (min-width: $screen-size--small) {
+        @include column-width(8);
+    }
+}
+
+.columns-9 {
+    @media only screen and (min-width: $screen-size--small) {
+        @include column-width(9);
+    }
+}

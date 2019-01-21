@@ -1,13 +1,7 @@
-$columns: (
-	1: 100%,
-	2: 50%,
-	3: 33.33%,
-	4: 25%,
-	5: 20%,
-	6: 16.66%,
-	7: 14.28%,
-	8: 12.5%,
-	9: 11.11%
-);
-
-$columns__margin: 3.8%;
+$columns: ( 1: 100%, 2: 50%, 3: 33.33%, 4: 25%, 5: 20%, 6: 16.66%, 7: 14.28%, 8: 12.5%, 9: 11.11%);
+$columns__margin: 1.8%;
+// Flexbox Grid
+// @url https://thingsym.github.io/flexbox-grid-mixins/
+//
+$default-grid-columns: 12;
+$default-grid-gutter: 2%;
