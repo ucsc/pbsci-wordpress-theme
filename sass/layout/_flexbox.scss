@@ -10,31 +10,12 @@
     margin: auto;
 }
 
-.flex-col {
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
-}
-
 //////
 .flex-row {
     display: flex;
     flex: 1;
     flex-direction: row;
     flex-wrap: wrap;
-}
-
-.flex-col {
-    margin: 6px;
-    padding: 16px;
-    background-color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    flex-direction: column;
-    color: white;
-    box-sizing: border-box;
 }
 
 @media (max-width:767px) {

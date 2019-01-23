@@ -103,16 +103,6 @@ get_header();
 </div>
 </div>
 </div>
-/**
- * end
- */
-		<hr>
-		<div class="flex-row">
-  <div class="flex-col">Assertively negotiate interoperable portals without cross functional process improvements. Dramatically incentivize tactical best practices with.</div>
-  <div class="flex-col">Seamlessly grow competitive.</div>
-  <div class="flex-col">Distinctively optimize user-centric mindshare vis-a-vis plug-and-play infomediaries. Seamlessly optimize impactful solutions and enabled infrastructures.</div>
-  <div class="flex-col">Dynamically extend flexible catalysts for change via pandemic supply chains. Efficiently.</div>
-</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

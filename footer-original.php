@@ -14,37 +14,8 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-
-		<div class="panel">
-			<div class="wrap">
-				<div class="flex-wrap">
-					<div class="panel-heading footer-top">
-						<h2 class="icon chevron-right"><span class="span-a">Science</span><span class="span-b">Apply</span>Today</h2>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="wrap">
-	<div class="flex-wrap">
-		<div class="panel-cell-2 footer-cell">
-			<div class="panel-heading">
-				<h2><span>Academic</span>Departments</h2>
-			</div>
-		</div>
-		<div class="panel-cell-2 footer-cell">
-			<div class="panel-heading">
-				<h2><span>Academic</span>Departments</h2>
-			</div>
-		</div>
-		<div class="panel-cell-2 footer-cell">
-			<div class="panel-heading">
-				<h2><span>Sharing</span>Science</h2>
-			</div>
-		</div>
-		</div>
-		</div>
 		<div class="site-info">
-		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ucsc-pbsci' ) ); ?>">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ucsc-pbsci' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
 				printf( esc_html__( 'Proudly powered by %s', 'ucsc-pbsci' ), 'WordPress' );
@@ -56,7 +27,6 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'ucsc-pbsci' ), 'ucsc-pbsci', '<a href="https://automattic.com/">Automattic</a>' );
 				?>
 		</div><!-- .site-info -->
-
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

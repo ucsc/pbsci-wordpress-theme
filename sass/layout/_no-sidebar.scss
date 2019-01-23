@@ -69,4 +69,41 @@
 .site-footer {
     clear: both;
     width: $size__site-main;
+    background-color: $ucsc--primary-blue;
+    .panel {
+        // width: $size__site-main;
+        background-color: $ucsc--primary-yellow;
+        padding-bottom: 0;
+        .footer-top {
+            flex: 1;
+            flex-basis: 100%;
+            font-family: 'Helvetica', sans-serif;
+            text-transform: uppercase;
+            font-weight: 300;
+            @include font-size(2.25);
+            color: $ucsc--light-blue;
+            border-left: 0;
+            margin: 10px 0;
+            .span-a {
+                text-transform: capitalize;
+                font-weight: 900;
+                padding-right: 15px;
+                border-right: 3px solid $ucsc--light-blue;
+            }
+            .span-b {
+                font-weight: 900;
+                padding-left: 15px;
+            }
+        }
+    }
+}
+
+.footer-cell {
+    // margin-top: 20px;
+    .panel-heading {
+        h2 {
+            color: #ffffff;
+            @include font-size(1);
+        }
+    }
 }
