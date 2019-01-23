@@ -27,7 +27,6 @@ get_header();
 
 				<div class="flex-wrap">
 					<div class="panel-cell-1 display-block">
-						<!-- <img 		src="http://lorempixel.		com/585/400" /> -->
 						<iframe width="560" height="315" 						src="https://www.youtube.com/embed/k32voqQhO	Dc" 				frameborder="0" 	allow="accelerometer; autoplay; 					encrypted-media; gyroscope; 	picture-in-picture" 					allowfullscreen></iframe>
 					</div>
 
@@ -56,31 +55,30 @@ get_header();
 				</div>
 			</div>
 		</div>
-	<div class="panel front-page-blue-panel">
+		<div class="panel front-page-blue-panel">
 			<div class="wrap">
 				<div class="flex-wrap">
-				<div class="panel-heading">
-					<h2><span>Mind</span>Blowing</h2>
-					<p>Warning: consuming our world changing science can be a satisfying brain workout. View at your own risk.</p>
-				</div>
+					<div class="panel-heading">
+						<h2><span>Mind</span>Blowing</h2>
+						<p>Warning: consuming our world changing science can be a satisfying brain workout. View at your own risk.</p>
+					</div>
 				</div>
 				<div class="flex-wrap">
 					<div class="panel-cell-2 display-block">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/04nKIkvEOoY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/04nKIkvEOoY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 					<div class="panel-cell-2 display-block">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/WP3WK8Lwtws" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/WP3WK8Lwtws" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 					<div class="panel-cell-2 display-block">
-
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/Yq2jJLswL8I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/Yq2jJLswL8I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
-				</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="panel">
+
+			<div class="panel">
 <div class="wrap">
 <div class="flex-wrap">
 	<div class="panel-heading">

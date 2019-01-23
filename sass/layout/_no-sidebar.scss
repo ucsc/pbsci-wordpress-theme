@@ -65,11 +65,13 @@
 //     float: left;
 //     overflow: hidden;
 //     width: $size__site-sidebar;
+// R0 G60 B108 RGB: R0 G106 B173
 // }
 .site-footer {
     clear: both;
     width: $size__site-main;
     background-color: $ucsc--primary-blue;
+    // background-image: linear-gradient(to bottom right, rgba(0, 60, 108, 1), rgba(0, 60, 108, .5), rgba(0, 60, 108, .25), rgba(255, 0, 0, 0));
     .panel {
         // width: $size__site-main;
         background-color: $ucsc--primary-yellow;
@@ -89,6 +91,7 @@
                 font-weight: 900;
                 padding-right: 15px;
                 border-right: 3px solid $ucsc--light-blue;
+                color: rgba(0, 106, 173, .35);
             }
             .span-b {
                 font-weight: 900;
@@ -99,7 +102,28 @@
 }
 
 .footer-cell {
-    // margin-top: 20px;
+    .panel-heading-footer {
+        width: 100%;
+        margin: 25px 0;
+        align-items: center;
+        span {
+            flex: 1;
+        }
+        .f-logo {
+            // padding-right: 10px;
+            padding: 10px;
+            border-right: solid 3px $ucsc--primary-yellow;
+        }
+        .f-text {
+            padding-left: 10px;
+            // padding: 15px 0 15px 10px;
+            font-family: 'Helvetica', sans-serif;
+            font-weight: 900;
+            @include font-size(2);
+            margin: 2px 0 0;
+            color: #fff;
+        }
+    }
     .panel-heading {
         h2 {
             color: #ffffff;
