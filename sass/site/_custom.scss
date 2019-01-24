@@ -43,7 +43,7 @@
     flex-basis: 100%;
     border-left: 3px solid $ucsc--primary-yellow;
     padding-left: 10px;
-    margin: 25px 0;
+    margin: 25px 0 10px;
     h2 {
         text-transform: uppercase;
         font-family: 'Helvetica', sans-serif;
@@ -99,14 +99,14 @@
 .panel-cell-quarter {
     // margin: 6px;
     // padding: 16px;
-    background-color: purple;
+    background-color: $ucsc--light-blue;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50%;
     // flex: 1;
-    color: white;
+    color: $color__white;
     box-sizing: border-box;
     min-height: 157px;
     .fas {
@@ -119,7 +119,7 @@
 
 .front-page-blue-panel {
     background-color: $ucsc--light-blue;
-    color: #fff;
+    color: $color__white;
 }
 
 

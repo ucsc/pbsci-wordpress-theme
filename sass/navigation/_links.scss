@@ -1,19 +1,66 @@
 a {
-	color: $color__link;
+    color: $color__link;
+    text-decoration: none;
+    &:visited {
+        color: $color__link-visited;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color__link-hover;
+    }
+    &:focus {
+        outline: thin dotted;
+    }
+    &:hover,
+    &:active {
+        outline: 0;
+    }
+}
 
-	&:visited {
-		color: $color__link-visited;
-	}
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
-	}
-	&:focus {
-		outline: thin dotted;
-	}
-	&:hover,
-	&:active {
-		outline: 0;
-	}
+.site-info {
+    a {
+        color: $color__white;
+        text-decoration: none;
+        &:visited {
+            color: $color__link-visited;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            // color: $color__link-hover;
+            text-decoration: underline;
+        }
+        &:focus {
+            outline: thin dotted;
+        }
+        &:hover,
+        &:active {
+            outline: 0;
+        }
+    }
+}
+
+.footer-departments-list {
+    a {
+        color: $ucsc__primary-yellow;
+        text-decoration: none;
+        font-weight: 900;
+        &:visited {
+            color: $color__link-visited;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            // color: $color__link-hover;
+            text-decoration: underline;
+        }
+        &:focus {
+            outline: thin dotted;
+        }
+        &:hover,
+        &:active {
+            outline: 0;
+        }
+    }
 }
