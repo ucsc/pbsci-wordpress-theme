@@ -13,11 +13,14 @@
     -webkit-font-smoothing: antialiased;
 }
 
-.chevron-right::after {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 800;
-    content: "\f054";
-    padding-left: 5px;
+.chevron-right {
+    color: $color__white;
+    &::after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 800;
+        content: "\f054";
+        padding-left: 5px;
+    }
 }
 
 .display-block * {
@@ -120,6 +123,12 @@
 .front-page-blue-panel {
     background-color: $ucsc--light-blue;
     color: $color__white;
+}
+
+.white-cell-link {
+    &::after {
+        color: $ucsc__primary-yellow;
+    }
 }
 
 

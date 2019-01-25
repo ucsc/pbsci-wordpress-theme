@@ -8,6 +8,7 @@ a {
     &:focus,
     &:active {
         color: $color__link-hover;
+        border-bottom: 2px solid $ucsc__primary-yellow;
     }
     &:focus {
         outline: thin dotted;
@@ -21,23 +22,6 @@ a {
 .site-info {
     a {
         color: $color__white;
-        text-decoration: none;
-        &:visited {
-            color: $color__link-visited;
-        }
-        &:hover,
-        &:focus,
-        &:active {
-            // color: $color__link-hover;
-            text-decoration: underline;
-        }
-        &:focus {
-            outline: thin dotted;
-        }
-        &:hover,
-        &:active {
-            outline: 0;
-        }
     }
 }
 
@@ -49,18 +33,13 @@ a {
         &:visited {
             color: $color__link-visited;
         }
-        &:hover,
-        &:focus,
-        &:active {
-            // color: $color__link-hover;
-            text-decoration: underline;
-        }
-        &:focus {
-            outline: thin dotted;
-        }
-        &:hover,
-        &:active {
-            outline: 0;
-        }
+    }
+}
+
+.white-cell-link {
+    // color: $ucsc__primary-yellow;
+    a {
+        color: $ucsc__light-blue;
+        font-weight: 900;
     }
 }

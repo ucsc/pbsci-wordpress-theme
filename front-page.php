@@ -97,11 +97,11 @@ get_header();
                     </div>
                 </div>
                 <div class="flex-wrap">
-                    <div class="panel-cell-1 display-block">
-                        <!-- <img 		src="http://lorempixel.	com/585/400" /> -->
+                    <div class="panel-cell-1">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/k32voqQhODc" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
+                            <p class="white-cell-link chevron-right"><a href="#">Program name here</a></p>
                     </div>
 
 
