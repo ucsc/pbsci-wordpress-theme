@@ -14,8 +14,9 @@
 .panel {
     width: $size__site-main;
     @include center-block();
-    padding-bottom: 50px;
-    padding-bottom: 3.125em;
+    // padding-bottom: 50px;
+    // padding-bottom: 3.125em;
+    padding: 25px 0;
     &:after {
         @include clearfix();
         @include clearfix-after();
@@ -75,7 +76,7 @@
     .panel {
         // width: $size__site-main;
         background-color: $ucsc--primary-yellow;
-        padding-bottom: 0;
+        padding: 0;
         .footer-top {
             flex: 1;
             flex-basis: 100%;
@@ -86,6 +87,9 @@
             color: $ucsc--light-blue;
             border-left: 0;
             margin: 10px 0;
+            .chevron-right::after {
+                color: $ucsc--light-blue;
+            }
             .span-a {
                 text-transform: capitalize;
                 font-weight: 900;

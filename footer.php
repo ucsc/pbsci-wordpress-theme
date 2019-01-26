@@ -19,7 +19,7 @@
         <div class="wrap">
             <div class="flex-wrap">
                 <div class="panel-heading footer-top">
-                    <h2 class="icon chevron-right"><span class="span-a">Science</span><span
+                    <h2 class="chevron-right"><span class="span-a">Science</span><span
                             class="span-b">Apply</span>Today</h2>
                 </div>
             </div>

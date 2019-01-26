@@ -102,13 +102,16 @@ get_header();
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                             <p class="white-cell-link chevron-right"><a href="#">Program name here</a></p>
+                            <p>Ooga booga. Ipsum and what not. Something witty is this here writ.</p>
                     </div>
 
 
-                    <div class="panel-cell-1 display-block">
+                    <div class="panel-cell-1">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/lf0wPU59PfI" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
+                            <p class="white-cell-link chevron-right"><a href="#">Program name here</a></p>
+                            <p>Ooga booga. Ipsum and what not. Something witty is this here writ.</p>
                     </div>
                 </div>
             </div>

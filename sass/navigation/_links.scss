@@ -1,45 +1,54 @@
-a {
-    color: $color__link;
-    text-decoration: none;
-    &:visited {
-        color: $color__link-visited;
-    }
-    &:hover,
-    &:focus,
-    &:active {
-        color: $color__link-hover;
-        border-bottom: 2px solid $ucsc__primary-yellow;
-    }
-    &:focus {
-        outline: thin dotted;
-    }
-    &:hover,
-    &:active {
-        outline: 0;
-    }
-}
-
-.site-info {
-    a {
-        color: $color__white;
-    }
-}
-
-.footer-departments-list {
-    a {
-        color: $ucsc__primary-yellow;
-        text-decoration: none;
-        font-weight: 900;
-        &:visited {
-            color: $color__link-visited;
+        a {
+            color: $color__link;
+            text-decoration: none;
+            &:visited {
+                color: $color__link-visited;
+            }
+            &:hover,
+            &:focus,
+            &:active {
+                color: $color__link-hover;
+                border-bottom: 2px solid $ucsc__primary-yellow;
+            }
+            &:focus {
+                outline: thin dotted;
+            }
+            &:hover,
+            &:active {
+                outline: 0;
+            }
         }
-    }
-}
-
-.white-cell-link {
-    // color: $ucsc__primary-yellow;
-    a {
-        color: $ucsc__light-blue;
-        font-weight: 900;
-    }
-}
+        
+        .site-info {
+            a {
+                color: $color__white;
+                &:visited {
+                    color: $color__white;
+                }
+            }
+        }
+        
+        .footer-departments-list {
+            .chevron-right::after {
+                color: $color__white;
+            }
+            a {
+                color: $ucsc--primary-yellow;
+                text-decoration: none;
+                font-weight: 900;
+                &:visited {
+                    color: $ucsc--primary-yellow;
+                }
+            }
+        }
+        
+        .white-cell-link {
+            // color: $ucsc__primary-yellow;
+            a {
+                color: $ucsc--light-blue;
+                font-weight: 900;
+                &:visited {
+                    color: $ucsc--light-blue;
+                }
+            }
+        }

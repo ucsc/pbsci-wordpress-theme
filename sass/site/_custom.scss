@@ -14,7 +14,7 @@
 }
 
 .chevron-right {
-    color: $color__white;
+    // color: $color__white;
     &::after {
         font-family: "Font Awesome 5 Free";
         font-weight: 800;
@@ -46,7 +46,7 @@
     flex-basis: 100%;
     border-left: 3px solid $ucsc--primary-yellow;
     padding-left: 10px;
-    margin: 25px 0 10px;
+    margin: 0 0 10px;
     h2 {
         text-transform: uppercase;
         font-family: 'Helvetica', sans-serif;
