@@ -13,6 +13,10 @@
     -webkit-font-smoothing: antialiased;
 }
 
+.topo-left {
+    background-image: url(images/impact-ring-optimized.svg) no-repeat bottom;
+}
+
 .chevron-right {
     // color: $color__white;
     &::after {
@@ -46,7 +50,7 @@
     flex-basis: 100%;
     border-left: 3px solid $ucsc--primary-yellow;
     padding-left: 10px;
-    margin: 0 0 10px;
+    margin: 0 0 32px;
     h2 {
         text-transform: uppercase;
         font-family: 'Helvetica', sans-serif;
@@ -122,6 +126,7 @@
 
 .front-page-blue-panel {
     background-color: $ucsc--light-blue;
+    background: linear-gradient(30deg, $ucsc--primary-blue, $ucsc--light-blue);
     color: $color__white;
 }
 

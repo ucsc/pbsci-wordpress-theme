@@ -117,6 +117,22 @@ function ucsc_pbsci_widgets_init() {
 add_action( 'widgets_init', 'ucsc_pbsci_widgets_init' );
 
 /**
+ * Deregister WordPress JQuery and register Google JQuery library
+ */
+
+function ucsc_pbsci_modify_jquery(){
+    if (!is_admin()){
+ // deregister WordPress JQuery
+    wp_deregister_script('jquery');
+    //register and enqueue jquery
+    wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', null, true); // register the external file
+        wp_enqueue_script('jquery'); // enqueue the external file
+}
+}
+
+add_action('init','ucsc_pbsci_modify_jquery');
+
+/**
  * Enqueue scripts and styles.
  */
 function ucsc_pbsci_scripts() {
@@ -129,9 +145,15 @@ function ucsc_pbsci_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	// Enqueue custom Localist widget script
+	wp_enqueue_script( 'localist-widget-fix', get_template_directory_uri() . '/js/localist-widget-fix.js', '',null, true );
+	//Enqueue FontAwesome
 	wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css');
 
+	//Enqueue Google Fonts
 	wp_enqueue_style( 'roboto-condensed-garamond', 'https://fonts.googleapis.com/css?family=EB+Garamond:400,500,700|Roboto+Condensed:300,400,700|Roboto:300,400,500,700', array(), false );
+	// Enqueue <span></span> adder
+	wp_enqueue_script( 'span-adder', get_template_directory_uri() . '/js/span-add.js', '',null, true );
 }
 add_action( 'wp_enqueue_scripts', 'ucsc_pbsci_scripts' );
 
