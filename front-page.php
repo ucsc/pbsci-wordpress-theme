@@ -74,13 +74,13 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
                                 <p>Facts & rankings</p>
                             </div>
                             <div class="panel-cell-1 flex-wrap 		panel-cell-quarter">
-                                <i class="fas fa-cannabis"></i>
+                                <i class="fas fa-hand-point-down"></i>
                                 <p>Alumni success</p>
                             </div>
                         </div>
                         <div class="flex-wrap">
                             <div class="panel-cell-1 flex-wrap 		panel-cell-quarter">
-                                <i class="fas fa-bong"></i>
+                                <i class="fas fa-hand-point-up"></i>
                                 <p>Student experience</p>
                             </div>
                             <div class="panel-cell-1 flex-wrap 		panel-cell-quarter">
@@ -96,26 +96,25 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
             <div class="wrap">
                 <div class="flex-wrap">
                     <div class="panel-heading">
-                        <!-- <h2><span>Mind</span>Blowing</h2> -->
                         <h2><?php echo $panelTwoHead?></h2>
                         <p><?php echo $panelTwoSubhead?></p>
                     </div>
                 </div>
                 <div class="flex-wrap">
                     <div class="panel-cell-2 display-block">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/04nKIkvEOoY" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                            <?php echo $panelTwoCellOneMedia ?>
+                            <p class="panel-2-cell-meta"><?php echo $panelTwoCellOneMeta?></p>
+                            <p><?php echo $panelTwoCellOneTeaser?></p>
                     </div>
                     <div class="panel-cell-2 display-block">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/WP3WK8Lwtws" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                    <?php echo $panelTwoCellTwoMedia ?>
+                    <p class="panel-2-cell-meta"><?php echo $panelTwoCellTwoMeta?></p>
+                            <p><?php echo $panelTwoCellTwoTeaser?></p>
                     </div>
                     <div class="panel-cell-2 display-block">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Yq2jJLswL8I" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                    <?php echo $panelTwoCellThreeMedia ?>
+                    <p class="panel-2-cell-meta"><?php echo $panelTwoCellThreeMeta?></p>
+                            <p><?php echo $panelTwoCellThreeTeaser?></p>
                     </div>
                 </div>
             </div>
@@ -124,25 +123,20 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
             <div class="wrap">
                 <div class="flex-wrap">
                     <div class="panel-heading">
-                        <h2><span>Bragging</span>Rights</h2>
                         <h2><?php echo $panelThreeHead?></h2>
                         <p><?php echo $panelThreeSubhead?></p>
                     </div>
                 </div>
                 <div class="flex-wrap">
                     <div class="panel-cell-1">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/k32voqQhODc" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                    <?php echo $panelThreeCellOneMedia ?>
                             <p class="white-cell-link chevron-right"><a href="#">Program name here</a></p>
                             <p>Ooga booga. Ipsum and what not. Something witty is this here writ.</p>
                     </div>
 
 
                     <div class="panel-cell-1">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/lf0wPU59PfI" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                    <?php echo $panelThreeCellTwoMedia ?>
                             <p class="white-cell-link chevron-right"><a href="#">Program name here</a></p>
                             <p>Ooga booga. Ipsum and what not. Something witty is this here writ.</p>
                     </div>
@@ -150,11 +144,6 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
             </div>
         </div>
     </main><!-- #main --><div id="primary" class="content-area">
-    <main id="main" class="site-main">
-        <div class="panel">
-            <div class="wrap">
-                <div class="flex-wrap">
-                    <div class="panel-heading">
 </div><!-- #primary -->
 
 <?php
