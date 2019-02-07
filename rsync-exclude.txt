@@ -1,0 +1,14 @@
+.git/
+.gitignore
+.vscode/
+node_modules/
+sass/
+wp-sync-db/
+package.json
+package-lock.json
+gulpfile.js
+synctheme
+syncuploads
+pull-content
+push-content
+rsync-exclude.txt

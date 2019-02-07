@@ -143,7 +143,8 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
                 </div>
             </div>
         </div>
-    </main><!-- #main --><div id="primary" class="content-area">
+    </main><!-- #main -->
+
 </div><!-- #primary -->
 
 <?php
