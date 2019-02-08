@@ -140,6 +140,10 @@
     }
 }
 
+.flex-column {
+    flex-direction: column;
+}
+
 
 /** HOME PAGE */
 
@@ -147,10 +151,14 @@
     height: 100vh;
     background-size: cover;
     min-height: 500px;
-    .hero-chevron-container {
-        width: 100%;
-        .hero-chevron {
-            color: $ucsc--primary-yellow;
-        }
+    .flexslider {
+        flex: 1;
+        margin-bottom: auto;
+    }
+    .hero-chevron {
+        color: $ucsc--primary-yellow;
+        text-align: center;
+        flex: 1;
+        margin-top: auto;
     }
 }

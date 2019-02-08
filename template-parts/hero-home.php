@@ -6,21 +6,25 @@ $hero = get_field('hero_image', 132);
 // print_r($hero);
 if($hero){
     echo '<div class="hero-home"
-    style="background:url('.$hero.') no-repeat top; background-size: cover;">';
+    style="background:url('.$hero.') no-repeat top; background-size: cover;">';}
+    else {
+        echo '<div class="hero-home">';
+    }
 ?>
-<div class="wrap flex-wrap">
-<ul class="home-stats">
-    <li>One Stat</li>
-    <li>Two Stat</li>
-    <li>Three Stat</li>
-</ul>
-<!-- </div> -->
-<?php
-    echo '<div class="hero-chevron-container"><div class="hero-chevron"><i class="fa fa-angle-down fa-4x"></i></div>';
+<div class="wrap flex-column flex-wrap">
+<div class="flexslider carousel">
+    <ul class="slides home-stats">
+        <li>One Stat</li>
+        <li>Two Stat</li>
+        <li>Three Stat</li>
+        <li>Four Stat</li>
+        <li>One Stat</li>
+        <li>Two Stat</li>
+        <li>Three Stat</li>
+        <li>Four Stat</li>
+    </ul>
+</div>
 
-    echo '</div></div>';
-}
-
-
-
-?>
+        <div class="hero-chevron"><i class="fa fa-angle-down fa-4x"></i>
+    </div><!-- .wrap -->
+</div><!-- .hero-home -->

@@ -125,7 +125,7 @@ function ucsc_pbsci_modify_jquery(){
  // deregister WordPress JQuery
     wp_deregister_script('jquery');
     //register and enqueue jquery
-    wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', null, true); // register the external file
+    wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', null, true); // register the external file
         wp_enqueue_script('jquery'); // enqueue the external file
 }
 }
@@ -154,6 +154,15 @@ function ucsc_pbsci_scripts() {
 	wp_enqueue_style( 'roboto-condensed-garamond', 'https://fonts.googleapis.com/css?family=EB+Garamond:400,500,700|Roboto+Condensed:300,400,700|Roboto:300,400,500,700', array(), false );
 	// Enqueue <span></span> adder
 	wp_enqueue_script( 'span-adder', get_template_directory_uri() . '/js/span-add.js', '',null, true );
+	//Enqueue Flexslider and its parts on home page
+	if ( is_front_page() ){
+		//main Flexslider js
+		wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/flexslider/jquery.flexslider-min.js', '',null, true );
+		//main Flexslider css
+		wp_enqueue_style( 'flexstyles', get_template_directory_uri() . '/flexslider/flexslider.css');
+		//Home custom slider/carousel js
+		wp_enqueue_script( 'homeflex', get_template_directory_uri() . '/js/flex-home.js');
+	}
 }
 add_action( 'wp_enqueue_scripts', 'ucsc_pbsci_scripts' );
 
