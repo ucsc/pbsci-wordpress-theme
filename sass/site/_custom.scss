@@ -46,8 +46,8 @@
 
 .panel-heading {
     // width: 100%;
-    flex: 1;
-    flex-basis: 100%;
+    flex: 1 1 100%;
+    // flex-basis: 100%;
     border-left: 3px solid $ucsc--primary-yellow;
     padding-left: 10px;
     margin: 0 0 32px;
@@ -151,14 +151,57 @@
     height: 100vh;
     background-size: cover;
     min-height: 500px;
+    @media only screen and (min-width: $screen-size--large) {
+        background-position-y: -200px
+    }
+    .wrap {
+        height: inherit;
+        min-height: 500px;
+    }
     .flexslider {
-        flex: 1;
-        margin-bottom: auto;
+        // flex: 1;
+        margin-top: auto;
+        background: transparent;
+        border: none;
     }
     .hero-chevron {
         color: $ucsc--primary-yellow;
         text-align: center;
-        flex: 1;
-        margin-top: auto;
+        // flex: 1;
+        // margin-top: auto;
+    }
+}
+
+.stats-home {
+    &>li {
+        border: 1px solid green
+    }
+    .stats-container {
+        border: 1px solid red;
+        margin: 0 auto;
+        padding: 0 15px;
+        width: 90%;
+        p {
+            color: $color__white;
+            margin: 0;
+        }
+        .stats-rank {
+            width: 20%;
+            line-height: 1;
+        }
+        .stats-meta {
+            width: 80%;
+            .stats-source {
+                @include font-size(0.75);
+            }
+        }
+        .stats-rank,
+        .stats-meta {
+            float: left;
+        }
+        .stats-rank p {
+            font-size: 50px;
+            font-weight: 600;
+        }
     }
 }
