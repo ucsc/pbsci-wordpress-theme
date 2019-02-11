@@ -36,12 +36,6 @@
     @include clearfix-after();
 }
 
-// Flexbox Grid
-// @url https://thingsym.github.io/flexbox-grid-mixins/
-//
-// .grid {
-//     @include grid();
-// }
 .grid {
     @include grid($gutter: $default-grid-gutter);
     @for $i from 1 through $default-grid-columns {
@@ -78,15 +72,22 @@
         background-color: $ucsc--primary-yellow;
         padding: 0;
         .footer-top {
+            h2 {
+                font-family: 'Helvetica', sans-serif;
+                text-transform: uppercase;
+                font-weight: 300;
+                @include font-size(1.75);
+                color: $ucsc--light-blue;
+                @media only screen and (min-width: $screen-size--large) {
+                    @include font-size(2.25);
+                    // padding-left:10px;
+                }
+            }
             flex: 1;
             flex-basis: 100%;
-            font-family: 'Helvetica', sans-serif;
-            text-transform: uppercase;
-            font-weight: 300;
-            @include font-size(2.25);
-            color: $ucsc--light-blue;
             border-left: 0;
             margin: 10px 0;
+            padding-left: 0;
             .chevron-right::after {
                 color: $ucsc--light-blue;
             }

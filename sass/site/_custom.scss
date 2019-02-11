@@ -13,10 +13,6 @@
     -webkit-font-smoothing: antialiased;
 }
 
-.topo-left {
-    background-image: url(images/impact-ring-optimized.svg) no-repeat bottom;
-}
-
 .chevron-right {
     // color: $color__white;
     &::after {
@@ -52,11 +48,15 @@
     padding-left: 10px;
     margin: 0 0 32px;
     h2 {
+        @media only screen and (min-width: $screen-size--small) {
+            @include font-size(2.25);
+        }
         text-transform: uppercase;
-        font-family: 'Helvetica', sans-serif;
+        font-family: 'Helvetica',
+        sans-serif;
         font-weight: 300;
         margin: 2px 0 0;
-        @include font-size(2.25);
+        @include font-size(2);
         span {
             font-weight: 900;
         }
@@ -129,9 +129,17 @@
 }
 
 .front-page-blue-panel {
-    background-color: $ucsc--light-blue;
-    background: linear-gradient(30deg, $ucsc--primary-blue, $ucsc--light-blue);
+    background: $ucsc--light-blue;
+    background: url("images/impact-ring-optimized-right.svg"), linear-gradient(30deg, $ucsc--primary-blue, $ucsc--light-blue);
+    background-position: bottom right;
+    background-repeat: no-repeat;
     color: $color__white;
+}
+
+.front-page-white-panel {
+    background: url("images/impact-ring-optimized-left.svg");
+    background-position: bottom left;
+    background-repeat: no-repeat;
 }
 
 .white-cell-link {
@@ -148,12 +156,13 @@
 /** HOME PAGE */
 
 .hero-home {
-    height: 100vh;
+    @media only screen and (min-width: $screen-size--large) {
+        background-position-y: -200px !important;
+        height: 100vh;
+    }
+    height: 50vh;
     background-size: cover;
     min-height: 500px;
-    @media only screen and (min-width: $screen-size--large) {
-        background-position-y: -200px
-    }
     .wrap {
         height: inherit;
         min-height: 500px;

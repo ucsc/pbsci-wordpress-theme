@@ -6,7 +6,7 @@ $hero = get_field('hero_image', 132);
 // print_r($hero);
 if($hero){
     echo '<div class="hero-home"
-    style="background:url('.$hero.') no-repeat top; background-size: cover; background-position-y: -200px">';}
+    style="background:url('.$hero.') no-repeat top; background-size: cover;">';}
     else {
         echo '<div class="hero-home">';
     }

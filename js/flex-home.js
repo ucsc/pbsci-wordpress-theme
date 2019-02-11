@@ -1,16 +1,4 @@
-// $(window).load(function() {
-//     $('.flexslider').flexslider({
-//       animation: "slide",
-//       animationLoop: false,
-//       itemWidth: 210,
-//       itemMargin: 50,
-//       minItems: 1,
-//       maxItems: 3
-//     });
-//   });
-
-  //And then there's this one
-  (function() {
+(function() {
 
     // store the slider in a local variable
     var $window = $(window),
@@ -30,7 +18,7 @@
       $('.flexslider').flexslider({
         animation: "slide",
         animationLoop: false,
-        itemWidth: 500,
+        itemWidth: 350,
         itemMargin: 5,
         minItems: getGridSize(), // use function to pull in initial value
         maxItems: getGridSize() // use function to pull in initial value

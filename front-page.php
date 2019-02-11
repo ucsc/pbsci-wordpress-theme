@@ -53,7 +53,7 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
 ?>
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
-        <div class="panel">
+        <div class="panel front-page-white-panel">
             <div class="wrap">
                 <div class="flex-wrap">
                     <div class="panel-heading">
@@ -92,7 +92,7 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
                 </div>
             </div>
         </div>
-        <div class="panel front-page-blue-panel topo-left">
+        <div class="panel front-page-blue-panel">
             <div class="wrap">
                 <div class="flex-wrap">
                     <div class="panel-heading">
