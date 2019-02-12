@@ -68,24 +68,34 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
                     </div>
 
                     <div class="panel-cell-1">
-                        <div class="flex-wrap">
-                            <div class="panel-cell-1 flex-wrap 		panel-cell-quarter">
-                                <i class="fas fa-hand-point-right"></i>
-                                <p>Facts & rankings</p>
+                        <div class="flex-wrap panel-cell-quarter-top">
+
+                            <div class="panel-cell-1 flex-wrap">
+                                <a class="panel-cell-quarter" href="#">
+                                    <i class="fas fa-hand-point-right"></i>
+                                    <p class="chevron-right">Facts & rankings</p>
+                                </a>
                             </div>
-                            <div class="panel-cell-1 flex-wrap 		panel-cell-quarter">
-                                <i class="fas fa-hand-point-down"></i>
-                                <p>Alumni success</p>
+                            <div class="panel-cell-1 flex-wrap">
+                                <a class="panel-cell-quarter" href="#">
+                                    <i class="fas fa-hand-point-down"></i>
+                                    <p class="chevron-right">Alumni success</p>
+                                </a>
                             </div>
+
                         </div>
                         <div class="flex-wrap">
-                            <div class="panel-cell-1 flex-wrap 		panel-cell-quarter">
-                                <i class="fas fa-hand-point-up"></i>
-                                <p>Student experience</p>
+                            <div class="panel-cell-1 flex-wrap">
+                                <a class="panel-cell-quarter" href="#">
+                                    <i class="fas fa-hand-point-up"></i>
+                                    <p class="chevron-right">Student experience</p>
+                                </a>
                             </div>
-                            <div class="panel-cell-1 flex-wrap 		panel-cell-quarter">
-                                <i class="fas fa-hand-point-left"></i>
-                                <p>World-class facilities</p>
+                            <div class="panel-cell-1 flex-wrap">
+                                <a class="panel-cell-quarter" href="#">
+                                    <i class="fas fa-hand-point-left"></i>
+                                    <p class="chevron-right">World-class facilities</p>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -102,24 +112,24 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
                 </div>
                 <div class="flex-wrap">
                     <div class="panel-cell-2 display-block">
-                            <?php echo $panelTwoCellOneMedia ?>
-                            <p class="panel-2-cell-meta"><?php echo $panelTwoCellOneMeta?></p>
-                            <p><?php echo $panelTwoCellOneTeaser?></p>
+                        <?php echo $panelTwoCellOneMedia ?>
+                        <p class="panel-2-cell-meta"><?php echo $panelTwoCellOneMeta?></p>
+                        <p><?php echo $panelTwoCellOneTeaser?></p>
                     </div>
                     <div class="panel-cell-2 display-block">
-                    <?php echo $panelTwoCellTwoMedia ?>
-                    <p class="panel-2-cell-meta"><?php echo $panelTwoCellTwoMeta?></p>
-                            <p><?php echo $panelTwoCellTwoTeaser?></p>
+                        <?php echo $panelTwoCellTwoMedia ?>
+                        <p class="panel-2-cell-meta"><?php echo $panelTwoCellTwoMeta?></p>
+                        <p><?php echo $panelTwoCellTwoTeaser?></p>
                     </div>
                     <div class="panel-cell-2 display-block">
-                    <?php echo $panelTwoCellThreeMedia ?>
-                    <p class="panel-2-cell-meta"><?php echo $panelTwoCellThreeMeta?></p>
-                            <p><?php echo $panelTwoCellThreeTeaser?></p>
+                        <?php echo $panelTwoCellThreeMedia ?>
+                        <p class="panel-2-cell-meta"><?php echo $panelTwoCellThreeMeta?></p>
+                        <p><?php echo $panelTwoCellThreeTeaser?></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel front-page-white-panel">
             <div class="wrap">
                 <div class="flex-wrap">
                     <div class="panel-heading">
@@ -129,16 +139,16 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
                 </div>
                 <div class="flex-wrap">
                     <div class="panel-cell-1">
-                    <?php echo $panelThreeCellOneMedia ?>
-                            <p class="white-cell-link chevron-right"><a href="#">Program name here</a></p>
-                            <p>Ooga booga. Ipsum and what not. Something witty is this here writ.</p>
+                        <?php echo $panelThreeCellOneMedia ?>
+                        <p class="white-cell-link chevron-right"><a href="#">Program name here</a></p>
+                        <p>Ooga booga. Ipsum and what not. Something witty is this here writ.</p>
                     </div>
 
 
                     <div class="panel-cell-1">
-                    <?php echo $panelThreeCellTwoMedia ?>
-                            <p class="white-cell-link chevron-right"><a href="#">Program name here</a></p>
-                            <p>Ooga booga. Ipsum and what not. Something witty is this here writ.</p>
+                        <?php echo $panelThreeCellTwoMedia ?>
+                        <p class="white-cell-link chevron-right"><a href="#">Program name here</a></p>
+                        <p>Ooga booga. Ipsum and what not. Something witty is this here writ.</p>
                     </div>
                 </div>
             </div>

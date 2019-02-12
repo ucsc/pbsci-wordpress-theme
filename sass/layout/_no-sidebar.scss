@@ -25,11 +25,11 @@
 
 .wrap {
     max-width: $size__max-width;
-    margin-left: 15px;
-    margin-right: 15px;
-    @media only screen and (min-width: $screen-size--large) {
-        @include center-block();
-    }
+    margin: 0 auto;
+    width: 90%;
+    // @media only screen and (min-width: $screen-size--large) {
+    //     @include center-block();
+    // }
 }
 
 .clear {

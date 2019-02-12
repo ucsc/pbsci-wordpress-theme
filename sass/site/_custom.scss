@@ -47,6 +47,7 @@
     border-left: 3px solid $ucsc--primary-yellow;
     padding-left: 10px;
     margin: 0 0 32px;
+    box-sizing: border-box;
     h2 {
         @media only screen and (min-width: $screen-size--small) {
             @include font-size(2.25);
@@ -71,7 +72,7 @@
 }
 
 [class^="panel-cell-"] {
-    border: 1px solid green;
+    // border: 1px solid green;
     margin-bottom: 10px;
     margin-bottom: 0.625em;
     &:last-of-type {
@@ -107,21 +108,28 @@
     }
 }
 
+.panel-cell-quarter-top {
+    margin-bottom: 24px;
+}
+
 .panel-cell-quarter {
-    // margin: 6px;
-    // padding: 16px;
-    background-color: $ucsc--light-blue;
+    margin-bottom: 0;
+    color: $ucsc--light-blue;
+    background-color: $color__white;
+    border: 1px solid #ddd;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    // flex: 1;
-    color: $color__white;
+    width: 100%;
+    // flex-basis: 48%;
     box-sizing: border-box;
-    min-height: 157px;
+    min-height: 146px;
     .fas {
         @include font-size(3);
+    }
+    .chevron-right::after {
+        color: $ucsc--primary-yellow;
     }
     p {
         margin-bottom: 0px;
@@ -172,41 +180,51 @@
         margin-top: auto;
         background: transparent;
         border: none;
+        margin-bottom: 30px;
     }
     .hero-chevron {
         color: $ucsc--primary-yellow;
+        // position: absolute;
+        // left: 50%;
+        // bottom: 5px;
+        margin: 0 auto;
+        // width: 30px;
+        // height: 30px;
+        border-radius: 50%;
         text-align: center;
-        // flex: 1;
-        // margin-top: auto;
+        // background: $color__white;
     }
 }
 
 .stats-home {
     &>li {
-        border: 1px solid green
+        // border: 1px solid green
     }
     .stats-container {
-        border: 1px solid red;
+        // border: 1px solid red;
+        display: flex;
         margin: 0 auto;
-        padding: 0 15px;
-        width: 90%;
+        // padding: 0 15px;
+        width: 100%;
         p {
             color: $color__white;
             margin: 0;
         }
         .stats-rank {
-            width: 20%;
+            // width: 20%;
+            padding: 0 16px 0 32px;
+            padding: 0 1rem 0 2rem;
             line-height: 1;
         }
         .stats-meta {
-            width: 80%;
+            // width: 80%;
             .stats-source {
                 @include font-size(0.75);
             }
         }
         .stats-rank,
         .stats-meta {
-            float: left;
+            // float: left;
         }
         .stats-rank p {
             font-size: 50px;
