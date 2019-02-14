@@ -12,7 +12,7 @@
  * @package UCSC_PBSci
  */
 
-get_header();
+get_header('home');
 
 /**
  *
@@ -70,14 +70,14 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
                     <div class="panel-cell-1">
                         <div class="flex-wrap panel-cell-quarter-top">
 
-                            <div class="panel-cell-1 flex-wrap">
-                                <a class="panel-cell-quarter" href="#">
+                            <div class="panel-cell-1 flex-wrap panel-cell-quarter">
+                                <a class="" href="#">
                                     <i class="fas fa-hand-point-right"></i>
                                     <p class="chevron-right">Facts & rankings</p>
                                 </a>
                             </div>
-                            <div class="panel-cell-1 flex-wrap">
-                                <a class="panel-cell-quarter" href="#">
+                            <div class="panel-cell-1 flex-wrap panel-cell-quarter">
+                                <a class="" href="#">
                                     <i class="fas fa-hand-point-down"></i>
                                     <p class="chevron-right">Alumni success</p>
                                 </a>
@@ -85,14 +85,14 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
 
                         </div>
                         <div class="flex-wrap">
-                            <div class="panel-cell-1 flex-wrap">
-                                <a class="panel-cell-quarter" href="#">
+                        <div class="panel-cell-1 flex-wrap panel-cell-quarter">
+                                <a class="" href="#">
                                     <i class="fas fa-hand-point-up"></i>
                                     <p class="chevron-right">Student experience</p>
                                 </a>
                             </div>
-                            <div class="panel-cell-1 flex-wrap">
-                                <a class="panel-cell-quarter" href="#">
+                            <div class="panel-cell-1 flex-wrap panel-cell-quarter">
+                                <a class="" href="#">
                                     <i class="fas fa-hand-point-left"></i>
                                     <p class="chevron-right">World-class facilities</p>
                                 </a>
