@@ -93,6 +93,7 @@
 /**Flexbox stuff*/
 
 .main-navigation {
+    padding: 5px 0;
     // background-color:#fff;
     &.stuck {
         position: fixed;
@@ -108,9 +109,9 @@
         ;
         z-index: 100;
     }
-    @media only screen and (min-width: $screen-size--small) {
-        padding: 10px 0;
-    }
+    // // @media only screen and (min-width: $screen-size--small) {
+    // padding: 10px 0;
+    // }
     &>* {
         box-sizing: border-box;
     }
@@ -142,12 +143,8 @@
         align-items: center;
         //   font-size: 22px;
         // background-color: blue;
-        margin-top: 10px;
-        @media only screen and (min-width: $screen-size--small) {
-            margin-top: 0;
-        }
         .h-logo {
-            padding: 10px;
+            padding: 10px 10px 10px 0;
             border-right: solid 3px $ucsc--primary-yellow;
             img {
                 width: 125px;
