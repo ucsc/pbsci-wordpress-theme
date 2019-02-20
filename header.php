@@ -35,27 +35,9 @@
 			    echo '<div class="hero-page flex-wrap" style="background:url('.$hero.') no-repeat top; background-size: cover;">';}
 			    else {
 			        echo '<div class="hero-page flex-wrap">';
-			    }
+				}
+				get_template_part( 'template-parts/navigation', 'primary' );
 			?>
-
-                <nav id="site-navigation" class="main-navigation stuck">
-                    <div class="nav-wrap">
-
-                        <span class="menu-toggle navbar-toggle" id="js-navbar-toggle" aria-controls="primary-menu"
-                            aria-expanded="false">
-                            <i class="fas fa-bars"></i>
-                        </span>
-                        <?php
-					echo '<a href="/" class="logo"><span class="h-logo"><img src="'.get_stylesheet_directory_uri().'/images/uc-santa-cruz-reverse.svg" alt=""/></span><span class="h-text">Science</span></a>';
-					wp_nav_menu( array(
-						'theme_location' => 'menu-1',
-						'menu_id' => 'primary-menu',
-						'container' => false,
-					) );
-
-					?>
-                    </div>
-				</nav><!-- #site-navigation -->
 				<div class="hero-page-runner">
                 <div class="wrap flex-wrap">
 				<header class="entry-header flex-wrap">

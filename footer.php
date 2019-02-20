@@ -28,9 +28,9 @@
         <div class="flex-wrap">
             <div class="panel-cell-2 footer-cell">
                 <div class="panel-heading-footer flex-wrap">
-                    <span class="f-logo"><img
-                            src="<?php echo get_stylesheet_directory_uri();?>/images/uc-santa-cruz-reverse.svg" alt=""
-                            width="195px" height="auto" /></span><span class="f-text">Science</span>
+                    <span class="f-logo">
+                        <img src="<?php echo IMAGES?>/science-logo.svg" alt=""/>
+                    </span>
                 </div>
             </div>
             <div class="panel-cell-2 footer-cell">

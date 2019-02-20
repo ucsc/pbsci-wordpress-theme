@@ -144,22 +144,15 @@
         //   font-size: 22px;
         // background-color: blue;
         .h-logo {
-            padding: 10px 10px 10px 0;
-            border-right: solid 3px $ucsc--primary-yellow;
+            // padding: 10px 10px 10px 0;
+            // border-right: solid 3px $ucsc--primary-yellow;
             img {
-                width: 125px;
+                width: auto;
                 height: auto;
                 @media only screen and (min-width: $screen-size--small) {
                     width: 125px;
                 }
             }
-        }
-        .h-text {
-            color: $color__white;
-            padding-left: 10px;
-            font-weight: 700;
-            font-family: 'Helvetica', sans-serif;
-            @include font-size(1.75);
         }
     }
     .menu {

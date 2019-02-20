@@ -89,6 +89,7 @@
             border-left: 0;
             margin: 10px 0;
             padding-left: 0;
+            overflow:hidden;
             .chevron-right::after {
                 color: $ucsc--light-blue;
             }
@@ -117,8 +118,8 @@
         }
         .f-logo {
             // padding-right: 10px;
-            padding: 10px;
-            border-right: solid 3px $ucsc--primary-yellow;
+            // padding: 10px;
+            // border-right: solid 3px $ucsc--primary-yellow;
         }
         .f-text {
             padding-left: 10px;

@@ -15,10 +15,7 @@
 </div>
 <div class="wrap">
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <header class="entry-header">
 
-            <?php the_title( '<h1 class="entry-title programs">', '</h1>' ); ?>
-        </header><!-- .entry-header -->
         <div class="entry-content">
             <div class="flex-wrap">
             <?php
@@ -138,7 +135,7 @@
         echo '<div class="panel-major-link">';
             // var_dump($department);
             // var_dump($dept_link);
-            echo '<a href="'.esc_url(get_permalink()).'">Degree Requirements</a>';
+            echo '<a href="'.esc_url(get_permalink()).'"><span>Degree Requirements</span></a>';
 
         echo '</div>';
         if ($program_blurb){
