@@ -19,9 +19,6 @@
 
             <?php the_title( '<h1 class="entry-title programs">', '</h1>' ); ?>
         </header><!-- .entry-header -->
-
-        <?php ucsc_pbsci_post_thumbnail(); ?>
-
         <div class="entry-content">
             <div class="flex-wrap">
             <?php
@@ -35,9 +32,7 @@
             );
         $program_query = new WP_Query ($args);
         if($program_query->have_posts()): while ($program_query->have_posts()):$program_query->the_post();
-
         //Set up the parts
-        // $program_image = get_the_post_thumbnail($post_id,'thumbnail');
         $program_title = get_the_title();
         $program_subtitle = get_field('program_subtitle');
         $program_blurb = get_the_excerpt();
@@ -61,7 +56,7 @@
         // Construct the parts
 
         echo '<!-- Panel Row Begin --><div class="panel-row">';
-        ucsc_pbsci_post_thumbnail('thumbnail');
+        ucsc_pbsci_post_thumbnail();
         // if($program_image){
         // echo '<!-- Panel Image Begin --><div class="panel-image">';
         // ucsc_underscore_post_thumbnail($post_id,'thumbnail');
@@ -77,19 +72,19 @@
             echo '<!-- Panel Degrees Offered Begin --><div class="panel-degrees-offered">';
             echo '<ul class="panel-list flex-wrap">';
             if(in_array('ba', $degrees)):
-                echo '<li class="ba">ba</li>';
+                echo '<li class="ba">B.A.</li>';
             endif;
             if(in_array('bs', $degrees)):
-                echo '<li class="bs">bs</li>';
+                echo '<li class="bs">B.S.</li>';
             endif;
             if(in_array('ma', $degrees)):
-                echo '<li class="ma">ma</li>';
+                echo '<li class="ma">M.A.</li>';
             endif;
             if(in_array('ms', $degrees)):
-                echo '<li class="ms">ms</li>';
+                echo '<li class="ms">M.A.</li>';
             endif;
             if(in_array('phd', $degrees)):
-                echo '<li class="phd">phd</li>';
+                echo '<li class="phd">Ph.D.</li>';
             endif;
             echo '</ul>';
             echo '</div><!-- Panel Degrees Offered End -->';
@@ -103,7 +98,7 @@
             echo '<!-- Panel Academic Options Begin --><div class="panel-academic-options">';
             echo '<ul class="panel-list">';
             if(in_array('undergradminor', $degrees)):
-                echo '<li>Undergraduate Minor</li>';
+                echo '<li><i class="fas fa-check"></i>Undergraduate Minor</li>';
             endif;
             if(in_array('gradminor', $degrees)):
                 echo '<li>Graduate Minor</li>';
@@ -135,9 +130,10 @@
             $dept_title = $dept_post->post_title;
             $dept_link = esc_url(get_permalink($department));
             echo '<div class="panel-department-link">';
-            echo '<a href="'.$dept_link.'">'.$dept_title.' Department Info</a>';
+            echo '<a href="'.$dept_link.'"><span>'.$dept_title.' Department Info</span></a>';
             echo '</div>';
-        }}
+        }
+    }
         // echo '</div>';
         echo '<div class="panel-major-link">';
             // var_dump($department);
@@ -145,9 +141,9 @@
             echo '<a href="'.esc_url(get_permalink()).'">Degree Requirements</a>';
 
         echo '</div>';
-        echo '<div class="panel-more-button"><button class="panel-toggle" id="'.$postid.'">More</button></div>';
-
-
+        if ($program_blurb){
+            echo '<div class="panel-more-button"><button class="panel-toggle" id="'.$postid.'">More</button></div>';
+        }
         echo '</div><!-- end Program Footer -->'; //end Program Footer
         echo '</div><!-- Panel Row End -->';//end Program Row
         wp_reset_postdata();

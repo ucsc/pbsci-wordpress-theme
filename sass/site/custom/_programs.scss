@@ -12,7 +12,7 @@
 
 .panel-blurb,
 .panel-content {
-    margin: 0.75em;
+    // margin: 0.75em;
 }
 
 .panel-blurb {
@@ -24,52 +24,45 @@
     background-color: #dcdcdc;
     margin-bottom: 20px;
     @media only screen and (min-width: $screen-size--small) {
-        display: flex;
-        flex-flow: row wrap;
-        &>* {
-            flex: 1 100%;
-        }
+        flex-basis: 32%;
+        // display: flex;
+        // flex-flow: row wrap;
+        // &>* {
+        //     flex: 1 100%;
+        // }
     }
-    .panel-image {
+    .post-thumbnail {
+        margin: 0 -5%;
         @media only screen and (min-width: $screen-size--small) {
-            width: auto;
-            -webkit-box-flex: 0!important;
-            -webkit-flex: none!important;
-            -ms-flex: none!important;
-            flex: none!important;
+            margin: 0 auto;
         }
     }
     .panel-content {
-        display: flex;
-        flex-flow: row wrap;
-        &>* {
-            flex: 1 100%;
-        }
-        @media only screen and (min-width: $screen-size--small) {
-            flex: 1;
-        }
+        // display: flex;
+        // flex-flow: row wrap;
+        // &>* {
+        // flex: 1 100%;
+        // }
+        // @media only screen and (min-width: $screen-size--small) {
+        // flex: 1;
+        // }
         .panel-header {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: flex-start;
-            &>* {
-                flex: 1 100%;
-            }
-            @media only screen and (min-width: $screen-size--small) {
-                flex: 1;
-            }
+            // display: flex;
+            // flex-flow: row wrap;
+            // justify-content: flex-start;
+            // &>* {
+            // flex: 1 100%;
+            // }
+            // @media only screen and (min-width: $screen-size--small) {
+            // flex: 1;
+            // }
             h3 {
-                margin: 0;
-                flex: 0 1 100%;
-                @media only screen and (min-width: $screen-size--small) {
-                    margin: 0 15px 0 0;
-                    flex: 0 2 auto;
-                }
+                margin: 10px 0;
             }
             .panel-degrees-offered {
-                flex: 0 1 100%;
+                // flex: 0 1 100%;
                 @media only screen and (min-width: $screen-size--small) {
-                    flex: 0 1 auto;
+                    // flex: 0 1 auto;
                 }
                 .panel-list {
                     justify-content: flex-start;
@@ -79,7 +72,7 @@
                         border-radius: 2.1875rem;
                         line-height: 2.0625rem;
                         color: #fff;
-                        text-transform: uppercase;
+                        // text-transform: uppercase;
                         font-weight: bold;
                         &.ba {
                             background: $ucsc--light-blue;
@@ -109,11 +102,11 @@
                 columns: 2;
                 -webkit-columns: 2;
                 -moz-columns: 2;
-                @media only screen and (min-width: $screen-size--small) {
-                    columns: auto;
-                    -webkit-columns: auto;
-                    -moz-columns: auto;
-                }
+                // @media only screen and (min-width: $screen-size--small) {
+                //     columns: auto;
+                //     -webkit-columns: auto;
+                //     -moz-columns: auto;
+                // }
                 li {
                     display: inline-block;
                     margin: 0 5px;
@@ -126,15 +119,24 @@
         flex: 0 1 100%;
     }
     .panel-footer {
-        flex: 0 1 100%;
-        display: flex;
-        align-items: center;
-        flex-flow: row wrap;
+        // flex: 0 1 100%;
+        // display: flex;
+        // align-items: center;
+        // flex-flow: row wrap;
+        a {
+            display: block;
+            &:after {
+                content: "\f054";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                float: right;
+            }
+        }
         .panel-department-link {
-            flex: 1;
+            // flex: 1;
         }
         .panel-major-link {
-            flex: 1;
+            // flex: 1;
         }
         .panel-more-button {
             // flex: 1;
