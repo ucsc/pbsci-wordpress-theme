@@ -1,24 +1,38 @@
-let mainNav = document.getElementById("primary-menu");
-let navBarToggle = document.getElementById("js-navbar-toggle");
+// let mainNav = document.getElementById("primary-menu");
+// let navBarToggle = document.getElementById("js-navbar-toggle");
+
+// navBarToggle.addEventListener("click", function() {
+//   mainNav.classList.toggle("active");
+// });
+
+window.onscroll = function() {scrollStuck()};
+var navBar = document.getElementById("site-navigation");
+var mainNav = document.getElementById("primary-menu");
+var navBarToggle = document.getElementById("js-navbar-toggle");
+var sticky = 650;
 
 navBarToggle.addEventListener("click", function() {
   mainNav.classList.toggle("active");
 });
 
-// jQuery(document).ready(function($) {
-//     var offset = 100;
-//     var speed = 250;
-//     var duration = 500;
-//     $(window).scroll(function() {
-//         if ($(this).scrollTop() < offset) {
-//             $('.topbutton').fadeOut(duration);
-//         } else {
-//             $('.topbutton').fadeIn(duration);
-//         }
-//     });
-//     $('.topbutton').on('click', function() {
-//         $('html, body').animate({ scrollTop: 0 }, speed);
-//         return false;
-//     });
-// });
+function scrollStuck() {
+  if (window.pageYOffset > sticky && window.matchMedia("(min-width: 48em)") ) {
+    navBar.classList.add("stuck");
+  } else {
+    navBar.classList.remove("stuck");
+  }
+}
 
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    // document.body.style.backgroundColor = "yellow";
+    navBar.classList.remove("stuck");
+  } else {
+    // document.body.style.backgroundColor = "pink";
+    navBar.classList.add("stuck");
+  }
+}
+
+var x = window.matchMedia("(min-width: 47em)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes

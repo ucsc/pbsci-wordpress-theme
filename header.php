@@ -38,7 +38,7 @@
 			    }
 			?>
 
-                <nav id="site-navigation" class="main-navigation">
+                <nav id="site-navigation" class="main-navigation stuck">
                     <div class="nav-wrap">
 
                         <span class="menu-toggle navbar-toggle" id="js-navbar-toggle" aria-controls="primary-menu"

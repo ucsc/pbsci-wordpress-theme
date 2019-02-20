@@ -7,6 +7,10 @@
  * @package UCSC_PBSci
  */
 
+define('THEMEROOT', get_stylesheet_directory_uri());
+define('TEMPLATE', get_template_directory_uri());
+define('IMAGES', THEMEROOT . '/images');
+
 if ( ! function_exists( 'ucsc_pbsci_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
