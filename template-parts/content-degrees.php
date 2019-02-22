@@ -146,7 +146,7 @@
         wp_reset_postdata();
         endwhile; endif;
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ucsc-underscore' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ucsc-pbsci' ),
 			'after'  => '</div>',
 		) );
         ?>
@@ -160,7 +160,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'ucsc-underscore' ),
+						__( 'Edit <span class="screen-reader-text">%s</span>', 'ucsc-pbsci' ),
 						array(
 							'span' => array(
 								'class' => array(),

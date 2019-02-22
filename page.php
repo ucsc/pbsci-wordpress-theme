@@ -23,6 +23,8 @@ get_header();
 			the_post();
 			if ("Degrees" == get_the_title()){
 				get_template_part( 'template-parts/content', 'degrees' );
+			} else if ("Departments" == get_the_title()) {
+				get_template_part( 'template-parts/content', 'departments' );
 			} else {
 				get_template_part( 'template-parts/content', 'page' );
 			}
