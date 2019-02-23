@@ -73,6 +73,7 @@
                         border-radius: 2.1875rem;
                         line-height: 2.0625rem;
                         color: #fff;
+                        @include font-size(.75);
                         // text-transform: uppercase;
                         font-weight: bold;
                         &.ba {

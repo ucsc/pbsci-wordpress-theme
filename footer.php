@@ -32,6 +32,7 @@
                         <img src="<?php echo IMAGES?>/science-logo.svg" alt=""/>
                     </span>
                 </div>
+                <?php get_sidebar('footer-one'); ?>
             </div>
             <div class="panel-cell-2 footer-cell">
                 <div class="panel-heading">
@@ -41,6 +42,7 @@
                     <li class="chevron-right"><a href="#">Astronomy &amp; Astrophysics</a></li>
                     <li class="chevron-right"><a href="#">Chemistry &amp; Biochemistry</a></li>
                 </ul>
+                <?php get_sidebar('footer-two'); ?>
             </div>
             <div class="panel-cell-2 footer-cell">
                 <div class="panel-heading">
@@ -59,6 +61,7 @@
                         </ul>
                     <!-- </div> -->
                 </div>
+                <?php get_sidebar('footer-three'); ?>
             </div>
         </div>
     </div>

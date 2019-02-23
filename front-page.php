@@ -19,7 +19,9 @@ get_header('home');
  * Home Page Variables
  *
  */
-
+/**
+ * Remove HARD CODING
+ */
  /** Panel One */
 $panelOneHead = get_field('panel_one_heading',132);
 $panelOneSubhead = get_field('panel_one_subheading',132);

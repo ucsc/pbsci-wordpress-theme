@@ -18,15 +18,15 @@
 
         <div class="entry-content">
             <div class="flex-wrap">
-            <?php
-        //AJAX Search
-        // get_template_part( 'template-parts/degrees', 'search' );
-        // Call Programs post
-        $args = array (
-            'post_type' => 'degree',
-            'orderby' => 'title',
-            'order' => 'ASC',
-            );
+                <?php
+                //AJAX Search
+                // get_template_part( 'template-parts/degrees', 'search' );
+                // Call Programs post
+                $args = array (
+                    'post_type' => 'degree',
+                    'orderby' => 'title',
+                    'order' => 'ASC',
+                    );
         $program_query = new WP_Query ($args);
         if($program_query->have_posts()): while ($program_query->have_posts()):$program_query->the_post();
         //Set up the parts
@@ -150,7 +150,7 @@
 			'after'  => '</div>',
 		) );
         ?>
-        </div>
+            </div><!-- End flex-wrap -->
         </div><!-- .entry-content -->
 
         <?php if ( get_edit_post_link() ) : ?>
