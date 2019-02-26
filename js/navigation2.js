@@ -25,10 +25,8 @@ function scrollStuck() {
 
 function myFunction(x) {
   if (x.matches) { // If media query matches
-    // document.body.style.backgroundColor = "yellow";
     navBar.classList.remove("stuck");
   } else {
-    // document.body.style.backgroundColor = "pink";
     navBar.classList.add("stuck");
   }
 }

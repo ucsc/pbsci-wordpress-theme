@@ -52,22 +52,18 @@
 
         // Construct the parts
 
-        echo '<!-- Panel Row Begin --><div class="panel-row">';
+        echo '<!-- Card Container Begin --><div class="card-container">';
         ucsc_pbsci_post_thumbnail();
-        // if($program_image){
-        // echo '<!-- Panel Image Begin --><div class="panel-image">';
-        // ucsc_underscore_post_thumbnail($post_id,'thumbnail');
-        // echo $program_image;
-        // echo '</div><!-- Panel Image End -->';
-        // echo '<!-- Panel Image Begin -->'.$program_image.'<!-- Panel Image End -->';
-        // }
-        echo '<!-- Panel Content Begin --><div class="panel-content">';
-        echo '<!-- Panel Header Begin --><div class="panel-header">';
-        echo '<h3 class="">'.$program_title.'</h3>';
+        echo '<!-- Card Content Begin --><div class="card-content">';
+        echo '<!-- Card Header Begin --><div class="card-header">';
+        echo '<h3>'.$program_title.'</h3>';
         // Get values from  ACF Checkbox
         if($degrees):
-            echo '<!-- Panel Degrees Offered Begin --><div class="panel-degrees-offered">';
-            echo '<ul class="panel-list flex-wrap">';
+            echo '<!-- Card Degrees Offered Begin --><div class="card-degrees-offered">';
+            echo '<ul class="card-list flex-wrap">';
+            if(in_array('undergradminor', $degrees)||in_array('gradminor', $degrees)):
+                echo '<li class="minor">m.</li>';
+            endif;
             if(in_array('ba', $degrees)):
                 echo '<li class="ba">B.A.</li>';
             endif;
@@ -78,7 +74,7 @@
                 echo '<li class="ma">M.A.</li>';
             endif;
             if(in_array('ms', $degrees)):
-                echo '<li class="ms">M.A.</li>';
+                echo '<li class="ms">M.S.</li>';
             endif;
             if(in_array('phd', $degrees)):
                 echo '<li class="phd">Ph.D.</li>';
@@ -91,58 +87,58 @@
             echo '<p>'.$program_subtitle.'</p>';
         }
 
-        if ($degrees):
-            echo '<!-- Panel Academic Options Begin --><div class="panel-academic-options">';
-            echo '<ul class="panel-list">';
-            if(in_array('undergradminor', $degrees)):
-                echo '<li><i class="fas fa-check"></i>Undergraduate Minor</li>';
-            endif;
-            if(in_array('gradminor', $degrees)):
-                echo '<li>Graduate Minor</li>';
-            endif;
-            if(in_array('gradcert', $degrees)):
-                echo '<li>Graduate Certificate</li>';
-            endif;
-            if(in_array('undergradhonors', $degrees)):
-                echo '<li>Undergraduate Honors</li>';
-            endif;
-            if(in_array('gradhonors', $degrees)):
-                echo '<li>Graduate Honors</li>';
-            endif;
-            if(in_array('jointmajor', $degrees)):
-                echo '<li>Joint Majors</li>';
-            endif;
-            echo '</ul>';
-            echo '</div><!-- Panel Academic Options End -->';
-        endif;
-        echo '</div><!-- Panel Content End -->';//end Program Content
+        // if ($degrees):
+        //     echo '<!-- Card Academic Options Begin --><div class="card-academic-options">';
+        //     echo '<ul class="card-list">';
+        //     if(in_array('undergradminor', $degrees)):
+        //         echo '<li>Undergraduate Minor</li>';
+        //     endif;
+        //     if(in_array('gradminor', $degrees)):
+        //         echo '<li>Graduate Minor</li>';
+        //     endif;
+        //     if(in_array('gradcert', $degrees)):
+        //         echo '<li>Graduate Certificate</li>';
+        //     endif;
+        //     if(in_array('undergradhonors', $degrees)):
+        //         echo '<li>Undergraduate Honors</li>';
+        //     endif;
+        //     if(in_array('gradhonors', $degrees)):
+        //         echo '<li>Graduate Honors</li>';
+        //     endif;
+        //     if(in_array('jointmajor', $degrees)):
+        //         echo '<li>Joint Majors</li>';
+        //     endif;
+        //     echo '</ul>';
+        //     echo '</div><!-- Panel Academic Options End -->';
+        // endif;
+        echo '</div><!-- Card Content End -->';//end Program Content
 
-        echo '<!-- Panel Blurb Begin --><div id="panelblurb'.$postid.'"class="panel-blurb">'.$program_blurb.'</div><!-- Panel Blurb End -->';
+        // echo '<!-- Card Blurb Begin --><div id="panelblurb'.$postid.'"class="card-blurb">'.$program_blurb.'</div><!-- Card Blurb End -->';
 
-        echo '<div class="panel-footer">';
-        // echo '<div class="panel-department-link">';
-        if($program_departments){
-        foreach ($program_departments as $department){
-            $dept_post = get_post($department);
-            $dept_title = $dept_post->post_title;
-            $dept_link = esc_url(get_permalink($department));
-            echo '<div class="panel-department-link">';
-            echo '<a href="'.$dept_link.'"><span>'.$dept_title.' Department Info</span></a>';
-            echo '</div>';
-        }
-    }
+        // echo '<div class="card-footer">';
+        // echo '<div class="card-department-link">';
+        // if($program_departments){
+        // foreach ($program_departments as $department){
+        //     $dept_post = get_post($department);
+        //     $dept_title = $dept_post->post_title;
+        //     $dept_link = esc_url(get_permalink($department));
+        //     echo '<div class="card-department-link">';
+        //     echo '<a href="'.$dept_link.'"><span>'.$dept_title.' Department Info</span></a>';
+        //     echo '</div>';
+        //     }
+        // }
         // echo '</div>';
-        echo '<div class="panel-major-link">';
+        echo '<div class="card-major-link">';
             // var_dump($department);
             // var_dump($dept_link);
             echo '<a href="'.esc_url(get_permalink()).'"><span>Degree Requirements</span></a>';
 
         echo '</div>';
-        if ($program_blurb){
-            echo '<div class="panel-more-button"><button class="panel-toggle" id="'.$postid.'">More</button></div>';
-        }
-        echo '</div><!-- end Program Footer -->'; //end Program Footer
-        echo '</div><!-- Panel Row End -->';//end Program Row
+        // if ($program_blurb){
+            // echo '<div class="card-more-button"><button class="panel-toggle" id="'.$postid.'">More</button></div>';
+        // }
+        // echo '</div><!-- end Program Footer -->'; //end Program Footer
+        echo '</div><!-- Card Content End -->';//end Card Content
         wp_reset_postdata();
         endwhile; endif;
 		wp_link_pages( array(

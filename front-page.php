@@ -23,39 +23,39 @@ get_header('home');
  * Remove HARD CODING
  */
  /** Panel One */
-$panelOneHead = get_field('panel_one_heading',132);
-$panelOneSubhead = get_field('panel_one_subheading',132);
-$panelOneCellOneMedia = get_field('p1_cell_one_media', 132);
+$panelOneHead = get_field('panel_one_heading');
+$panelOneSubhead = get_field('panel_one_subheading');
+$panelOneCellOneMedia = get_field('p1_cell_one_media');
 // var_dump($panelOneCellOneMedia);
 
 /** Panel Two */
-$panelTwoHead = get_field('panel_two_heading',132);
-$panelTwoSubhead = get_field('panel_two_subheading',132);
-$panelTwoCellOneMedia = get_field('p2_cell_one_media', 132);
-$panelTwoCellOneMeta = get_field('p2_cell_one_meta', 132);
-$panelTwoCellOneTeaser = get_field('p2_cell_one_teaser', 132);
-$panelTwoCellTwoMedia = get_field('p2_cell_two_media', 132);
-$panelTwoCellTwoMeta = get_field('p2_cell_two_meta', 132);
-$panelTwoCellTwoTeaser = get_field('p2_cell_two_teaser', 132);
-$panelTwoCellThreeMedia = get_field('p2_cell_three_media', 132);
-$panelTwoCellThreeMeta = get_field('p2_cell_three_meta', 132);
-$panelTwoCellThreeTeaser = get_field('p2_cell_three_teaser', 132);
+$panelTwoHead = get_field('panel_two_heading');
+$panelTwoSubhead = get_field('panel_two_subheading');
+$panelTwoCellOneMedia = get_field('p2_cell_one_media');
+$panelTwoCellOneMeta = get_field('p2_cell_one_meta');
+$panelTwoCellOneTeaser = get_field('p2_cell_one_teaser');
+$panelTwoCellTwoMedia = get_field('p2_cell_two_media');
+$panelTwoCellTwoMeta = get_field('p2_cell_two_meta');
+$panelTwoCellTwoTeaser = get_field('p2_cell_two_teaser');
+$panelTwoCellThreeMedia = get_field('p2_cell_three_media');
+$panelTwoCellThreeMeta = get_field('p2_cell_three_meta');
+$panelTwoCellThreeTeaser = get_field('p2_cell_three_teaser');
 
 /** Panel Three */
-$panelThreeHead = get_field('panel_three_heading',132);
-$panelThreeSubhead = get_field('panel_three_subheading',132);
-$panelThreeCellOneMedia = get_field('p3_cell_one_media', 132);
-$panelThreeCellOneLink = get_field('p3_cell_one_link', 132);
-$panelThreeCellOneLinkTitle = get_field('p3_cell_one_link_title', 132);
-$panelThreeCellOneTeaser = get_field('p3_cell_one_teaser', 132);
-$panelThreeCellTwoMedia = get_field('p3_cell_two_media', 132);
-$panelThreeCellTwoLink = get_field('p3_cell_two_link', 132);
-$panelThreeCellTwoLinkTitle = get_field('p3_cell_two_link_title', 132);
-$panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
+$panelThreeHead = get_field('panel_three_heading');
+$panelThreeSubhead = get_field('panel_three_subheading');
+$panelThreeCellOneMedia = get_field('p3_cell_one_media');
+$panelThreeCellOneLink = get_field('p3_cell_one_link');
+$panelThreeCellOneLinkTitle = get_field('p3_cell_one_link_title');
+$panelThreeCellOneTeaser = get_field('p3_cell_one_teaser');
+$panelThreeCellTwoMedia = get_field('p3_cell_two_media');
+$panelThreeCellTwoLink = get_field('p3_cell_two_link');
+$panelThreeCellTwoLinkTitle = get_field('p3_cell_two_link_title');
+$panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser');
 ?>
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
-        <div class="panel front-page-white-panel">
+        <section class="panel front-page-white-panel">
             <div class="wrap">
                 <div class="flex-wrap">
                     <div class="panel-heading">
@@ -103,8 +103,8 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="panel front-page-blue-panel">
+        </section>
+        <section class="panel front-page-blue-panel">
             <div class="wrap">
                 <div class="flex-wrap">
                     <div class="panel-heading">
@@ -130,8 +130,8 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="panel front-page-white-panel">
+        </section>
+        <section class="panel front-page-white-panel">
             <div class="wrap">
                 <div class="flex-wrap">
                     <div class="panel-heading">
@@ -154,7 +154,7 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser', 132);
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main><!-- #main -->
 
 </div><!-- #primary -->

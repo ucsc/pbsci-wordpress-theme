@@ -1,4 +1,4 @@
-.panel-list {
+.card-list {
     padding: 0;
     margin: 5px 0 0;
     margin: 0.313em 0 0;
@@ -10,26 +10,10 @@
     }
 }
 
-.panel-blurb,
-.panel-content {
-    // margin: 0.75em;
-}
-
-.page-id-104 .panel-blurb {
-    display: none;
-}
-
-.panel-row {
-    // width: 100%;
-    // background-color: #dcdcdc;
+.card-container {
     margin-bottom: 20px;
     @media only screen and (min-width: $screen-size--small) {
         flex-basis: 32%;
-        // display: flex;
-        // flex-flow: row wrap;
-        // &>* {
-        //     flex: 1 100%;
-        // }
     }
     .post-thumbnail {
         margin: 0 -5%;
@@ -37,35 +21,18 @@
             margin: 0 auto;
         }
     }
-    .panel-content {
+    .card-content {
         padding: 0 0 10px;
-        // display: flex;
-        // flex-flow: row wrap;
-        // &>* {
-        // flex: 1 100%;
-        // }
-        // @media only screen and (min-width: $screen-size--small) {
-        // flex: 1;
-        // }
-        .panel-header {
-            // display: flex;
-            // flex-flow: row wrap;
-            // justify-content: flex-start;
-            // &>* {
-            // flex: 1 100%;
-            // }
-            // @media only screen and (min-width: $screen-size--small) {
-            // flex: 1;
-            // }
+        .card-header {
             h3 {
                 margin: 10px 0;
             }
-            .panel-degrees-offered {
+            .card-degrees-offered {
                 // flex: 0 1 100%;
                 @media only screen and (min-width: $screen-size--small) {
                     // flex: 0 1 auto;
                 }
-                .panel-list {
+                .card-list {
                     justify-content: flex-start;
                     li {
                         height: 2.1875rem;
@@ -76,6 +43,12 @@
                         @include font-size(.75);
                         // text-transform: uppercase;
                         font-weight: bold;
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                        &.minor {
+                            background: $ucsc--primary-yellow;
+                        }
                         &.ba {
                             background: $ucsc--light-blue;
                         }
@@ -95,36 +68,8 @@
                 }
             }
         }
-        p {
-            flex: 0 1 100%;
-        }
-        .panel-academic-options {
-            flex: 0 1 100%;
-            .panel-list {
-                columns: 2;
-                -webkit-columns: 2;
-                -moz-columns: 2;
-                // @media only screen and (min-width: $screen-size--small) {
-                //     columns: auto;
-                //     -webkit-columns: auto;
-                //     -moz-columns: auto;
-                // }
-                li {
-                    display: inline-block;
-                    margin: 0 5px;
-                    margin: 0 0.313em;
-                }
-            }
-        }
     }
-    .panel-blurb {
-        flex: 0 1 100%;
-    }
-    .panel-footer {
-        // flex: 0 1 100%;
-        // display: flex;
-        // align-items: center;
-        // flex-flow: row wrap;
+    .card-major-link {
         a {
             display: block;
             border: 1px solid #dcdcdc;
@@ -134,39 +79,40 @@
             &:visited {
                 color: $ucsc--light-blue;
             }
-            // &:after {
-            // content: "\f054";
-            // font-family: "Font Awesome 5 Free";
-            // font-weight: 900;
-            // float: right;
-            // }
-        }
-        span {
-            padding: 0.5em;
-            display: block;
-            background: transparent url(images/chevron.svg) no-repeat 96% center;
-            background-size: auto 1.5em;
-            // -webkit-transition-property: background;
-            // transition-property: background;
-            // -webkit-transition-duration: 0.2s;
-            // transition-duration: 0.2s;
-            // -webkit-transition-timing-function: linear;
-            // transition-timing-function: linear;
-        }
-        .panel-department-link {
-            // flex: 1;
-            padding: 0 0 10px;
-        }
-        .panel-major-link {
-            // flex: 1;
-        }
-        .panel-more-button {
-            // flex: 1;
-        }
-        .panel-department-link,
-        .panel-major-link,
-        .panel-more-button {
-            // padding: 1em;
+            span {
+                padding: 0.5em;
+                display: block;
+                background: transparent url(images/chevron.svg) no-repeat 96% center;
+                background-size: auto 1.5em;
+                // -webkit-transition-property: background;
+                // transition-property: background;
+                // -webkit-transition-duration: 0.2s;
+                // transition-duration: 0.2s;
+                // -webkit-transition-timing-function: linear;
+                // transition-timing-function: linear;
+            }
         }
     }
 }
+
+
+/**Saving for later*/
+
+// .card-academic-options {
+// flex: 0 1 100%;
+// .card-list {
+// columns: 2;
+// -webkit-columns: 2;
+// -moz-columns: 2;
+// @media only screen and (min-width: $screen-size--small) {
+// columns: auto;
+// -webkit-columns: auto;
+// -moz-columns: auto;
+// }
+// li {
+// display: inline-block;
+// margin: 0 5px;
+// margin: 0 0.313em;
+// }
+// }
+// }

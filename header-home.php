@@ -69,7 +69,7 @@
                                         <p class="stats-source">Source: THE 2019</p>
                                     </div>
                                 </div>
-                            </li>
+                            </li>get_template_part( 'template-parts/navigation', 'primary' );
                             <li>
                                 <div class="stats-container">
                                     <div class="stats-rank">
@@ -87,7 +87,7 @@
                                         <p>#5</p>
                                     </div>
                                     <div class="stats-meta">
-                                        <p class="stats-headline">Global ranking for science reserach influence</p>
+                                        <p class="stats-headline">Glget_template_part( 'template-parts/navigation', 'primary' );obal ranking for science reserach influence</p>
                                         <p class="stats-source">Source: THE 2019</p>
                                     </div>
                                 </div>
