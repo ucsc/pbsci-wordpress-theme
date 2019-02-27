@@ -19,14 +19,10 @@ get_header('home');
  * Home Page Variables
  *
  */
-/**
- * Remove HARD CODING
- */
  /** Panel One */
 $panelOneHead = get_field('panel_one_heading');
 $panelOneSubhead = get_field('panel_one_subheading');
 $panelOneCellOneMedia = get_field('p1_cell_one_media');
-// var_dump($panelOneCellOneMedia);
 
 /** Panel Two */
 $panelTwoHead = get_field('panel_two_heading');
@@ -75,13 +71,13 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser');
                             <div class="panel-cell-1 flex-wrap panel-cell-quarter">
                                 <a class="" href="#">
                                     <i class="fas fa-hand-point-right"></i>
-                                    <p class="chevron-right">Facts & rankings</p>
+                                    <p class="chevron-right-yellow-small">Facts & rankings</p>
                                 </a>
                             </div>
                             <div class="panel-cell-1 flex-wrap panel-cell-quarter">
                                 <a class="" href="#">
                                     <i class="fas fa-hand-point-down"></i>
-                                    <p class="chevron-right">Alumni success</p>
+                                    <p class="chevron-right-yellow-small">Alumni success</p>
                                 </a>
                             </div>
 
@@ -90,13 +86,13 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser');
                         <div class="panel-cell-1 flex-wrap panel-cell-quarter">
                                 <a class="" href="#">
                                     <i class="fas fa-hand-point-up"></i>
-                                    <p class="chevron-right">Student experience</p>
+                                    <p class="chevron-right-yellow-small">Student experience</p>
                                 </a>
                             </div>
                             <div class="panel-cell-1 flex-wrap panel-cell-quarter">
                                 <a class="" href="#">
                                     <i class="fas fa-hand-point-left"></i>
-                                    <p class="chevron-right">World-class facilities</p>
+                                    <p class="chevron-right-yellow-small">World-class facilities</p>
                                 </a>
                             </div>
                         </div>

@@ -21,6 +21,33 @@
         }
     }
     
+    .chevron-right-white-small {
+        // color: $color__white;
+        &::after {
+            content: url(images/chevron-sm-white.svg);
+            padding: 3px 0 0 3px;
+            position: absolute;
+        }
+    }
+    
+    .chevron-right-yellow-small {
+        // color: $color__white;
+        &::after {
+            content: url(images/chevron-sm-yellow.svg);
+            padding: 3px 0 0 3px;
+            position: absolute;
+        }
+    }
+    
+    .chevron-right-medium-blue {
+        // color: $color__white;
+        &::after {
+            content: url(images/chevron-md-blue.svg);
+            padding: 3px 0 0 5px;
+            position: absolute;
+        }
+    }
+    
     .display-block * {
         display: block;
         margin: auto;

@@ -19,7 +19,7 @@
         <div class="wrap">
             <div class="flex-wrap">
                 <div class="panel-heading footer-top">
-                    <h2 class="chevron-right"><span class="span-a">Science</span><span class="span-b">Apply</span>Today</h2>
+                    <h2 class="chevron-right-medium-blue"><span class="span-a">Science</span><span class="span-b">Apply</span>Today</h2>
                 </div>
             </div>
         </div>
@@ -39,8 +39,8 @@
                     <h2><span>Academic</span>Departments</h2>
                 </div>
                 <ul class="footer-departments-list">
-                    <li class="chevron-right"><a href="#">Astronomy &amp; Astrophysics</a></li>
-                    <li class="chevron-right"><a href="#">Chemistry &amp; Biochemistry</a></li>
+                    <li class="chevron-right-white-small"><a href="#">Astronomy &amp; Astrophysics</a></li>
+                    <li class="chevron-right-white-small"><a href="#">Chemistry &amp; Biochemistry</a></li>
                 </ul>
                 <?php get_sidebar('footer-two'); ?>
             </div>

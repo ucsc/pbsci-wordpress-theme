@@ -43,8 +43,6 @@
                 }
             get_template_part( 'template-parts/navigation', 'primary' );
 			?>
-
-                <!-- nav goes here -->
                 <div class="wrap flex-column flex-wrap">
                     <div class="flexslider carousel">
                         <ul class="slides stats-home">

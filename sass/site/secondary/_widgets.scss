@@ -1,8 +1,25 @@
 .widget {
-	margin: 0 0 1.5em;
+    margin: 0 0 1.5em;
+    /* Make sure select elements fit in widgets. */
+    select {
+        max-width: 100%;
+    }
+}
 
-	/* Make sure select elements fit in widgets. */
-	select {
-		max-width: 100%;
-	}
+.widget-area {
+    .widget-title {
+        text-transform: uppercase;
+        font-family: 'Helvetica', sans-serif;
+        font-weight: 300;
+        margin: 2px 0 0;
+        color: $color__white;
+        @include font-size(1);
+        border-left: 3px solid $ucsc--primary-yellow;
+        padding-left: 10px;
+        margin: 0 0 32px;
+        box-sizing: border-box;
+        span {
+            font-weight: 900;
+        }
+    }
 }

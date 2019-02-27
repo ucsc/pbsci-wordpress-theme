@@ -51,7 +51,6 @@
         // end debug
 
         // Construct the parts
-
         echo '<!-- Card Container Begin --><div class="card-container">';
         ucsc_pbsci_post_thumbnail();
         echo '<!-- Card Content Begin --><div class="card-content">';
