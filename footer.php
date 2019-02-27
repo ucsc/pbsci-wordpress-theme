@@ -28,20 +28,13 @@
         <div class="flex-wrap">
             <div class="panel-cell-2 footer-cell">
                 <div class="panel-heading-footer flex-wrap">
-                    <span class="f-logo">
+                    <!-- <span class="f-logo"> -->
                         <img src="<?php echo IMAGES?>/science-logo.svg" alt=""/>
-                    </span>
+                    <!-- </span> -->
                 </div>
                 <?php get_sidebar('footer-one'); ?>
             </div>
             <div class="panel-cell-2 footer-cell">
-                <div class="panel-heading">
-                    <h2><span>Academic</span>Departments</h2>
-                </div>
-                <ul class="footer-departments-list">
-                    <li class="chevron-right-white-small"><a href="#">Astronomy &amp; Astrophysics</a></li>
-                    <li class="chevron-right-white-small"><a href="#">Chemistry &amp; Biochemistry</a></li>
-                </ul>
                 <?php get_sidebar('footer-two'); ?>
             </div>
             <div class="panel-cell-2 footer-cell">

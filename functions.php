@@ -242,3 +242,45 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+// Enable shortcodes in widgets
+add_filter( 'widget_text', 'shortcode_unautop' );
+add_filter('widget_text', 'do_shortcode');
+//Short codes
+function footer_dept_loop() {
+	$output = '<ul class="footer-departments-list">';
+	// Call Departments post
+	$args = array (
+		'post_type' => 'department',
+		'orderby' => 'title',
+		'order' => 'ASC',
+		);
+	$department_query = new WP_Query ($args);
+	if($department_query->have_posts()): while ($department_query->have_posts()):$department_query->the_post();
+
+	//Set up the parts
+	$department_title = get_the_title();
+	$department_url = get_permalink();
+	//Construct the parts
+	if ($department_title !=""){
+		$output .= '<li class="chevron-right-white-small"><a href="'.esc_url($department_url).'">'.$department_title.'</a></li>';
+	}
+	wp_reset_postdata();
+endwhile; endif;
+$output .= '</ul>';
+return $output;
+	}
+
+add_shortcode('footer-dept-loop', 'footer_dept_loop');
+
+// Enable PHP in widgets
+// add_filter('widget_text','execute_php',100);
+// function execute_php($html){
+//      if(strpos($html,"<"."?php")!==false){
+//           ob_start();
+//           eval("?".">".$html);
+//           $html=ob_get_contents();
+//           ob_end_clean();
+//      }
+//      return $html;
+// }

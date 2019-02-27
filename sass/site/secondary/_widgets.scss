@@ -4,6 +4,9 @@
     select {
         max-width: 100%;
     }
+    footer & {
+        color: $color__white
+    }
 }
 
 .widget-area {

@@ -109,27 +109,8 @@
 }
 
 .footer-cell {
-    .panel-heading-footer {
-        width: 100%;
-        margin: 25px 0;
-        align-items: center;
-        span {
-            flex: 1;
-        }
-        .f-logo {
-            // padding-right: 10px;
-            // padding: 10px;
-            // border-right: solid 3px $ucsc--primary-yellow;
-        }
-        .f-text {
-            padding-left: 10px;
-            // padding: 15px 0 15px 10px;
-            font-family: 'Helvetica', sans-serif;
-            font-weight: 900;
-            @include font-size(2);
-            margin: 2px 0 0;
-            color: $color__white;
-        }
+    img {
+        flex: 1;
     }
     .panel-heading {
         h2 {
