@@ -110,7 +110,7 @@
 
 .footer-cell {
     img {
-        flex: 1;
+        margin-top: 14px;
     }
     .panel-heading {
         h2 {
@@ -118,16 +118,24 @@
             @include font-size(1);
         }
     }
-    .footer-social-container {
-        padding-top: 15px;
-        .footer-social {
-            width: 100%;
-            // display: inline-block;
-            text-align: center;
-            list-style: none;
-            i {
-                color: $ucsc--primary-yellow;
-            }
+    .footer-social {
+        width: 100%;
+        // display: inline-block;
+        text-align: center;
+        list-style: none;
+        i {
+            color: $ucsc--primary-yellow;
+        }
+    }
+    .newsletter-cta {
+        font-family: 'Helvetica', sans-serif;
+        @include font-size(.75);
+        span {
+            text-transform: uppercase;
+            color: $ucsc--primary-yellow;
+        }
+        .impact {
+            font-weight: 900;
         }
     }
 }

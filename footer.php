@@ -27,33 +27,12 @@
     <div class="wrap">
         <div class="flex-wrap">
             <div class="panel-cell-2 footer-cell">
-                <div class="panel-heading-footer flex-wrap">
-                    <!-- <span class="f-logo"> -->
-                        <img src="<?php echo IMAGES?>/science-logo.svg" alt=""/>
-                    <!-- </span> -->
-                </div>
                 <?php get_sidebar('footer-one'); ?>
             </div>
             <div class="panel-cell-2 footer-cell">
                 <?php get_sidebar('footer-two'); ?>
             </div>
             <div class="panel-cell-2 footer-cell">
-                <div class="panel-heading">
-                    <h2><span>Sharing</span>Science</h2>
-                </div>
-                <div class="footer-social-container">
-                    <!-- <div class="footer-social"> -->
-                        <ul class="footer-social flex-wrap">
-                            <li><a href="http://www.facebook.com/ucsantacruz" title="Facebook"><i
-                                        class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                            <li><a href="http://twitter.com/ucsc" title="Twitter"><i class="fab fa-twitter"
-                                        aria-hidden="true"></i>
-                            <li><a href="http://youtube.com/ucsantacruz" title="YouTube"><i class="fab fa-youtube"
-                                        aria-hidden="true"></i></a></li>
-                            <li><a href="http://www.linkedin.com/groups?home=&amp;gid=102708" title="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
-                        </ul>
-                    <!-- </div> -->
-                </div>
                 <?php get_sidebar('footer-three'); ?>
             </div>
         </div>
