@@ -138,14 +138,14 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser');
                 <div class="flex-wrap">
                     <div class="panel-cell-1">
                         <?php echo $panelThreeCellOneMedia ?>
-                        <p class="white-cell-link chevron-right"><a href="#">Program name here</a></p>
+                        <a href="#" class="white-cell-link"><p class="chevron-right-yellow-small">Program name here</p></a>
                         <p>Ooga booga. Ipsum and what not. Something witty is this here writ.</p>
                     </div>
 
 
                     <div class="panel-cell-1">
                         <?php echo $panelThreeCellTwoMedia ?>
-                        <p class="white-cell-link chevron-right"><a href="#">Program name here</a></p>
+                        <a href="#" class="white-cell-link"><p class="chevron-right-yellow-small">Program name here</p></a>
                         <p>Ooga booga. Ipsum and what not. Something witty is this here writ.</p>
                     </div>
                 </div>

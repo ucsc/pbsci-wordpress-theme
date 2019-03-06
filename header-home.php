@@ -25,7 +25,7 @@
     <div id="page" class="site">
         <a class="skip-link screen-reader-text"
             href="#content"><?php esc_html_e( 'Skip to content', 'ucsc-pbsci' ); ?></a>
-
+           <?php get_template_part( 'template-parts/navigation', 'primary' );?>
         <header id="masthead" class="site-header">
             <div class="site-branding">
                 <?php
@@ -41,7 +41,6 @@
 			    else {
 			        echo '<div class="hero-home">';
                 }
-            get_template_part( 'template-parts/navigation', 'primary' );
 			?>
                 <div class="wrap flex-column flex-wrap">
                     <div class="flexslider carousel">
@@ -67,7 +66,7 @@
                                         <p class="stats-source">Source: THE 2019</p>
                                     </div>
                                 </div>
-                            </li>get_template_part( 'template-parts/navigation', 'primary' );
+                            </li>
                             <li>
                                 <div class="stats-container">
                                     <div class="stats-rank">
@@ -85,7 +84,7 @@
                                         <p>#5</p>
                                     </div>
                                     <div class="stats-meta">
-                                        <p class="stats-headline">Glget_template_part( 'template-parts/navigation', 'primary' );obal ranking for science reserach influence</p>
+                                    <p class="stats-headline">Global ranking for science reserach influence</p>
                                         <p class="stats-source">Source: THE 2019</p>
                                     </div>
                                 </div>

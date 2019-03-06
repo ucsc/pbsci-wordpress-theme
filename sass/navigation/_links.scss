@@ -44,11 +44,9 @@
         
         .white-cell-link {
             // color: $ucsc__primary-yellow;
-            a {
+            color: $ucsc--light-blue;
+            font-weight: 900;
+            &:visited {
                 color: $ucsc--light-blue;
-                font-weight: 900;
-                &:visited {
-                    color: $ucsc--light-blue;
-                }
             }
         }

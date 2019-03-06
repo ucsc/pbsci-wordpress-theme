@@ -25,7 +25,7 @@
     <div id="page" class="site">
         <a class="skip-link screen-reader-text"
             href="#content"><?php esc_html_e( 'Skip to content', 'ucsc-pbsci' ); ?></a>
-
+			<?php get_template_part( 'template-parts/navigation', 'primary' );?>
         <header id="masthead" class="site-header">
             <div class="site-branding">
                 <?php
@@ -36,7 +36,7 @@
 			    else {
 			        echo '<div class="hero-page flex-wrap">';
 				}
-				get_template_part( 'template-parts/navigation', 'primary' );
+
 			?>
 				<div class="hero-page-runner">
                 <div class="wrap flex-wrap">

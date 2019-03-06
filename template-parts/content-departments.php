@@ -33,15 +33,15 @@
 		$department_url = get_permalink();
 		$department_blurb = get_field('department_blurb');
 		//Construct the parts
-		echo '<!-- Panel Row Begin --><div class="panel-row">';
+		echo '<!-- Card Container Begin --><div class="card-container">';
 		ucsc_pbsci_post_thumbnail();
-		echo '<!-- Panel Content Begin --><div class="panel-content">';
-        echo '<!-- Panel Header Begin --><div class="panel-header">';
+		echo '<!-- card Content Begin --><div class="card-content">';
+        echo '<!-- card Header Begin --><div class="card-header">';
 		echo '<a href="'.esc_url($department_url).'"><h3>'.$department_title.'</h3></a>';
-		echo '</div><!-- Panel Header End -->';
-		echo '</div><!-- Panel Content End -->';//end Program Content
-		echo '<!-- Panel Blurb Begin --><div id="panelblurb'.$postid.'"class="panel-blurb">'.$department_blurb.'</div><!-- Panel Blurb End -->';
-		echo '</div><!-- Panel Row End -->';//end Program Row
+		echo '</div><!-- card Header End -->';
+		echo '</div><!-- card Content End -->';//end Program Content
+		echo '<!-- card Blurb Begin --><div id="cardblurb'.$postid.'"class="card-blurb">'.$department_blurb.'</div><!-- card Blurb End -->';
+		echo '</div><!-- card Row End -->';//end Program Row
 		wp_reset_postdata();
 	endwhile; endif;
 
