@@ -194,7 +194,7 @@
     
     .hero-home {
         @media only screen and (min-width: $screen-size--large) {
-            background-position-y: -200px !important;
+            background-position-y: -150px !important;
             height: 100vh;
         }
         height: 50vh;
@@ -264,6 +264,7 @@
     /** SINGLE PAGE/POST **/
     
     .hero-page {
+        align-items: flex-end;
         @media only screen and (min-width: $screen-size--small) {
             height: 50vh;
         }
@@ -271,12 +272,21 @@
         background-size: cover;
         .hero-page-runner {
             width: 100%;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(255, 255, 255, 0.35));
+            .entry-header-span-a {
+                @include font-size(2);
+                color: rgba(255, 255, 255, 0.35)
+            }
+            .entry-header-span-b {
+                text-transform: uppercase;
+            }
         }
     }
     
     .entry-header {
         justify-content: flex-start;
         align-self: flex-end;
+        font-family: 'Helvetica', sans-serif;
         h1 {
             margin: 0;
         }

@@ -42,8 +42,8 @@
                 <div class="wrap flex-wrap">
 				<header class="entry-header flex-wrap">
 				<span class="entry-header-span-a">Science</span>
-					<span class="entry-header-span-b flex-wrap"><p>Impactful</p><?php the_title( '<h1 class="entry-title">', '</h1>' ); ?></span>
-					<span class="entry-header-span-c">Snappy descriptor meta field</span>
+					<span class="entry-header-span-b flex-wrap"><h1>Impactful</h1><?php the_title( '<h1 class="entry-title">', '</h1>' ); ?></span>
+					<span class="entry-header-span-c">From the microscopic to the unfathomable, UC Santa Cruz offers 37 high impact science degree programs that explore and study the inner secrets of the universe.</span>
 	</header><!-- .entry-header -->
 
 				</div><!-- .hero-home wrap -->
