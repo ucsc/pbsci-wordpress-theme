@@ -41,12 +41,13 @@
     
     .chevron-right-medium-blue {
         // color: $color__white;
+        position: relative;
         &::after {
             content: url(images/chevron-md-blue.svg);
-            // top: -5px;
+            top: -5px;
             position: absolute;
             @media only screen and (min-width: $screen-size--large) {
-                padding: 3px 0 0 5px;
+                padding: 10px 0 0 5px;
             }
         }
     }
@@ -318,13 +319,21 @@
             }
             .entry-header-span-c {
                 flex: 1;
+                flex-basis: 100%;
                 padding: 5px 0;
-                @media only screen and (min-width: $screen-size--small) {
-                    padding: 0 0 0 5px;
+                @media only screen and (min-width: $screen-size--medium) {
+                    padding: 0 0 0 15px;
+                    flex-basis: 0;
                 }
+                // @media only screen and (min-width: $screen-size--mediumrelative) {
+                // padding: 0 0 0 15px;
+                // }
             }
             .entry-title {
                 font-weight: 300;
+                .single & {
+                    font-weight: 700;
+                }
             }
         }
         &.mobile {

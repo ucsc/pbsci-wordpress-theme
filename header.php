@@ -29,11 +29,11 @@
         <header id="masthead" class="site-header">
             <div class="site-branding">
                 <?php
-			$hero = get_the_post_thumbnail_url();
+			$hero = get_the_post_thumbnail_url($post->ID,'large');
 			// var_dump($pageTitle);
 			$page_blurb = get_field('page_blurb');
 			if($hero){
-			    echo '<div class="hero-page flex-wrap" style="background:url('.$hero.') no-repeat top; background-size: cover;">';}
+			    echo '<div class="hero-page flex-wrap" style="background:url('.$hero.') no-repeat bottom; background-size: cover;">';}
 			    else {
 			        echo '<div class="hero-page flex-wrap">';
 				}
@@ -44,12 +44,26 @@
                         <header class="entry-header flex-wrap">
                             <span class="entry-header-span-a">Science</span>
                             <span class="entry-header-span-b flex-wrap">
-                                <h1>Impactful </h1><?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                            <?php
+                            if (is_page()) :
+                            ?>
+                            <h1>Impactful </h1><?php the_title( '<h1 class="entry-title">', '</h1>' );
+                            else:
+                                the_title( '<h1 class="entry-title">', '</h1>' );
+                            endif; ?>
+
                             </span>
-							<span class="entry-header-span-c"><?php
-							if($page_blurb){
-								echo $page_blurb;
-							}?></span>
+                            <?php
+                            if (is_page()) {
+                                echo '<span class="entry-header-span-c">';
+                                // if($page_blurb):
+                                    echo $page_blurb;
+                                // endif;
+                            } else {
+                                echo '<span class="entry-header-span-c">Hello World';
+                                }
+
+                            ?></span>
                         </header><!-- .entry-header -->
 
                     </div><!-- .hero-home wrap -->

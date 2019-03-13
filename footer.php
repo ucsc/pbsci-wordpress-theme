@@ -19,7 +19,7 @@
         <div class="wrap">
             <div class="flex-wrap">
                 <div class="panel-heading footer-top">
-                    <h2 class="chevron-right-medium-blue"><span class="span-a">Science</span><span class="span-b">Apply</span>Today</h2>
+                    <a href="#"><h2 class="chevron-right-medium-blue"><span class="span-a">Science</span><span class="span-b">Apply</span>Today</h2></a>
                 </div>
             </div>
         </div>

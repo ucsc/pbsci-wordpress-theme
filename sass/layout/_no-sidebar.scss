@@ -86,7 +86,7 @@
                 margin-top: 10px;
                 @media only screen and (min-width: $screen-size--large) {
                     @include font-size(2.25);
-                    // padding-left:10px;
+                    margin-top: 0;
                 }
             }
             flex: 1;
@@ -101,13 +101,13 @@
             .span-a {
                 text-transform: capitalize;
                 font-weight: 900;
-                padding-right: 15px;
+                padding-right: 5px;
                 border-right: 3px solid $ucsc--light-blue;
                 color: rgba(0, 106, 173, .35);
             }
             .span-b {
                 font-weight: 900;
-                padding-left: 15px;
+                padding-left: 5px;
             }
         }
     }
