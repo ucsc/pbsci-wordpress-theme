@@ -31,7 +31,9 @@
                 <?php
 			$hero = get_the_post_thumbnail_url($post->ID,'large');
 			// var_dump($pageTitle);
-			$page_blurb = get_field('page_blurb');
+            $page_blurb = get_field('page_blurb');
+            $degrees_offered = get_field_object('degrees_offered');
+            $degrees = $degrees_offered['value'];
 			if($hero){
 			    echo '<div class="hero-page flex-wrap" style="background:url('.$hero.') no-repeat bottom; background-size: cover;">';}
 			    else {
@@ -56,11 +58,35 @@
                             <?php
                             if (is_page()) {
                                 echo '<span class="entry-header-span-c">';
-                                // if($page_blurb):
+                                if($page_blurb):
                                     echo $page_blurb;
-                                // endif;
+                                endif;
                             } else {
-                                echo '<span class="entry-header-span-c">Hello World';
+                                echo '<span class="entry-header-span-c">';
+                                if($degrees):
+                                    echo '<!-- Card Degrees Offered Begin --><div class="card-degrees-offered">';
+                                    echo '<ul class="card-list flex-wrap">';
+                                    if(in_array('undergradminor', $degrees)||in_array('gradminor', $degrees)):
+                                        echo '<li class="minor">m.</li>';
+                                    endif;
+                                    if(in_array('ba', $degrees)):
+                                        echo '<li class="ba">B.A.</li>';
+                                    endif;
+                                    if(in_array('bs', $degrees)):
+                                        echo '<li class="bs">B.S.</li>';
+                                    endif;
+                                    if(in_array('ma', $degrees)):
+                                        echo '<li class="ma">M.A.</li>';
+                                    endif;
+                                    if(in_array('ms', $degrees)):
+                                        echo '<li class="ms">M.S.</li>';
+                                    endif;
+                                    if(in_array('phd', $degrees)):
+                                        echo '<li class="phd">Ph.D.</li>';
+                                    endif;
+                                    echo '</ul>';
+                                    echo '</div><!-- Panel Degrees Offered End -->';
+                                endif;
                                 }
 
                             ?></span>
@@ -72,17 +98,56 @@
             </div><!-- .site-branding -->
         </header><!-- #masthead -->
         <div class="hero-page-runner mobile">
-            <div class="wrap flex-wrap">
-                <header class="entry-header flex-wrap">
-                    <span class="entry-header-span-a">Science</span>
-                    <span class="entry-header-span-b flex-wrap">
-                        <h1>Impactful </h1><?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-                    </span>
-                    <span class="entry-header-span-c">From the microscopic to the unfathomable, UC Santa Cruz offers 37
-                        high impact science degree programs that explore and study the inner secrets of the
-                        universe.</span>
-                </header><!-- .entry-header -->
+                    <div class="wrap flex-wrap">
+                        <header class="entry-header flex-wrap">
+                            <span class="entry-header-span-a">Science</span>
+                            <span class="entry-header-span-b flex-wrap">
+                            <?php
+                            if (is_page()) :
+                            ?>
+                            <h1>Impactful </h1><?php the_title( '<h1 class="entry-title">', '</h1>' );
+                            else:
+                                the_title( '<h1 class="entry-title">', '</h1>' );
+                            endif; ?>
 
-            </div><!-- .hero-home wrap -->
-        </div><!-- .hero-page-runner -->
+                            </span>
+                            <?php
+                            if (is_page()) {
+                                echo '<span class="entry-header-span-c">';
+                                if($page_blurb):
+                                    echo $page_blurb;
+                                endif;
+                            } else {
+                                echo '<span class="entry-header-span-c">';
+                                if($degrees):
+                                    echo '<!-- Card Degrees Offered Begin --><div class="card-degrees-offered">';
+                                    echo '<ul class="card-list flex-wrap">';
+                                    if(in_array('undergradminor', $degrees)||in_array('gradminor', $degrees)):
+                                        echo '<li class="minor">m.</li>';
+                                    endif;
+                                    if(in_array('ba', $degrees)):
+                                        echo '<li class="ba">B.A.</li>';
+                                    endif;
+                                    if(in_array('bs', $degrees)):
+                                        echo '<li class="bs">B.S.</li>';
+                                    endif;
+                                    if(in_array('ma', $degrees)):
+                                        echo '<li class="ma">M.A.</li>';
+                                    endif;
+                                    if(in_array('ms', $degrees)):
+                                        echo '<li class="ms">M.S.</li>';
+                                    endif;
+                                    if(in_array('phd', $degrees)):
+                                        echo '<li class="phd">Ph.D.</li>';
+                                    endif;
+                                    echo '</ul>';
+                                    echo '</div><!-- Panel Degrees Offered End -->';
+                                endif;
+                                }
+
+                            ?></span>
+                        </header><!-- .entry-header -->
+
+                    </div><!-- .hero-home wrap -->
+                </div><!-- .hero-page-runner -->
         <div id="content" class="site-content">
