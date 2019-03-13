@@ -1,5 +1,9 @@
 @import "columns";
 @import "flexbox";
+.site-header {
+    padding-top: 80px;
+}
+
 .content-area {
     float: none;
     margin-left: auto;
@@ -77,8 +81,9 @@
                 font-family: 'Helvetica', sans-serif;
                 text-transform: uppercase;
                 font-weight: 300;
-                @include font-size(1.75);
+                @include font-size(1.35);
                 color: $ucsc--light-blue;
+                margin-top: 10px;
                 @media only screen and (min-width: $screen-size--large) {
                     @include font-size(2.25);
                     // padding-left:10px;

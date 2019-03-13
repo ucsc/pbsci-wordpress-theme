@@ -25,30 +25,50 @@
     <div id="page" class="site">
         <a class="skip-link screen-reader-text"
             href="#content"><?php esc_html_e( 'Skip to content', 'ucsc-pbsci' ); ?></a>
-			<?php get_template_part( 'template-parts/navigation', 'primary' );?>
+        <?php get_template_part( 'template-parts/navigation', 'primary' );?>
         <header id="masthead" class="site-header">
             <div class="site-branding">
                 <?php
 			$hero = get_the_post_thumbnail_url();
-			// var_dump($hero);
+			// var_dump($pageTitle);
+			$page_blurb = get_field('page_blurb');
 			if($hero){
 			    echo '<div class="hero-page flex-wrap" style="background:url('.$hero.') no-repeat top; background-size: cover;">';}
 			    else {
 			        echo '<div class="hero-page flex-wrap">';
 				}
+				?>
 
-			?>
-				<div class="hero-page-runner">
-                <div class="wrap flex-wrap">
-				<header class="entry-header flex-wrap">
-				<span class="entry-header-span-a">Science</span>
-					<span class="entry-header-span-b flex-wrap"><h1>Impactful</h1><?php the_title( '<h1 class="entry-title">', '</h1>' ); ?></span>
-					<span class="entry-header-span-c">From the microscopic to the unfathomable, UC Santa Cruz offers 37 high impact science degree programs that explore and study the inner secrets of the universe.</span>
-	</header><!-- .entry-header -->
+                <div class="hero-page-runner desktop">
+                    <div class="wrap flex-wrap">
+                        <header class="entry-header flex-wrap">
+                            <span class="entry-header-span-a">Science</span>
+                            <span class="entry-header-span-b flex-wrap">
+                                <h1>Impactful </h1><?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                            </span>
+							<span class="entry-header-span-c"><?php
+							if($page_blurb){
+								echo $page_blurb;
+							}?></span>
+                        </header><!-- .entry-header -->
 
-				</div><!-- .hero-home wrap -->
-					</div>
+                    </div><!-- .hero-home wrap -->
+                </div><!-- .hero-page-runner -->
+
             </div><!-- .site-branding -->
         </header><!-- #masthead -->
+        <div class="hero-page-runner mobile">
+            <div class="wrap flex-wrap">
+                <header class="entry-header flex-wrap">
+                    <span class="entry-header-span-a">Science</span>
+                    <span class="entry-header-span-b flex-wrap">
+                        <h1>Impactful </h1><?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                    </span>
+                    <span class="entry-header-span-c">From the microscopic to the unfathomable, UC Santa Cruz offers 37
+                        high impact science degree programs that explore and study the inner secrets of the
+                        universe.</span>
+                </header><!-- .entry-header -->
 
+            </div><!-- .hero-home wrap -->
+        </div><!-- .hero-page-runner -->
         <div id="content" class="site-content">
