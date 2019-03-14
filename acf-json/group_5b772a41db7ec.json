@@ -1,0 +1,80 @@
+{
+    "key": "group_5b772a41db7ec",
+    "title": "Slider Options",
+    "fields": [
+        {
+            "key": "field_5b77328449469",
+            "label": "Number of Slides",
+            "name": "number_of_slides",
+            "type": "radio",
+            "instructions": "Select the number of slides you want on the home page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "one": "one",
+                "two": "two",
+                "three": "three",
+                "four": "four",
+                "five": "five",
+                "six": "six",
+                "seven": "seven",
+                "eight": "eight",
+                "nine": "nine",
+                "ten": "ten"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5b8597e5fb02d",
+            "label": "Slide Animation",
+            "name": "slide_animation",
+            "type": "radio",
+            "instructions": "Select the animation style for the slider",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "fade": "Fade",
+                "slide": "Slide"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1552603134
+}

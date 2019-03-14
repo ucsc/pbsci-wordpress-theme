@@ -27,46 +27,46 @@
             h3 {
                 margin: 10px 0;
             }
-            .card-degrees-offered {
-                // flex: 0 1 100%;
-                @media only screen and (min-width: $screen-size--small) {
-                    // flex: 0 1 auto;
-                }
-                .card-list {
-                    justify-content: flex-start;
-                    li {
-                        height: 2.1875rem;
-                        width: 2.1875rem;
-                        border-radius: 2.1875rem;
-                        line-height: 2.0625rem;
-                        color: #fff;
-                        @include font-size(.75);
-                        // text-transform: uppercase;
-                        font-weight: bold;
-                        &:first-child {
-                            margin-left: 0;
-                        }
-                        &.minor {
-                            background: $ucsc--primary-yellow;
-                        }
-                        &.ba {
-                            background: $ucsc--light-blue;
-                        }
-                        &.bs {
-                            background: $ucsc--green;
-                        }
-                        &.ma {
-                            background: $ucsc--orange;
-                        }
-                        &.ms {
-                            background: $ucsc--blue-green;
-                        }
-                        &.phd {
-                            background: $ucsc--magenta;
-                        }
-                    }
-                }
-            }
+            // .card-degrees-offered {
+            //     // flex: 0 1 100%;
+            //     @media only screen and (min-width: $screen-size--small) {
+            //         // flex: 0 1 auto;
+            //     }
+            //     .card-list {
+            //         justify-content: flex-start;
+            //         li {
+            //             height: 2.1875rem;
+            //             width: 2.1875rem;
+            //             border-radius: 2.1875rem;
+            //             line-height: 2.0625rem;
+            //             color: #fff;
+            //             @include font-size(.75);
+            //             // text-transform: uppercase;
+            //             font-weight: bold;
+            //             &:first-child {
+            //                 margin-left: 0;
+            //             }
+            //             &.minor {
+            //                 background: $ucsc--primary-yellow;
+            //             }
+            //             &.ba {
+            //                 background: $ucsc--light-blue;
+            //             }
+            //             &.bs {
+            //                 background: $ucsc--green;
+            //             }
+            //             &.ma {
+            //                 background: $ucsc--orange;
+            //             }
+            //             &.ms {
+            //                 background: $ucsc--blue-green;
+            //             }
+            //             &.phd {
+            //                 background: $ucsc--magenta;
+            //             }
+            //         }
+            //     }
+            // }
         }
     }
     .card-major-link {
@@ -95,24 +95,43 @@
     }
 }
 
-
-/**Saving for later*/
-
-// .card-academic-options {
-// flex: 0 1 100%;
-// .card-list {
-// columns: 2;
-// -webkit-columns: 2;
-// -moz-columns: 2;
-// @media only screen and (min-width: $screen-size--small) {
-// columns: auto;
-// -webkit-columns: auto;
-// -moz-columns: auto;
-// }
-// li {
-// display: inline-block;
-// margin: 0 5px;
-// margin: 0 0.313em;
-// }
-// }
-// }
+.card-degrees-offered {
+    // flex: 0 1 100%;
+    @media only screen and (min-width: $screen-size--small) {
+        // flex: 0 1 auto;
+    }
+    .card-list {
+        justify-content: flex-start;
+        li {
+            height: 2.1875rem;
+            width: 2.1875rem;
+            border-radius: 2.1875rem;
+            line-height: 2.0625rem;
+            color: #fff;
+            @include font-size(.75);
+            // text-transform: uppercase;
+            font-weight: bold;
+            &:first-child {
+                margin-left: 0;
+            }
+            &.minor {
+                background: $ucsc--primary-yellow;
+            }
+            &.ba {
+                background: $ucsc--light-blue;
+            }
+            &.bs {
+                background: $ucsc--green;
+            }
+            &.ma {
+                background: $ucsc--orange;
+            }
+            &.ms {
+                background: $ucsc--blue-green;
+            }
+            &.phd {
+                background: $ucsc--magenta;
+            }
+        }
+    }
+}
