@@ -25,10 +25,10 @@
     <div id="page" class="site">
         <a class="skip-link screen-reader-text"
             href="#content"><?php esc_html_e( 'Skip to content', 'ucsc-pbsci' ); ?></a>
-           <?php get_template_part( 'template-parts/navigation', 'primary' );?>
+           <!-- <?php //get_template_part( 'template-parts/navigation', 'primary' );?> -->
         <header id="masthead" class="site-header">
             <div class="site-branding">
-                <?php
+                <?php get_template_part( 'template-parts/navigation', 'primary' );
 			/**
 			 * Hero code for home page
 			 */
@@ -50,79 +50,8 @@
                 echo'</ul></div>';
             }
 			?>
-                <!-- <div class="wrap flex-column flex-wrap">
-                    <div class="flexslider carousel">
-                        <ul class="slides stats-home">
-                            <li>
-                                <div class="stats-container">
-                                    <div class="stats-rank">
-                                        <p>#5</p>
-                                    </div>
-                                    <div class="stats-meta">
-                                        <p class="stats-headline">Global ranking for science reserach influence</p>
-                                        <p class="stats-source">Source: THE 2019</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="stats-container">
-                                    <div class="stats-rank">
-                                        <p>#5</p>
-                                    </div>
-                                    <div class="stats-meta">
-                                        <p class="stats-headline">Global ranking for science reserach influence</p>
-                                        <p class="stats-source">Source: THE 2019</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="stats-container">
-                                    <div class="stats-rank">
-                                        <p>#5</p>
-                                    </div>
-                                    <div class="stats-meta">
-                                        <p class="stats-headline">Global ranking for science reserach influence</p>
-                                        <p class="stats-source">Source: THE 2019</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="stats-container">
-                                    <div class="stats-rank">
-                                        <p>#5</p>
-                                    </div>
-                                    <div class="stats-meta">
-                                    <p class="stats-headline">Global ranking for science reserach influence</p>
-                                        <p class="stats-source">Source: THE 2019</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="stats-container">
-                                    <div class="stats-rank">
-                                        <p>#5</p>
-                                    </div>
-                                    <div class="stats-meta">
-                                        <p class="stats-headline">Global ranking for science reserach influence</p>
-                                        <p class="stats-source">Source: THE 2019</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="stats-container">
-                                    <div class="stats-rank">
-                                        <p>#5</p>
-                                    </div>
-                                    <div class="stats-meta">
-                                        <p class="stats-headline">Global ranking for science reserach influence</p>
-                                        <p class="stats-source">Source: THE 2019</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div> -->
-
-                    <div class="hero-chevron"><i class="fa fa-angle-down fa-4x"></i>
+                  <div class="hero-chevron">
+                    <img src="<?php echo get_stylesheet_directory_uri()?>/images/chevron-md-yellow.svg">
                     </div><!-- .wrap -->
                 </div><!-- .hero-home -->
             </div><!-- .site-branding -->

@@ -216,6 +216,12 @@
             border: none;
             margin-bottom: 30px;
         }
+        .stats-home {
+            // li:nth-child(even) {
+            //     border-left: 2px solid $ucsc--primary-yellow;
+            //     border-right: 2px solid $ucsc--primary-yellow;
+            // }
+        }
         .hero-chevron {
             color: $ucsc--primary-yellow;
             // position: absolute;
