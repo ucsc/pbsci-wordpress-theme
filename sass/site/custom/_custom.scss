@@ -204,10 +204,26 @@
         }
         height: 50vh;
         background-size: cover;
-        min-height: 500px;
+        // min-height: 500px;
+        .flex-column.flex-wrap {
+            min-height: 50vh;
+            align-items: center;
+            @media only screen and (min-width: $screen-size--large) {
+                min-height: 100vh;
+            }
+        }
+        .hero-hidden {
+            margin-top: auto;
+            visibility: hidden;
+        }
+        .panel {
+            margin-top: auto;
+            background-color: rgba(0, 0, 0, 0.25);
+            padding: 5px 0;
+        }
         .wrap {
-            height: inherit;
-            min-height: 500px;
+            // height: inherit;
+            // min-height: 500px;
         }
         .flexslider {
             // flex: 1;
@@ -223,11 +239,12 @@
             // }
         }
         .hero-chevron {
+            // margin-bottom: auto;
             color: $ucsc--primary-yellow;
             // position: absolute;
             // left: 50%;
             // bottom: 5px;
-            margin: 0 auto;
+            // margin: 0 auto auto;
             // width: 30px;
             // height: 30px;
             border-radius: 50%;
