@@ -20,6 +20,7 @@
         animationLoop: false,
         itemWidth: 350,
         itemMargin: 5,
+        controlNav: false,
         minItems: getGridSize(), // use function to pull in initial value
         maxItems: getGridSize() // use function to pull in initial value
       });

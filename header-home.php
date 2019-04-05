@@ -47,14 +47,17 @@
                 foreach ($slideRows as $slideRow){
                     echo '<li><div class="stats-container"><div class="stats-rank"><p>#'.$slideRow['stat_rank'].'</p></div><div class="stats-meta"><p class="stats-headline">'.$slideRow['stat_heading'].'</p><p class="stats-source">Source: '.$slideRow['stat_source'].'</p></div></div> </li>';
                 }
-                echo'</ul></div></div></div>';
+                echo'</ul></div></div>';
             }
 			?>
                   <div class="hero-chevron">
                     <img src="<?php echo get_stylesheet_directory_uri()?>/images/chevron-md-yellow.svg">
-                    </div><!-- .wrap -->
-                </div><!-- .hero-home -->
-            </div><!-- .site-branding -->
-        </header><!-- #masthead -->
+                    </div>
+                </div></div>
+            <!-- .hero-home -->
+            </div>
+        <!-- .site-branding -->
+        </header>
+        <!-- #masthead -->
 
         <div id="content" class="site-content">

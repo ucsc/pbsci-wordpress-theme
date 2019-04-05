@@ -200,7 +200,7 @@
     .hero-home {
         @media only screen and (min-width: $screen-size--large) {
             background-position-y: -150px !important;
-            height: 100vh;
+            height: 90vh;
         }
         height: 50vh;
         background-size: cover;
@@ -209,7 +209,7 @@
             min-height: 50vh;
             align-items: center;
             @media only screen and (min-width: $screen-size--large) {
-                min-height: 100vh;
+                min-height: 90vh;
             }
         }
         .hero-hidden {
@@ -219,18 +219,18 @@
         .panel {
             margin-top: auto;
             background-color: rgba(0, 0, 0, 0.25);
-            padding: 5px 0;
+            background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+            padding: 20px 0;
         }
         .wrap {
-            // height: inherit;
-            // min-height: 500px;
+            padding: 15px 0;
         }
         .flexslider {
             // flex: 1;
             margin-top: auto;
             background: transparent;
             border: none;
-            margin-bottom: 30px;
+            margin-bottom: 0px;
         }
         .stats-home {
             // li:nth-child(even) {
@@ -241,15 +241,15 @@
         .hero-chevron {
             // margin-bottom: auto;
             color: $ucsc--primary-yellow;
-            // position: absolute;
-            // left: 50%;
-            // bottom: 5px;
-            // margin: 0 auto auto;
-            // width: 30px;
-            // height: 30px;
+            position: absolute;
+            left: 48%;
+            padding: 5px;
+            margin: 0 auto;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             text-align: center;
-            // background: $color__white;
+            background: $color__white;
         }
     }
     
