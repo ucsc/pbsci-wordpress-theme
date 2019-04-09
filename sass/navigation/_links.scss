@@ -50,3 +50,11 @@
                 color: $ucsc--light-blue;
             }
         }
+        
+        .logo {
+            &:hover,
+            &:focus,
+            &:active {
+                border-bottom: none;
+            }
+        }
