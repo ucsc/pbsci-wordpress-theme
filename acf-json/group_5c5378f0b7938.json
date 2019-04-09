@@ -101,6 +101,22 @@
                     "prepend": "Source:",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_5caccb99ac07c",
+                    "label": "Source Link",
+                    "name": "source_link",
+                    "type": "url",
+                    "instructions": "Enter the link to the source here",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
                 }
             ]
         },
@@ -808,5 +824,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1552603038
+    "modified": 1554828282
 }
