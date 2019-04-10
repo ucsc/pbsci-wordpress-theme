@@ -13,7 +13,7 @@
 
 </div><!-- #content -->
 
-<footer id="colophon" class="site-footer">
+<footer id="colophon" class="site-footer front-page-blue-panel">
 
     <div class="panel">
         <div class="wrap">

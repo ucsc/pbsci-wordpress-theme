@@ -10,7 +10,7 @@
             aria-expanded="false">
             <i class="fas fa-bars"></i>
         </span>
-        <?php echo '<a href="/" class="logo"><span class="h-logo"><img src="'.IMAGES.'/science-logo.svg" alt="" /></span></a>';
+        <?php echo '<a href="/" class="logo"><img src="'.IMAGES.'/science-logo.svg" alt="" /></a>';
         wp_nav_menu( array(
             'theme_location' => 'menu-1',
             'menu_id' => 'primary-menu',

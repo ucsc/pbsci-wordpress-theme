@@ -153,6 +153,21 @@ function ucsc_pbsci_widgets_init() {
 add_action( 'widgets_init', 'ucsc_pbsci_widgets_init' );
 
 /**
+ * Add new image sizes
+ */
+add_image_size('page-hero', 1905, 430, true);
+
+/**
+ * Register new image sizes for Add Media modal
+ */
+add_filter('image_size_names_choose','ucsc_pbsci_custom_sizes');
+function ucsc_pbsci_custom_sizes ($sizes) {
+	return array_merge($sizes, array(
+		'page-hero' => __('Hero Image'),
+	));
+}
+
+/**
  * Deregister WordPress JQuery and register Google JQuery library
  */
 

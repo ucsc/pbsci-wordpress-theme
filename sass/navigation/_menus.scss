@@ -62,7 +62,7 @@
     display: block;
 }
 
-@media screen and (min-width: 48em) {
+@media only screen and (min-width: $screen-size--medium) {
     .menu-toggle {
         display: none;
     }
@@ -120,7 +120,7 @@
         box-sizing: border-box;
     }
     .nav-wrap {
-        @media only screen and (min-width: $screen-size--small) {
+        @media only screen and (min-width: $screen-size--medium) {
             display: flex;
             justify-content: space-between;
             padding-bottom: 0;
@@ -136,27 +136,18 @@
         color: rgba(255, 255, 255, 0.8);
         color: $ucsc--primary-blue;
         font-size: 24px;
-        @media only screen and (min-width: $screen-size--small) {
+        @media only screen and (min-width: $screen-size--medium) {
             display: none;
         }
     }
     .logo {
-        // display: inline-block;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        //   font-size: 22px;
-        // background-color: blue;
-        .h-logo {
-            // padding: 10px 10px 10px 0;
-            // border-right: solid 3px $ucsc--primary-yellow;
-            img {
-                width: 250px;
-                height: auto;
-                @media only screen and (min-width: $screen-size--small) {
-                    // width: 250px;
-                }
-            }
+        flex: 0 0 250px;
+        // display: flex;
+        // justify-content: flex-start;
+        // align-items: center;
+        img {
+            width: 250px;
+            height: auto;
         }
     }
     .menu {
@@ -164,7 +155,7 @@
         &.active {
             display: block;
         }
-        @media only screen and (min-width: $screen-size--small) {
+        @media only screen and (min-width: $screen-size--medium) {
             display: flex;
             // margin-right: 30px;
             .active {
@@ -172,6 +163,7 @@
             }
             flex-direction: row;
             justify-content: flex-end;
+            flex-wrap: wrap;
         }
         .menu-item {
             text-align: center;
@@ -182,7 +174,7 @@
             a:visited {
                 color: $color__white;
             }
-            @media only screen and (min-width: $screen-size--small) {
+            @media only screen and (min-width: $screen-size--medium) {
                 margin: 0;
                 padding: 10px;
             }
@@ -191,7 +183,7 @@
 }
 
 ul.menu>li.menu-item:last-child {
-    @media only screen and (min-width: $screen-size--small) {
+    @media only screen and (min-width: $screen-size--medium) {
         margin: 0;
         padding: 0;
         a {
