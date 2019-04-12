@@ -15,6 +15,7 @@
             top: 100%;
             left: -999em;
             z-index: 99999;
+            background: linear-gradient(30deg, #003c6c, #006aad);
             ul {
                 left: -999em;
                 top: 0;
@@ -26,7 +27,7 @@
                 }
             }
             a {
-                width: 200px;
+                // width: 200px;
             }
              :hover>a,
             .focus>a {}
@@ -189,7 +190,7 @@ ul.menu>li.menu-item:last-child {
         a {
             color: $ucsc--primary-yellow!important;
             margin: 0;
-            padding: 10px;
+            padding: 8px;
             border: 2px solid $ucsc--primary-yellow;
             border-radius: 3px;
             &:hover {

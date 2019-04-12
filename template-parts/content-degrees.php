@@ -17,10 +17,9 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
         <div class="entry-content">
-            <div class="flex-wrap">
+        <?php get_template_part( 'template-parts/filter', 'programs' );?>
+        <div class="flex-wrap">
                 <?php
-                //AJAX Search
-                // get_template_part( 'template-parts/degrees', 'search' );
                 // Call Programs post
                 $args = array (
                     'post_type' => 'degree',
@@ -51,6 +50,7 @@
         // end debug
 
         // Construct the parts
+        // echo '<div class="flex-wrap">';
         echo '<!-- Card Container Begin --><div class="card-container">';
         ucsc_pbsci_post_thumbnail();
         echo '<!-- Card Content Begin --><div class="card-content">';
@@ -85,48 +85,7 @@
         if ($program_subtitle !=''){
             echo '<p>'.$program_subtitle.'</p>';
         }
-
-        // if ($degrees):
-        //     echo '<!-- Card Academic Options Begin --><div class="card-academic-options">';
-        //     echo '<ul class="card-list">';
-        //     if(in_array('undergradminor', $degrees)):
-        //         echo '<li>Undergraduate Minor</li>';
-        //     endif;
-        //     if(in_array('gradminor', $degrees)):
-        //         echo '<li>Graduate Minor</li>';
-        //     endif;
-        //     if(in_array('gradcert', $degrees)):
-        //         echo '<li>Graduate Certificate</li>';
-        //     endif;
-        //     if(in_array('undergradhonors', $degrees)):
-        //         echo '<li>Undergraduate Honors</li>';
-        //     endif;
-        //     if(in_array('gradhonors', $degrees)):
-        //         echo '<li>Graduate Honors</li>';
-        //     endif;
-        //     if(in_array('jointmajor', $degrees)):
-        //         echo '<li>Joint Majors</li>';
-        //     endif;
-        //     echo '</ul>';
-        //     echo '</div><!-- Panel Academic Options End -->';
-        // endif;
         echo '</div><!-- Card Content End -->';//end Program Content
-
-        // echo '<!-- Card Blurb Begin --><div id="panelblurb'.$postid.'"class="card-blurb">'.$program_blurb.'</div><!-- Card Blurb End -->';
-
-        // echo '<div class="card-footer">';
-        // echo '<div class="card-department-link">';
-        // if($program_departments){
-        // foreach ($program_departments as $department){
-        //     $dept_post = get_post($department);
-        //     $dept_title = $dept_post->post_title;
-        //     $dept_link = esc_url(get_permalink($department));
-        //     echo '<div class="card-department-link">';
-        //     echo '<a href="'.$dept_link.'"><span>'.$dept_title.' Department Info</span></a>';
-        //     echo '</div>';
-        //     }
-        // }
-        // echo '</div>';
         echo '<div class="card-major-link">';
             // var_dump($department);
             // var_dump($dept_link);

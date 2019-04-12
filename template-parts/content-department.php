@@ -64,6 +64,38 @@
         echo '<p>MS: '.$department_address_mail_stop.'</p>';
         }
         echo '<p>'.$department_address_city.', '.$department_address_state.'&nbsp;'.$department_address_zip.'</p>';
+
+        echo '<div class="flex-wrap">';
+        echo '<div class="dept-info">';
+        echo '<ul class="">';
+        if ($department_location){
+            echo '<li>Campus Location: '.$department_location.'</li>';
+        }
+
+        echo '</ul>';
+        echo '</div>';
+        echo '<div class="dept-info">';
+        echo '<ul class="">';
+        echo '<li>';
+        echo 'hello world';
+        echo '</li>';
+        echo '</ul>';
+        echo '</div>';
+        echo '<div class="dept-info">';
+        echo '<ul class="">';
+        echo '<li>';
+        echo 'hello world';
+        echo '</li>';
+        echo '</ul>';
+        echo '</div>';
+        echo '<div class="dept-info">';
+        echo '<ul class="">';
+        echo '<li>';
+        echo 'hello world';
+        echo '</li>';
+        echo '</ul>';
+        echo '</div>';
+        echo '</div>';
         // debug
         // echo '<pre>';
         // var_dump($department_phone_numbers);
