@@ -24,6 +24,7 @@
         $department_address_university_street_address = get_field('department_address_university_street_address');
         $department_address_dept_name = get_field('department_address_dept_name');
         $department_address_mail_stop = get_field('department_address_mail_stop');
+        $department_address_delivery_building_room = get_field('department_address_delivery_building_room_number');
         $department_address_city = get_field('department_address_city');
         $department_address_state = get_field('department_address_state');
         $department_address_zip = get_field('department_address_zip');
@@ -39,60 +40,58 @@
         }
         //build the parts
         echo $department_blurb;
-
-        if (have_rows('department_phone_numbers')): while (have_rows('department_phone_numbers')):the_row();
-        $department_phone_line = get_sub_field('phone_line');
-        $department_phone_number = get_sub_field('phone_number');
-        echo '<p>';
-        if ($department_phone_line):
-            echo '<span>'.$department_phone_line.': </span>';
-        endif;
-        if ($department_phone_number):
-            echo '<span>'.ucsc_format_dept_phone($department_phone_number).'</span>';
-        endif;
-        endwhile;
-        endif;
-
-
-        echo '<p class="department-location">Department Location: '.$department_location.'</p>';
-        echo '<p><a href="'.$department_website.'">Department Website</a></p>';
-        echo '<p>Mailing Address:</p>';
-        echo '<p>UC Santa Cruz</p>';
-        echo '<p>'.$department_address_dept_name.'</p>';
-        echo '<p>'.$department_address_university_street_address.'</p>';
-        if ($department_address_mail_stop !=""){
-        echo '<p>MS: '.$department_address_mail_stop.'</p>';
-        }
-        echo '<p>'.$department_address_city.', '.$department_address_state.'&nbsp;'.$department_address_zip.'</p>';
-
         echo '<div class="flex-wrap">';
         echo '<div class="dept-info">';
         echo '<ul class="">';
         if ($department_location){
-            echo '<li>Campus Location: '.$department_location.'</li>';
+            echo '<li><h3>Department Location</h3></li>';
+            echo '<li>'.$department_location.'</li>';
+        }
+        if($department_website){
+            echo '<li><a href="'.$department_website.'">Department Website</a></li>';
         }
 
         echo '</ul>';
         echo '</div>';
         echo '<div class="dept-info">';
         echo '<ul class="">';
-        echo '<li>';
-        echo 'hello world';
-        echo '</li>';
+        echo '<li class=""><h3>Telephone</h3></li>';
+        if (have_rows('department_phone_numbers')): while (have_rows('department_phone_numbers')):the_row();
+        $department_phone_line = get_sub_field('phone_line');
+        $department_phone_number = get_sub_field('phone_number');
+        // echo '<p>';
+        if ($department_phone_line):
+            echo '<li><span class="dept-lable">'.$department_phone_line.': </span>';
+        endif;
+        if ($department_phone_number):
+            echo '<span>'.ucsc_format_dept_phone($department_phone_number).'</span></li>';
+        endif;
+        endwhile;
+        endif;
+        echo '</ul>';
+        echo '</div>';
+        echo '<div class="dept-info">';
+        echo '<ul>';
+        echo '<li><h3>USPS Mailing Address</h3></li>';
+        echo '<li>UC Santa Cruz</li>';
+        echo '<li>Department of '.$department_address_dept_name.'</li>';
+        echo '<li>'.$department_address_university_street_address.'</li>';
+        if ($department_address_mail_stop !=""){
+            echo '<li>MS: '.$department_address_mail_stop.'</li>';
+            }
+        echo '<li>'.$department_address_city.', '.$department_address_state.'&nbsp;'.$department_address_zip.'</li>';
         echo '</ul>';
         echo '</div>';
         echo '<div class="dept-info">';
         echo '<ul class="">';
-        echo '<li>';
-        echo 'hello world';
-        echo '</li>';
-        echo '</ul>';
-        echo '</div>';
-        echo '<div class="dept-info">';
-        echo '<ul class="">';
-        echo '<li>';
-        echo 'hello world';
-        echo '</li>';
+        echo '<li><h3>FedEx/UPS Delivery Address</h3></li>';
+        echo '<li>UC Santa Cruz</li>';
+        echo '<li>Department of '.$department_address_dept_name.'</li>';
+        echo '<li>'.$department_address_university_street_address.'</li>';
+        if ($department_address_delivery_building_room !=""){
+            echo '<li>'.$department_address_delivery_building_room.'</li>';
+            }
+        echo '<li>'.$department_address_city.', '.$department_address_state.'&nbsp;'.$department_address_zip.'</li>';
         echo '</ul>';
         echo '</div>';
         echo '</div>';

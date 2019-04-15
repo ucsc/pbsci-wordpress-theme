@@ -2,4 +2,13 @@
     @media only screen and (min-width: $screen-size--small) {
         flex-basis: 50%;
     }
+    ul {
+        list-style-type: none;
+    }
+    li {
+        line-height: 1.5;
+    }
+    .dept-lable {
+        font-weight: 700;
+    }
 }

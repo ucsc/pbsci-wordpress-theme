@@ -188,6 +188,25 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_5cb511a8d5b0a",
+                    "label": "Delivery Building Room Number",
+                    "name": "delivery_building_room_number",
+                    "type": "text",
+                    "instructions": "Enter the name and number of the campus building where the department receives deliveries.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5b7de3d1467c3",
                     "label": "University Street Address",
                     "name": "university_street_address",
@@ -285,5 +304,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1552603062
+    "modified": 1555370591
 }
