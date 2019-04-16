@@ -11,9 +11,9 @@
 }
 
 .card-container {
-    margin-bottom: 20px;
+    margin-bottom: 2em;
     @media only screen and (min-width: $screen-size--small) {
-        flex-basis: 32%;
+        flex-basis: 30%;
     }
     .post-thumbnail {
         margin: 0 -5%;
@@ -27,46 +27,11 @@
             h3 {
                 margin: 10px 0;
             }
-            // .card-degrees-offered {
-            //     // flex: 0 1 100%;
-            //     @media only screen and (min-width: $screen-size--small) {
-            //         // flex: 0 1 auto;
-            //     }
-            //     .card-list {
-            //         justify-content: flex-start;
-            //         li {
-            //             height: 2.1875rem;
-            //             width: 2.1875rem;
-            //             border-radius: 2.1875rem;
-            //             line-height: 2.0625rem;
-            //             color: #fff;
-            //             @include font-size(.75);
-            //             // text-transform: uppercase;
-            //             font-weight: bold;
-            //             &:first-child {
-            //                 margin-left: 0;
-            //             }
-            //             &.minor {
-            //                 background: $ucsc--primary-yellow;
-            //             }
-            //             &.ba {
-            //                 background: $ucsc--light-blue;
-            //             }
-            //             &.bs {
-            //                 background: $ucsc--green;
-            //             }
-            //             &.ma {
-            //                 background: $ucsc--orange;
-            //             }
-            //             &.ms {
-            //                 background: $ucsc--blue-green;
-            //             }
-            //             &.phd {
-            //                 background: $ucsc--magenta;
-            //             }
-            //         }
-            //     }
-            // }
+        }
+    }
+    .card-blurb {
+         :first-child {
+            margin-top: 0;
         }
     }
     .card-major-link {
@@ -105,12 +70,13 @@
         li {
             height: 2.1875rem;
             width: 2.1875rem;
-            border-radius: 2.1875rem;
-            line-height: 2.0625rem;
+            border-radius: 50%;
+            line-height: 2.6;
             color: #fff;
             @include font-size(.75);
             // text-transform: uppercase;
             font-weight: bold;
+            padding-top: 0.2em;
             &:first-child {
                 margin-left: 0;
             }
