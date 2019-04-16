@@ -15,6 +15,8 @@
                 "class": "",
                 "id": ""
             },
+            "show_prefix": 1,
+            "maxlength": 200,
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
@@ -39,6 +41,159 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5cb6077d7c08e",
+            "label": "Department Office Hours",
+            "name": "department_office_hours",
+            "type": "repeater",
+            "instructions": "Please use the fields below to enter department office hours. If your office is open at different times on different days, you may add a row.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5cb609897c08f",
+                    "label": "Day from",
+                    "name": "day_from",
+                    "type": "select",
+                    "instructions": "Select the first day of the week you are open.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "monday": "Monday",
+                        "tuesday": "Tuesday",
+                        "wednesday": "Wednesday",
+                        "thursday": "Thursday",
+                        "friday": "Friday",
+                        "saturday": "Saturday",
+                        "sunday": "Sunday"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "label",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5cb60b0f7c090",
+                    "label": "Day to",
+                    "name": "day_to",
+                    "type": "select",
+                    "instructions": "Select the last day of the week you are open.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "monday": "Monday",
+                        "tuesday": "Tuesday",
+                        "wednesday": "Wednesday",
+                        "thursday": "Thursday",
+                        "friday": "Friday",
+                        "saturday": "Saturday",
+                        "sunday": "Sunday"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "label",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5cb60b597c091",
+                    "label": "Morning Open",
+                    "name": "morning_open",
+                    "type": "time_picker",
+                    "instructions": "Select the opening morning time.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_prefix": 0,
+                    "maxlength": "",
+                    "display_format": "g:i a",
+                    "return_format": "g:i a"
+                },
+                {
+                    "key": "field_5cb60bc97c092",
+                    "label": "Morning Closed",
+                    "name": "morning_closed",
+                    "type": "time_picker",
+                    "instructions": "Select the morning closing time.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_prefix": 0,
+                    "maxlength": "",
+                    "display_format": "g:i a",
+                    "return_format": "g:i a"
+                },
+                {
+                    "key": "field_5cb60c0f7c093",
+                    "label": "Afternoon Open",
+                    "name": "afternoon_open",
+                    "type": "time_picker",
+                    "instructions": "Select the afternoon open hours.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_prefix": 0,
+                    "maxlength": "",
+                    "display_format": "g:i a",
+                    "return_format": "g:i a"
+                },
+                {
+                    "key": "field_5cb60c3c7c094",
+                    "label": "Afternoon Closed",
+                    "name": "afternoon_closed",
+                    "type": "time_picker",
+                    "instructions": "Select the afternoon closed hour.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_prefix": 0,
+                    "maxlength": "",
+                    "display_format": "g:i a",
+                    "return_format": "g:i a"
+                }
+            ]
         },
         {
             "key": "field_5b80326f370db",
@@ -304,5 +459,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1555370591
+    "modified": 1555443034
 }

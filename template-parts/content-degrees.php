@@ -17,7 +17,7 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
         <div class="entry-content">
-        <?php get_template_part( 'template-parts/filter', 'programs' );?>
+        <?php //get_template_part( 'template-parts/filter', 'programs' );?>
         <div class="flex-wrap">
                 <?php
                 // Call Programs post
