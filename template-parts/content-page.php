@@ -8,11 +8,7 @@
  */
 
 ?>
-<div class="crumbs">
-    <div class="wrap">
-        <?php get_template_part( 'template-parts/breadcrumbs','all' ); ?>
-    </div>
-</div>
+
 <div class="wrap">
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
