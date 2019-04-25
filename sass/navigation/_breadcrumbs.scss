@@ -1,0 +1,8 @@
+.breadcrumbs {
+    color: $ucsc--primary-yellow;
+    a {
+        &:visited {
+            color: $ucsc--primary-yellow;
+        }
+    }
+}

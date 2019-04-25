@@ -44,7 +44,6 @@
         }
         
         .white-cell-link {
-            // color: $ucsc__primary-yellow;
             color: $ucsc--light-blue;
             font-weight: 900;
             &:visited {
@@ -60,5 +59,8 @@
             }
         }
         
-        // .stats-source {
-        // }
+        .stats-source {
+            a {
+                color: $color__white;
+            }
+        }

@@ -105,7 +105,11 @@
         <div class="hero-page-runner mobile">
                     <div class="wrap flex-wrap">
                         <header class="entry-header flex-wrap">
+                        <div class="entry-header-left">
                             <span class="entry-header-span-a">Science</span>
+                        </div>
+                        <div class="entry-header-right">
+                        <?php get_template_part( 'template-parts/breadcrumbs','head' ); ?>
                             <span class="entry-header-span-b flex-wrap">
                             <?php
                             if (is_page()) :
@@ -151,6 +155,7 @@
                                 }
 
                             ?></span>
+                            </div>
                         </header><!-- .entry-header -->
 
                     </div><!-- .hero-home wrap -->

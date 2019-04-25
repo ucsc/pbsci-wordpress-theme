@@ -15,19 +15,31 @@
             top: 100%;
             left: -999em;
             z-index: 99999;
-            background: linear-gradient(30deg, #003c6c, #006aad);
+            // background: linear-gradient(30deg, #003c6c, #006aad);
+            background: $color__white;
             ul {
                 left: -999em;
                 top: 0;
             }
             li {
+                border-bottom: 1px solid #2d2d2d;
+                &:last-child {
+                    border-bottom: none;
+                }
+                &:hover {
+                    background-color: $ucsc--primary-blue;
+                    color: $color__white;
+                }
                 &:hover>ul,
                 &.focus>ul {
                     left: 100%;
                 }
             }
             a {
-                // width: 200px;
+                color: $ucsc--primary-blue !important;
+                &:hover {
+                    color: $color__white!important;
+                }
             }
              :hover>a,
             .focus>a {}
