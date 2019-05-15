@@ -25,7 +25,7 @@
 
 		//Set up the parts
 		$department_title = get_the_title();
-		$department_url = get_permalink();
+		$department_url = get_field('department_website');
 		$department_blurb = get_field('department_blurb');
 		//Construct the parts
 		echo '<!-- Card Container Begin --><div class="card-container">';

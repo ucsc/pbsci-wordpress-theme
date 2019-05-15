@@ -17,8 +17,17 @@
     }
     .post-thumbnail {
         margin: 0 -5%;
+        height: auto;
+        overflow: hidden;
         @media only screen and (min-width: $screen-size--small) {
             margin: 0 auto;
+        }
+        img {
+            // transition: transform .5s ease;
+            transition: transform .5s, filter 1.5s ease-in-out;
+        }
+        &:hover img {
+            transform: scale(1.1);
         }
     }
     .card-content {
@@ -34,30 +43,30 @@
             margin-top: 0;
         }
     }
-    .card-major-link {
-        a {
-            display: block;
-            border: 1px solid #dcdcdc;
-            border-radius: 3px;
-            color: $ucsc--light-blue;
-            &:hover,
-            &:visited {
-                color: $ucsc--light-blue;
-            }
-            span {
-                padding: 0.5em;
-                display: block;
-                background: transparent url(images/chevron.svg) no-repeat 96% center;
-                background-size: auto 1.5em;
-                // -webkit-transition-property: background;
-                // transition-property: background;
-                // -webkit-transition-duration: 0.2s;
-                // transition-duration: 0.2s;
-                // -webkit-transition-timing-function: linear;
-                // transition-timing-function: linear;
-            }
-        }
-    }
+    // .card-major-link {
+    //     a {
+    //         display: block;
+    //         border: 1px solid #dcdcdc;
+    //         border-radius: 3px;
+    //         color: $ucsc--light-blue;
+    //         &:hover,
+    //         &:visited {
+    //             color: $ucsc--light-blue;
+    //         }
+    //         span {
+    //             padding: 0.5em;
+    //             display: block;
+    //             background: transparent url(images/chevron.svg) no-repeat 96% center;
+    //             background-size: auto 1.5em;
+    //             // -webkit-transition-property: background;
+    //             // transition-property: background;
+    //             // -webkit-transition-duration: 0.2s;
+    //             // transition-duration: 0.2s;
+    //             // -webkit-transition-timing-function: linear;
+    //             // transition-timing-function: linear;
+    //         }
+    //     }
+    // }
 }
 
 .card-degrees-offered {

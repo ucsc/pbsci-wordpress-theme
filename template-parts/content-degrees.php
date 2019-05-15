@@ -15,6 +15,8 @@
         <?php //get_template_part( 'template-parts/filter', 'programs' );?>
         <div class="flex-wrap">
                 <?php
+                // add custom body class
+                add_filter( 'body_class','ucsc_pbsci_add_body_classes' );
                 // Call Programs post
                 $args = array (
                     'post_type' => 'degree',
@@ -47,6 +49,7 @@
         // Construct the parts
         // echo '<div class="flex-wrap">';
         echo '<!-- Card Container Begin --><div class="card-container">';
+        echo '<a href="'.esc_url(get_permalink()).'">';
         ucsc_pbsci_post_thumbnail();
         echo '<!-- Card Content Begin --><div class="card-content">';
         echo '<!-- Card Header Begin --><div class="card-header">';
@@ -81,16 +84,18 @@
             echo '<p>'.$program_subtitle.'</p>';
         }
         echo '</div><!-- Card Content End -->';//end Program Content
-        echo '<div class="card-major-link">';
+        // echo '<div class="card-major-link">';
             // var_dump($department);
             // var_dump($dept_link);
-            echo '<a href="'.esc_url(get_permalink()).'"><span>Degree Requirements</span></a>';
+        // echo '<a href="'.esc_url(get_permalink()).'"><span>Degree Requirements</span></a>';
 
-        echo '</div>';
+
+        // echo '</div>';
         // if ($program_blurb){
             // echo '<div class="card-more-button"><button class="panel-toggle" id="'.$postid.'">More</button></div>';
         // }
         // echo '</div><!-- end Program Footer -->'; //end Program Footer
+        echo '</a>';
         echo '</div><!-- Card Content End -->';//end Card Content
         wp_reset_postdata();
         endwhile; endif;

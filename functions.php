@@ -73,11 +73,7 @@ if ( ! function_exists( 'ucsc_pbsci_setup' ) ) :
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/**
-		 * Add support for core c<div class="panel-heading-footer flex-wrap">
-                    <!-- <span class="f-logo"> -->
-                        <img src="<?php echo IMAGES?>/science-logo.svg" alt=""/>
-                    <!-- </span> -->
-                </div>ustom logo.
+		 * Add support for core custom logo.
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
@@ -191,7 +187,7 @@ function ucsc_pbsci_scripts() {
 
 	// wp_enqueue_script( 'ucsc-pbsci-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'ucsc-pbsci-navigation-2', get_template_directory_uri() . '/js/navigation2.js', array(), '', true );
+	// wp_enqueue_script( 'ucsc-pbsci-navigation-2', get_template_directory_uri() . '/js/navigation2.js', array(), '', true );
 
 	wp_enqueue_script( 'ucsc-pbsci-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -278,4 +274,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
+}
+
+/**
+ * custom body class adder
+ */
+// add_filter( 'body_class','ucsc_pbsci_add_body_classes' );
+function ucsc_pbsci_add_body_classes( $classes ) {
+
+    $classes[] = 'grid';
+
+    return $classes;
+
 }
