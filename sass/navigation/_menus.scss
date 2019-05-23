@@ -13,6 +13,9 @@
             float: left;
             position: absolute;
             top: 100%;
+            @media only screen and (min-width: $screen-size--medium) {
+                width: auto;
+            }
             left: -999em;
             z-index: 99999;
             // background: linear-gradient(30deg, #003c6c, #006aad);
@@ -66,6 +69,25 @@
     .current-menu-item>a,
     .current_page_ancestor>a,
     .current-menu-ancestor>a {}
+}
+
+.sub-menu {
+    width: 100%;
+    @media only screen and (min-width: $screen-size--medium) {
+        width: auto;
+    }
+    li {
+        widows: 100%;
+        margin: 0!important;
+        padding: 0!important;
+        @media only screen and (min-width: $screen-size--medium) {
+            width: auto;
+        }
+        a {
+            // margin: 15px auto;
+            padding: 10px;
+        }
+    }
 }
 
 

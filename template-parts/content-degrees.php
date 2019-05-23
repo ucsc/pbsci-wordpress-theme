@@ -11,7 +11,7 @@
 <div class="wrap">
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-        <div class="entry-content">
+        <div class="page-content">
         <?php //get_template_part( 'template-parts/filter', 'programs' );?>
         <div class="flex-wrap">
                 <?php

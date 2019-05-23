@@ -187,7 +187,7 @@ function ucsc_pbsci_scripts() {
 
 	// wp_enqueue_script( 'ucsc-pbsci-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	// wp_enqueue_script( 'ucsc-pbsci-navigation-2', get_template_directory_uri() . '/js/navigation2.js', array(), '', true );
+	wp_enqueue_script( 'ucsc-pbsci-navigation-2', get_template_directory_uri() . '/js/navigation2.js', array(), '', true );
 
 	wp_enqueue_script( 'ucsc-pbsci-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

@@ -10,7 +10,7 @@
 ?>
 <div class="wrap">
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <div class="entry-content">
+        <div class="page-content">
 		<div class="flex-wrap">
             <?php
 
