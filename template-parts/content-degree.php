@@ -40,18 +40,18 @@
               echo '<div style="clear:both"></div>';
 
               echo '<div class="majorcontainers">';
-              echo '<div id="overview" class="tab-content">'.get_field('overview').'</div>';
+              echo '<section id="overview" class="tab-content">'.get_field('overview').'</section>';
               if(in_array('ba', $degrees) || in_array('bs', $degrees)) {
-                echo '<div id="ba" class="tab-content">'.get_field('bachelor_degree').'</div>';
+                echo '<section id="ba" class="tab-content">'.get_field('bachelor_degree').'</section>';
                }
             if(in_array('ma', $degrees) || in_array('ms', $degrees)) {
-                echo '<div id="ma" class="tab-content">'.get_field('master_degree').'</div>';
+                echo '<section id="ma" class="tab-content">'.get_field('master_degree').'</section>';
                 }
             if (in_array("phd", $degrees)) {
-                echo '<div id="phd" class="tab-content">'.get_field('doctoral_degree').'</div>';
+                echo '<section id="phd" class="tab-content">'.get_field('doctoral_degree').'</section>';
                 }
             if(in_array('undergradminor', $degrees) || in_array('gradminor', $degrees)){
-                echo '<div id="minor" class="tab-content">'.get_field('minor').'</div>';
+                echo '<section id="minor" class="tab-content">'.get_field('minor').'</section>';
                 }
             // if (in_array("faculty", $major_tabs)) {
             //     echo '<div id="faculty" class="tab-content">'.get_field('faculty').'</div>';

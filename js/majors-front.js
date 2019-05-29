@@ -9,7 +9,7 @@ $(document).ready(function($){
     $(this).attr('aria-selected','true');
     $("#major-tabs li").not($(this).parent('li')).removeClass("active");
     $("#major-tabs li a").not($(this).parent('li')).attr("aria-selected","false");
-    $('.majorcontainers div').hide();
+    $('.majorcontainers section').hide();
     $('#' + $(this).data('rel')).show();
 });
 });
