@@ -1,4 +1,4 @@
-window.onscroll = function() {scrollStuck()};
+// window.onscroll = function() {scrollStuck()};
 var navBar = document.getElementById("site-navigation");
 var mainNav = document.getElementById("primary-menu");
 var navBarToggle = document.getElementById("js-navbar-toggle");
