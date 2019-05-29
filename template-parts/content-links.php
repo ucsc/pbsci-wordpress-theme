@@ -46,11 +46,7 @@
             $postTax = 'student-support-resources-tax';
         }
         if ($postType == 'labs' || $postType == 'student-support') {
-            $taxTerms = get_terms(array(
-                'taxonomy' => $postTax,
-                'hide_empty' => 'true',
-                'parent' => 0 // if 0 is passed, only top level terms returned
-            ));
+            $taxTerms = get_the_terms($post->ID,$postTax);
         }
         //Construct the parts
         echo '<!-- Card Container Begin --><div class="card-container">';
@@ -62,6 +58,14 @@
         echo '</div><!-- card Header End -->';
         echo '</div><!-- card Content End -->';//end Program Content
         echo '</a>';
+        if (! empty  ($taxTerms)) {
+            echo '<ul class="pbsci-taxonomy flex-wrap">';
+            foreach ($taxTerms as $taxTerm){
+                echo '<li>'.$taxTerm->name.'</li>';
+            }
+            echo '</ul>';
+        }
+        //print_r($taxTerms);
         echo '<!-- card Blurb Begin --><div id="cardblurb'.$postid.'"class="card-blurb">'.$post_blurb.'</div><!-- card Blurb End -->';
         echo '</div><!-- card Row End -->';//end Program Row
         wp_reset_postdata();

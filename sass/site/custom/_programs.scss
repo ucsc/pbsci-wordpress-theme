@@ -30,6 +30,24 @@
             transform: scale(1.1);
         }
     }
+    .pbsci-taxonomy {
+        list-style-type: none;
+        margin: 0 0 10px;
+        padding: 0;
+        justify-content: flex-start;
+        li {
+            margin: 0 5px 0 0;
+            color: blue;
+            &:after {
+                content: ",";
+            }
+            &:last-child {
+                &:after {
+                    content: "";
+                }
+            }
+        }
+    }
     .card-content {
         padding: 0 0 10px;
         .card-header {
