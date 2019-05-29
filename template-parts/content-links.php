@@ -26,7 +26,7 @@
         } elseif ($pageTitle == "Student Support") {
             $postType = 'student-support';
         }
-        var_dump($pageTitle);
+        // var_dump($pageTitle);
         // Call post
         $args = array (
             'post_type' => $postType,
