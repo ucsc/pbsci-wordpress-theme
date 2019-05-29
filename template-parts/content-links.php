@@ -40,6 +40,18 @@
         $post_title = get_the_title();
         $post_url = get_field('external_url');
         $post_blurb = get_the_excerpt();
+        if($postType == 'labs'){
+            $postTax = 'researcher-faculty-labs-tax';
+        } elseif ($postType == 'student-support') {
+            $postTax = 'student-support-resources-tax';
+        }
+        if ($postType == 'labs' || $postType == 'student-support') {
+            $taxTerms = get_terms(array(
+                'taxonomy' => $postTax,
+                'hide_empty' => 'true',
+                'parent' => 0 // if 0 is passed, only top level terms returned
+            ));
+        }
         //Construct the parts
         echo '<!-- Card Container Begin --><div class="card-container">';
         echo '<a href="'.esc_url($post_url).'">';
