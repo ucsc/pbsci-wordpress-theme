@@ -20,22 +20,48 @@ get_header('home');
  *
  */
  /** Panel One */
-$panelOneHead = get_field('panel_one_heading');
-$panelOneSubhead = get_field('panel_one_subheading');
-$panelOneCellOneMedia = get_field('p1_cell_one_media');
+ if(have_rows('panel_one')):
+    while(have_rows('panel_one')): the_row();
+        $panelOneHead = get_sub_field('panel_one_heading');
+        $panelOneSubhead = get_sub_field('panel_one_subheading');
+        if(have_rows('panel_one_cell_one')):
+            while(have_rows('panel_one_cell_one')): the_row();
+            $panelOneCellOneMedia = get_sub_field('p1_cell_one_media');
+            endwhile;
+        endif;
+    endwhile;
+ endif;
 
 /** Panel Two */
-$panelTwoHead = get_field('panel_two_heading');
-$panelTwoSubhead = get_field('panel_two_subheading');
-$panelTwoCellOneMedia = get_field('p2_cell_one_media');
-$panelTwoCellOneMeta = get_field('p2_cell_one_meta');
-$panelTwoCellOneTeaser = get_field('p2_cell_one_teaser');
-$panelTwoCellTwoMedia = get_field('p2_cell_two_media');
-$panelTwoCellTwoMeta = get_field('p2_cell_two_meta');
-$panelTwoCellTwoTeaser = get_field('p2_cell_two_teaser');
-$panelTwoCellThreeMedia = get_field('p2_cell_three_media');
-$panelTwoCellThreeMeta = get_field('p2_cell_three_meta');
-$panelTwoCellThreeTeaser = get_field('p2_cell_three_teaser');
+$panelTwo = get_field('panel_two');
+//  var_dump($panelTwo);
+if(have_rows('panel_two')):
+    while(have_rows('panel_two')): the_row();
+        $panelTwoHead = get_sub_field('panel_two_heading');
+        $panelTwoSubhead = get_sub_field('panel_two_subheading');
+        if(have_rows('panel_two_cell_one')):
+            while(have_rows('panel_two_cell_one')): the_row();
+            $panelTwoCellOneMedia = get_sub_field('p2_cell_one_media');
+            $panelTwoCellOneMeta = get_sub_field('p2_cell_one_meta');
+            $panelTwoCellOneTeaser = get_sub_field('p2_cell_one_teaser');
+            endwhile;
+        endif;
+        if(have_rows('panel_two_cell_two')):
+            while(have_rows('panel_two_cell_two')): the_row();
+            $panelTwoCellTwoMedia = get_sub_field('p2_cell_two_media');
+            $panelTwoCellTwoMeta = get_sub_field('p2_cell_two_meta');
+            $panelTwoCellTwoTeaser = get_sub_field('p2_cell_two_teaser');
+            endwhile;
+        endif;
+        if(have_rows('panel_two_cell_three')):
+            while(have_rows('panel_two_cell_three')): the_row();
+            $panelTwoCellThreeMedia = get_sub_field('p2_cell_three_media');
+            $panelTwoCellThreeMeta = get_sub_field('p2_cell_three_meta');
+            $panelTwoCellThreeTeaser = get_sub_field('p2_cell_three_teaser');
+            endwhile;
+        endif;
+    endwhile;
+ endif;
 
 /** Panel Three */
 $panelThreeHead = get_field('panel_three_heading');
