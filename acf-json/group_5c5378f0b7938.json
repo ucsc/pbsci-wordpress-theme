@@ -313,15 +313,15 @@
                                 "id": ""
                             },
                             "choices": {
-                                "primary-blue": "UCSC Primary Blue",
-                                "primary-yellow": "UCSC Primary Yellow",
-                                "light-blue": "UCSC Light Blue",
-                                "lighter-blue": "UCSC Lighter Blue",
-                                "aquamarine": "UCSC Aquamarine",
-                                "orange": "UCSC Orange",
-                                "light-orange": "UCSC Light Orange",
-                                "green": "UCSC Green",
-                                "rubine-red": "UCSC Reddish"
+                                "#003c6c": "UCSC Primary Blue",
+                                "#fdc700": "UCSC Primary Yellow",
+                                "#006aad": "UCSC Light Blue",
+                                "#13a5dc": "UCSC Lighter Blue",
+                                "#007988": "UCSC Aquamarine",
+                                "#f29813": "UCSC Orange",
+                                "#ffbf00": "UCSC Light Orange",
+                                "#93c02d": "UCSC Green",
+                                "#da216d": "UCSC Reddish"
                             },
                             "default_value": [],
                             "allow_null": 0,
@@ -413,15 +413,15 @@
                                 "id": ""
                             },
                             "choices": {
-                                "primary-blue": "UCSC Primary Blue",
-                                "primary-yellow": "UCSC Primary Yellow",
-                                "light-blue": "UCSC Light Blue",
-                                "lighter-blue": "UCSC Lighter Blue",
-                                "aquamarine": "UCSC Aquamarine",
-                                "orange": "UCSC Orange",
-                                "light-orange": "UCSC Light Orange",
-                                "green": "UCSC Green",
-                                "rubine-red": "UCSC Reddish"
+                                "#003c6c": "UCSC Primary Blue",
+                                "#fdc700": "UCSC Primary Yellow",
+                                "#006aad": "UCSC Light Blue",
+                                "#13a5dc": "UCSC Lighter Blue",
+                                "#007988": "UCSC Aquamarine",
+                                "#f29813": "UCSC Orange",
+                                "#ffbf00": "UCSC Light Orange",
+                                "#93c02d": "UCSC Green",
+                                "#da216d": "UCSC Reddish"
                             },
                             "default_value": [],
                             "allow_null": 0,
@@ -511,15 +511,15 @@
                                 "id": ""
                             },
                             "choices": {
-                                "primary-blue": "UCSC Primary Blue",
-                                "primary-yellow": "UCSC Primary Yellow",
-                                "light-blue": "UCSC Light Blue",
-                                "lighter-blue": "UCSC Lighter Blue",
-                                "aquamarine": "UCSC Aquamarine",
-                                "orange": "UCSC Orange",
-                                "light-orange": "UCSC Light Orange",
-                                "green": "UCSC Green",
-                                "rubine-red": "UCSC Reddish"
+                                "#003c6c": "UCSC Primary Blue",
+                                "#fdc700": "UCSC Primary Yellow",
+                                "#006aad": "UCSC Light Blue",
+                                "#13a5dc": "UCSC Lighter Blue",
+                                "#007988": "UCSC Aquamarine",
+                                "#f29813": "UCSC Orange",
+                                "#ffbf00": "UCSC Light Orange",
+                                "#93c02d": "UCSC Green",
+                                "#da216d": "UCSC Reddish"
                             },
                             "default_value": [],
                             "allow_null": 0,
@@ -609,15 +609,15 @@
                                 "id": ""
                             },
                             "choices": {
-                                "primary-blue": "UCSC Primary Blue",
-                                "primary-yellow": "UCSC Primary Yellow",
-                                "light-blue": "UCSC Light Blue",
-                                "lighter-blue": "UCSC Lighter Blue",
-                                "aquamarine": "UCSC Aquamarine",
-                                "orange": "UCSC Orange",
-                                "light-orange": "UCSC Light Orange",
-                                "green": "UCSC Green",
-                                "rubine-red": "UCSC Reddish"
+                                "#003c6c": "UCSC Primary Blue",
+                                "#fdc700": "UCSC Primary Yellow",
+                                "#006aad": "UCSC Light Blue",
+                                "#13a5dc": "UCSC Lighter Blue",
+                                "#007988": "UCSC Aquamarine",
+                                "#f29813": "UCSC Orange",
+                                "#ffbf00": "UCSC Light Orange",
+                                "#93c02d": "UCSC Green",
+                                "#da216d": "UCSC Reddish"
                             },
                             "default_value": [],
                             "allow_null": 0,
@@ -1131,5 +1131,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1559257250
+    "modified": 1559340526
 }

@@ -19,8 +19,9 @@ get_header('home');
  * Home Page Variables
  *
  */
- /** Panel One */
- if(have_rows('panel_one')):
+
+ /** Panel One Variables */
+if(have_rows('panel_one')):
     while(have_rows('panel_one')): the_row();
         $panelOneHead = get_sub_field('panel_one_heading');
         $panelOneSubhead = get_sub_field('panel_one_subheading');
@@ -29,55 +30,92 @@ get_header('home');
             $panelOneCellOneMedia = get_sub_field('p1_cell_one_media');
             endwhile;
         endif;
+        if(have_rows('panel_one_cell_two')):
+            while(have_rows('panel_one_cell_two')): the_row();
+                $panelOneCellTwoQuadOneIcon = get_sub_field('p1_cell_two_quad_one_icon');
+                $panelOneCellTwoQuadOneIconColor = get_sub_field('p1_cell_two_quad_one_icon_color');
+                $panelOneCellTwoQuadOneLink = get_sub_field('p1_cell_two_quad_one_link');
+                    if($panelOneCellTwoQuadOneLink):
+                        $panelOneCellTwoQuadOneLinkUrl = $panelOneCellTwoQuadOneLink['url'];
+                        $panelOneCellTwoQuadOneLinkTitle = $panelOneCellTwoQuadOneLink['title'];
+                    endif;
+                $panelOneCellTwoQuadTwoIcon = get_sub_field('p1_cell_two_quad_two_icon');
+                $panelOneCellTwoQuadTwoIconColor = get_sub_field('p1_cell_two_quad_two_icon_color');
+                $panelOneCellTwoQuadTwoLink = get_sub_field('p1_cell_two_quad_two_link');
+                    if($panelOneCellTwoQuadTwoLink):
+                        $panelOneCellTwoQuadTwoLinkUrl = $panelOneCellTwoQuadTwoLink['url'];
+                        $panelOneCellTwoQuadTwoLinkTitle = $panelOneCellTwoQuadTwoLink['title'];
+                    endif;
+                $panelOneCellTwoQuadThreeIcon = get_sub_field('p1_cell_two_quad_three_icon');
+                $panelOneCellTwoQuadThreeIconColor = get_sub_field('p1_cell_two_quad_three_icon_color');
+                $panelOneCellTwoQuadThreeLink = get_sub_field('p1_cell_two_quad_three_link');
+                    if($panelOneCellTwoQuadThreeLink):
+                        $panelOneCellTwoQuadThreeLinkUrl = $panelOneCellTwoQuadThreeLink['url'];
+                        $panelOneCellTwoQuadThreeLinkTitle = $panelOneCellTwoQuadThreeLink['title'];
+                    endif;
+                $panelOneCellTwoQuadFourIcon = get_sub_field('p1_cell_two_quad_four_icon');
+                $panelOneCellTwoQuadFourIconColor = get_sub_field('p1_cell_two_quad_four_icon_color');
+                $panelOneCellTwoQuadFourLink = get_sub_field('p1_cell_two_quad_four_link');
+                    if($panelOneCellTwoQuadFourLink):
+                        $panelOneCellTwoQuadFourLinkUrl = $panelOneCellTwoQuadFourLink['url'];
+                        $panelOneCellTwoQuadFourLinkTitle = $panelOneCellTwoQuadFourLink['title'];
+                    endif;
+            endwhile;
+        endif;
     endwhile;
- endif;
-
-/** Panel Two */
-$panelTwo = get_field('panel_two');
-//  var_dump($panelTwo);
+endif;
+// var_dump($panelOneCellTwoQuadOneLink);
+/** Panel Two Variables*/
 if(have_rows('panel_two')):
     while(have_rows('panel_two')): the_row();
         $panelTwoHead = get_sub_field('panel_two_heading');
         $panelTwoSubhead = get_sub_field('panel_two_subheading');
-        if(have_rows('panel_two_cell_one')):
-            while(have_rows('panel_two_cell_one')): the_row();
-            $panelTwoCellOneMedia = get_sub_field('p2_cell_one_media');
-            $panelTwoCellOneMeta = get_sub_field('p2_cell_one_meta');
-            $panelTwoCellOneTeaser = get_sub_field('p2_cell_one_teaser');
-            endwhile;
-        endif;
-        if(have_rows('panel_two_cell_two')):
-            while(have_rows('panel_two_cell_two')): the_row();
-            $panelTwoCellTwoMedia = get_sub_field('p2_cell_two_media');
-            $panelTwoCellTwoMeta = get_sub_field('p2_cell_two_meta');
-            $panelTwoCellTwoTeaser = get_sub_field('p2_cell_two_teaser');
-            endwhile;
-        endif;
-        if(have_rows('panel_two_cell_three')):
-            while(have_rows('panel_two_cell_three')): the_row();
-            $panelTwoCellThreeMedia = get_sub_field('p2_cell_three_media');
-            $panelTwoCellThreeMeta = get_sub_field('p2_cell_three_meta');
-            $panelTwoCellThreeTeaser = get_sub_field('p2_cell_three_teaser');
-            endwhile;
-        endif;
+        $panelTwoCellOneMedia = get_sub_field('p2_cell_one_media');
+        $panelTwoCellOneMeta = get_sub_field('p2_cell_one_meta');
+        $panelTwoCellOneTeaser = get_sub_field('p2_cell_one_teaser');
+        $panelTwoCellTwoMedia = get_sub_field('p2_cell_two_media');
+        $panelTwoCellTwoMeta = get_sub_field('p2_cell_two_meta');
+        $panelTwoCellTwoTeaser = get_sub_field('p2_cell_two_teaser');
+        $panelTwoCellThreeMedia = get_sub_field('p2_cell_three_media');
+        $panelTwoCellThreeMeta = get_sub_field('p2_cell_three_meta');
+        $panelTwoCellThreeTeaser = get_sub_field('p2_cell_three_teaser');
     endwhile;
  endif;
 
-/** Panel Three */
-$panelThreeHead = get_field('panel_three_heading');
-$panelThreeSubhead = get_field('panel_three_subheading');
-$panelThreeCellOneMedia = get_field('p3_cell_one_media');
-$panelThreeCellOneLink = get_field('p3_cell_one_link');
-$panelThreeCellOneLinkTitle = get_field('p3_cell_one_link_title');
-$panelThreeCellOneTeaser = get_field('p3_cell_one_teaser');
-$panelThreeCellTwoMedia = get_field('p3_cell_two_media');
-$panelThreeCellTwoLink = get_field('p3_cell_two_link');
-$panelThreeCellTwoLinkTitle = get_field('p3_cell_two_link_title');
-$panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser');
+/** Panel Three Variables */
+
+if(have_rows('panel_three')):
+    while(have_rows('panel_three')): the_row();
+        $panelThreeHead = get_sub_field('panel_three_heading');
+        $panelThreeSubhead = get_sub_field('panel_three_subheading');
+        $panelThreeCellOneMedia = get_sub_field('p3_cell_one_media');
+        $panelThreeCellOneLink = get_sub_field('p3_cell_one_link');
+        if($panelThreeCellOneLink):
+            $panelThreeCellOneLinkTitle = $panelThreeCellOneLink['title'];
+            $panelThreeCellOneLinkUrl = $panelThreeCellOneLink['url'];
+            $panelThreeCellOneLinkTarget = $panelThreeCellOneLink['target'] ? $panelThreeCellOneLink['target'] : '_self';
+        endif;
+        $panelThreeCellOneTeaser = get_sub_field('p3_cell_one_teaser');
+        $panelThreeCellTwoMedia = get_sub_field('p3_cell_two_media');
+        $panelThreeCellTwoLink = get_sub_field('p3_cell_two_link');
+        if($panelThreeCellTwoLink):
+            $panelThreeCellTwoLinkTitle = $panelThreeCellTwoLink['title'];
+            $panelThreeCellTwoLinkUrl = $panelThreeCellTwoLink['url'];
+            $panelThreeCellTwoLinkTarget = $panelThreeCellTwoLink['target'] ? $panelThreeCellTwoLink['target'] : '_self';
+        endif;
+        $panelThreeCellTwoTeaser = get_sub_field('p3_cell_two_teaser');
+    endwhile;
+ endif;
+
+
+/**
+ * And now the code
+ */
 ?>
+
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
-        <section class="panel front-page-white-panel">
+        <section class="panel panel-one front-page-white-panel">
             <div class="wrap">
                 <div class="flex-wrap">
                     <div class="panel-heading">
@@ -95,30 +133,30 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser');
                         <div class="flex-wrap panel-cell-quarter-top">
 
                             <div class="panel-cell-1 flex-wrap panel-cell-quarter">
-                                <a class="" href="#">
-                                    <i class="fas fa-hand-point-right"></i>
-                                    <p class="chevron-right-yellow-small">Facts & rankings</p>
+                                <a class="" href="<?php echo esc_url($panelOneCellTwoQuadOneLinkUrl); ?>">
+                                    <i class="fas fa-<?php echo $panelOneCellTwoQuadOneIcon?>" style="color:<?php echo $panelOneCellTwoQuadOneIconColor?>"></i>
+                                    <p class="chevron-right-yellow-small"><?php echo $panelOneCellTwoQuadOneLinkTitle; ?></p>
                                 </a>
                             </div>
                             <div class="panel-cell-1 flex-wrap panel-cell-quarter">
-                                <a class="" href="#">
-                                    <i class="fas fa-hand-point-down"></i>
-                                    <p class="chevron-right-yellow-small">Alumni success</p>
+                                <a class="" href="<?php echo esc_url($panelOneCellTwoQuadTwoLinkUrl); ?>">
+                                    <i class="fas fa-<?php echo $panelOneCellTwoQuadTwoIcon?>" style="color:<?php echo $panelOneCellTwoQuadTwoIconColor?>"></i>
+                                    <p class="chevron-right-yellow-small"><?php echo $panelOneCellTwoQuadTwoLinkTitle; ?></p>
                                 </a>
                             </div>
 
                         </div>
                         <div class="flex-wrap">
-                        <div class="panel-cell-1 flex-wrap panel-cell-quarter">
-                                <a class="" href="#">
-                                    <i class="fas fa-hand-point-up"></i>
-                                    <p class="chevron-right-yellow-small">Student experience</p>
+                            <div class="panel-cell-1 flex-wrap panel-cell-quarter">
+                                <a class="" href="<?php echo esc_url($panelOneCellTwoQuadThreeLinkUrl); ?>">
+                                    <i class="fas fa-<?php echo $panelOneCellTwoQuadThreeIcon?>" style="color:<?php echo $panelOneCellTwoQuadThreeIconColor?>"></i>
+                                    <p class="chevron-right-yellow-small"><?php echo $panelOneCellTwoQuadThreeLinkTitle; ?></p>
                                 </a>
                             </div>
                             <div class="panel-cell-1 flex-wrap panel-cell-quarter">
-                                <a class="" href="#">
-                                    <i class="fas fa-hand-point-left"></i>
-                                    <p class="chevron-right-yellow-small">World-class facilities</p>
+                                <a class="" href="<?php echo esc_url($panelOneCellTwoQuadFourLinkUrl); ?>">
+                                    <i class="fas fa-<?php echo $panelOneCellTwoQuadFourIcon?>" style="color:<?php echo $panelOneCellTwoQuadFourIconColor?>"></i>
+                                    <p class="chevron-right-yellow-small"><?php echo $panelOneCellTwoQuadFourLinkTitle; ?></p>
                                 </a>
                             </div>
                         </div>
@@ -126,7 +164,7 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser');
                 </div>
             </div>
         </section>
-        <section class="panel front-page-blue-panel">
+        <section class="panel panel-two front-page-blue-panel">
             <div class="wrap">
                 <div class="flex-wrap">
                     <div class="panel-heading">
@@ -153,7 +191,7 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser');
                 </div>
             </div>
         </section>
-        <section class="panel front-page-white-panel">
+        <section class="panel panel-three front-page-white-panel">
             <div class="wrap">
                 <div class="flex-wrap">
                     <div class="panel-heading">
@@ -164,15 +202,15 @@ $panelThreeCellTwoTeaser = get_field('p3_cell_two_teaser');
                 <div class="flex-wrap">
                     <div class="panel-cell-1">
                         <?php echo $panelThreeCellOneMedia ?>
-                        <a href="#" class="white-cell-link"><p class="chevron-right-yellow-small">Program name here</p></a>
-                        <p>Ooga booga. Ipsum and what not. Something witty is this here writ.</p>
+                        <a href="<?php echo esc_url($panelThreeCellOneLinkUrl); ?>" class="white-cell-link" target="<?php esc_attr($panelThreeCellOneLinkTarget); ?>"><p class="chevron-right-yellow-small"><?php echo esc_html( $panelThreeCellOneLinkTitle); ?></p></a>
+                        <p><?php echo $panelThreeCellOneTeaser ?></p>
                     </div>
 
 
                     <div class="panel-cell-1">
                         <?php echo $panelThreeCellTwoMedia ?>
-                        <a href="#" class="white-cell-link"><p class="chevron-right-yellow-small">Program name here</p></a>
-                        <p>Ooga booga. Ipsum and what not. Something witty is this here writ.</p>
+                        <a href="<?php echo esc_url($panelThreeCellTwoLinkUrl); ?>" class="white-cell-link" target="<?php esc_attr($panelThreeCellTwoLinkTarget); ?>"><p class="chevron-right-yellow-small"><?php echo esc_html( $panelThreeCellTwoLinkTitle); ?></p></a>
+                        <p><?php echo $panelThreeCellTwoTeaser ?></p>
                     </div>
                 </div>
             </div>
