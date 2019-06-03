@@ -10,7 +10,9 @@
 ?>
 <div class="wrap">
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+    <?php if(has_excerpt()) {
+	the_excerpt();
+}?>
         <div class="page-content">
         <?php //get_template_part( 'template-parts/filter', 'programs' );?>
         <div class="flex-wrap">

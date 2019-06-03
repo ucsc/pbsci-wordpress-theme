@@ -30,17 +30,16 @@
         <header id="masthead" class="site-header">
             <div class="site-branding">
                 <?php
-			$hero = get_the_post_thumbnail_url(get_the_ID(),'page-hero');
-			// var_dump($hero);
+            $hero = get_the_post_thumbnail_url(get_the_ID(),'page-hero');
             $page_blurb = get_field('page_blurb');
             $degrees_offered = get_field_object('degrees_offered');
             $degrees = $degrees_offered['value'];
-			if($hero){
-			    echo '<div class="hero-page flex-wrap" style="background:url('.$hero.') no-repeat bottom; background-size: cover;">';}
-			    else {
-			        echo '<div class="hero-page flex-wrap">';
-				}
-				?>
+            if($hero){
+                echo '<div class="hero-page flex-wrap" style="background:url('.$hero.') no-repeat bottom; background-size: cover;">';}
+                else {
+                    echo '<div class="hero-page flex-wrap">';
+                }
+                ?>
 
                 <div class="hero-page-runner desktop">
                     <div class="wrap flex-wrap">
@@ -61,12 +60,9 @@
 
                             </span>
                             <?php
-                            if (is_page()) {
-                                echo '<span class="entry-header-span-c">';
-                                if($page_blurb):
-                                    echo $page_blurb;
-                                endif;
-                            } else {
+                            // $cocksucker = get_post_type();
+                            // var_dump($cocksucker);
+                            if ('degree' == get_post_type()) {
                                 echo '<span class="entry-header-span-c">';
                                 if($degrees):
                                     echo '<!-- Card Degrees Offered Begin --><div class="card-degrees-offered">';

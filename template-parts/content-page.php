@@ -6,12 +6,14 @@
  *
  * @package UCSC_PBSci
  */
-
+$page_blurb = get_field('page_blurb');
 ?>
 
 <div class="wrap">
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+<?php if(has_excerpt()) {
+	the_excerpt();
+}?>
         <div class="entry-content">
             <?php
 		the_content();
