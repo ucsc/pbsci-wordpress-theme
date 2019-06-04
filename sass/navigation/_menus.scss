@@ -86,6 +86,11 @@
         a {
             // margin: 15px auto;
             padding: 10px;
+            &:hover,
+            &:focus,
+            &:active {
+                border-bottom: none;
+            }
         }
     }
 }
