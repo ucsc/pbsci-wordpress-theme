@@ -102,27 +102,27 @@
         padding-left: 0;
         li {
             flex-basis: 30%;
-            &:nth-child(1) {
-                a {
-                    i {
-                        color: $ucsc--green;
-                    }
-                }
-            }
-            &:nth-child(2) {
-                a {
-                    i {
-                        color: $ucsc--magenta;
-                    }
-                }
-            }
-            &:nth-child(3) {
-                a {
-                    i {
-                        color: $ucsc--lighter-blue;
-                    }
-                }
-            }
+            // &:nth-child(1) {
+            // a {
+            // i {
+            // color: $ucsc--green;
+            // }
+            // }
+            // }
+            // &:nth-child(2) {
+            // a {
+            // i {
+            // color: $ucsc--magenta;
+            // }
+            // }
+            // }
+            // &:nth-child(3) {
+            // a {
+            // i {
+            // color: $ucsc--lighter-blue;
+            // }
+            // }
+            // }
         }
         a {
             display: flex;

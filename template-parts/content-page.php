@@ -20,24 +20,14 @@ $page_blurb = get_field('page_blurb');
         $secondaryMenu = 'menu-2';
     }
     if(is_page('academics')||is_page('research')){
+        $secondaryNav1 = '#da216d';//magenta
+        $secondaryNav2 = '#93c02d';//green
+        $secondaryNav3 = '#007988';//aquamarine
         echo '<style>';
         echo '.menu-item {color: green}';
-        // li:nth-child(1) i { color: $ucsc--green; }
-        // }
-        // &:nth-child(2) {
-        //     a {
-        //         i {
-        //             color: $ucsc--magenta;
-        //         }
-        //     }
-        // }
-        // &:nth-child(3) {
-        //     a {
-        //         i {
-        //             color: $ucsc--lighter-blue;
-        //         }
-        //     }
-        // }
+        echo '.secondary-navigation li:nth-child(1) i { color: '.$secondaryNav1.'; }';
+        echo '.secondary-navigation li:nth-child(2) i { color: '.$secondaryNav2.'; }';
+        echo '.secondary-navigation li:nth-child(3) i { color: '.$secondaryNav3.'; }';
         echo '</style>';
         echo '<div class="secondary-menu-container">';
 
@@ -52,10 +42,26 @@ $page_blurb = get_field('page_blurb');
                 $menuItemTitle = $menuItem->title;
                 $menuItemUrl = $menuItem->url;
                 $menuItemID = $menuItem->ID;
+                $pos = strpos($menuItemTitle, 'Degree');
+                // if ($pos !== false){
+                //     echo "The string 'Degree' was found in the string '$menuItemTitle'";
+                //     echo "and its position is '$pos'";
+                //     $fontIcon = 'fa-poo';
+                //     echo $fontIcon;
+                // } else {
+                //     echo "The string 'Degree' was not found in the string '$menuItemTitle'";
+
+                //     $fontIcon = 'fa-thumbs-up';
+                //     echo $fontIcon;
+                // }
+
                 if (strpos($menuItemTitle, 'Degree') != false){
                     $fontIcon = 'fa-poo';
-                } else {
-                    $fontIcon = 'fa-user-graduate';
+                    echo "woot!";
+                }
+                if (strpos($menuItemTitle, 'Academic') != false){
+                    $fontIcon = 'fa-facebook';
+                    echo "woot!";
                 }
                 echo "<li id='menu-item-$menuItemID' class='menu-item menu-item-type-post_type menu-item-object-page menu-item-$menuItemID'><a href='$menuItemUrl'><i class='fas $fontIcon'></i><p class='chevron-right-yellow-small'>".$menuItemTitle."</p></a></li>";
             }
@@ -63,7 +69,7 @@ $page_blurb = get_field('page_blurb');
         }
         echo '</div>';
     }
-        var_dump($menuItemTitle);
+        var_dump($menuSlug);
     if(is_page('academics')||is_page('research')){
         if (has_nav_menu($secondaryMenu)){
             wp_nav_menu( array(
