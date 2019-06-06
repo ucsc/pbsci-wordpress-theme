@@ -12,6 +12,7 @@ $page_blurb = get_field('page_blurb');
 <div class="wrap">
 <?php if(has_excerpt()) {
     the_excerpt();
+}
     if(is_page('academics')) {
         $secondaryMenu = 'menu-3';
     }
@@ -19,14 +20,62 @@ $page_blurb = get_field('page_blurb');
         $secondaryMenu = 'menu-2';
     }
     if(is_page('academics')||is_page('research')){
-        wp_nav_menu( array(
-            'theme_location' => $secondaryMenu,
-            'link_before' => '<i class="fas fa-user-graduate"></i><p class="chevron-right-yellow-small">',
-            'link_after' => '</p>',
-            'menu_class' => 'menu secondary-navigation flex-wrap',
-        ) );
+        echo '<style>';
+        echo '.menu-item {color: green}';
+        // li:nth-child(1) i { color: $ucsc--green; }
+        // }
+        // &:nth-child(2) {
+        //     a {
+        //         i {
+        //             color: $ucsc--magenta;
+        //         }
+        //     }
+        // }
+        // &:nth-child(3) {
+        //     a {
+        //         i {
+        //             color: $ucsc--lighter-blue;
+        //         }
+        //     }
+        // }
+        echo '</style>';
+        echo '<div class="secondary-menu-container">';
+
+        $menuLocations = get_nav_menu_locations();
+        if (has_nav_menu($secondaryMenu)){
+            $menuID = $menuLocations[$secondaryMenu];
+            $menuObject = wp_get_nav_menu_object($menuID);
+            $menuSlug = $menuObject->slug;
+            $menuItems = wp_get_nav_menu_items($menuID);
+            echo '<ul id="menu-'.$menuSlug.'" class="menu secondary-navigation flex-wrap">';
+            foreach($menuItems as $menuItem){
+                $menuItemTitle = $menuItem->title;
+                $menuItemUrl = $menuItem->url;
+                $menuItemID = $menuItem->ID;
+                if (strpos($menuItemTitle, 'Degree') != false){
+                    $fontIcon = 'fa-poo';
+                } else {
+                    $fontIcon = 'fa-user-graduate';
+                }
+                echo "<li id='menu-item-$menuItemID' class='menu-item menu-item-type-post_type menu-item-object-page menu-item-$menuItemID'><a href='$menuItemUrl'><i class='fas $fontIcon'></i><p class='chevron-right-yellow-small'>".$menuItemTitle."</p></a></li>";
+            }
+            echo '</ul>';
+        }
+        echo '</div>';
     }
-}?>
+        var_dump($menuItemTitle);
+    if(is_page('academics')||is_page('research')){
+        if (has_nav_menu($secondaryMenu)){
+            wp_nav_menu( array(
+                'theme_location' => $secondaryMenu,
+                'link_before' => '<i class="fas '.$fontIcon.'"></i><p class="chevron-right-yellow-small">',
+                'link_after' => '</p>',
+                'menu_class' => 'menu secondary-navigation flex-wrap',
+            ) );
+        }
+
+    }
+?>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
         <div class="entry-content">

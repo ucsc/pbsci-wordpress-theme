@@ -12,14 +12,6 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php if(has_excerpt()) {
     the_excerpt();
-    if(is_page('research')){
-        wp_nav_menu( array(
-            'theme_location' => 'menu-2',
-            'link_before' => '<i class="fas fa-user-graduate"></i><p class="chevron-right-yellow-small">',
-            'link_after' => '</p>',
-            'menu_class' => 'menu secondary-navigation flex-wrap',
-        ) );
-    }
 }?>
         <div class="page-content">
         <div class="flex-wrap">
