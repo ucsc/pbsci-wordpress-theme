@@ -278,6 +278,7 @@
                                 "id": ""
                             },
                             "choices": {
+                                "one": "Choose one",
                                 "user-graduate": "Graduate",
                                 "graduation-cap": "Graduation Cap",
                                 "chart-line": "Line Graph",
@@ -313,6 +314,7 @@
                                 "id": ""
                             },
                             "choices": {
+                                "one": "Choose one",
                                 "#003c6c": "UCSC Primary Blue",
                                 "#fdc700": "UCSC Primary Yellow",
                                 "#006aad": "UCSC Light Blue",
@@ -378,6 +380,7 @@
                                 "id": ""
                             },
                             "choices": {
+                                "one": "Choose one",
                                 "user-graduate": "Graduate",
                                 "graduation-cap": "Graduation Cap",
                                 "chart-line": "Line Graph",
@@ -413,6 +416,7 @@
                                 "id": ""
                             },
                             "choices": {
+                                "one": "Choose one",
                                 "#003c6c": "UCSC Primary Blue",
                                 "#fdc700": "UCSC Primary Yellow",
                                 "#006aad": "UCSC Light Blue",
@@ -476,6 +480,7 @@
                                 "id": ""
                             },
                             "choices": {
+                                "one": "Choose one",
                                 "user-graduate": "Graduate",
                                 "graduation-cap": "Graduation Cap",
                                 "chart-line": "Line Graph",
@@ -511,6 +516,7 @@
                                 "id": ""
                             },
                             "choices": {
+                                "one": "Choose one",
                                 "#003c6c": "UCSC Primary Blue",
                                 "#fdc700": "UCSC Primary Yellow",
                                 "#006aad": "UCSC Light Blue",
@@ -574,6 +580,7 @@
                                 "id": ""
                             },
                             "choices": {
+                                "one": "Choose one",
                                 "user-graduate": "Graduate",
                                 "graduation-cap": "Graduation Cap",
                                 "chart-line": "Line Graph",
@@ -1131,5 +1138,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1559340526
+    "modified": 1559942359
 }

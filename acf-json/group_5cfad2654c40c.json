@@ -1,0 +1,141 @@
+{
+    "key": "group_5cfad2654c40c",
+    "title": "Secondary Menu",
+    "fields": [
+        {
+            "key": "field_5cfad295e0ec2",
+            "label": "Secondary Navigation Customization",
+            "name": "secondary_navigation_customization",
+            "type": "repeater",
+            "instructions": "Customization options for the secondary navigation at the top of this page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5cfad31ee0ec3",
+                    "label": "Secondary Navigation Label",
+                    "name": "secondary_navigation_label",
+                    "type": "text",
+                    "instructions": "Enter the name of the secondary navigation item here (case sensitive).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_prefix": 0,
+                    "maxlength": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_5cfad35de0ec4",
+                    "label": "Secondary Navigation Icon",
+                    "name": "secondary_navigation_icon",
+                    "type": "select",
+                    "instructions": "Select the icon for the secondary navigation item button.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "one": "Choose one",
+                        "user-graduate": "Graduate",
+                        "graduation-cap": "Graduation Cap",
+                        "chart-line": "Line Graph",
+                        "thumbs-up": "Thumbs Up",
+                        "thumbs-down": "Thumbs Down",
+                        "tasks": "To Do List",
+                        "list-ul": "Bulleted List",
+                        "list-ol": "Numbered List",
+                        "check": "Check Mark",
+                        "fighter-jet": "Zoom",
+                        "cat": "Kitty",
+                        "poo": "Mystery"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5cfad3c7e0ec5",
+                    "label": "Secondary Navigation Icon Color",
+                    "name": "secondary_navigation_icon_color",
+                    "type": "select",
+                    "instructions": "Select the color for the navigation icon.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "one": "Choose one",
+                        "#003c6c": "UCSC Primary Blue",
+                        "#fdc700": "UCSC Primary Yellow",
+                        "#006aad": "UCSC Light Blue",
+                        "#13a5dc": "UCSC Lighter Blue",
+                        "#007988": "UCSC Aquamarine",
+                        "#f29813": "UCSC Orange",
+                        "#ffbf00": "UCSC Light Orange",
+                        "#93c02d": "UCSC Green",
+                        "#da216d": "UCSC Reddish"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "5"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "200"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1559966772
+}
