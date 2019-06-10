@@ -28,8 +28,7 @@ $page_blurb = get_field('page_blurb');
                 $customRowTwo = $secondaryNavCustomRows[1];
                 $customRowThree = $secondaryNavCustomRows[2];
             }
-            // for($i=0;$i<$customRowsCount;$i++){
-            // }
+            // for($i=0;$i<$customRowsCount;$i++){}
         }
         $secondaryNav1 = $customRowOne['secondary_navigation_label'];
         $secondaryIcon1 = $customRowOne['secondary_navigation_icon'];
@@ -40,16 +39,8 @@ $page_blurb = get_field('page_blurb');
         $secondaryNav3 = $customRowThree['secondary_navigation_label'];
         $secondaryIcon3 = $customRowThree['secondary_navigation_icon'];
         $secondaryIconColor3 = $customRowThree['secondary_navigation_icon_color'];
-        echo '<style>';
-        echo '.menu-item {color: green}';
-        echo '.secondary-navigation li:nth-child(1) i { color: '.$secondaryIconColor1.'; }';
-        echo '.secondary-navigation li:nth-child(2) i { color: '.$secondaryIconColor2.'; }';
-        echo '.secondary-navigation li:nth-child(3) i { color: '.$secondaryIconColor3.'; }';
-        echo '</style>';
         echo '<div class="secondary-menu-container">';
-
         $menuLocations = get_nav_menu_locations();
-
         if (has_nav_menu($secondaryMenu)){
             $menuID = $menuLocations[$secondaryMenu];
             $menuObject = wp_get_nav_menu_object($menuID);
@@ -67,12 +58,15 @@ $page_blurb = get_field('page_blurb');
                 $pos2 = strpos($menuItemTitle, $secondaryNav3);
                 if ($pos !== false){
                     $fontIcon = $secondaryIcon1;
+                    $fontIconColor = $secondaryIconColor1;
                 } if ($pos1 !== false){
                     $fontIcon = $secondaryIcon2;
+                    $fontIconColor = $secondaryIconColor2;
                 } if ($pos2 !== false){
                     $fontIcon = $secondaryIcon3;
+                    $fontIconColor = $secondaryIconColor3;
                 }
-                echo "<li id='menu-item-$menuItemID' class='menu-item menu-item-type-post_type menu-item-object-page menu-item-$menuItemID'><a href='$menuItemUrl'><i class='fas fa-$fontIcon'></i><p class='chevron-right-yellow-small'>".$menuItemTitle."</p></a></li>";
+                echo "<li id='menu-item-$menuItemID' class='menu-item menu-item-type-post_type menu-item-object-page menu-item-$menuItemID'><a href='$menuItemUrl'><i style='color: $fontIconColor'class='fas fa-$fontIcon'></i><p class='chevron-right-yellow-small'>".$menuItemTitle."</p></a></li>";
             }
             echo '</ul>';
         }

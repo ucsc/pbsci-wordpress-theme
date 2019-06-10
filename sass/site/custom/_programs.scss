@@ -10,13 +10,20 @@
     }
 }
 
-// @media only screen and (min-width: $screen-size--small) {
-//     //targe last row
-//     .card-container:nth-child(3n+1):nth-last-child(-n+3),
-//     .card-container:nth-child(3n+1):nth-last-child(-n+3)~.card-container {
-//         border: 3px solid gray;
-//     }
-// }
+@media only screen and (min-width: $screen-size--small) {
+    //target last row
+    .card-container:nth-child(3n+1):nth-last-child(-n+3),
+    .card-container:nth-child(3n+1):nth-last-child(-n+3)~.card-container {
+        // border: 3px solid green;
+    }
+    .card-container:nth-child(3n+2):nth-last-child(-n+3),
+    .card-container:nth-child(3n+2):nth-last-child(-n+3)~.card-container {
+        // border: 3px solid gray!important;
+        margin-left: calc(30% * .160);
+        margin-right: auto;
+    }
+}
+
 .card-container {
     margin-bottom: 2em;
     @media only screen and (min-width: $screen-size--small) {

@@ -15,9 +15,9 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
+            "collapsed": "field_5cfad31ee0ec3",
+            "min": 3,
+            "max": 3,
             "layout": "table",
             "button_label": "",
             "sub_fields": [
@@ -67,7 +67,8 @@
                         "check": "Check Mark",
                         "fighter-jet": "Zoom",
                         "cat": "Kitty",
-                        "poo": "Mystery"
+                        "poo": "Mystery",
+                        "binoculars": "Binocs"
                     },
                     "default_value": [],
                     "allow_null": 0,
@@ -137,5 +138,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1559966772
+    "modified": 1560201963
 }
