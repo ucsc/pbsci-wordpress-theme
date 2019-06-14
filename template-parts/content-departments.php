@@ -14,7 +14,7 @@
     the_excerpt();
 }?>
         <div class="page-content">
-        <div class="flex-wrap">
+        <div class="three-col-grid">
             <?php
 
         // Call Departments post

@@ -15,7 +15,7 @@
 }?>
         <div class="page-content">
         <?php //get_template_part( 'template-parts/filter', 'programs' );?>
-        <div class="flex-wrap">
+        <div class="three-col-grid">
                 <?php
                 // add custom body class
                 add_filter( 'body_class','ucsc_pbsci_add_body_classes' );
