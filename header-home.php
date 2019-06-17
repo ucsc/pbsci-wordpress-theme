@@ -51,7 +51,7 @@
             }
 			?>
                   <div class="hero-chevron">
-                    <img src="<?php echo get_stylesheet_directory_uri()?>/images/chevron-md-yellow.svg">
+                    <img id="hero-chevron" src="<?php echo get_stylesheet_directory_uri()?>/images/chevron-md-yellow.svg">
                     </div>
                 </div></div>
             <!-- .hero-home -->

@@ -213,6 +213,8 @@ function ucsc_pbsci_scripts() {
         wp_enqueue_style( 'flexstyles', get_template_directory_uri() . '/flexslider/flexslider.css');
         //Home custom slider/carousel js
         wp_enqueue_script( 'homeflex', get_template_directory_uri() . '/js/flex-home.js');
+        //scroll-to-here js
+        wp_enqueue_script( 'scroll-to-here', get_template_directory_uri() . '/js/home-page-scroll-to-here.js', '',null, true);
     }
     // Enqueue degree panel toggle script
     if ( is_page( '104' ) ){
