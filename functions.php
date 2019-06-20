@@ -46,13 +46,38 @@ if ( ! function_exists( 'ucsc_pbsci_setup' ) ) :
          */
         add_theme_support( 'post-thumbnails' );
 
-        // This theme uses wp_nav_menu() in three locations.
+        /**
+         * Register nav menu locations
+         * this theme uses wp_nav_menu() in three location.
+         */
         register_nav_menus( array(
             'menu-1' => esc_html__( 'Primary', 'ucsc-pbsci' ),
             'menu-2' => esc_html__('Impactful Research', 'ucsc-pbsci'),
             'menu-3' => esc_html__('Impactful Academics', 'ucsc-pbsci'),
         ) );
-
+        /**
+         * Restrict Impctful Research and Impactful Academics
+         * menus to only three top-level items
+         * like this: https://www.isitwp.com/limit-amount-of-menu-items/
+         * note: does not currently appear to work
+         */
+        add_filter( 'wp_nav_menu_objects', 'ucsc_pbsci_menufilter', 10, 2 );
+        function ucsc_pbsci_menufilter($items, $args) {
+            if ( ($args->theme_location == 'menu-2') ) {
+                $toplinks = 0;
+                foreach ( $items as $k => $v ) {
+                    if ( $v->menu_item_parent == 0 ) {
+                        // count how many top-level links we have so far...
+                        $toplinks++;
+                    }
+                    // if we've passed our max # ...
+                    if ( $toplinks > 3 ) {
+                        unset($items[$k]);
+                    }
+                }
+            }
+            return $items;
+        }
         /*
          * Switch default core markup for search form, comment form, and comments
          * to output valid HTML5.
@@ -95,7 +120,7 @@ add_action( 'after_setup_theme', 'ucsc_pbsci_setup' );
  * Priority 0 to make it available to lower priority callbacks.
  *
  * @global int $content_width
- */
+ */        // This theme uses wp_nav_menu() in three locations.
 function ucsc_pbsci_content_width() {
     // This variable is intended to be overruled from themes.
     // Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
@@ -297,3 +322,18 @@ function ucsc_underscore_body_classes( $classes ) {
  * enable excerpts on pages
  */
 add_post_type_support( 'page', 'excerpt' );
+
+/**
+ * @param [type] $num
+ * @return void
+ * Change Excerpt Length
+ * https://wordpress.stackexchange.com/questions/1567/best-collection-of-code-for-your-functions-php-file/6225#6225
+ * @license GNU General Public License 2.0+
+ */
+function ucsc_underscore_custom_excerpt($num) {
+    $limit = $num+1;
+    $excerpt = explode(' ', get_the_excerpt(), $limit);
+    array_pop($excerpt);
+    $excerpt = implode(" ",$excerpt)/**."... (<a href='" .get_permalink($post->ID) ." '>Read more</a>)"*/;
+    echo $excerpt;
+}

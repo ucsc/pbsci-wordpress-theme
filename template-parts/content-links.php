@@ -42,7 +42,7 @@
         //Set up the parts
         $post_title = get_the_title();
         $post_url = get_field('external_url');
-        $post_blurb = get_the_excerpt();
+        $excerpt_wordcount = '34';
         if($postType == 'labs'){
             $postTax = 'researcher-faculty-labs-tax';
         } elseif ($postType == 'student-support') {
@@ -69,7 +69,9 @@
             echo '</ul>';
         }
         //print_r($taxTerms);
-        echo '<!-- card Blurb Begin --><div id="cardblurb'.$postid.'"class="card-blurb">'.$post_blurb.'</div><!-- card Blurb End -->';
+        echo '<!-- card Blurb Begin --><div id="cardblurb'.$postid.'"class="card-blurb">';
+        ucsc_underscore_custom_excerpt($excerpt_wordcount);
+        echo '</div><!-- card Blurb End -->';
         echo '</div><!-- card Row End -->';//end Program Row
         wp_reset_postdata();
     endwhile; endif;

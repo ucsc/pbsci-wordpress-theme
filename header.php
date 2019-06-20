@@ -49,16 +49,9 @@
                         </div>
                         <div class="entry-header-right">
                         <?php get_template_part( 'template-parts/breadcrumbs','head' ); ?>
-                            <span class="entry-header-span-b flex-wrap">
-                            <?php
-                            if (is_page()) :
-                            ?>
-                            <h1>Impactful </h1><?php the_title( '<h1 class="entry-title">', '</h1>' );
-                            else:
-                                the_title( '<h1 class="entry-title">', '</h1>' );
-                            endif; ?>
-
-                            </span>
+                        <span class="entry-header-span-b flex-wrap">
+                        <?php the_title( '<h1 class="entry-title">', '</h1>' )?>
+                        </span>
                             <?php
                             // $cocksucker = get_post_type();
                             // var_dump($cocksucker);

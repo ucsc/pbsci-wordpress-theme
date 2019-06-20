@@ -39,7 +39,7 @@
         margin: 0 -5%;
         height: auto;
         overflow: hidden;
-        @media only screen and (min-width: $screen-size--small) {
+        @media only screen and (min-width: $screen-size--tiny) {
             margin: 0 auto;
         }
         img {

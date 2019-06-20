@@ -15,15 +15,7 @@
 
 <footer id="colophon" class="site-footer front-page-blue-panel">
 
-    <div class="panel">
-        <div class="wrap">
-            <div class="flex-wrap">
-                <div class="panel-heading footer-top">
-                    <a href="#"><h2 class="chevron-right-medium-blue"><span class="span-a">Science</span><span class="span-b">Apply</span>Today</h2></a>
-                </div>
-            </div>
-        </div>
-    </div>
+<?php //get_template_part( 'template-parts/footer', 'applytoday' );?>
     <div class="wrap">
         <div class="flex-wrap">
             <div class="panel-cell-2 footer-cell">

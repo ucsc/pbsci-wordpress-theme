@@ -348,7 +348,6 @@
                 padding-left: 10px;
             }
             .entry-header-span-b {
-                text-transform: uppercase;
                 justify-content: flex-start;
             }
             .entry-header-span-c {
@@ -358,12 +357,8 @@
                 display: block;
                 max-width: 45em;
                 @media only screen and (min-width: $screen-size--medium) {
-                    // padding: 0 0 0 15px;
                     flex-basis: 0;
                 }
-                // @media only screen and (min-width: $screen-size--mediumrelative) {
-                // padding: 0 0 0 15px;
-                // }
             }
             .entry-title {
                 font-weight: 300;
