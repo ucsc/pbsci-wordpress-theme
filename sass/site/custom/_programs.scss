@@ -26,7 +26,7 @@
 .card-container {
     margin-bottom: 2em;
     @media only screen and (min-width: $screen-size--small) {
-        flex-basis: 30%;
+        // flex-basis: 30%;
         //targe last row, see: https://keithclark.co.uk/articles/targeting-first-and-last-rows-in-css-grid-layouts/
         // &:nth-child(3n+1):nth-last-child(-n+3),
         // &:nth-child(3n+1):nth-last-child(-n+3)~& {

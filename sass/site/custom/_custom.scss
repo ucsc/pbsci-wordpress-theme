@@ -72,8 +72,9 @@
     
     .three-col-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 3rem;
+        // grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat( auto-fit, minmax(360px, 1fr));
+        grid-gap: 1.5rem;
     }
     
     .panel-heading {
@@ -314,10 +315,11 @@
         // padding: 10px 0;
         // }
         // background-image: linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(255, 255, 255, 0.35));
-        background-color: rgba(0, 0, 0, 0.55);
+        // background-color: rgba(0, 0, 0, 0.55);
+        background: linear-gradient( to top, rgba(0, 0, 0, 0.75), rgba(255, 0, 0, 0));
         .entry-header {
             align-items: center;
-            font-family: 'Helvetica', sans-serif;
+            font-family: 'Helvetica'repeat(3, 1fr), sans-serif;
             @media only screen and (min-width: 1430px) {
                 margin-left: -125px;
                 margin-left: -7.813em;
