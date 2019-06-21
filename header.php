@@ -44,17 +44,15 @@
                 <div class="hero-page-runner desktop">
                     <div class="wrap flex-wrap">
                         <header class="entry-header flex-wrap">
-                        <div class="entry-header-left">
+                        <!-- <div class="entry-header-left">
                             <span class="entry-header-span-a">Science</span>
-                        </div>
+                        </div> -->
                         <div class="entry-header-right">
                         <?php get_template_part( 'template-parts/breadcrumbs','head' ); ?>
                         <span class="entry-header-span-b flex-wrap">
                         <?php the_title( '<h1 class="entry-title">', '</h1>' )?>
                         </span>
                             <?php
-                            // $cocksucker = get_post_type();
-                            // var_dump($cocksucker);
                             if ('degree' == get_post_type()) {
                                 echo '<span class="entry-header-span-c">';
                                 if($degrees):
