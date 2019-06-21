@@ -271,7 +271,15 @@
             margin: 0 auto;
             // padding: 0 15px;
             width: 100%;
-            p {
+            linear-gradient( to top,
+            rgba(0,
+            0,
+            0,
+            0.55),
+            rgba(255,
+            0,
+            0,
+            0)) p {
                 color: $color__white;
                 margin: 0;
             }
@@ -364,12 +372,12 @@
                     flex-basis: 0;
                 }
             }
-            .entry-title {
-                font-weight: 300;
-                .single & {
-                    font-weight: 700;
-                }
-            }
+            // .entry-title {
+            //     font-weight: 300;
+            //     .single & {
+            //         font-weight: 700;
+            //     }
+            // }
         }
         &.mobile {
             display: block;
