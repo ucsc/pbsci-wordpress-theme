@@ -149,6 +149,9 @@
     text-transform: uppercase;
     color: $color__white;
     .footer-legal {
+        img {
+            max-width: 250px;
+        }
         text-align: center;
         margin-bottom: 2em;
         // font-size: .8em;

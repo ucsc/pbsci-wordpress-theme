@@ -29,35 +29,18 @@
             </div>
         </div>
     </div>
-    <div class="site-info">
-        <div class="wrap">
-            <div class="footer-legal">
-                <ul>
-                    <li><a href="http://academicaffairs.ucsc.edu/accreditation/">Accreditation</a><span class="sep"> |
-                        </span></li>
-                    <li><a
-                            href="http://diversity.ucsc.edu/eeo-aa/images/non-discrimination.pdf">Non-Discrimination&nbsp;Policy</a><span
-                            class="sep"> | </span>
-                    </li>
-                    <li><a href="http://www.ucsc.edu/about/employment.html">Employment</a><span class="sep"> | </span>
-                    </li>
-                    <li><a
-                            href="http://its.ucsc.edu/terms/">Privacy&nbsp;Policy&nbsp;&amp;&nbsp;Terms&nbsp;of&nbsp;Use</a><span
-                            class="sep"> | </span>
-                    </li>
-                    <li><a href="http://safe.ucsc.edu">Sexual&nbsp;Violence&nbsp;Prevention&nbsp;&amp;&nbsp;Response</a>
-                    </li>
-                </ul>
-                <p class="page-meta">
-                    &copy;<?php echo date("Y");?> Regents of the University of California. All rights reserved.
-                </p>
-                <p class="page-meta">
-                    Last modified: March 26, 2018 <span class="check-ip">128.114.113.73</span>
-                </p>
-            </div>
-        </div>
-    </div><!-- .site-info -->
-
+    <?php
+    $footerLinks = get_field('footer_links','option');
+    if ($footerLinks){
+        echo '<div class="site-info"><div class="wrap"><div class="footer-legal"><img src="'.IMAGES.'/science-logo.svg" alt=""/><ul>';
+        foreach ($footerLinks as $footerLink) {
+            echo '<li><a href="'.$footerLink['footer_link_url'].'">'.$footerLink['footer_link_text'].'</a><span class="sep"> |
+            </span></li>';
+        }
+        echo '</ul><p class="page-meta">
+        &copy;'. date("Y").' Regents of the University of California. All rights reserved.</p><p class="page-meta">Last modified: '.get_the_modified_date().'</p></div></div><!-- .site-info -->';
+    }
+    ?>
 </footer><!-- #colophon -->
 </div><!-- #page -->
 

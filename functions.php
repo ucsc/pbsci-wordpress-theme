@@ -229,7 +229,7 @@ function ucsc_pbsci_scripts() {
     //Enqueue Google Fonts
     wp_enqueue_style( 'roboto-condensed-garamond', 'https://fonts.googleapis.com/css?family=EB+Garamond:400,500,700|Roboto+Condensed:300,400,700|Roboto:300,400,500,700', array(), false );
     // Enqueue <span></span> adder
-    wp_enqueue_script( 'span-adder', get_template_directory_uri() . '/js/span-add.js', '',null, true );
+    // wp_enqueue_script( 'span-adder', get_template_directory_uri() . '/js/span-add.js', '',null, true );
     //Enqueue Flexslider and its parts on home page
     if ( is_front_page() ){
         //main Flexslider js

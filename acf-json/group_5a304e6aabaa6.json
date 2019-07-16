@@ -1,6 +1,6 @@
 {
     "key": "group_5a304e6aabaa6",
-    "title": "Theme Options Social Media",
+    "title": "Theme Options",
     "fields": [
         {
             "key": "field_5a304e6b1d92c",
@@ -74,6 +74,99 @@
                     "placeholder": "Social Media URL"
                 }
             ]
+        },
+        {
+            "key": "field_5d2e407590ec4",
+            "label": "Resource Links",
+            "name": "resource_links",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5d2e407590ec6",
+                    "label": "Resources",
+                    "name": "resources",
+                    "type": "link",
+                    "instructions": "Enter the URL of the footer link.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                }
+            ]
+        },
+        {
+            "key": "field_5d2e10d9409b4",
+            "label": "Footer LInks",
+            "name": "footer_links",
+            "type": "repeater",
+            "instructions": "Select your Social Media property from the field below, then enter its URL.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5d2e10d9409b5",
+                    "label": "Footer Link Text",
+                    "name": "footer_link_text",
+                    "type": "text",
+                    "instructions": "Enter the footer link title.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_prefix": 0,
+                    "maxlength": "",
+                    "default_value": "",
+                    "placeholder": "Footer link title",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_5d2e10d9409b6",
+                    "label": "Footer Link URL",
+                    "name": "footer_link_url",
+                    "type": "url",
+                    "instructions": "Enter the URL of the footer link.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Footer link url"
+                }
+            ]
         }
     ],
     "location": [
@@ -93,5 +186,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1552603145
+    "modified": 1563318086
 }

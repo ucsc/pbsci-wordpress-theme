@@ -29,7 +29,8 @@
             }
         }
         
-        .footer-departments-list {
+        .footer-departments-list,
+        .footer-resources-list {
             .chevron-right::after {
                 color: $color__white;
             }
