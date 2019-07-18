@@ -29,7 +29,10 @@
         //Set up the parts
         $department_title = get_the_title();
         $department_url = get_field('department_website');
-        $department_blurb = get_field('department_blurb');
+        // $department_blurb = get_field('department_blurb');
+        if(has_excerpt()) {
+            $department_blurb = get_the_excerpt();
+        }
         //Construct the parts
         echo '<!-- Card Container Begin --><div class="card-container">';
         ucsc_pbsci_post_thumbnail();
