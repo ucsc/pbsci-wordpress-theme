@@ -3,27 +3,6 @@
     "title": "Departments",
     "fields": [
         {
-            "key": "field_5b79d8d8a4ca1",
-            "label": "Department Blurb",
-            "name": "department_blurb",
-            "type": "wysiwyg",
-            "instructions": "Enter a short description of the department here",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "show_prefix": 1,
-            "maxlength": 200,
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
             "key": "field_5b79d939a4ca2",
             "label": "Department Location",
             "name": "department_location",
@@ -459,5 +438,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1555443034
+    "modified": 1563482031
 }
