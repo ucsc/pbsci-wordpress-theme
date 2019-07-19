@@ -395,13 +395,13 @@
         text-align: right;
         color: $color__white;
         p {
-            @include font-size(1.35);
+            @include font-size(1.25);
             margin: 0;
         }
         .cta-container {
             div {
                 border-right: 3px solid $ucsc--primary-yellow;
-                padding: 10px;
+                padding: 5px 10px 5px 0;
             }
             @media only screen and (min-width: $screen-size--large) {
                 max-width: 50%;
@@ -412,15 +412,27 @@
         .cta-p2 {
             text-transform: uppercase;
         }
+        .cta-p1 {
+            @include font-size(1.5);
+        }
         .cta-p2 {
             font-weight: 700;
+            @include font-size(1.75);
         }
-        button {
+        .cta-p3 {
+            margin: 10px;
+            padding: 10px;
+        }
+        .button {
+            float: right;
             padding: 15px 25px;
+            margin-right: 20px;
             text-align: center;
+            background-color: #e7e7e6;
             color: $ucsc--lighter-blue;
             border: 1px solid $ucsc--lighter-blue;
-            @include font-size(1);
+            border-radius: 3px;
+            @include font-size(1.25);
             i {
                 margin-right: 5px;
             }
