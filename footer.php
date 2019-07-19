@@ -12,9 +12,8 @@
 ?>
 
 </div><!-- #content -->
-
+<?php get_template_part( 'template-parts/footer', 'cta' );?>
 <footer id="colophon" class="site-footer front-page-blue-panel">
-
 <?php //get_template_part( 'template-parts/footer', 'applytoday' );?>
     <div class="wrap">
         <div class="flex-wrap">

@@ -82,10 +82,10 @@
             @media only screen and (min-width: $screen-size--small) {
                 @include font-size(2.25);
             }
-            text-transform: uppercase;
+            //text-transform: uppercase;
             font-family: 'Helvetica',
             sans-serif;
-            font-weight: 300;
+            //font-weight: 300;
             margin: 2px 0 0;
             @include font-size(1.625);
             span {
@@ -383,4 +383,46 @@
     [class^="entry-header-span-"] {
         // border: 1px purple solid;
         color: $color__white;
+    }
+    /**
+ * CALL TO ACTION STYLES
+ *
+ */
+    
+    .cta {
+        background: url("images/cta-bg.jpg") no-repeat top;
+        background-size: cover;
+        text-align: right;
+        color: $color__white;
+        p {
+            @include font-size(1.35);
+            margin: 0;
+        }
+        .cta-container {
+            div {
+                border-right: 3px solid $ucsc--primary-yellow;
+                padding: 10px;
+            }
+            @media only screen and (min-width: $screen-size--large) {
+                max-width: 50%;
+                float: right;
+            }
+        }
+        .cta-p1,
+        .cta-p2 {
+            text-transform: uppercase;
+        }
+        .cta-p2 {
+            font-weight: 700;
+        }
+        button {
+            padding: 15px 25px;
+            text-align: center;
+            color: $ucsc--lighter-blue;
+            border: 1px solid $ucsc--lighter-blue;
+            @include font-size(1);
+            i {
+                margin-right: 5px;
+            }
+        }
     }
