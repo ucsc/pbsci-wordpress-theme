@@ -199,7 +199,7 @@
     
     .hero-home {
         @media only screen and (min-width: $screen-size--large) {
-            background-position-y: -150px !important;
+            background-position-y: -75px !important;
             height: 90vh;
         }
         height: 50vh;
@@ -260,6 +260,11 @@
             // border: 1px solid green
         }
         .stats-container {
+            // @media only screen and (min-width: $screen-size--small) {
+            // padding: 10px 0;
+            // }
+            // background-image: linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(255, 255, 255, 0.35));
+            // background-color: rgba(0, 0, 0, 0.55);
             // border: 1px solid red;
             display: flex;
             margin: 0 auto;
@@ -306,22 +311,10 @@
     .hero-page-runner {
         width: 100%;
         padding: 100px 0 10px;
-        // @media only screen and (min-width: $screen-size--small) {
-        // padding: 10px 0;
-        // }
-        // background-image: linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(255, 255, 255, 0.35));
-        // background-color: rgba(0, 0, 0, 0.55);
         background: linear-gradient( to top, rgba(0, 0, 0, 0.75), rgba(255, 0, 0, 0));
         .entry-header {
             align-items: center;
             font-family: 'Helvetica', sans-serif;
-            // @media only screen and (min-width: 1430px) {
-            //     margin-left: -125px;
-            //     margin-left: -7.813em;
-            // }
-            // @media only screen and (min-width: $screen-size--small) {
-            // padding-top: 0;
-            // }
             h1 {
                 margin: 0;
                 @include font-size(1.35);
@@ -358,12 +351,6 @@
                     flex-basis: 0;
                 }
             }
-            // .entry-title {
-            //     font-weight: 300;
-            //     .single & {
-            //         font-weight: 700;
-            //     }
-            // }
         }
         &.mobile {
             display: block;
