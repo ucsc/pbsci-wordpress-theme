@@ -175,14 +175,14 @@
     .front-page-blue-panel {
         background: $ucsc--light-blue;
         background: url("images/impact-ring-optimized-right.svg"), linear-gradient(30deg, $ucsc--primary-blue, $ucsc--light-blue);
-        background-position: bottom right;
+        background-position: top right;
         background-repeat: no-repeat;
         color: $color__white;
     }
     
     .front-page-white-panel {
         background: url("images/impact-ring-optimized-left.svg");
-        background-position: bottom left;
+        background-position: top left;
         background-repeat: no-repeat;
     }
     
@@ -386,6 +386,10 @@
             margin: 0;
         }
         .cta-container {
+            padding: 10px 10px 10px 10px;
+            margin-right: -10px;
+            // padding: 10px;
+            background-color: rgba(50, 50, 50, 0.5);
             div {
                 border-right: 3px solid $ucsc--primary-yellow;
                 padding: 5px 10px 5px 0;
@@ -409,6 +413,13 @@
         .cta-p3 {
             margin: 10px;
             padding: 10px;
+            .impact {
+                font-weight: 700;
+            }
+            .report {
+                font-family: 'Roboto Condensed', sans-serif;
+                font-weight: 300;
+            }
         }
         .button {
             float: right;
