@@ -310,8 +310,19 @@
     
     .hero-page-runner {
         width: 100%;
-        padding: 100px 0 10px;
-        background: linear-gradient( to top, rgba(0, 0, 0, 0.75), rgba(255, 0, 0, 0));
+        padding: 10px 0;
+        @media only screen and (min-width: $screen-size--small) {
+            padding: 100px 0 10px;
+        }
+        background: linear-gradient( to top,
+        rgba(0,
+        0,
+        0,
+        0.75),
+        rgba(255,
+        0,
+        0,
+        0));
         .entry-header {
             align-items: center;
             font-family: 'Helvetica', sans-serif;
@@ -353,14 +364,14 @@
             }
         }
         &.mobile {
-            display: block;
+            display: none;
             background-color: $ucsc--primary-blue;
             @media only screen and (min-width: $screen-size--small) {
                 display: none;
             }
         }
         &.desktop {
-            display: none;
+            display: block;
             @media only screen and (min-width: $screen-size--small) {
                 display: block;
             }
