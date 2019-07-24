@@ -61,9 +61,8 @@
             &.focus>a {}
         }
         a {
-            display: block;
+            display: inline-block;
             text-decoration: none;
-            //border-bottom: 2px solid transparent;
             border-bottom: none;
         }
         .current_page_item>a,
@@ -205,7 +204,9 @@
             }
         }
         .logo {
-            flex: 0 0 250px;
+            @media only screen and (min-width: $screen-size--medium) {
+                flex: 0 0 250px;
+            }
             // display: flex;
             // justify-content: flex-start;
             // align-items: center;
