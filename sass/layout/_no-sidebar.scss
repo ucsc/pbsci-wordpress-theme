@@ -129,7 +129,10 @@
         text-align: center;
         list-style: none;
         i {
-            color: $ucsc--primary-yellow;
+            color: $color__white;
+        }
+        a {
+            border-bottom: none;
         }
     }
     .newsletter-cta {
@@ -165,20 +168,23 @@
                 display: inline;
                 margin: 0;
                 position: relative;
-                // padding: 0 5px;
-                // &::after {
-                //     background-color: #f1af13;
-                //     width: 5px;
-                //     height: 5px;
-                //     border-radius: 50%;
-                //     content: "";
-                //     display: block;
-                //     position: absolute;
-                //     top: 50%;
-                //     left: -.75em;
-                //     margin-left: -2.5px;
-                //     margin-top: -2.5px;
-                // }
+                line-height: 16px;
+                line-height: 1rem;
+                padding-right: 10px;
+                &::after {
+                    //     background-color: #f1af13;
+                    //     width: 5px;
+                    //     height: 5px;
+                    //     border-radius: 50%;
+                    content: "|";
+                    color: $ucsc--primary-yellow;
+                    //     display: block;
+                    position: relative;
+                    //     top: 50%;
+                    left: 5px;
+                    // margin-left: -2.5px;
+                    //     margin-top: -2.5px;
+                }
                 // border-right: 1px $ucsc--primary-yellow solid;
                 &:first-of-type {
                     // padding-left: 0;
@@ -187,10 +193,10 @@
                     border-right: none;
                     // padding-right: 0;
                 }
-                .sep {
-                    padding: 0 5px;
-                    color: $ucsc--primary-yellow;
-                }
+                // .sep {
+                // padding: 0 5px;
+                // color: $ucsc--primary-yellow;
+                // }
             }
         }
     }

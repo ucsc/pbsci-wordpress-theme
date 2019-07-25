@@ -33,8 +33,7 @@
     if ($footerLinks){
         echo '<div class="site-info"><div class="wrap"><div class="footer-legal"><img src="'.IMAGES.'/science-logo.svg" alt=""/><ul>';
         foreach ($footerLinks as $footerLink) {
-            echo '<li><a href="'.$footerLink['footer_link_url'].'">'.$footerLink['footer_link_text'].'</a><span class="sep"> |
-            </span></li>';
+            echo '<li><a href="'.$footerLink['footer_link_url'].'">'.$footerLink['footer_link_text'].'</a></li>';
         }
         echo '</ul><p class="page-meta">
         &copy;'. date("Y").' Regents of the University of California. All rights reserved.</p><p class="page-meta">Last modified: '.get_the_modified_date().'</p></div></div><!-- .site-info -->';
