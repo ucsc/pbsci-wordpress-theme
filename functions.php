@@ -337,3 +337,16 @@ function ucsc_underscore_custom_excerpt($num) {
     $excerpt = implode(" ",$excerpt)/**."... (<a href='" .get_permalink($post->ID) ." '>Read more</a>)"*/;
     echo $excerpt;
 }
+
+/** format values on ACF text field to return shortcode */
+function ucsc_underscore_acf_format_value( $value, $post_id, $field ) {
+
+	// run do_shortcode on all textarea values
+	$value = do_shortcode($value);
+
+
+	// return
+	return $value;
+}
+
+add_filter('acf/format_value/type=textarea', 'ucsc_underscore_acf_format_value', 10, 3);

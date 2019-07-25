@@ -76,6 +76,129 @@
             ]
         },
         {
+            "key": "field_5d39f67a54a24",
+            "label": "Call To Action",
+            "name": "call_to_action",
+            "type": "group",
+            "instructions": "Collection of fields for the CTA panel above the footer for the Impact Report",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_prefix": 0,
+            "maxlength": "",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5d3a19f087d0c",
+                    "label": "CTA Switch",
+                    "name": "cta_switch",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_prefix": 0,
+                    "maxlength": "",
+                    "message": "Turn on call to action?",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_5d39f9cd54a25",
+                    "label": "CTA Body",
+                    "name": "cta_body",
+                    "type": "textarea",
+                    "instructions": "Enter the text of the CTA message.",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d3a19f087d0c",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_prefix": 0,
+                    "maxlength": 100,
+                    "default_value": "Sign up for our newsletter!",
+                    "placeholder": "",
+                    "rows": 2,
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_5d39faee54a26",
+                    "label": "CTA Button",
+                    "name": "cta_button",
+                    "type": "link",
+                    "instructions": "Enter the link and text for the CTA button",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d3a19f087d0c",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_5d39fbc854a27",
+                    "label": "CTA Background Image",
+                    "name": "cta_background_image",
+                    "type": "image",
+                    "instructions": "Enter a background image.",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d3a19f087d0c",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
+        },
+        {
             "key": "field_5d2e407590ec4",
             "label": "Resource Links",
             "name": "resource_links",
@@ -186,5 +309,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1563318086
+    "modified": 1564098471
 }

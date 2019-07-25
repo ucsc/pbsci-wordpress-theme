@@ -388,7 +388,7 @@
  */
     
     .cta {
-        background: url("images/cta-bg.jpg") no-repeat top;
+        //background: url("images/cta-bg.jpg") no-repeat top;
         background-size: cover;
         text-align: right;
         color: $color__white;
@@ -424,26 +424,42 @@
         .cta-p3 {
             margin: 10px;
             padding: 10px;
-            .impact {
-                font-weight: 700;
-            }
-            .report {
-                // font-family: 'Roboto Condensed', sans-serif;
-                font-weight: 300;
-            }
         }
         .button {
             float: right;
             padding: 15px 25px;
             margin-right: 20px;
             text-align: center;
+            text-transform: uppercase;
             background-color: #e7e7e6;
             color: $ucsc--lighter-blue;
             border: 1px solid $ucsc--lighter-blue;
             border-radius: 3px;
             @include font-size(1.25);
+            &:hover {
+                background-color: $ucsc--lighter-blue;
+                color: #e7e7e6;
+                border: 1px solid #e7e7e6;
+            }
             i {
                 margin-right: 5px;
             }
         }
+    }
+    /**
+Impact Report
+*/
+    
+    .impact,
+    .report {
+        text-transform: uppercase;
+    }
+    
+    .impact {
+        font-weight: 700;
+    }
+    
+    .report {
+        // font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 300;
     }

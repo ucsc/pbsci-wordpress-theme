@@ -12,7 +12,13 @@
 ?>
 
 </div><!-- #content -->
-<?php get_template_part( 'template-parts/footer', 'cta' );?>
+<?php
+if (class_exists('acf')){
+$cta = get_field('call_to_action','option');
+if($cta['cta_switch']): get_template_part( 'template-parts/footer', 'cta' );
+endif;
+}
+?>
 <footer id="colophon" class="site-footer front-page-blue-panel">
 <?php //get_template_part( 'template-parts/footer', 'applytoday' );?>
     <div class="wrap">
