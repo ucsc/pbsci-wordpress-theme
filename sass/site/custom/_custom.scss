@@ -256,43 +256,27 @@
     }
     
     .stats-home {
-        &>li {
-            // border: 1px solid green
-        }
         .stats-container {
-            // @media only screen and (min-width: $screen-size--small) {
-            // padding: 10px 0;
-            // }
-            // background-image: linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(255, 255, 255, 0.35));
-            // background-color: rgba(0, 0, 0, 0.55);
-            // border: 1px solid red;
             display: flex;
             margin: 0 auto;
-            // padding: 0 15px;
             width: 100%;
             p {
                 color: $color__white;
                 margin: 0;
             }
             .stats-rank {
-                // width: 20%;
-                padding: 0 16px 0 32px;
-                padding: 0 1rem 0 2rem;
+                padding: 0 10px 0 32px;
+                padding: 0 0.625rem 0 2rem;
                 line-height: 1;
             }
             .stats-meta {
-                // width: 80%;
                 .stats-source {
                     @include font-size(0.75);
                 }
             }
-            .stats-rank,
-            .stats-meta {
-                // float: left;
-            }
             .stats-rank p {
-                font-size: 50px;
-                font-weight: 600;
+                @include font-size(2.50);
+                font-weight: 700;
             }
         }
     }
@@ -379,7 +363,6 @@
     }
     
     [class^="entry-header-span-"] {
-        // border: 1px purple solid;
         color: $color__white;
     }
     /**

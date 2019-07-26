@@ -20,7 +20,7 @@ if (class_exists('acf')){
 }
 //var_dump($ctaImage);
 ?>
-<aside class="panel cta" style="background-image: url(<?php echo $ctaImageLink ?>)">
+<aside class="panel cta" style="background: url('<?php echo $ctaImageLink ?>') no-repeat top">
     <div class="wrap">
         <div class="cta-container">
         <div class="cta-headline"><p class="cta-p1">do you</p><p class="cta-p2">Love science?</p></div>
