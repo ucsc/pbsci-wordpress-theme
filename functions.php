@@ -226,6 +226,12 @@ function ucsc_pbsci_scripts() {
     //Enqueue FontAwesome
     wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css');
 
+    //Enqueue Vue.js
+    //Development Version
+    wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js');
+    // Production Version
+    // wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue');
+
     //Enqueue Google Fonts
     wp_enqueue_style( 'roboto-condensed-garamond', 'https://fonts.googleapis.com/css?family=EB+Garamond:400,500,700|Roboto+Condensed:300,400,700|Roboto:300,400,500,700', array(), false );
     // Enqueue <span></span> adder
@@ -250,6 +256,11 @@ function ucsc_pbsci_scripts() {
     if ( is_singular() && ('degree' === get_post_type())) {
         wp_enqueue_script( 'majors-front', get_template_directory_uri() . '/js/majors-front.js', '',null, true );
     }
+
+    // Enqueue degree parse script --- temporary
+    if ( is_page( 'degrees' ) ){
+        wp_enqueue_script( 'test-js', get_template_directory_uri() . '/js/test.js', '',null, true );
+        }
 }
 add_action( 'wp_enqueue_scripts', 'ucsc_pbsci_scripts' );
 
