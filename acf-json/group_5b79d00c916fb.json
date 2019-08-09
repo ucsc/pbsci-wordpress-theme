@@ -34,6 +34,8 @@
                 "class": "",
                 "id": ""
             },
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
             "choices": {
                 "ba": "Bachelor of Arts",
                 "bs": "Bachelor of Science",
@@ -254,25 +256,6 @@
             "min": "",
             "max": 3,
             "return_format": "object"
-        },
-        {
-            "key": "field_5bce3914e7e77",
-            "label": "",
-            "name": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -299,5 +282,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1552603115
+    "modified": 1565306966
 }
