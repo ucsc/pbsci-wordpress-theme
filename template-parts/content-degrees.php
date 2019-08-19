@@ -14,9 +14,9 @@
         <?php if (has_excerpt()) {
             the_excerpt();
         } ?>
-        <div class="page-content">
+        <div id="degree_cards" class="page-content">
             <?php get_template_part('template-parts/filter', 'programs'); ?>
-            <div class="three-col-grid">
+            <div class="list three-col-grid">
                 <?php
                 // Call Programs post
                 $args = array(
@@ -47,7 +47,7 @@
                         // echo count($departments);
                         // endif;
                         // Construct the parts
-                        echo '<!-- Card Container Begin --><div id="card-container" class="card-container" data-degrees=\'[';
+                        echo '<!-- Card Container Begin --><div id="card_container" class="card-container" data-degrees=\'[';
                         foreach ($degrees as $key => $degree) {
                             if ($key !== count($degrees) - 1) {
                                 echo '"' . $degree . '",';
@@ -58,15 +58,13 @@
                         echo ']\' ';
                         echo 'data-departments=\'[';
                         if ($departments) :
-                            foreach ($departments as $key => $post) :
-                                setup_postdata($post);
+                            foreach ($departments as $key => $department) :
                                 if ($key !== count($departments) - 1) {
-                                    echo '"' . $post->post_name . '",';
+                                    echo '"' . $department->post_name . '",';
                                 } else {
-                                    echo '"' . $post->post_name . '"';
+                                    echo '"' . $department->post_name . '"';
                                 }
                             endforeach;
-                            wp_reset_postdata();
                         endif;
                         echo ']\'';
                         echo '>';
@@ -74,7 +72,7 @@
                         ucsc_pbsci_post_thumbnail();
                         echo '<!-- Card Content Begin --><div class="card-content">';
                         echo '<!-- Card Header Begin --><div class="card-header">';
-                        echo '<h3>' . $program_title . '</h3>';
+                        echo '<h3 class="card-title">' . $program_title . '</h3>';
                         // Get values from  ACF Checkbox
                         if ($degrees) :
                             echo '<!-- Card Degrees Offered Begin --><div class="card-degrees-offered">';
@@ -104,6 +102,24 @@
                         if ($program_subtitle != '') {
                             echo '<p>' . $program_subtitle . '</p>';
                         }
+                        echo '<div aria-hidden="true" class="hidden-data">';
+                        if ($departments) :
+                            echo '<p class="depts">';
+                            foreach ($departments as $key => $department) :
+
+                                echo $department->post_name . ' ';
+                            endforeach;
+                            echo '</p>';
+                        endif;
+                        if ($degrees) :
+                            echo '<p class="program">';
+                            foreach ($degrees as $degree) :
+                                echo $degree . ' ';
+                            endforeach;
+                            echo '</p>';
+                        endif;
+                        echo '</div>';
+
                         echo '</div><!-- Card Content End -->'; //end Program Content
                         echo '</a>';
                         echo '</div><!-- Card Content End -->'; //end Card Content

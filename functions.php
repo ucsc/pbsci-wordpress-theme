@@ -234,9 +234,9 @@ function ucsc_pbsci_scripts()
     //Enqueue FontAwesome
     wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css');
 
-    //Enqueue Vue.js
+    //Enqueue list.js
     //Development Version
-    wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js');
+    wp_enqueue_script('listJS', '//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js');
     // Production Version
     // wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue');
 
@@ -255,10 +255,6 @@ function ucsc_pbsci_scripts()
         //scroll-to-here js
         wp_enqueue_script('scroll-to-here', get_template_directory_uri() . '/js/home-page-scroll-to-here.js', '', null, true);
     }
-    // Enqueue degree panel toggle script
-    if (is_page('104')) {
-        wp_enqueue_script('panel-toggle', get_template_directory_uri() . '/js/majors-blurb-toggle.js', '', null, true);
-    }
 
     // Enqueue custom Majors front end script
     if (is_singular() && ('degree' === get_post_type())) {
@@ -266,8 +262,8 @@ function ucsc_pbsci_scripts()
     }
 
     // Enqueue degree parse script --- temporary
-    if (is_page('degrees') || is_page('newsroom')) {
-        wp_enqueue_script('test-js', get_template_directory_uri() . '/js/test.js', '', null, true);
+    if (is_page('degrees')) {
+        wp_enqueue_script('filter-js', get_template_directory_uri() . '/js/filter.js', '', null, true);
     }
 }
 add_action('wp_enqueue_scripts', 'ucsc_pbsci_scripts');
