@@ -77,14 +77,8 @@
                         if ($degrees) :
                             echo '<!-- Card Degrees Offered Begin --><div class="card-degrees-offered">';
                             echo '<ul class="card-list flex-wrap">';
-                            if (in_array('undergradminor', $degrees) || in_array('gradminor', $degrees)) :
-                                echo '<li class="minor">m.</li>';
-                            endif;
-                            if (in_array('ba', $degrees)) :
-                                echo '<li class="ba">B.A.</li>';
-                            endif;
-                            if (in_array('bs', $degrees)) :
-                                echo '<li class="bs">B.S.</li>';
+                            if (in_array('phd', $degrees)) :
+                                echo '<li class="phd">Ph.D.</li>';
                             endif;
                             if (in_array('ma', $degrees)) :
                                 echo '<li class="ma">M.A.</li>';
@@ -92,8 +86,14 @@
                             if (in_array('ms', $degrees)) :
                                 echo '<li class="ms">M.S.</li>';
                             endif;
-                            if (in_array('phd', $degrees)) :
-                                echo '<li class="phd">Ph.D.</li>';
+                            if (in_array('ba', $degrees)) :
+                                echo '<li class="ba">B.A.</li>';
+                            endif;
+                            if (in_array('bs', $degrees)) :
+                                echo '<li class="bs">B.S.</li>';
+                            endif;
+                            if (in_array('undergradminor', $degrees) || in_array('gradminor', $degrees)) :
+                                echo '<li class="minor">m.</li>';
                             endif;
                             echo '</ul>';
                             echo '</div><!-- Panel Degrees Offered End -->';
