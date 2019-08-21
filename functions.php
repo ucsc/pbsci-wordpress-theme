@@ -262,7 +262,7 @@ function ucsc_pbsci_scripts()
     }
 
     // Enqueue degree parse script --- temporary
-    if (is_page(array('degrees', 'faculty-researchers'))) {
+    if (is_page(array('degrees', 'faculty-researchers', 'student-research-opportunities', 'institutes-and-centers', 'student-support'))) {
         wp_enqueue_script('filter-js', get_template_directory_uri() . '/js/filter.js', '', null, true);
     }
 }

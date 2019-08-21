@@ -106,3 +106,42 @@ $(function () {
 
     });
 });
+
+$(function () {
+    //search js
+    var opportunityOptions = {
+        valueNames: [
+            'post-title',
+            'itemtaxonomy',
+            // { data: ['researcher_faculty_opportunitys'] },
+            // { data: ['timestamp'] },
+        ]
+    }
+    var opportunityList = new List('page-student-research-opportunities', opportunityOptions);
+    console.log(opportunityList.items);
+    $('#opportunity-search').on('keyup', function () {
+        var searchString = $(this).val();
+        opportunityList.fuzzySearch(searchString);
+    });
+    $('#student-opportunities-tax').change(function () {
+        var selection = this.value;
+        console.log(selection);
+        if (selection != 'clear') {
+            // opportunityList.filter(function (item) {
+            //     return (item.values().itemtaxonomy == selection);
+
+            // });
+            opportunityList.fuzzySearch(selection);
+        } else {
+            opportunityList.filter();
+            return false;
+        }
+
+    })
+    $('#opportunity_clear').click(function () {
+        // document.getElementById('degree-search').value = '';
+        opportunityList.filter();
+        return false;
+
+    });
+});
