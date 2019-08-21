@@ -2,17 +2,6 @@
 
 // var departments = JSON.parse($('#card-container').attr('data-departments'));
 
-// console.log(degreeSelect);
-// var checkboxes = document.getElementsByClassName('filter');
-// for (var index in checkboxes) {
-//     checkboxes[index].onchange = checkValue;
-// }
-// function checkValue(
-//     var val = this.value;
-// if (this.checked) {
-//     alert($(this).val());
-// }
-// )
 $(function () {
     //search js
     var degreeOptions = {
@@ -113,7 +102,6 @@ $(function () {
         valueNames: [
             'post-title',
             'itemtaxonomy',
-            // { data: ['researcher_faculty_opportunitys'] },
             // { data: ['timestamp'] },
         ]
     }
