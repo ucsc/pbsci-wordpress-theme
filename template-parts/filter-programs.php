@@ -1,4 +1,15 @@
 <?php
+
+/**
+ * Template part for displaying filtering options
+ *
+ * for Degrees CPT
+ *
+ * template part added from content-degrees.php
+ *
+ *  @package UC_Santa_Cruz
+ */
+
 // debug
 // $meta = get_post_meta($post->ID);
 // echo '<pre>';

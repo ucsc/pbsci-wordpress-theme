@@ -8,6 +8,7 @@
  * @package UC_Santa_Cruz
  */
 
+
 ?>
 <div class="wrap">
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -52,19 +53,26 @@
             if ($post_query->have_posts()) : while ($post_query->have_posts()) : $post_query->the_post();
 
                     //Set up the parts
+
+                    // $taxargs = array(
+                    //     'public'   => true,
+                    //     '_builtin' => false
+
+                    // );
+                    // $output = 'names'; // or objects
+                    // $operator = 'and'; // 'and' or 'or'
+                    // $taxonomies = get_taxonomies($taxargs, $output, $operator);
                     $post_title = get_the_title();
                     $post_url = get_field('external_url');
                     $excerpt_wordcount = '34';
+                    //Post Type Conditionals
+                    //Post Types
                     if ($postType == 'labs') {
+                        //Post Type Taxonomies
                         $postTax1 = 'researcher-faculty-labs-tax';
-                    } elseif ($postType == 'student-support') {
-                        $postTax1 = 'student-support-resources-tax';
-                    } elseif ($postType == 'studentopportunities') {
-                        $postTax1 = 'student-opportunities-tax';
-                        $postTax2 = 'student-opp-eligib-tax';
-                        $postTax3 = 'student-opp-avail-tax';
-                    }
-                    if ($postType == 'labs' || $postType == 'student-support' || $postType == 'studentopportunities') {
+                        //Taxonomy Labels
+                        $taxLabel1 = '';
+                        //Terms conditionals
                         if ($postTax1) {
                             $taxTerms1 = get_the_terms($post->ID, $postTax1);
                         }
@@ -74,7 +82,54 @@
                         if ($postTax3) {
                             $taxTerms3 = get_the_terms($post->ID, $postTax3);
                         }
+                    } elseif ($postType == 'student-support') {
+                        //Post Type Taxonomies
+                        $postTax1 = 'student-support-resources-tax';
+                        //Taxonomy Labels
+                        $taxLabel1 = '';
+                        //Terms conditionals
+                        if ($postTax1) {
+                            $taxTerms1 = get_the_terms($post->ID, $postTax1);
+                        }
+                        if ($postTax2) {
+                            $taxTerms2 = get_the_terms($post->ID, $postTax2);
+                        }
+                        if ($postTax3) {
+                            $taxTerms3 = get_the_terms($post->ID, $postTax3);
+                        }
+                    } elseif ($postType == 'studentopportunities') {
+                        //Post Type Taxonomies
+                        $postTax1 = 'student-opportunities-tax';
+                        $postTax2 = 'student-opp-eligib-tax';
+                        $postTax3 = 'student-opp-avail-tax';
+                        //Taxonomy Labels
+                        $taxLabel1 = '';
+                        $taxLabel2 = 'Eligibility';
+                        $taxLabel3 = 'Availability';
+                        //Terms conditionals
+                        if ($postTax1) {
+                            $taxTerms1 = get_the_terms($post->ID, $postTax1);
+                        }
+                        if ($postTax2) {
+                            $taxTerms2 = get_the_terms($post->ID, $postTax2);
+                        }
+                        if ($postTax3) {
+                            $taxTerms3 = get_the_terms($post->ID, $postTax3);
+                        }
+
+                        //test code
+                        // $items = array();
+                        // foreach ($group_membership as $username) {
+                        //     $items[] = $username;
+                        // }
+                        // print_r($items);
+                        // $testItems = array();
+                        // foreach ($taxonomies  as $taxonomy) {
+                        //     $testItems[] = get_the_terms($post->ID, $taxonomy);
+                        //     // $testItems[] = $taxonomy;
+                        // }
                     }
+
 
                     //Construct the parts
                     echo '<!-- Card Container Begin --><div class="card-container">';
@@ -87,6 +142,9 @@
                     echo '</div><!-- card Content End -->'; //end Program Content
                     echo '</a>';
                     if (!empty($taxTerms1) && !empty($itemClass1)) {
+                        if ($taxLabel1 != '') {
+                            echo '<span>' . $taxLabel1 . '</span>';
+                        }
                         echo '<ul class="pbsci-taxonomy flex-wrap">';
                         foreach ($taxTerms1 as $taxTerm1) {
                             echo '<li class="itemtaxonomy1"  data-' . $itemClass1 . '="' . $taxTerm1->slug . '">' . $taxTerm1->name . '</li>';
@@ -94,20 +152,30 @@
                         echo '</ul>';
                     }
                     if (!empty($taxTerms2) && !empty($itemClass2)) {
+                        if ($taxLabel2 != '') {
+                            echo '<span>' . $taxLabel2 . '</span>';
+                        }
                         echo '<ul class="pbsci-taxonomy flex-wrap">';
                         foreach ($taxTerms2 as $taxTerm2) {
-                            echo '<li class="itemtaxonomy"  data-' . $itemClass2 . '="' . $taxTerm2->slug . '">' . $taxTerm2->name . '</li>';
+                            echo '<li class="itemtaxonomy2"  data-' . $itemClass2 . '="' . $taxTerm2->slug . '">' . $taxTerm2->name . '</li>';
                         }
                         echo '</ul>';
                     }
                     if (!empty($taxTerms3) && !empty($itemClass3)) {
+                        if ($taxLabel3 != '') {
+                            echo '<span>' . $taxLabel3 . '</span>';
+                        }
                         echo '<ul class="pbsci-taxonomy flex-wrap">';
                         foreach ($taxTerms3 as $taxTerm3) {
-                            echo '<li class="itemtaxonomy"  data-' . $itemClass3 . '="' . $taxTerm3->slug . '">' . $taxTerm3->name . '</li>';
+                            echo '<li class="itemtaxonomy3"  data-' . $itemClass3 . '="' . $taxTerm3->slug . '">' . $taxTerm3->name . '</li>';
                         }
                         echo '</ul>';
                     }
-                    var_dump($taxTerms2);
+
+                    // echo '<pre>';
+                    // print_r($testItems);
+                    // print_r($taxonomies);
+                    // echo '</pre>';
                     echo '<!-- card Blurb Begin --><div id="cardblurb" class="card-blurb">';
                     ucsc_underscore_custom_excerpt($excerpt_wordcount);
                     echo '</div><!-- card Blurb End -->';

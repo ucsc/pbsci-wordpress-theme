@@ -1,4 +1,15 @@
 <?php
+
+/**
+ * Template part for displaying filtering options
+ *
+ * for Faculty and Researcher Labs CPT
+ *
+ * template part added from content-links.php
+ *
+ *  @package UC_Santa_Cruz
+ */
+
 // debug
 // $meta = get_post_meta($post->ID);
 // echo '<pre>';

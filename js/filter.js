@@ -128,6 +128,36 @@ $(function () {
         }
 
     })
+    $('#student-opp-eligib-tax').change(function () {
+        var selection = this.value;
+        console.log(selection);
+        if (selection != 'clear') {
+            // opportunityList.filter(function (item) {
+            //     return (item.values().itemtaxonomy1 == selection);
+
+            // });
+            opportunityList.fuzzySearch(selection);
+        } else {
+            opportunityList.filter();
+            return false;
+        }
+
+    })
+    $('#student-opp-avail-tax').change(function () {
+        var selection = this.value;
+        console.log(selection);
+        if (selection != 'clear') {
+            // opportunityList.filter(function (item) {
+            //     return (item.values().itemtaxonomy1 == selection);
+
+            // });
+            opportunityList.fuzzySearch(selection);
+        } else {
+            opportunityList.filter();
+            return false;
+        }
+
+    })
     $('#opportunity_clear').click(function () {
         // document.getElementById('degree-search').value = '';
         opportunityList.filter();
