@@ -20,13 +20,17 @@
 
 
 $degreeTypes = array(
-    "undergradminor" => "Undergraduate Minor",
-    "gradminor" => "Graduate Minor",
-    "ba" => "Bachelor of Arts",
-    "bs" => "Bachelor of Science",
+    "phd" => "Doctor of Philosophy",
     "ma" => "Master of Arts",
     "ms" => "Master of Science",
-    "phd" => "Doctor of Philosophy"
+    "designatedemphasis" => "Designated Emphasis",
+    "contig" => "Contiguous Bachelor's/Master's",
+    "ba" => "Bachelor of Arts",
+    "bs" => "Bachelor of Science",
+    "undergradminor" => "Undergraduate Minor",
+
+
+    "designatedemphasis" => "Designated Emphasis"
 );
 
 ?>

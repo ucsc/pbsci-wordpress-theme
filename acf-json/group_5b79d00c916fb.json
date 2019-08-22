@@ -41,9 +41,10 @@
                 "bs": "Bachelor of Science",
                 "ma": "Master of Arts",
                 "ms": "Master of Science",
+                "contig": "Contiguous Bachelor’s\/Master’s (4+1)",
                 "phd": "Doctor of Philosophy",
                 "undergradminor": "Undergraduate Minor",
-                "gradminor": "Graduate Minor",
+                "designatedemphasis": "Designated Emphasis",
                 "gradcert": "Graduate Certificate",
                 "undergradhonors": "Undergraduate Honors",
                 "gradhonors": "Graduate Honors",
@@ -104,6 +105,37 @@
                 "class": "",
                 "id": ""
             },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5d5f1cab1641a",
+            "label": "Contiguous Bachelor's\/Master's (4+1)",
+            "name": "contiguous_bachelorsmasters",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b7ad8159c3d2",
+                        "operator": "==",
+                        "value": "contig"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_prefix": 0,
+            "maxlength": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
@@ -185,12 +217,36 @@
                         "operator": "==",
                         "value": "undergradminor"
                     }
-                ],
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_prefix": 0,
+            "maxlength": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5d5f19a65f6c7",
+            "label": "Designated Emphasis",
+            "name": "designated_emphasis",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
                 [
                     {
                         "field": "field_5b7ad8159c3d2",
                         "operator": "==",
-                        "value": "gradminor"
+                        "value": "designatedemphasis"
                     }
                 ]
             ],
@@ -199,6 +255,10 @@
                 "class": "",
                 "id": ""
             },
+            "show_prefix": 0,
+            "maxlength": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
@@ -256,33 +316,6 @@
             "min": "",
             "max": 3,
             "return_format": "object"
-        },
-        {
-            "key": "field_5d5ee21ac58a2",
-            "label": "Department Link (copy)",
-            "name": "department_link_copy",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "show_in_rest": 0,
-            "edit_in_rest": 0,
-            "post_type": [
-                "department"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "elements": "",
-            "min": "",
-            "max": 3,
-            "return_format": "object"
         }
     ],
     "location": [
@@ -302,5 +335,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1566499370
+    "modified": 1566514444
 }

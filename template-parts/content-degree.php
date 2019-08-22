@@ -19,12 +19,18 @@
             if ($degrees != '') {
                 echo '<div id="major-tabs" class="major-tabs">';
                 echo '<ul role="tablist">';
-                echo '<li id="overview-tab"  role="presentation"><a href="#" class="tab-link" data-rel="overview"role="tab">Overview</a></li>';
+                echo '<li id="overview-tab"  role="presentation"><a href="#" class="tab-link" data-rel="overview" role="tab">Overview</a></li>';
                 if (in_array('phd', $degrees)) :
                     echo '<li id="phd-tab"  role="presentation"><a href="#" class="tab-link" data-rel="phd" role="tab">Doctoral</a></li>';
                 endif;
                 if (in_array('ma', $degrees) || in_array('ms', $degrees)) :
                     echo '<li id="ma-tab"  role="presentation"><a href="#" class="tab-link" data-rel="ma" role="tab">Master\'s</a></li>';
+                endif;
+                if (in_array('designatedemphasis', $degrees)) :
+                    echo '<li id="designatedemphasis-tab"  role="presentation"><a href="#" class="tab-link" data-rel="designatedemphasis" role="tab">Designated Emphasis</a></li>';
+                endif;
+                if (in_array('contig', $degrees)) :
+                    echo '<li id="contig-tab"  role="presentation"><a href="#" class="tab-link" data-rel="contig" role="tab">Contiguous Bachelor\'s/Master\'s (4+1)</a></li>';
                 endif;
                 if (in_array('ba', $degrees) || in_array('bs', $degrees)) {
                     echo '<li id="ba-tab"  role="presentation"><a href="#" class="tab-link" data-rel="ba" role="tab">Bachelor\'s</a></li>';
@@ -32,6 +38,7 @@
                 if (in_array('undergradminor', $degrees) || in_array('gradminor', $degrees)) :
                     echo '<li id="minor-tab"  role="presentation"><a href="#" class="tab-link" data-rel="minor" role="tab">Minor</a></li>';
                 endif;
+
                 if (in_array('c', $degrees)) :
                     echo '<li id="courses-tab"  role="presentation"><a href="#" class="tab-link" data-rel="courses" role="tab">Courses</a></li>';
                 endif;
@@ -44,20 +51,23 @@
                 if (in_array('ba', $degrees) || in_array('bs', $degrees)) {
                     echo '<section id="ba" class="tab-content">' . get_field('bachelor_degree') . '</section>';
                 }
+                if (in_array('contig', $degrees)) {
+                    echo '<section id="contig" class="tab-content">' . get_field('contiguous_bachelorsmasters') . '</section>';
+                }
                 if (in_array('ma', $degrees) || in_array('ms', $degrees)) {
                     echo '<section id="ma" class="tab-content">' . get_field('master_degree') . '</section>';
                 }
                 if (in_array("phd", $degrees)) {
                     echo '<section id="phd" class="tab-content">' . get_field('doctoral_degree') . '</section>';
                 }
-                if (in_array('undergradminor', $degrees) || in_array('gradminor', $degrees)) {
+                if (in_array('designatedemphasis', $degrees)) {
+                    echo '<section id="designatedemphasis" class="tab-content">' . get_field('designated_emphasis') . '</section>';
+                }
+                if (in_array('undergradminor', $degrees)) {
                     echo '<section id="minor" class="tab-content">' . get_field('minor') . '</section>';
                 }
-                // if (in_array("faculty", $major_tabs)) {
-                //     echo '<div id="faculty" class="tab-content">'.get_field('faculty').'</div>';
-                //     }
                 if (in_array("c", $degrees)) {
-                    echo '<div id="courses" class="tab-content">' . get_field('courses') . '</div>';
+                    echo '<section id="courses" class="tab-content">' . get_field('courses') . '</section>';
                 }
                 echo '</div>';
             }

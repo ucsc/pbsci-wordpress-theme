@@ -68,6 +68,12 @@
                                         if (in_array('ms', $degrees)) :
                                             echo '<li class="ms">M.S.</li>';
                                         endif;
+                                        if (in_array('designatedemphasis', $degrees)) :
+                                            echo '<li class="bs">D.E.</li>';
+                                        endif;
+                                        if (in_array('contig', $degrees)) :
+                                            echo '<li class="ma">4+1</li>';
+                                        endif;
                                         if (in_array('ba', $degrees)) :
                                             echo '<li class="ba">B.A.</li>';
                                         endif;
@@ -75,7 +81,7 @@
                                             echo '<li class="bs">B.S.</li>';
                                         endif;
                                         if (in_array('undergradminor', $degrees) || in_array('gradminor', $degrees)) :
-                                            echo '<li class="minor">m.</li>';
+                                            echo '<li class="minor">Min.</li>';
                                         endif;
 
 
