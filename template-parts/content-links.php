@@ -23,7 +23,7 @@
             echo '<div id="page-' . $pslug . '" class="page-content">';
             get_template_part('template-parts/filter', 'labs');
             $postType = 'labs';
-            $itemClass = 'researcher_faculty_labs';
+            $itemClass1 = 'researcher_faculty_labs';
         } elseif (is_page('institutes-and-centers')) {
             echo '<div id="page-' . $pslug . '" class="page-content">';
             $postType = 'institutes-centers';
@@ -31,11 +31,13 @@
             echo '<div id="page-' . $pslug . '" class="page-content">';
             get_template_part('template-parts/filter', 'studentopportunities');
             $postType = 'studentopportunities';
-            $itemClass = 'student_opportunities';
+            $itemClass1 = 'student_opportunities';
+            $itemClass2 = 'opportunity_eligibility';
+            $itemClass3 = 'opportunity_availability';
         } elseif (is_page('student-support')) {
             echo '<div id="page-' . $pslug . '" class="page-content">';
             $postType = 'student-support';
-            $itemClass = 'student_support';
+            $itemClass1 = 'student_support';
         } ?>
         <div class="list three-col-grid">
             <?php
@@ -54,15 +56,26 @@
                     $post_url = get_field('external_url');
                     $excerpt_wordcount = '34';
                     if ($postType == 'labs') {
-                        $postTax = 'researcher-faculty-labs-tax';
+                        $postTax1 = 'researcher-faculty-labs-tax';
                     } elseif ($postType == 'student-support') {
-                        $postTax = 'student-support-resources-tax';
+                        $postTax1 = 'student-support-resources-tax';
                     } elseif ($postType == 'studentopportunities') {
-                        $postTax = 'student-opportunities-tax';
+                        $postTax1 = 'student-opportunities-tax';
+                        $postTax2 = 'student-opp-eligib-tax';
+                        $postTax3 = 'student-opp-avail-tax';
                     }
                     if ($postType == 'labs' || $postType == 'student-support' || $postType == 'studentopportunities') {
-                        $taxTerms = get_the_terms($post->ID, $postTax);
+                        if ($postTax1) {
+                            $taxTerms1 = get_the_terms($post->ID, $postTax1);
+                        }
+                        if ($postTax2) {
+                            $taxTerms2 = get_the_terms($post->ID, $postTax2);
+                        }
+                        if ($postTax3) {
+                            $taxTerms3 = get_the_terms($post->ID, $postTax3);
+                        }
                     }
+
                     //Construct the parts
                     echo '<!-- Card Container Begin --><div class="card-container">';
                     echo '<a href="' . esc_url($post_url) . '">';
@@ -73,15 +86,29 @@
                     echo '</div><!-- card Header End -->';
                     echo '</div><!-- card Content End -->'; //end Program Content
                     echo '</a>';
-                    if (!empty($taxTerms)) {
+                    if (!empty($taxTerms1) && !empty($itemClass1)) {
                         echo '<ul class="pbsci-taxonomy flex-wrap">';
-                        foreach ($taxTerms as $taxTerm) {
-                            echo '<li class="itemtaxonomy" data-timestamp="1234" data-' . $itemClass . '="' . $taxTerm->slug . '">' . $taxTerm->name . '</li>';
+                        foreach ($taxTerms1 as $taxTerm1) {
+                            echo '<li class="itemtaxonomy1"  data-' . $itemClass1 . '="' . $taxTerm1->slug . '">' . $taxTerm1->name . '</li>';
                         }
                         echo '</ul>';
                     }
-                    //print_r($taxTerms);
-                    echo '<!-- card Blurb Begin --><div id="cardblurb' . $postid . '"class="card-blurb">';
+                    if (!empty($taxTerms2) && !empty($itemClass2)) {
+                        echo '<ul class="pbsci-taxonomy flex-wrap">';
+                        foreach ($taxTerms2 as $taxTerm2) {
+                            echo '<li class="itemtaxonomy"  data-' . $itemClass2 . '="' . $taxTerm2->slug . '">' . $taxTerm2->name . '</li>';
+                        }
+                        echo '</ul>';
+                    }
+                    if (!empty($taxTerms3) && !empty($itemClass3)) {
+                        echo '<ul class="pbsci-taxonomy flex-wrap">';
+                        foreach ($taxTerms3 as $taxTerm3) {
+                            echo '<li class="itemtaxonomy"  data-' . $itemClass3 . '="' . $taxTerm3->slug . '">' . $taxTerm3->name . '</li>';
+                        }
+                        echo '</ul>';
+                    }
+                    var_dump($taxTerms2);
+                    echo '<!-- card Blurb Begin --><div id="cardblurb" class="card-blurb">';
                     ucsc_underscore_custom_excerpt($excerpt_wordcount);
                     echo '</div><!-- card Blurb End -->';
                     echo '</div><!-- card Row End -->'; //end Program Row

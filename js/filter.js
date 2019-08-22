@@ -101,7 +101,9 @@ $(function () {
     var opportunityOptions = {
         valueNames: [
             'post-title',
-            'itemtaxonomy',
+            'itemtaxonomy1',
+            'itemtaxonomy2',
+            'itemtaxonomy3',
             // { data: ['timestamp'] },
         ]
     }
@@ -116,7 +118,7 @@ $(function () {
         console.log(selection);
         if (selection != 'clear') {
             // opportunityList.filter(function (item) {
-            //     return (item.values().itemtaxonomy == selection);
+            //     return (item.values().itemtaxonomy1 == selection);
 
             // });
             opportunityList.fuzzySearch(selection);
