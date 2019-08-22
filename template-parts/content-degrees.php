@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template part for displaying page content in page.php
+ * Template part for displaying DEGREES archive content in page.php
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
