@@ -64,10 +64,13 @@
                     // $taxonomies = get_taxonomies($taxargs, $output, $operator);
                     $post_title = get_the_title();
                     $post_url = get_field('external_url');
+                    $current_post_type = get_post_type();
                     $excerpt_wordcount = '34';
                     //Post Type Conditionals
                     //Post Types
                     if ($postType == 'labs') {
+                        // get departments ACF
+                        // $departments = get_field('department_link_global');
                         //Post Type Taxonomies
                         $postTax1 = 'researcher-faculty-labs-tax';
                         //Taxonomy Labels
@@ -83,6 +86,8 @@
                             $taxTerms3 = get_the_terms($post->ID, $postTax3);
                         }
                     } elseif ($postType == 'student-support') {
+                        // get departments ACF
+                        // $departments = get_field('department_link_global');
                         //Post Type Taxonomies
                         $postTax1 = 'student-support-resources-tax';
                         //Taxonomy Labels
@@ -98,6 +103,8 @@
                             $taxTerms3 = get_the_terms($post->ID, $postTax3);
                         }
                     } elseif ($postType == 'studentopportunities') {
+                        // get departments ACF
+                        $departments = get_field('department_link_global');
                         //Post Type Taxonomies
                         $postTax1 = 'student-opportunities-tax';
                         $postTax2 = 'student-opp-eligib-tax';
@@ -179,6 +186,18 @@
                     echo '<!-- card Blurb Begin --><div id="cardblurb" class="card-blurb">';
                     ucsc_underscore_custom_excerpt($excerpt_wordcount);
                     echo '</div><!-- card Blurb End -->';
+
+                    if ($departments) :
+                        echo '<div aria-hidden="true" class="hidden-data">';
+                        echo '<p class="depts">';
+                        foreach ($departments as $key => $department) :
+
+                            echo $department->post_name . ' ';
+                        endforeach;
+                        echo '</p>';
+                        echo '</div>';
+                    endif;
+
                     echo '</div><!-- card Row End -->'; //end Program Row
                     wp_reset_postdata();
                 endwhile;

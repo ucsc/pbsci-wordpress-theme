@@ -256,6 +256,33 @@
             "min": "",
             "max": 3,
             "return_format": "object"
+        },
+        {
+            "key": "field_5d5ee21ac58a2",
+            "label": "Department Link (copy)",
+            "name": "department_link_copy",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "post_type": [
+                "department"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": 3,
+            "return_format": "object"
         }
     ],
     "location": [
@@ -275,5 +302,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1565712291
+    "modified": 1566499370
 }

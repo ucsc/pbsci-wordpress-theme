@@ -104,6 +104,7 @@ $(function () {
             'itemtaxonomy1',
             'itemtaxonomy2',
             'itemtaxonomy3',
+            'depts',
             // { data: ['timestamp'] },
         ]
     }
@@ -154,6 +155,21 @@ $(function () {
             opportunityList.fuzzySearch(selection);
         } else {
             opportunityList.filter();
+            return false;
+        }
+
+    })
+    $('#studentopportunities-department-select').change(function () {
+        var selection = this.value;
+        console.log(selection);
+        if (selection != 'clear') {
+            // degreeList.filter(function (item) {
+            //     return (item.values().departments == selection);
+
+            // });
+            opportunityList.fuzzySearch(selection);
+        } else {
+            // degreeList.clear();
             return false;
         }
 

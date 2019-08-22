@@ -52,6 +52,12 @@
         }
     }
     
+    .hidden-data {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    
     .display-block * {
         display: block;
         margin: auto;

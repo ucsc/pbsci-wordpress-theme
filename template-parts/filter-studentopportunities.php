@@ -70,6 +70,29 @@ $taxTerms3 = get_terms($postTax3, ['hide_empty' => false]);
         </select>
     </li>
     <li>
+        <select id="studentopportunities-department-select">
+            <option selected="selected" value="clear">By department</option>
+            <?php
+            $depargs = array(
+                'post_type' => 'department',
+                'orderby' => 'title',
+                'order' => 'ASC',
+                'posts_per_page' => '-1'
+            );
+            $departmentsList = get_posts($depargs);
+
+            if ($departmentsList) {
+                foreach ($departmentsList as $department) {
+                    $deptSlug = $department->post_name;
+                    $deptTitle = $department->post_title;
+                    echo '<option value="' . $deptSlug . '">' . $deptTitle . '</option>';
+                }
+            }
+            ?>
+
+        </select>
+    </li>
+    <li>
         <input class="search" id="opportunity-search" placeholder="Search Here.." />
     </li>
     <li>
