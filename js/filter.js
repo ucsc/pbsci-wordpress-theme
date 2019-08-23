@@ -148,3 +148,70 @@ $(function () {
         $('.filter-select').prop('selectedIndex', 0);
     });
 });
+
+
+$(function () {
+    //search js
+    var supportOptions = {
+        valueNames: [
+            'post-title',
+            'itemtaxonomy1',
+            'itemtaxonomy2',
+            'itemtaxonomy3',
+            'depts',
+        ]
+    }
+    var supportList = new List('page-student-support', supportOptions);
+    // console.log(supportList.items);
+    $('#support-search').on('keyup', function () {
+        var searchString = $(this).val();
+        supportList.fuzzySearch(searchString);
+    });
+    $('#student-support-tax').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            supportList.fuzzySearch(selection);
+        } else {
+            supportList.search();
+        }
+
+    })
+    $('#student-supp-eligib-tax').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            supportList.fuzzySearch(selection);
+        } else {
+            supportList.search();
+        }
+
+    })
+    $('#student-supp-avail-tax').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            supportList.fuzzySearch(selection);
+        } else {
+            supportList.search();
+        }
+
+    })
+    $('#studentsupport-department-select').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            supportList.fuzzySearch(selection);
+        } else {
+            supportList.search();
+        }
+
+    })
+    $('#support-clear').click(function () {
+        /*Clear textarea using class */
+        $('#support-search').val('');
+        supportList.search();
+        /* Reset Degree type Dropdown*/
+        $('.filter-select').prop('selectedIndex', 0);
+    });
+});

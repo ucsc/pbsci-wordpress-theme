@@ -37,8 +37,11 @@
             $itemClass3 = 'opportunity_availability';
         } elseif (is_page('student-support')) {
             echo '<div id="page-' . $pslug . '" class="page-content">';
+            get_template_part('template-parts/filter', 'studentsupport');
             $postType = 'student-support';
             $itemClass1 = 'student_support';
+            $itemClass2 = 'opportunity_eligibility';
+            $itemClass3 = 'opportunity_availability';
         } ?>
         <div class="list three-col-grid">
             <?php
@@ -53,15 +56,6 @@
             if ($post_query->have_posts()) : while ($post_query->have_posts()) : $post_query->the_post();
 
                     //Set up the parts
-
-                    // $taxargs = array(
-                    //     'public'   => true,
-                    //     '_builtin' => false
-
-                    // );
-                    // $output = 'names'; // or objects
-                    // $operator = 'and'; // 'and' or 'or'
-                    // $taxonomies = get_taxonomies($taxargs, $output, $operator);
                     $post_title = get_the_title();
                     $post_url = get_field('external_url');
                     $current_post_type = get_post_type();
@@ -87,11 +81,15 @@
                         }
                     } elseif ($postType == 'student-support') {
                         // get departments ACF
-                        // $departments = get_field('department_link_global');
-                        //Post Type Taxonomiesinstitutes-and-centers
-                        $postTax1 = 'student-support-resources-tax';
+                        $departments = get_field('department_link_global');
+                        //Post Type Taxonomies
+                        $postTax1 = 'student-support-tax';
+                        $postTax2 = 'student-opp-eligib-tax';
+                        $postTax3 = 'student-opp-avail-tax';
                         //Taxonomy Labels
                         $taxLabel1 = '';
+                        $taxLabel2 = 'Eligibility';
+                        $taxLabel3 = 'Availability';
                         //Terms conditionals
                         if ($postTax1) {
                             $taxTerms1 = get_the_terms($post->ID, $postTax1);
