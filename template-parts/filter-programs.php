@@ -28,17 +28,15 @@ $degreeTypes = array(
     "ba" => "Bachelor of Arts",
     "bs" => "Bachelor of Science",
     "undergradminor" => "Undergraduate Minor",
-
-
     "designatedemphasis" => "Designated Emphasis"
 );
 
 ?>
 
-<ul class="flex-wrap filter-select">
+<ul id="filterSelect" class="flex-wrap filter-list">
 
     <li>
-        <select name="degreetype" id="degreetype-select">
+        <select name="degreetype" id="degreetype-select" class="filter-select">
             <option selected="selected" value="clear">By degree type</option>
             <?php if ($degreeTypes) {
                 foreach ($degreeTypes as $key => $value) {
@@ -48,7 +46,7 @@ $degreeTypes = array(
         </select>
     </li>
     <li>
-        <select name="department" id="department-select">
+        <select name="department" id="department-select" class="filter-select">
             <option selected="selected" value="clear">By department</option>
             <?php
             $depargs = array(
@@ -74,8 +72,8 @@ $degreeTypes = array(
         <input class="search" id="degree-search" placeholder="Search Here.." />
     </li>
     <li>
-        <button id="filter-clear">
-            clear
+        <button id="degree-clear" class="filter-clear">
+            reset
         </button>
     </li>
 </ul>

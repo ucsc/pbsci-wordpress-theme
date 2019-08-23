@@ -14,32 +14,22 @@ $(function () {
     var degreeList = new List('degree_cards', degreeOptions);
     console.log(degreeList.items);
     $('#degreetype-select').change(function () {
-        // alert($(this).val());
         var selection = this.value;
-        console.log(selection);
+        // console.log(selection);
         if (selection != 'clear') {
-            // degreeList.filter(function (item) {
-            //     return (item.values().program == selection);
-            // });
             degreeList.fuzzySearch(selection);
         } else {
-            degreeList.filter();
-            return false;
+            degreeList.search();
         }
     });
 
     $('#department-select').change(function () {
         var selection = this.value;
-        console.log(selection);
+        // console.log(selection);
         if (selection != 'clear') {
-            // degreeList.filter(function (item) {
-            //     return (item.values().departments == selection);
-
-            // });
             degreeList.fuzzySearch(selection);
         } else {
-            // degreeList.clear();
-            return false;
+            degreeList.search();
         }
 
     })
@@ -49,12 +39,14 @@ $(function () {
         degreeList.fuzzySearch(searchString);
     });
 
-    $('#filter-clear').click(function () {
-        document.getElementById('degree-search').value = '';
-        // degreeList.filter();
-        // return false;
-
+    $('#degree-clear').click(function () {
+        /*Clear textarea using ID */
+        $('#degree-search').val('');
+        degreeList.search();
+        /* Reset Degree type Dropdown using Class*/
+        $('.filter-select').prop('selectedIndex', 0);
     });
+
 });
 
 $(function () {
@@ -62,37 +54,32 @@ $(function () {
     var labOptions = {
         valueNames: [
             'post-title',
-            'itemtaxonomy',
+            'itemtaxonomy1',
             // { data: ['researcher_faculty_labs'] },
-            // { data: ['timestamp'] },
         ]
     }
     var labList = new List('page-faculty-researchers', labOptions);
-    console.log(labList.items);
+    // console.log(labList.items);
     $('#lab-search').on('keyup', function () {
         var searchString = $(this).val();
         labList.fuzzySearch(searchString);
     });
     $('#researcher-faculty-labs-tax').change(function () {
         var selection = this.value;
-        console.log(selection);
+        // console.log(selection);
         if (selection != 'clear') {
-            // labList.filter(function (item) {
-            //     return (item.values().itemtaxonomy == selection);
-
-            // });
             labList.fuzzySearch(selection);
         } else {
-            labList.filter();
-            return false;
+            labList.search();
         }
 
     })
-    $('#lab_clear').click(function () {
-        // document.getElementById('degree-search').value = '';
-        labList.filter();
-        return false;
-
+    $('#lab-clear').click(function () {
+        /*Clear textarea using ID */
+        $('#lab-search').val('');
+        labList.search();
+        /* Reset Degree type Dropdown*/
+        $('.filter-select').prop('selectedIndex', 0);
     });
 });
 
@@ -105,79 +92,59 @@ $(function () {
             'itemtaxonomy2',
             'itemtaxonomy3',
             'depts',
-            // { data: ['timestamp'] },
         ]
     }
     var opportunityList = new List('page-student-research-opportunities', opportunityOptions);
-    console.log(opportunityList.items);
+    // console.log(opportunityList.items);
     $('#opportunity-search').on('keyup', function () {
         var searchString = $(this).val();
         opportunityList.fuzzySearch(searchString);
     });
     $('#student-opportunities-tax').change(function () {
         var selection = this.value;
-        console.log(selection);
+        // console.log(selection);
         if (selection != 'clear') {
-            // opportunityList.filter(function (item) {
-            //     return (item.values().itemtaxonomy1 == selection);
-
-            // });
             opportunityList.fuzzySearch(selection);
         } else {
-            opportunityList.filter();
-            return false;
+            opportunityList.search();
         }
 
     })
     $('#student-opp-eligib-tax').change(function () {
         var selection = this.value;
-        console.log(selection);
+        // console.log(selection);
         if (selection != 'clear') {
-            // opportunityList.filter(function (item) {
-            //     return (item.values().itemtaxonomy1 == selection);
-
-            // });
             opportunityList.fuzzySearch(selection);
         } else {
-            opportunityList.filter();
-            return false;
+            opportunityList.search();
         }
 
     })
     $('#student-opp-avail-tax').change(function () {
         var selection = this.value;
-        console.log(selection);
+        // console.log(selection);
         if (selection != 'clear') {
-            // opportunityList.filter(function (item) {
-            //     return (item.values().itemtaxonomy1 == selection);
-
-            // });
             opportunityList.fuzzySearch(selection);
         } else {
-            opportunityList.filter();
-            return false;
+            opportunityList.search();
         }
 
     })
     $('#studentopportunities-department-select').change(function () {
         var selection = this.value;
-        console.log(selection);
+        // console.log(selection);
         if (selection != 'clear') {
-            // degreeList.filter(function (item) {
-            //     return (item.values().departments == selection);
-
-            // });
             opportunityList.fuzzySearch(selection);
         } else {
-            // degreeList.clear();
-            return false;
+            opportunityList.search();
         }
 
     })
-    $('#opportunity_clear').click(function () {
-        // document.getElementById('degree-search').value = '';
-        opportunityList.filter();
-        return false;
-
+    $('#opportunity-clear').click(function () {
+        /*Clear textarea using class */
+        $('#opportunity-search').val('');
+        opportunityList.search();
+        /* Reset Degree type Dropdown*/
+        $('.filter-select').prop('selectedIndex', 0);
     });
 });

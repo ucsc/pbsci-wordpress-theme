@@ -25,10 +25,10 @@ $taxTerms = get_terms($postTax, ['hide_empty' => false]);
 
 ?>
 
-<ul class="flex-wrap filter-select">
+<ul class="flex-wrap filter-list">
 
     <li>
-        <select class="link-select" id="<?php echo $postTax ?>">
+        <select class="filter-select" id="<?php echo $postTax ?>">
             <option selected="selected" value="clear"><?php echo $taxTitle ?></option>
             <?php if ($taxTerms) {
                 foreach ($taxTerms as $taxTerm) {
@@ -41,7 +41,7 @@ $taxTerms = get_terms($postTax, ['hide_empty' => false]);
         <input class="search" id="lab-search" placeholder="Search Here.." />
     </li>
     <li>
-        <button class="filter-clear" id="lab_clear">
+        <button class="filter-clear" id="lab-clear">
             clear
         </button>
     </li>

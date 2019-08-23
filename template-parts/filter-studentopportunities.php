@@ -37,10 +37,10 @@ $taxTerms3 = get_terms($postTax3, ['hide_empty' => false]);
 
 ?>
 
-<ul class="flex-wrap filter-select">
+<ul class="flex-wrap filter-list">
 
     <li>
-        <select class="link-select" id="<?php echo $postTax1 ?>">
+        <select class="filter-select" id="<?php echo $postTax1 ?>">
             <option selected="selected" value="clear"><?php echo $selectTitle1 ?></option>
             <?php if ($taxTerms1) {
                 foreach ($taxTerms1 as $taxTerm1) {
@@ -50,7 +50,7 @@ $taxTerms3 = get_terms($postTax3, ['hide_empty' => false]);
         </select>
     </li>
     <li>
-        <select class="link-select" id="<?php echo $postTax2 ?>">
+        <select class="filter-select" id="<?php echo $postTax2 ?>">
             <option selected="selected" value="clear"><?php echo $selectTitle2 ?></option>
             <?php if ($taxTerms2) {
                 foreach ($taxTerms2 as $taxTerm2) {
@@ -60,7 +60,7 @@ $taxTerms3 = get_terms($postTax3, ['hide_empty' => false]);
         </select>
     </li>
     <li>
-        <select class="link-select" id="<?php echo $postTax3 ?>">
+        <select class="filter-select" id="<?php echo $postTax3 ?>">
             <option selected="selected" value="clear"><?php echo $selectTitle3 ?></option>
             <?php if ($taxTerms3) {
                 foreach ($taxTerms3 as $taxTerm3) {
@@ -70,7 +70,7 @@ $taxTerms3 = get_terms($postTax3, ['hide_empty' => false]);
         </select>
     </li>
     <li>
-        <select id="studentopportunities-department-select">
+        <select class="filter-select" id="studentopportunities-department-select">
             <option selected="selected" value="clear">By department</option>
             <?php
             $depargs = array(
@@ -96,8 +96,8 @@ $taxTerms3 = get_terms($postTax3, ['hide_empty' => false]);
         <input class="search" id="opportunity-search" placeholder="Search Here.." />
     </li>
     <li>
-        <button class="filter-clear" id="lab_clear">
-            clear
+        <button class="filter-clear" id="opportunity-clear">
+            reset
         </button>
     </li>
 </ul>
