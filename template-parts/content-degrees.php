@@ -98,7 +98,7 @@
                             if (in_array('bs', $degrees)) :
                                 echo '<li class="bs">B.S.</li>';
                             endif;
-                            if (in_array('undergradminor', $degrees) || in_array('gradminor', $degrees)) :
+                            if (in_array('undergradminor', $degrees)) :
                                 echo '<li class="minor">Min.</li>';
                             endif;
                             echo '</ul>';
