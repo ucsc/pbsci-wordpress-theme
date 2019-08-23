@@ -28,7 +28,7 @@ get_header();
                 get_template_part('template-parts/content', 'degrees');
             } else if (is_page('departments')) {
                 get_template_part('template-parts/content', 'departments');
-            } else if (is_page(array('faculty-researchers', 'institutes-and-centers', 'student-research-opportunities', 'student-support'))) {
+            } else if (is_page(array('faculty-researchers', 'research-groups-facilities', 'student-research-opportunities', 'student-support'))) {
                 get_template_part('template-parts/content', 'links');
             } else {
                 get_template_part('template-parts/content', 'page');

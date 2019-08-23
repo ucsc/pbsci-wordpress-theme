@@ -25,7 +25,7 @@
             get_template_part('template-parts/filter', 'labs');
             $postType = 'labs';
             $itemClass1 = 'researcher_faculty_labs';
-        } elseif (is_page('institutes-and-centers')) {
+        } elseif (is_page('research-groups-facilities')) {
             echo '<div id="page-' . $pslug . '" class="page-content">';
             $postType = 'institutes-centers';
         } elseif (is_page('student-research-opportunities')) {
@@ -88,7 +88,7 @@
                     } elseif ($postType == 'student-support') {
                         // get departments ACF
                         // $departments = get_field('department_link_global');
-                        //Post Type Taxonomies
+                        //Post Type Taxonomiesinstitutes-and-centers
                         $postTax1 = 'student-support-resources-tax';
                         //Taxonomy Labels
                         $taxLabel1 = '';
