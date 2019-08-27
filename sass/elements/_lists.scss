@@ -25,6 +25,12 @@
         margin: 0 1.5em 1.5em;
     }
     
+    .no-list-style {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
     .footer-departments-list,
     .footer-resources-list,
     .footer-social {
@@ -49,4 +55,9 @@
                 @include font-size(3);
             }
         }
+    }
+    /* FilterJS Search*/
+    
+    .filter-list {
+        margin: 0 0 2.5em;
     }

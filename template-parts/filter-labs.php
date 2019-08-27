@@ -38,11 +38,9 @@ $taxTerms = get_terms($postTax, ['hide_empty' => false]);
         </select>
     </li>
     <li>
-        <input class="search" id="lab-search" placeholder="Search Here.." />
+        <input type="search" class="search" id="lab-search" placeholder="Search Here.." />
     </li>
     <li>
-        <button class="filter-clear" id="lab-clear">
-            clear
-        </button>
+        <input value="reset" type="reset" class="filter-clear" id="lab-clear">
     </li>
 </ul>

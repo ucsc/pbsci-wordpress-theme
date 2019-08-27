@@ -33,7 +33,7 @@ $degreeTypes = array(
 
 ?>
 
-<ul id="filterSelect" class="flex-wrap filter-list">
+<ul id="filterSelect" class="flex-wrap filter-list no-list-style">
 
     <li>
         <select name="degreetype" id="degreetype-select" class="filter-select">
@@ -69,11 +69,9 @@ $degreeTypes = array(
         </select>
     </li>
     <li>
-        <input class="search" id="degree-search" placeholder="Search Here.." />
+        <input type="search" class="search" id="degree-search" placeholder="Search Here..." />
     </li>
     <li>
-        <button id="degree-clear" class="filter-clear">
-            reset
-        </button>
+        <input type="reset" type="reset" id="degree-clear" class="primary filter-clear" value="Reset">
     </li>
 </ul>

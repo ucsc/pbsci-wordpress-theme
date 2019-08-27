@@ -2,21 +2,44 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
-	background: $color__background-button;
-	color: rgba(0, 0, 0, .8);
-	@include font-size(0.75);
-	line-height: 1;
-	padding: .6em 1em .4em;
+    border: 1px solid;
+    border-color: $color__border-button;
+    border-radius: 3px;
+    background: $color__background-button;
+    color: rgba(0, 0, 0, .8);
+    @include font-size(1);
+    line-height: 1;
+    padding: 10px 5px;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        height: 3px;
+        background-color: #ffbf00;
+        width: 100%;
+        transition: -webkit-transform 400ms ease-in-out;
+        transition: transform 400ms ease-in-out;
+        transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+        -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+        transform: scaleX(0);
+    }
+}
 
-	&:hover {
-		border-color: $color__border-button-hover;
-	}
+&:hover {
+    border-color: $ucsc--light-orange;
+}
 
-	&:active,
-	&:focus {
-		border-color: $color__border-button-focus;
-	}
+&:active,
+&:focus {
+    border-color: $ucsc--light-orange;
+}
+
+.primary {
+    color: $color__white !important;
+    background: $ucsc--lighter-blue !important;
+    border: 2px solid $ucsc--lighter-blue !important;
+    transition: all 0.3s !important;
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1) !important;
 }

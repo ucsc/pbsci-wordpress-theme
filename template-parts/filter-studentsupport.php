@@ -37,7 +37,7 @@ $taxTerms3 = get_terms($postTax3, ['hide_empty' => false]);
 
 ?>
 
-<ul class="flex-wrap filter-list">
+<ul class="flex-wrap filter-list no-list-style">
 
     <li>
         <select class="filter-select" id="<?php echo $postTax1 ?>">
@@ -93,11 +93,10 @@ $taxTerms3 = get_terms($postTax3, ['hide_empty' => false]);
         </select>
     </li>
     <li>
-        <input class="search" id="support-search" placeholder="Search Here.." />
+        <input type="search" class="search" id="support-search" placeholder="Search Here..." />
     </li>
     <li>
-        <button class="filter-clear" id="support-clear">
-            reset
-        </button>
+        <input value="reset" type="reset" class="primary filter-clear" id="support-clear">
+
     </li>
 </ul>
