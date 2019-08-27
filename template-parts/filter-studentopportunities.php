@@ -96,6 +96,6 @@ $taxTerms3 = get_terms($postTax3, ['hide_empty' => false]);
         <input type="search" class="search" id="opportunity-search" placeholder="Search Here.." />
     </li>
     <li>
-        <input value="reset" type="reset" class="filter-clear" id="opportunity-clear">
+        <input value="reset" type="reset" class="primary filter-clear" id="opportunity-clear">
     </li>
 </ul>
