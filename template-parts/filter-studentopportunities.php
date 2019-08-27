@@ -37,7 +37,7 @@ $taxTerms3 = get_terms($postTax3, ['hide_empty' => false]);
 
 ?>
 
-<ul class="flex-wrap filter-list">
+<ul class="flex-wrap filter-list no-list-style">
 
     <li>
         <select class="filter-select" id="<?php echo $postTax1 ?>">
