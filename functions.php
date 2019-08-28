@@ -337,7 +337,28 @@ function ucsc_underscore_body_classes($classes)
  */
 add_post_type_support('page', 'excerpt');
 
-
+/**
+ * Hide editor on specific pages.
+ *
+ */
+add_action('admin_init', 'ucsc_underscore_hide_editor');
+function ucsc_underscore_hide_editor()
+{
+    // Get the Post ID.
+    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+    if (!isset($post_id)) return;
+    // Hide the editor on the page titled 'Homepage'
+    $pagename = get_the_title($post_id);
+    if ($pagename == 'Student Support' || $pagename == 'Degrees' || $pagename == 'Departments' || $pagename == 'Faculty &#038; Researchers' || $pagename == 'Research Groups &#038; Facilities' || $pagename == 'Student Research Opportunities') {
+        remove_post_type_support('page', 'editor');
+    }
+    // Hide the editor on a page with a specific page template
+    // Get the name of the Page Template file.
+    //   $template_file = get_post_meta($post_id, '_wp_page_template', true);
+    //   if($template_file == 'my-page-template.php'){ // the filename of the page template
+    // remove_post_type_support('page', 'editor');
+    //   }
+}
 
 /**
  * @param [type] $num

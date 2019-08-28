@@ -14,6 +14,7 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <?php if (has_excerpt()) {
             the_excerpt();
+            echo get_the_title();
         } ?>
 
         <?php
@@ -59,7 +60,7 @@
                     $post_title = get_the_title();
                     $post_url = get_field('external_url');
                     $current_post_type = get_post_type();
-                    $excerpt_wordcount = '34';
+                    $excerpt_wordcount = '30';
                     //Post Type Conditionals
                     //Post Types
                     if ($postType == 'labs') {
@@ -182,7 +183,7 @@
                     // print_r($taxonomies);
                     // echo '</pre>';
                     echo '<!-- card Blurb Begin --><div id="cardblurb" class="card-blurb">';
-                    ucsc_underscore_custom_excerpt(35);
+                    ucsc_underscore_custom_excerpt($excerpt_wordcount);
                     echo '</div><!-- card Blurb End -->';
 
                     if ($departments) :
