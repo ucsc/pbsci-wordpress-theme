@@ -24,9 +24,8 @@ $taxTitle = 'Faculty Researchers List';
 $taxTerms = get_terms($postTax, ['hide_empty' => false]);
 
 ?>
-
+<p class="filter-head">Filter this list:</p>
 <ul class="flex-wrap filter-list no-list-style">
-
     <li>
         <select class="filter-select" id="<?php echo $postTax ?>">
             <option selected="selected" value="clear"><?php echo $taxTitle ?></option>

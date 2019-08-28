@@ -32,12 +32,12 @@ $degreeTypes = array(
 );
 
 ?>
-
+<p class="filter-head">Filter this list:</p>
 <ul id="filterSelect" class="flex-wrap filter-list no-list-style">
 
     <li>
-        <select name="degreetype" id="degreetype-select" class="filter-select">
-            <option selected="selected" value="clear">By degree type</option>
+        <span>By: </span> <select name="degreetype" id="degreetype-select" class="filter-select">
+            <option selected="selected" value="clear">Program</option>
             <?php if ($degreeTypes) {
                 foreach ($degreeTypes as $key => $value) {
                     echo '<option value="' . $key . '">' . $value . '</option>';
@@ -46,8 +46,8 @@ $degreeTypes = array(
         </select>
     </li>
     <li>
-        <select name="department" id="department-select" class="filter-select">
-            <option selected="selected" value="clear">By department</option>
+        <span>By: </span> <select name="department" id="department-select" class="filter-select">
+            <option selected="selected" value="clear">Department</option>
             <?php
             $depargs = array(
                 'post_type' => 'department',
@@ -69,9 +69,9 @@ $degreeTypes = array(
         </select>
     </li>
     <li>
-        <input type="search" class="search" id="degree-search" placeholder="Search Here..." />
+        <input type="search" class="search" id="degree-search" placeholder="Search this list" />
     </li>
     <li>
-        <input type="reset" type="reset" id="degree-clear" class="primary filter-clear" value="Reset">
+        <input type="reset" type="reset" id="degree-clear" class="primary filter-clear" value="Show all">
     </li>
 </ul>

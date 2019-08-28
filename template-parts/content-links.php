@@ -182,7 +182,7 @@
                     // print_r($taxonomies);
                     // echo '</pre>';
                     echo '<!-- card Blurb Begin --><div id="cardblurb" class="card-blurb">';
-                    ucsc_underscore_custom_excerpt($excerpt_wordcount);
+                    ucsc_underscore_custom_excerpt(35);
                     echo '</div><!-- card Blurb End -->';
 
                     if ($departments) :

@@ -337,6 +337,8 @@ function ucsc_underscore_body_classes($classes)
  */
 add_post_type_support('page', 'excerpt');
 
+
+
 /**
  * @param [type] $num
  * @return void
@@ -348,10 +350,10 @@ function ucsc_underscore_custom_excerpt($num)
 {
     $limit = $num + 1;
     $excerpt = explode(' ', get_the_excerpt(), $limit);
-    array_pop($excerpt);
-    $excerpt = implode(" ", $excerpt)
-        /**."... (<a href='" .get_permalink($post->ID) ." '>Read more</a>)"*/
-    ;
+    if (count($excerpt) > $num) {
+        array_pop($excerpt);
+    }
+    $excerpt = implode(" ", $excerpt);
     echo $excerpt;
 }
 /**
