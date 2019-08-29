@@ -9,7 +9,6 @@
  *
  * @package UCSC_PBSci
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -83,15 +82,10 @@
                                         if (in_array('undergradminor', $degrees) || in_array('gradminor', $degrees)) :
                                             echo '<li class="minor">Min.</li>';
                                         endif;
-
-
-
-
                                         echo '</ul>';
                                         echo '</div><!-- Panel Degrees Offered End -->';
                                     endif;
                                 }
-
                                 ?></span>
                             </div>
                         </header><!-- .entry-header -->
@@ -152,7 +146,6 @@
                                 echo '</div><!-- Panel Degrees Offered End -->';
                             endif;
                         }
-
                         ?></span>
                     </div>
                 </header><!-- .entry-header -->

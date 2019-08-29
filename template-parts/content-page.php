@@ -69,7 +69,7 @@ $page_blurb = get_field('page_blurb');
                     $fontIcon = $secondaryIcon3;
                     $fontIconColor = $secondaryIconColor3;
                 }
-                echo "<li id='menu-item-$menuItemID' class='menu-item menu-item-type-post_type menu-item-object-page menu-item-$menuItemID'><a href='$menuItemUrl'><i style='color: $fontIconColor'class='fas fa-$fontIcon'></i><p class='chevron-right-yellow-small'>" . $menuItemTitle . "</p></a></li>";
+                echo "<li id='menu-item-$menuItemID' class='menu-item menu-item-type-post_type menu-item-object-page menu-item-$menuItemID'><a href='$menuItemUrl'><i style='color: $fontIconColor'class='fas fa-$fontIcon'></i><p>" . $menuItemTitle . "</p></a></li>";
             }
             echo '</ul>';
         }

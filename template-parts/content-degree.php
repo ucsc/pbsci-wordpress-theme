@@ -7,7 +7,11 @@
  *
  * @package UC_Santa_Cruz
  */
-
+if (has_post_thumbnail($post->ID)) {
+    the_post_thumbnail_url('page-hero');
+}
+// $test = wp_get_attachment_image_url($post->ID, 'page-hero');
+// var_dump($test);
 ?>
 <div class="wrap">
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

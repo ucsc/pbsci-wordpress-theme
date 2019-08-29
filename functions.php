@@ -7,11 +7,9 @@
  *
  * @package UCSC_PBSci
  */
-
 define('THEMEROOT', get_stylesheet_directory_uri());
 define('TEMPLATE', get_template_directory_uri());
 define('IMAGES', THEMEROOT . '/images');
-
 if (!function_exists('ucsc_pbsci_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
@@ -29,10 +27,8 @@ if (!function_exists('ucsc_pbsci_setup')) :
          * to change 'ucsc-pbsci' to the name of your theme in all the template files.
          */
         load_theme_textdomain('ucsc-pbsci', get_template_directory() . '/languages');
-
         // Add default posts and comments RSS feed links to head.
         add_theme_support('automatic-feed-links');
-
         /*
          * Let WordPress manage the document title.
          * By adding theme support, we declare that this theme does not use a
@@ -40,14 +36,17 @@ if (!function_exists('ucsc_pbsci_setup')) :
          * provide it for us.
          */
         add_theme_support('title-tag');
-
         /*
          * Enable support for Post Thumbnails on posts and pages.
          *
          * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
          */
         add_theme_support('post-thumbnails');
-
+        /**
+         * Add new image sizes
+         */
+        add_image_size('page-hero', 1600, 200, true);
+        // add_image_size('page-hero', 1905, 230);
         /**
          * Register nav menu locations
          * this theme uses wp_nav_menu() in three location.
@@ -92,16 +91,13 @@ if (!function_exists('ucsc_pbsci_setup')) :
             'gallery',
             'caption',
         ));
-
         // Set up the WordPress core custom background feature.
         add_theme_support('custom-background', apply_filters('ucsc_pbsci_custom_background_args', array(
             'default-color' => 'ffffff',
             'default-image' => '',
         )));
-
         // Add theme support for selective refresh for widgets.
         add_theme_support('customize-selective-refresh-widgets');
-
         /**
          * Add support for core custom logo.
          *
@@ -116,7 +112,6 @@ if (!function_exists('ucsc_pbsci_setup')) :
     }
 endif;
 add_action('after_setup_theme', 'ucsc_pbsci_setup');
-
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -132,7 +127,6 @@ function ucsc_pbsci_content_width()
     $GLOBALS['content_width'] = apply_filters('ucsc_pbsci_content_width', 640);
 }
 add_action('after_setup_theme', 'ucsc_pbsci_content_width', 0);
-
 /**
  * Register widget area.
  *
@@ -149,7 +143,6 @@ function ucsc_pbsci_widgets_init()
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ));
-
     register_sidebar(array(
         'name'          => esc_html__('Footer One', 'ucsc-pbsci'),
         'id'            => 'footer-sidebar-1',
@@ -181,11 +174,6 @@ function ucsc_pbsci_widgets_init()
 add_action('widgets_init', 'ucsc_pbsci_widgets_init');
 
 /**
- * Add new image sizes
- */
-add_image_size('page-hero', 1905, 430, true);
-
-/**
  * Register new image sizes for Add Media modal
  */
 add_filter('image_size_names_choose', 'ucsc_pbsci_custom_sizes');
@@ -195,11 +183,9 @@ function ucsc_pbsci_custom_sizes($sizes)
         'page-hero' => __('Hero Image'),
     ));
 }
-
 /**
  * Deregister WordPress JQuery and register Google JQuThese are some wordsery library
  */
-
 function ucsc_pbsci_modify_jquery()
 {
     if (!is_admin()) {
@@ -210,22 +196,16 @@ function ucsc_pbsci_modify_jquery()
         wp_enqueue_script('jquery'); // enqueue the external file
     }
 }
-
 add_action('init', 'ucsc_pbsci_modify_jquery');
-
 /**
  * Enqueue scripts and styles.
  */
 function ucsc_pbsci_scripts()
 {
     wp_enqueue_style('ucsc-pbsci-style', get_stylesheet_uri());
-
     // wp_enqueue_script( 'ucsc-pbsci-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
     wp_enqueue_script('ucsc-pbsci-navigation-2', get_template_directory_uri() . '/js/navigation2.js', array(), '', true);
-
     wp_enqueue_script('ucsc-pbsci-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
-
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
@@ -233,13 +213,11 @@ function ucsc_pbsci_scripts()
     wp_enqueue_script('localist-widget-fix', get_template_directory_uri() . '/js/localist-widget-fix.js', '', null, true);
     //Enqueue FontAwesome
     wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css');
-
     //Enqueue list.js
     //Development Version
     wp_enqueue_script('listJS', '//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js');
     // Production Version
     // wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue');
-
     //Enqueue Google Fonts
     wp_enqueue_style('roboto-condensed-garamond', 'https://fonts.googleapis.com/css?family=EB+Garamond:400,500,700|Roboto+Condensed:300,400,700|Roboto:300,400,500,700', array(), false);
     // Enqueue <span></span> adder
@@ -255,25 +233,20 @@ function ucsc_pbsci_scripts()
         //scroll-to-here js
         wp_enqueue_script('scroll-to-here', get_template_directory_uri() . '/js/home-page-scroll-to-here.js', '', null, true);
     }
-
     // Enqueue custom Majors front end script
     if (is_singular() && ('degree' === get_post_type())) {
         wp_enqueue_script('majors-front', get_template_directory_uri() . '/js/majors-front.js', '', null, true);
     }
-
     // Enqueue degree parse script --- temporary
     if (is_page(array('degrees', 'faculty-researchers', 'student-research-opportunities', 'institutes-and-centers', 'student-support'))) {
         wp_enqueue_script('filter-js', get_template_directory_uri() . '/js/filter.js', '', null, true);
     }
 }
 add_action('wp_enqueue_scripts', 'ucsc_pbsci_scripts');
-
-
 /**
  * Theme Options -- Admin Page
  */
 if (function_exists('acf_add_options_page')) {
-
     acf_add_options_page(array(
         'page_title'     => 'Theme Options',
         'menu_title'     => 'Theme Options',
@@ -283,55 +256,45 @@ if (function_exists('acf_add_options_page')) {
         'redirect'     => false
     ));
 }
-
 /**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
-
 /**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
-
 /**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
 /**
  * Load Jetpack compatibility file.
  */
 if (defined('JETPACK__VERSION')) {
     require get_template_directory() . '/inc/jetpack.php';
 }
-
 /**
  * Load WooCommerce compatibility file.
  */
 if (class_exists('WooCommerce')) {
     require get_template_directory() . '/inc/woocommerce.php';
 }
-
 /**
  * Add class to page excerpt
  */
-
 add_filter("the_excerpt", "ucsc_underscore_add_class_to_excerpt");
 function ucsc_underscore_add_class_to_excerpt($excerpt)
 {
     return str_replace('<p', '<p class="pbsci-excerpt"', $excerpt);
 }
-
 /**
  * add page title slug to body class
  */
-
 add_filter('body_class', 'ucsc_underscore_body_classes');
 function ucsc_underscore_body_classes($classes)
 {
@@ -341,12 +304,10 @@ function ucsc_underscore_body_classes($classes)
     }
     return $classes;
 }
-
 /**
  * enable excerpts on pages
  */
 add_post_type_support('page', 'excerpt');
-
 /**
  * Hide Content editor on specific pages.
  *
@@ -369,7 +330,6 @@ function ucsc_underscore_hide_editor()
     // remove_post_type_support('page', 'editor');
     //   }
 }
-
 /**
  * @param [type] $num
  * @return void
@@ -397,7 +357,6 @@ function ucsc_underscore_custom_excerpt($num)
  * @link http://www.blackbirdconsult.com
  * @license GNU General Public License 2.0+
  */
-
 /** format values on ACF text field to return shortcode */
 function ucsc_underscore_acf_format_value($value, $post_id, $field)
 {
@@ -406,30 +365,22 @@ function ucsc_underscore_acf_format_value($value, $post_id, $field)
     // return
     return $value;
 }
-
 add_filter('acf/format_value/type=textarea', 'ucsc_underscore_acf_format_value', 10, 3);
-
 // Enable the option show in rest
 add_filter('acf/rest_api/field_settings/show_in_rest', '__return_true');
-
 // Enable the option edit in rest
 add_filter('acf/rest_api/field_settings/edit_in_rest', '__return_true');
-
 // Custom REST API endpoints.
 //Requires [acf-to-rest-api](https://github.com/airesvsg/acf-to-rest-api)
 //also uses https://clarencepearson.com/advanced-custom-fields-rest-api/
-
 function ucsc_underscore_degrees_endpoint($request_data)
 {
-
     // setup query argument
     $args = array(
         'post_type' => 'degree',
     );
-
     // get posts
     $posts = get_posts($args);
-
     // add custom field data to posts array
     foreach ($posts as $key => $post) {
         $posts[$key]->acf = get_fields($post->ID);
@@ -438,11 +389,8 @@ function ucsc_underscore_degrees_endpoint($request_data)
     }
     return $posts;
 }
-
 // register the endpoint
 add_action('rest_api_init', 'ucsc_underscore_register_degree_rest_route');
-
-
 function ucsc_underscore_register_degree_rest_route()
 {
     register_rest_route(
