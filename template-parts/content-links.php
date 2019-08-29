@@ -14,7 +14,6 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <?php if (has_excerpt()) {
             the_excerpt();
-            echo get_the_title();
         } ?>
 
         <?php

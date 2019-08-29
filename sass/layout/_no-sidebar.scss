@@ -15,6 +15,13 @@
     margin-right: 0;
 }
 
+.pbsci-excerpt {
+    max-width: 42em;
+    line-height: 1.6;
+    @include font-size(1.1);
+    color: #585858
+}
+
 .panel {
     width: $size__site-main;
     @include center-block();

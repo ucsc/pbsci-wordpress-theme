@@ -319,6 +319,16 @@ if (class_exists('WooCommerce')) {
 }
 
 /**
+ * Add class to page excerpt
+ */
+
+add_filter("the_excerpt", "ucsc_underscore_add_class_to_excerpt");
+function ucsc_underscore_add_class_to_excerpt($excerpt)
+{
+    return str_replace('<p', '<p class="pbsci-excerpt"', $excerpt);
+}
+
+/**
  * add page title slug to body class
  */
 
@@ -338,7 +348,7 @@ function ucsc_underscore_body_classes($classes)
 add_post_type_support('page', 'excerpt');
 
 /**
- * Hide editor on specific pages.
+ * Hide Content editor on specific pages.
  *
  */
 add_action('admin_init', 'ucsc_underscore_hide_editor');
