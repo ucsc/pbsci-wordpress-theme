@@ -22,7 +22,9 @@
       itemMargin: 5,
       controlNav: false,
       minItems: getGridSize(), // use function to pull in initial value
-      maxItems: getGridSize() // use function to pull in initial value
+      maxItems: getGridSize(), // use function to pull in initial value
+      prevText: "",    //String: Set the text for the "previous" directionNav item
+      nextText: "",        //String: Set the text for the "next" directionNav item
     });
   });
 

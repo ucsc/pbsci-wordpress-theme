@@ -45,7 +45,7 @@ if (!function_exists('ucsc_pbsci_setup')) :
         /**
          * Add new image sizes
          */
-        add_image_size('page-hero', 1600, 200, true);
+        add_image_size('page-hero', 1905, 430, true);
         // add_image_size('page-hero', 1905, 230);
         /**
          * Register nav menu locations

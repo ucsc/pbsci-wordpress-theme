@@ -239,6 +239,16 @@
             background: transparent;
             border: none;
             margin-bottom: 0px;
+            .flex-direction-nav a {
+                margin: -30px 0 0;
+                overflow: visible;
+                &::before {
+                    color: $ucsc--primary-yellow !important;
+                }
+                &:hover {
+                    border-bottom: none!important;
+                }
+            }
         }
         .stats-home {
             // li:nth-child(even) {
