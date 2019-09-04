@@ -45,7 +45,7 @@ if (!function_exists('ucsc_pbsci_setup')) :
         /**
          * Add new image sizes
          */
-        add_image_size('page-hero', 1905, 430, true);
+        add_image_size('page-hero', 1600, 530, false);
         // add_image_size('page-hero', 1905, 230);
         /**
          * Register nav menu locations
@@ -304,6 +304,11 @@ function ucsc_underscore_body_classes($classes)
     }
     return $classes;
 }
+/**
+ * disable Gutenberg Editor
+ */
+add_filter('use_block_editor_for_post', '__return_false', 10);
+
 /**
  * enable excerpts on pages
  */
