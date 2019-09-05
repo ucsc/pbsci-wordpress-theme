@@ -10,10 +10,6 @@
       (window.innerWidth < 900) ? 2 : 3;
   }
 
-  // $(function() {
-  //   SyntaxHighlighter.all();
-  // });
-
   $window.load(function () {
     $('.flexslider').flexslider({
       animation: "slide",

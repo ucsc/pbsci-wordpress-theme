@@ -231,7 +231,7 @@ function ucsc_pbsci_scripts()
         //Home custom slider/carousel js
         wp_enqueue_script('homeflex', get_template_directory_uri() . '/js/flex-home.js');
         //scroll-to-here js
-        wp_enqueue_script('scroll-to-here', get_template_directory_uri() . '/js/home-page-scroll-to-here.js', '', null, true);
+        // wp_enqueue_script('scroll-to-here', get_template_directory_uri() . '/js/home-page-scroll-to-here.js', '', null, true);
     }
     // Enqueue custom Majors front end script
     if (is_singular() && ('degree' === get_post_type())) {
