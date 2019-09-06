@@ -28,7 +28,10 @@
             $itemClass2 = 'researcher_faculty_expertise';
         } elseif (is_page('research-groups-facilities')) {
             echo '<div id="page-' . $pslug . '" class="page-content">';
+            get_template_part('template-parts/filter', 'resgroups');
             $postType = 'institutes-centers';
+            $itemClass1 = 'research_group_location';
+            $itemClass2 = 'researcher_faculty_expertise';
         } elseif (is_page('student-research-opportunities')) {
             echo '<div id="page-' . $pslug . '" class="page-content">';
             get_template_part('template-parts/filter', 'studentopportunities');
@@ -71,6 +74,25 @@
                         $postTax2 = 'resesarch-area-expertise-tax';
                         //Taxonomy Labels
                         $taxLabel1 = 'Categories';
+                        $taxLabel2 = 'Expertise';
+                        //Terms conditionals
+                        if ($postTax1) {
+                            $taxTerms1 = get_the_terms($post->ID, $postTax1);
+                        }
+                        if ($postTax2) {
+                            $taxTerms2 = get_the_terms($post->ID, $postTax2);
+                        }
+                        if ($postTax3) {
+                            $taxTerms3 = get_the_terms($post->ID, $postTax3);
+                        }
+                    } elseif ($postType == 'institutes-centers') {
+                        // get departments ACF
+                        // $departments = get_field('department_link_global');
+                        //Post Type Taxonomies
+                        $postTax1 = 'resesarch-group-location-tax';
+                        $postTax2 = 'resesarch-area-expertise-tax';
+                        //Taxonomy Labels
+                        $taxLabel1 = 'Locations';
                         $taxLabel2 = 'Expertise';
                         //Terms conditionals
                         if ($postTax1) {
@@ -167,10 +189,16 @@
                         }
                         echo '</ul>';
                     }
-
                     // echo '<pre>';
-                    // print_r($testItems);
-                    // print_r($taxonomies);
+                    // var_dump($current_post_type);
+                    // echo '</pre>';
+                    // echo '<pre>';
+                    // $me = get_post_taxonomies(get_the_ID());
+                    // print_r($me);
+                    // echo '</pre>';
+                    // echo '<pre>';
+                    // $you = get_the_terms($post->ID, $postTax1);
+                    // print_r($you);
                     // echo '</pre>';
                     echo '<!-- card Blurb Begin --><div class="card-blurb">';
                     ucsc_underscore_custom_excerpt($excerpt_wordcount);

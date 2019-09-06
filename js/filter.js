@@ -12,7 +12,7 @@ $(function () {
         ]
     }
     var degreeList = new List('degree_cards', degreeOptions);
-    console.log(degreeList.items);
+    // console.log(degreeList.items);
     $('#degreetype-select').change(function () {
         var selection = this.value;
         // console.log(selection);
@@ -61,7 +61,7 @@ $(function () {
         ]
     }
     var labList = new List('page-faculty-researchers', labOptions);
-    console.log(labList.items);
+    // console.log(labList.items);
     $('#lab-search').on('keyup', function () {
         var searchString = $(this).val();
         labList.fuzzySearch(searchString);
@@ -77,16 +77,16 @@ $(function () {
     })
     $('#resesarch-area-expertise-tax').change(function () {
         var selection = this.value;
-        console.log(selection);
+        //console.log(selection);
         if (selection != 'clear') {
             labList.fuzzySearch(selection);
         } else {
             labList.search();
         }
     })
-    $('#researcher-faculty-department-select').change(function () {
-        var s = this.value;
-        console.log(s);
+    $('#researcher-faculty-department-select2').change(function () {
+        var selection = this.value;
+        console.log(selection);
         if (selection != 'clear') {
             labList.fuzzySearch(selection);
         } else {
@@ -98,6 +98,50 @@ $(function () {
         $('#lab-search').val('');
         labList.search();
         /* Reset Degree type Dropdown*/
+        $('.filter-select').prop('selectedIndex', 0);
+    });
+});
+
+$(function () {
+    //search js
+    var instituteOptions = {
+        valueNames: [
+            'post-title',
+            'itemtaxonomy1',
+            'itemtaxonomy2',
+            // 'depts'
+            // { data: ['researcher_faculty_labs'] },
+        ]
+    }
+    var instituteList = new List('page-research-groups-facilities', instituteOptions);
+    // console.log(instituteList.items);
+    $('#res-grp-search').on('keyup', function () {
+        var searchString = $(this).val();
+        instituteList.fuzzySearch(searchString);
+    });
+    $('#research-group-location').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            instituteList.fuzzySearch(selection);
+        } else {
+            instituteList.search();
+        }
+    })
+    $('#research-group-expertise').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            instituteList.fuzzySearch(selection);
+        } else {
+            instituteList.search();
+        }
+    })
+    $('#res-grp-clear').click(function () {
+        /*Clear textarea using ID */
+        $('#res-grp-search').val('');
+        instituteList.search();
+        /* Reset Dropdowns*/
         $('.filter-select').prop('selectedIndex', 0);
     });
 });

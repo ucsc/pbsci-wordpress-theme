@@ -238,7 +238,7 @@ function ucsc_pbsci_scripts()
         wp_enqueue_script('majors-front', get_template_directory_uri() . '/js/majors-front.js', '', null, true);
     }
     // Enqueue degree parse script --- temporary
-    if (is_page(array('degrees', 'faculty-researchers', 'student-research-opportunities', 'institutes-and-centers', 'student-support'))) {
+    if (is_page(array('degrees', 'faculty-researchers', 'student-research-opportunities', 'institutes-and-centers', 'student-support', 'research-groups-facilities'))) {
         wp_enqueue_script('filter-js', get_template_directory_uri() . '/js/filter.js', '', null, true);
     }
 }
