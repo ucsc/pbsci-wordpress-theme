@@ -55,6 +55,8 @@ $(function () {
         valueNames: [
             'post-title',
             'itemtaxonomy1',
+            'itemtaxonomy2',
+            'depts'
             // { data: ['researcher_faculty_labs'] },
         ]
     }
@@ -72,7 +74,24 @@ $(function () {
         } else {
             labList.search();
         }
-
+    })
+    $('#resesarch-area-expertise-tax').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            labList.fuzzySearch(selection);
+        } else {
+            labList.search();
+        }
+    })
+    $('#researcher-faculty-department-select').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            labList.fuzzySearch(selection);
+        } else {
+            labList.search();
+        }
     })
     $('#lab-clear').click(function () {
         /*Clear textarea using ID */
@@ -138,7 +157,6 @@ $(function () {
         } else {
             opportunityList.search();
         }
-
     })
     $('#opportunity-clear').click(function () {
         /*Clear textarea using class */

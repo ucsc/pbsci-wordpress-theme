@@ -25,6 +25,7 @@
             get_template_part('template-parts/filter', 'labs');
             $postType = 'labs';
             $itemClass1 = 'researcher_faculty_labs';
+            $itemClass2 = 'researcher_faculty_expertise';
         } elseif (is_page('research-groups-facilities')) {
             echo '<div id="page-' . $pslug . '" class="page-content">';
             $postType = 'institutes-centers';
@@ -64,11 +65,13 @@
                     //Post Types
                     if ($postType == 'labs') {
                         // get departments ACF
-                        // $departments = get_field('department_link_global');
+                        $departments = get_field('department_link_global');
                         //Post Type Taxonomies
                         $postTax1 = 'researcher-faculty-labs-tax';
+                        $postTax2 = 'resesarch-area-expertise-tax';
                         //Taxonomy Labels
-                        $taxLabel1 = '';
+                        $taxLabel1 = 'Categories';
+                        $taxLabel2 = 'Expertise';
                         //Terms conditionals
                         if ($postTax1) {
                             $taxTerms1 = get_the_terms($post->ID, $postTax1);
@@ -87,7 +90,7 @@
                         $postTax2 = 'student-opp-eligib-tax';
                         $postTax3 = 'student-opp-avail-tax';
                         //Taxonomy Labels
-                        $taxLabel1 = '';
+                        $taxLabel1 = 'Category';
                         $taxLabel2 = 'Eligibility';
                         $taxLabel3 = 'Availability';
                         //Terms conditionals
@@ -108,7 +111,7 @@
                         $postTax2 = 'student-opp-eligib-tax';
                         $postTax3 = 'student-opp-avail-tax';
                         //Taxonomy Labels
-                        $taxLabel1 = '';
+                        $taxLabel1 = 'Category';
                         $taxLabel2 = 'Eligibility';
                         $taxLabel3 = 'Availability';
                         //Terms conditionals
@@ -121,18 +124,6 @@
                         if ($postTax3) {
                             $taxTerms3 = get_the_terms($post->ID, $postTax3);
                         }
-
-                        //test code
-                        // $items = array();
-                        // foreach ($group_membership as $username) {
-                        //     $items[] = $username;
-                        // }
-                        // print_r($items);
-                        // $testItems = array();
-                        // foreach ($taxonomies  as $taxonomy) {
-                        //     $testItems[] = get_the_terms($post->ID, $taxonomy);
-                        //     // $testItems[] = $taxonomy;
-                        // }
                     }
 
 
@@ -148,7 +139,7 @@
                     echo '</a>';
                     if (!empty($taxTerms1) && !empty($itemClass1)) {
                         if ($taxLabel1 != '') {
-                            echo '<span>' . $taxLabel1 . '</span>';
+                            echo '<h4>' . $taxLabel1 . '</h4>';
                         }
                         echo '<ul class="pbsci-taxonomy flex-wrap">';
                         foreach ($taxTerms1 as $taxTerm1) {
@@ -158,7 +149,7 @@
                     }
                     if (!empty($taxTerms2) && !empty($itemClass2)) {
                         if ($taxLabel2 != '') {
-                            echo '<span>' . $taxLabel2 . '</span>';
+                            echo '<h4>' . $taxLabel2 . '</h4>';
                         }
                         echo '<ul class="pbsci-taxonomy flex-wrap">';
                         foreach ($taxTerms2 as $taxTerm2) {
@@ -168,7 +159,7 @@
                     }
                     if (!empty($taxTerms3) && !empty($itemClass3)) {
                         if ($taxLabel3 != '') {
-                            echo '<span>' . $taxLabel3 . '</span>';
+                            echo '<h4>' . $taxLabel3 . '</h4>';
                         }
                         echo '<ul class="pbsci-taxonomy flex-wrap">';
                         foreach ($taxTerms3 as $taxTerm3) {
@@ -181,7 +172,7 @@
                     // print_r($testItems);
                     // print_r($taxonomies);
                     // echo '</pre>';
-                    echo '<!-- card Blurb Begin --><div id="cardblurb" class="card-blurb">';
+                    echo '<!-- card Blurb Begin --><div class="card-blurb">';
                     ucsc_underscore_custom_excerpt($excerpt_wordcount);
                     echo '</div><!-- card Blurb End -->';
 
@@ -211,23 +202,23 @@
 <?php if (get_edit_post_link()) : ?>
 <footer class="entry-footer">
     <?php
-        edit_post_link(
-            sprintf(
-                wp_kses(
-                    /* translators: %s: Name of current post. Only visible to screen readers */
-                    __('Edit <span class="screen-reader-text">%s</span>', 'ucsc-pbsci'),
-                    array(
-                        'span' => array(
-                            'class' => array(),
-                        ),
-                    )
+            edit_post_link(
+                sprintf(
+                    wp_kses(
+                        /* translators: %s: Name of current post. Only visible to screen readers */
+                        __('Edit <span class="screen-reader-text">%s</span>', 'ucsc-pbsci'),
+                        array(
+                            'span' => array(
+                                'class' => array(),
+                            ),
+                        )
+                    ),
+                    get_the_title()
                 ),
-                get_the_title()
-            ),
-            '<span class="edit-link">',
-            '</span>'
-        );
-        ?>
+                '<span class="edit-link">',
+                '</span>'
+            );
+            ?>
 </footer><!-- .entry-footer -->
 <?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->

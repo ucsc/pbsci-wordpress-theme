@@ -32,8 +32,8 @@ $degreeTypes = array(
 );
 
 ?>
-<p class="filter-head">Filter this list:</p>
-<ul id="filterSelect" class="flex-wrap filter-list no-list-style">
+<h3 class="filter-head">Filter this list:</h3>
+<ul class="filter-list no-list-style">
 
     <li>
         <span>By: </span> <select name="degreetype" id="degreetype-select" class="filter-select">

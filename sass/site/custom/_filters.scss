@@ -1,0 +1,37 @@
+    /* FilterJS Search*/
+    
+    .filter-head {
+        font-weight: 700 !important;
+    }
+    
+    .filter-list {
+        margin: 0 0 2.5em;
+        align-items: center;
+        li {
+            @media only screen and (min-width: $screen-size--small) {
+                display: inline-block;
+                margin-right: .5em;
+            }
+            margin-bottom: 0.65rem;
+            select {
+                background-color: $color__white;
+                border: 1px solid $ucsc--light-blue;
+                border-radius: 3px;
+                cursor: pointer;
+                padding: .3rem .25rem;
+            }
+            input[type="search"] {
+                padding: .4rem .4rem;
+            }
+            .primary {
+                color: $color__white !important;
+                background: $ucsc--lighter-blue !important;
+                border: 1px solid $ucsc--lighter-blue !important;
+                cursor: pointer;
+                &:hover {
+                    background: $ucsc--magenta!important;
+                    border: 1px solid $ucsc--magenta !important;
+                }
+            }
+        }
+    }

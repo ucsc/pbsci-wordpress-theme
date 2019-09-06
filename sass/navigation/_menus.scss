@@ -210,8 +210,11 @@
             // justify-content: flex-start;
             // align-items: center;
             img {
-                width: 250px;
+                width: 180px;
                 height: auto;
+                @media only screen and (min-width: $screen-size--medium) {
+                    width: 250px;
+                }
             }
         }
         .menu {

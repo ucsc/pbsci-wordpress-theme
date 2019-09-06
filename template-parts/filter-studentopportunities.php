@@ -36,8 +36,8 @@ $taxTerms3 = get_terms($postTax3, ['hide_empty' => false]);
 
 
 ?>
-<p class="filter-head">Filter this list:</p>
-<ul class="flex-wrap filter-list no-list-style">
+<h3 class="filter-head">Filter this list:</h3>
+<ul class="filter-list no-list-style">
     <li>
         <select class="filter-select" id="<?php echo $postTax1 ?>">
             <option selected="selected" value="clear"><?php echo $selectTitle1 ?></option>
@@ -92,9 +92,9 @@ $taxTerms3 = get_terms($postTax3, ['hide_empty' => false]);
         </select>
     </li>
     <li>
-        <input type="search" class="search" id="opportunity-search" placeholder="Search Here.." />
+        <input type="search" class="search" id="opportunity-search" placeholder="Search by keyword" />
     </li>
     <li>
-        <input value="reset" type="reset" class="primary filter-clear" id="opportunity-clear">
+        <input value="Clear all filters" type="reset" class="primary filter-clear" id="opportunity-clear">
     </li>
 </ul>

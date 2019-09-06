@@ -49,6 +49,13 @@
             {
                 "param": "post_type",
                 "operator": "==",
+                "value": "labs"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
                 "value": "degree"
             }
         ]
@@ -61,5 +68,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1566504920
+    "modified": 1567725494
 }
