@@ -61,14 +61,14 @@ $(function () {
         ]
     }
     var labList = new List('page-faculty-researchers', labOptions);
-    // console.log(labList.items);
+    console.log(labList.items);
     $('#lab-search').on('keyup', function () {
         var searchString = $(this).val();
         labList.fuzzySearch(searchString);
     });
     $('#researcher-faculty-labs-tax').change(function () {
         var selection = this.value;
-        // console.log(selection);
+        console.log(selection);
         if (selection != 'clear') {
             labList.fuzzySearch(selection);
         } else {
@@ -77,7 +77,7 @@ $(function () {
     })
     $('#resesarch-area-expertise-tax').change(function () {
         var selection = this.value;
-        // console.log(selection);
+        console.log(selection);
         if (selection != 'clear') {
             labList.fuzzySearch(selection);
         } else {
@@ -85,8 +85,8 @@ $(function () {
         }
     })
     $('#researcher-faculty-department-select').change(function () {
-        var selection = this.value;
-        // console.log(selection);
+        var s = this.value;
+        console.log(s);
         if (selection != 'clear') {
             labList.fuzzySearch(selection);
         } else {
