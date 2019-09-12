@@ -51,48 +51,42 @@ function handleErrors() {
 /**
  * PostCSS Task Handler
  */
-gulp.task('postcss', function() {
+gulp.task('postcss', function () {
 
     return gulp.src('sass/style.scss')
 
-    // Error handling
-    .pipe(plumber({
-        errorHandler: handleErrors
-    }))
+        // Error handling
+        .pipe(plumber({
+            errorHandler: handleErrors
+        }))
 
-    // Wrap tasks in a sourcemap
-    .pipe(sourcemaps.init())
+        // Wrap tasks in a sourcemap
+        .pipe(sourcemaps.init())
 
-    .pipe(sass({
-        includePaths: [].concat(bourbon, neat),
-        errLogToConsole: true,
-        outputStyle: 'expanded' // Options: nested, expanded, compact, compressed
-    }))
-    // livereload
-    .pipe(livereload())
+        .pipe(sass({
+            includePaths: [].concat(bourbon, neat),
+            errLogToConsole: true,
+            outputStyle: 'expanded' // Options: nested, expanded, compact, compressed
+        }))
+        // livereload
+        .pipe(livereload())
+        .pipe(postcss([autoprefixer()]))
+        // creates the sourcemap
+        .pipe(sourcemaps.write())
 
-    .pipe(postcss([
-        autoprefixer({
-            browsers: ['last 2 versions']
-        })
-    ]))
-
-    // creates the sourcemap
-    .pipe(sourcemaps.write())
-
-    .pipe(gulp.dest('./'));
+        .pipe(gulp.dest('./'));
 
 
 });
 
-gulp.task('css:minify', gulp.series('postcss'), function() {
+gulp.task('css:minify', gulp.series('postcss'), function () {
     return gulp.src('style.css')
         // Error handling
         .pipe(plumber({
             errorHandler: handleErrors
         }))
 
-    .pipe(cssMinify({
+        .pipe(cssMinify({
             safe: true
         }))
         .pipe(rename('style.min.css'))
@@ -103,12 +97,12 @@ gulp.task('css:minify', gulp.series('postcss'), function() {
 
 });
 
-gulp.task('sass:lint', gulp.series('css:minify'), function() {
+gulp.task('sass:lint', gulp.series('css:minify'), function () {
     gulp.src([
-            'sass/style.scss',
-            '!sass/base/html5-reset/_normalize.scss',
-            '!sass/utilities/animate/**/*.*'
-        ])
+        'sass/style.scss',
+        '!sass/base/html5-reset/_normalize.scss',
+        '!sass/utilities/animate/**/*.*'
+    ])
         .pipe(sassLint())
         .pipe(sassLint.format())
         .pipe(sassLint.failOnError())
@@ -119,7 +113,7 @@ gulp.task('sass:lint', gulp.series('css:minify'), function() {
  * All Tasks Listeners
  *******************/
 
-gulp.task('watch', function() {
+gulp.task('watch', function () {
     livereload.listen();
     gulp.watch('sass/**/*.scss', gulp.series('styles'));
 });
