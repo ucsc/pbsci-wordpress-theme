@@ -407,3 +407,20 @@ function ucsc_underscore_register_degree_rest_route()
         )
     );
 }
+
+/**
+ * CUSTOM HOOKS
+ */
+
+function ucsc_header()
+{
+    do_action('ucsc_header');
+}
+function ucsc_before_header()
+{
+    do_action('ucsc_before_header');
+}
+function ucsc_after_header()
+{
+    do_action('ucsc_after_header');
+}

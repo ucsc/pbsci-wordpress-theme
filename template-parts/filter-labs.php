@@ -50,7 +50,7 @@ $taxTerms2 = get_terms($postTax2, ['hide_empty' => false]);
         </select>
     </li>
     <li>
-        <select class="filter-select" id="#researcher-faculty-department-select2">
+        <select class="filter-select" id="researcher-faculty-department-select2">
             <option selected="selected" value="clear">By department</option>
             <?php
             $depargs = array(
