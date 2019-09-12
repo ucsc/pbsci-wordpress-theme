@@ -37,11 +37,11 @@
                 if ($hero) {
                     echo '<div class="hero-page flex-wrap" style="background:url(' . $hero . ') no-repeat bottom; background-size: cover;">';
                 } else {
-                    echo '<div class="hero-page flex-wrap">';
+                    echo '<div class="no-hero flex-wrap">';
                 }
                 ?>
 
-                <div class="hero-page-runner desktop">
+                <div class="header-runner">
                     <div class="wrap flex-wrap">
                         <header class="entry-header flex-wrap">
                             <!-- <div class="entry-header-left">
@@ -54,7 +54,7 @@
                                 </span>
                                 <?php
                                 if ('degree' == get_post_type()) {
-                                    echo '<span class="entry-header-span-c">';
+                                    echo '<span class="enhero-page try-header-span-c">';
                                     if ($degrees) :
                                         echo '<!-- Card Degrees Offered Begin --><div class="card-degrees-offered">';
                                         echo '<ul class="card-list flex-wrap">';
@@ -91,7 +91,7 @@
                         </header><!-- .entry-header -->
 
                     </div><!-- .hero-home wrap -->
-                </div><!-- .hero-page-runner -->
+                </div><!-- .header-runner -->
 
             </div><!-- .site-branding -->
         </header><!-- #masthead -->
