@@ -29,6 +29,7 @@
         <!-- <?php //get_template_part( 'template-parts/navigation', 'primary' );
                 ?> -->
         <header id="masthead" class="site-header">
+
             <div class="site-branding">
                 <?php get_template_part('template-parts/navigation', 'primary');
                 /**
