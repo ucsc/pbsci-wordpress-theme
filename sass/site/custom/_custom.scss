@@ -311,9 +311,16 @@
     .hero-page-runner {
         width: 100%;
         padding: 10px 0;
+        display: block;
         @media only screen and (min-width: $screen-size--small) {
             padding: 100px 0 10px;
         }
+        // &.desktop {
+        //     display: block;
+        //     @media only screen and (min-width: $screen-size--small) {
+        //         display: block;
+        //     }
+        // }
         background: linear-gradient( to top,
         rgba(0,
         0,
@@ -361,19 +368,6 @@
                 @media only screen and (min-width: $screen-size--medium) {
                     flex-basis: 0;
                 }
-            }
-        }
-        &.mobile {
-            display: none;
-            background-color: $ucsc--primary-blue;
-            @media only screen and (min-width: $screen-size--small) {
-                display: none;
-            }
-        }
-        &.desktop {
-            display: block;
-            @media only screen and (min-width: $screen-size--small) {
-                display: block;
             }
         }
     }
