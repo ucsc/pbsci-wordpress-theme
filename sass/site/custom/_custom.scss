@@ -333,7 +333,7 @@
             }
             .entry-header-right {
                 flex: 1;
-                border-left: 6px solid $ucsc--primary-yellow;
+                border-left: 4px solid $ucsc--primary-yellow;
                 padding-left: 10px;
             }
             .entry-header-span-b {
@@ -354,6 +354,7 @@
     
     .no-hero {
         .header-runner {
+            background: $ucsc--blue-green;
             @media only screen and (min-width: $screen-size--small) {
                 padding: 10px 0 10px;
             }
