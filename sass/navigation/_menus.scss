@@ -157,24 +157,23 @@
     
     .main-navigation {
         padding: 5px 0;
-        // background-color:#fff;
+        text-align: initial;
+        right: 0;
+        left: 0;
+        top: 0;
+        // height: 60px;
+        // padding: 10px 0;
+        // border-bottom: 1px solid #979797;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+        background: linear-gradient(30deg, #003c6c, #006aad);
+        ;
+        z-index: 100;
+        /* Here's the new CSS to add... */
+        .admin-bar & {
+            top: 32px;
+        }
         &.stuck {
             position: fixed;
-            text-align: initial;
-            right: 0;
-            left: 0;
-            top: 0;
-            // height: 60px;
-            // padding: 10px 0;
-            // border-bottom: 1px solid #979797;
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-            background: linear-gradient(30deg, #003c6c, #006aad);
-            ;
-            z-index: 100;
-            /* Here's the new CSS to add... */
-            .admin-bar & {
-                top: 32px;
-            }
         }
         // // @media only screen and (min-width: $screen-size--small) {
         // padding: 10px 0;
