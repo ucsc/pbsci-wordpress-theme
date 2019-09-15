@@ -244,7 +244,7 @@ $(function () {
     $('#student-opportunities-tax').change(function () {
         var selection = this.value;
         var stringSelection = String(selection);
-        console.log(stringSelection);
+        // console.log(stringSelection);
         if (selection != 'clear') {
             opportunityList.search(stringSelection, ['itemtaxonomy1']);
         } else {
