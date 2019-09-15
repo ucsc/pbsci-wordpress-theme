@@ -126,7 +126,7 @@ $(function () {
         ]
     }
     var labList = new List('page-faculty-researchers', labOptions);
-    // console.log(labList.items);
+    console.log(labList.items);
     $('#researcher-faculty-labs-tax').change(function () {
         var selection = this.value;
         // console.log(selection);
