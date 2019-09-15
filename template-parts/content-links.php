@@ -172,7 +172,7 @@
                         echo '</ul>';
                         echo '<p aria-hidden="true" class="itemtaxonomy1 hidden-data">';
                         foreach ($taxTerms1 as $taxTerm1a) {
-                            echo $taxTerm1a->name . ' ';
+                            echo $taxTerm1a->slug . ' ';
                         }
                         echo '</p>';
                     }
@@ -187,7 +187,7 @@
                         echo '</ul>';
                         echo '<p aria-hidden="true" class="itemtaxonomy2 hidden-data">';
                         foreach ($taxTerms2 as $taxTerm2a) {
-                            echo $taxTerm2a->name . ' ';
+                            echo $taxTerm2a->slug . ' ';
                         }
                         echo '</p>';
                     }
@@ -202,7 +202,7 @@
                         echo '</ul>';
                         echo '<p aria-hidden="true" class="itemtaxonomy3 hidden-data">';
                         foreach ($taxTerms3 as $taxTerm3a) {
-                            echo $taxTerm3a->name . ' ';
+                            echo $taxTerm3a->slug . ' ';
                         }
                         echo '</p>';
                     }

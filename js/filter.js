@@ -126,7 +126,7 @@ $(function () {
         ]
     }
     var labList = new List('page-faculty-researchers', labOptions);
-    console.log(labList.items);
+    // console.log(labList.items);
     $('#researcher-faculty-labs-tax').change(function () {
         var selection = this.value;
         // console.log(selection);
@@ -243,9 +243,10 @@ $(function () {
 
     $('#student-opportunities-tax').change(function () {
         var selection = this.value;
-        // console.log(selection);
+        var stringSelection = String(selection);
+        console.log(stringSelection);
         if (selection != 'clear') {
-            opportunityList.search(selection, ['itemtaxonomy1']);
+            opportunityList.search(stringSelection, ['itemtaxonomy1']);
         } else {
             opportunityList.search();
         }
