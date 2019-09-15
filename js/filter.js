@@ -34,12 +34,12 @@ $(function () {
         ]
     }
     var degreeList = new List('degree_cards', degreeOptions);
-    console.log(degreeList.items);
+    // console.log(degreeList.items);
     $('#degreetype-select').change(function () {
         // this sets the selection term
         // based on value of the <option>
         var selection = this.value;
-        console.log(selection);
+        // console.log(selection);
         if (selection != 'clear') {
             // degreeList.fuzzySearch(selection);
             // degreeList.search(selection, ['programHidden']);
@@ -87,7 +87,7 @@ $(function () {
 
     $('#department-select').change(function () {
         var selection = this.value;
-        // console.log(selection);
+        //  console.log(selection);
         if (selection != 'clear') {
             // degreeList.fuzzySearch(selection);
             degreeList.search(selection, ['depts']);
@@ -120,47 +120,51 @@ $(function () {
             'post-title',
             'itemtaxonomy1',
             'itemtaxonomy2',
-            'depts'
-            // { data: ['researcher_faculty_labs'] },
+            'depts',
+            'card-blurb'
+
         ]
     }
     var labList = new List('page-faculty-researchers', labOptions);
-    // console.log(labList.items);
-    $('#lab-search').on('keyup', function () {
-        var searchString = $(this).val();
-        labList.fuzzySearch(searchString);
-    });
+    console.log(labList.items);
     $('#researcher-faculty-labs-tax').change(function () {
         var selection = this.value;
-        console.log(selection);
+        // console.log(selection);
         if (selection != 'clear') {
-            labList.fuzzySearch(selection);
+            // degreeList.fuzzySearch(selection);
+            labList.search(selection, ['itemtaxonomy1']);
         } else {
             labList.search();
         }
     })
     $('#resesarch-area-expertise-tax').change(function () {
         var selection = this.value;
-        //console.log(selection);
+        // console.log(selection);
         if (selection != 'clear') {
-            labList.fuzzySearch(selection);
+            // degreeList.fuzzySearch(selection);
+            labList.search(selection, ['itemtaxonomy2']);
         } else {
             labList.search();
         }
     })
     $('#researcher-faculty-department-select2').change(function () {
         var selection = this.value;
-        console.log(selection);
+        // console.log(selection);
         if (selection != 'clear') {
-            labList.fuzzySearch(selection);
+            labList.search(selection, ['depts']);
         } else {
             labList.search();
         }
     })
+    $('#lab-search').on('keyup', function () {
+        var searchString = $(this).val();
+        labList.fuzzySearch(searchString);
+    });
     $('#lab-clear').click(function () {
         /*Clear textarea using ID */
         $('#lab-search').val('');
         labList.search();
+        labList.filter();
         /* Reset Degree type Dropdown*/
         $('.filter-select').prop('selectedIndex', 0);
     });
