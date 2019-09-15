@@ -72,6 +72,6 @@ $degreeTypes = array(
         <input type="search" class="search" id="degree-search" placeholder="Search this list" />
     </li>
     <li>
-        <input type="reset" type="reset" id="degree-clear" class="primary filter-clear" value="Show all">
+        <input type="reset" type="reset" id="degree-clear" class="primary filter-clear" value="Clear all filters">
     </li>
 </ul>

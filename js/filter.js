@@ -87,7 +87,7 @@ $(function () {
 
     $('#department-select').change(function () {
         var selection = this.value;
-        console.log(selection);
+        // console.log(selection);
         if (selection != 'clear') {
             // degreeList.fuzzySearch(selection);
             degreeList.search(selection, ['depts']);
