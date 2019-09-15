@@ -1,6 +1,11 @@
-// var degrees = JSON.parse($('#card-container').attr('data-degrees'));
-
-// var departments = JSON.parse($('#card-container').attr('data-departments'));
+// ISSUE: there are two fields (classes) with multiple values,
+// programHidden and depts. The values in these fields are separated
+// by a "space" &nbsp; . The Drop-downs for "Program" and "Department" contain
+// one of the possible values in each drop-down option. The problem is that
+// listjs only allows for a single value per field/class (eg., "Name:John" not
+// "Name:John, Sally, Mary, Rob"). The problem is that we need to convert the
+// multiple-values fields into arrays and loop through them. There are various
+// attempts in this code to solve this issue
 
 $(function () {
     //search js
@@ -8,26 +13,80 @@ $(function () {
         valueNames: [
             'card-title',
             'program',
+            'programHidden',
             'depts',
+            // 'dept',
+            // 'name',
+            // 'phd',
+            // 'ma',
+            // 'ms',
+            // 'designatedemphasis',
+            // 'contig',
+            // 'ba',
+            // 'bs',
+            // 'undergradminor',
+            // 'designatedemphasis',
         ]
     }
     var degreeList = new List('degree_cards', degreeOptions);
-    // console.log(degreeList.items);
+    console.log(degreeList.items);
     $('#degreetype-select').change(function () {
+        // this sets the selection term
+        // based on value of the <option>
         var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            degreeList.fuzzySearch(selection);
-        } else {
-            degreeList.search();
-        }
+        // converts value into string
+        var selectionString = String(selection);
+        console.log(selectionString);
+        // degreeList.search(selection, ['programHidden']);
+        degreeList.filter(function (item) {
+            if (
+                item.values().programHidden.indexOf(selection) >= 0
+            ) {
+                return true;
+            } else {
+                return false;
+
+            }
+
+
+
+            // runs a filter on the list
+
+            // looks for something with class
+            // of "programHidden"
+            // var toBeSplit = item.values().programHidden;
+            // this turns multiple entries separated
+            // by a space into different
+            // elements in an array
+            // var alreadySplit = toBeSplit.split(' ');
+            // console.log(alreadySplit);
+            // we then loop through the array
+            // for (var i = 0, j = alreadySplit.length; i < j; i++) {
+            // this checks each possible "programHidden"
+            // against the selection
+            // and filters the list based on the
+            // one that matches
+            // console.log(alreadySplit[i]);
+            // if (alreadySplit[i].includes(selection)) {
+            // return true;
+            // return (alreadySplit[i]);
+            // console.log(alreadySplit[i]);
+            // } else {
+            // return false;
+            // }
+            // }
+
+        });
+
     });
 
     $('#department-select').change(function () {
         var selection = this.value;
+        var option = document.getElementById('department-select').value;
+        console.log(selection); console.log(option);
         // console.log(selection);
         if (selection != 'clear') {
-            degreeList.fuzzySearch(selection);
+            // degreeList.fuzzySearch(selection);
         } else {
             degreeList.search();
         }
@@ -48,6 +107,58 @@ $(function () {
     });
 
 });
+
+// $(function () {
+//     //search js
+//     var degreeOptions = {
+//         valueNames: [
+//             'card-title',
+//             // 'program',
+//             'program-hidden',
+//             'depts',
+//             'dept',
+//             'name'
+//         ]
+//     }
+//     var degreeList = new List('degree_cards', degreeOptions);
+//     console.log(degreeList.items);
+//     $('#degreetype-select').change(function () {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             degreeList.fuzzySearch(selection);
+//         } else {
+//             degreeList.search();
+//         }
+//     });
+
+//     $('#department-select').change(function () {
+//         var selection = this.value;
+//         var option = document.getElementById('department-select').value;
+//         console.log(selection); console.log(option);
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             // degreeList.fuzzySearch(selection);
+//         } else {
+//             degreeList.search();
+//         }
+
+//     })
+
+//     $('#degree-search').on('keyup', function () {
+//         var searchString = $(this).val();
+//         degreeList.fuzzySearch(searchString);
+//     });
+
+//     $('#degree-clear').click(function () {
+//         /*Clear textarea using ID */
+//         $('#degree-search').val('');
+//         degreeList.search();
+//         /* Reset Degree type Dropdown using Class*/
+//         $('.filter-select').prop('selectedIndex', 0);
+//     });
+
+// });
 
 $(function () {
     //search js
