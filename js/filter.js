@@ -239,7 +239,7 @@ $(function () {
         ]
     }
     var opportunityList = new List('page-student-research-opportunities', opportunityOptions);
-    console.log(opportunityList.items);
+    // console.log(opportunityList.items);
 
     $('#student-opportunities-tax').change(function () {
         var selection = this.value;
@@ -283,6 +283,11 @@ $(function () {
     $('#opportunity-search').on('keyup', function () {
         var searchString = $(this).val();
         opportunityList.fuzzySearch(searchString);
+        // opportunityList.search(searchString, ['post-title']);
+        // opportunityList.search(searchString, ['itemtaxonomy1']);
+        // opportunityList.search(searchString, ['itemtaxonomy2']);
+        // opportunityList.search(searchString, ['itemtaxonomy3']);
+        // opportunityList.search(searchString, ['depts']);
         opportunityList.search(searchString, ['card-blurb']);
     });
     $('#opportunity-clear').click(function () {
@@ -304,20 +309,17 @@ $(function () {
             'itemtaxonomy1',
             'itemtaxonomy2',
             'itemtaxonomy3',
+            'card-blurb',
             'depts',
         ]
     }
     var supportList = new List('page-student-support', supportOptions);
-    // console.log(supportList.items);
-    $('#support-search').on('keyup', function () {
-        var searchString = $(this).val();
-        supportList.fuzzySearch(searchString);
-    });
+    console.log(supportList.items);
     $('#student-support-tax').change(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
-            supportList.fuzzySearch(selection);
+            supportList.search(selection, ['itemtaxonomy1']);
         } else {
             supportList.search();
         }
@@ -327,7 +329,7 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
-            supportList.fuzzySearch(selection);
+            supportList.search(selection, ['itemtaxonomy2']);
         } else {
             supportList.search();
         }
@@ -337,7 +339,7 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
-            supportList.fuzzySearch(selection);
+            supportList.search(selection, ['itemtaxonomy3']);
         } else {
             supportList.search();
         }
@@ -347,16 +349,22 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
-            supportList.fuzzySearch(selection);
+            supportList.search(selection, ['depts']);
         } else {
             supportList.search();
         }
 
     })
+    $('#support-search').on('keyup', function () {
+        var searchString = $(this).val();
+        supportList.fuzzySearch(searchString);
+        supportList.search(searchString, ['card-blurb']);
+    });
     $('#support-clear').click(function () {
         /*Clear textarea using class */
         $('#support-search').val('');
         supportList.search();
+        supportList.filter();
         /* Reset Degree type Dropdown*/
         $('.filter-select').prop('selectedIndex', 0);
     });
