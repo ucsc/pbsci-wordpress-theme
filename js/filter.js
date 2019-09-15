@@ -182,11 +182,11 @@ $(function () {
         ]
     }
     var instituteList = new List('page-research-groups-facilities', instituteOptions);
-    console.log(instituteList.items);
+    // console.log(instituteList.items);
 
     $('#research-group-location').change(function () {
         var selection = this.value;
-        console.log(selection);
+        // console.log(selection);
         if (selection != 'clear') {
             instituteList.search(selection, ['itemtaxonomy1']);
         } else {
@@ -234,20 +234,18 @@ $(function () {
             'itemtaxonomy1',
             'itemtaxonomy2',
             'itemtaxonomy3',
+            'card-blurb',
             'depts',
         ]
     }
     var opportunityList = new List('page-student-research-opportunities', opportunityOptions);
-    // console.log(opportunityList.items);
-    $('#opportunity-search').on('keyup', function () {
-        var searchString = $(this).val();
-        opportunityList.fuzzySearch(searchString);
-    });
+    console.log(opportunityList.items);
+
     $('#student-opportunities-tax').change(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
-            opportunityList.fuzzySearch(selection);
+            opportunityList.search(selection, ['itemtaxonomy1']);
         } else {
             opportunityList.search();
         }
@@ -257,7 +255,7 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
-            opportunityList.fuzzySearch(selection);
+            opportunityList.search(selection, ['itemtaxonomy2']);
         } else {
             opportunityList.search();
         }
@@ -267,7 +265,7 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
-            opportunityList.fuzzySearch(selection);
+            opportunityList.search(selection, ['itemtaxonomy3']);
         } else {
             opportunityList.search();
         }
@@ -277,15 +275,21 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
-            opportunityList.fuzzySearch(selection);
+            opportunityList.search(selection, ['depts']);
         } else {
             opportunityList.search();
         }
     })
+    $('#opportunity-search').on('keyup', function () {
+        var searchString = $(this).val();
+        opportunityList.fuzzySearch(searchString);
+        opportunityList.search(searchString, ['card-blurb']);
+    });
     $('#opportunity-clear').click(function () {
         /*Clear textarea using class */
         $('#opportunity-search').val('');
         opportunityList.search();
+        opportunityList.filter();
         /* Reset Degree type Dropdown*/
         $('.filter-select').prop('selectedIndex', 0);
     });
