@@ -75,22 +75,22 @@
                         echo '<h3 class="card-title">' . $program_title . '</h3>';
                         // Get values from  ACF Checkbox
                         if ($degrees) :
-                            echo '<!-- Card Degrees Offered Begin --><div class="card-degrees-offered">';
+                            echo '<!-- Card Degrees Offered Begin --><div id="degrees_offered" class="card-degrees-offered">';
                             echo '<ul class="card-list flex-wrap">';
                             if (in_array('phd', $degrees)) :
-                                echo '<li class="phd">Ph.D.</li>';
+                                echo '<li class="program phd">Ph.D.</li>';
                             endif;
                             if (in_array('ma', $degrees)) :
-                                echo '<li class="ma">M.A.</li>';
+                                echo '<li class="program ma">M.A.</li>';
                             endif;
                             if (in_array('ms', $degrees)) :
-                                echo '<li class="ms">M.S.</li>';
+                                echo '<li class="program ms">M.S.</li>';
                             endif;
                             if (in_array('designatedemphasis', $degrees)) :
-                                echo '<li class="bs">D.E.</li>';
+                                echo '<li class="program designatedemphasis bs">D.E.</li>';
                             endif;
                             if (in_array('contig', $degrees)) :
-                                echo '<li class="ma">4+1</li>';
+                                echo '<li class="program contig ma">4+1</li>';
                             endif;
                             if (in_array('ba', $degrees)) :
                                 echo '<li class="ba">B.A.</li>';
@@ -116,9 +116,15 @@
                                 echo $department->post_name . ' ';
                             endforeach;
                             echo '</p>';
+                            echo '<ul class="hidden-dept-list">';
+                            foreach ($departments as $key => $department2) :
+
+                                echo '<li class="dept">' . $department->post_name . '</li>';
+                            endforeach;
+                            echo '</ul>';
                         endif;
                         if ($degrees) :
-                            echo '<p class="program">';
+                            echo '<p class="programHidden">';
                             foreach ($degrees as $degree) :
                                 echo $degree . ' ';
                             endforeach;
@@ -143,23 +149,23 @@
         <?php if (get_edit_post_link()) : ?>
         <footer class="entry-footer">
             <?php
-                edit_post_link(
-                    sprintf(
-                        wp_kses(
-                            /* translators: %s: Name of current post. Only visible to screen readers */
-                            __('Edit <span class="screen-reader-text">%s</span>', 'ucsc-pbsci'),
-                            array(
-                                'span' => array(
-                                    'class' => array(),
-                                ),
-                            )
+                    edit_post_link(
+                        sprintf(
+                            wp_kses(
+                                /* translators: %s: Name of current post. Only visible to screen readers */
+                                __('Edit <span class="screen-reader-text">%s</span>', 'ucsc-pbsci'),
+                                array(
+                                    'span' => array(
+                                        'class' => array(),
+                                    ),
+                                )
+                            ),
+                            get_the_title()
                         ),
-                        get_the_title()
-                    ),
-                    '<span class="edit-link">',
-                    '</span>'
-                );
-                ?>
+                        '<span class="edit-link">',
+                        '</span>'
+                    );
+                    ?>
         </footer><!-- .entry-footer -->
         <?php endif; ?>
 

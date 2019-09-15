@@ -34,7 +34,7 @@ $taxTerms2 = get_terms($postTax2, ['hide_empty' => false]);
             <option selected="selected" value="clear"><?php echo $taxTitle1 ?></option>
             <?php if ($taxTerms1) {
                 foreach ($taxTerms1 as $taxTerm1) {
-                    echo '<option value="' . $taxTerm1->name . '">' . $taxTerm1->name . '</option>';
+                    echo '<option value="' . $taxTerm1->slug . '">' . $taxTerm1->name . '</option>';
                 }
             } ?>
         </select>
@@ -44,7 +44,7 @@ $taxTerms2 = get_terms($postTax2, ['hide_empty' => false]);
             <option selected="selected" value="clear"><?php echo $taxTitle2 ?></option>
             <?php if ($taxTerms2) {
                 foreach ($taxTerms2 as $taxTerm2) {
-                    echo '<option value="' . $taxTerm2->name . '">' . $taxTerm2->name . '</option>';
+                    echo '<option value="' . $taxTerm2->slug . '">' . $taxTerm2->name . '</option>';
                 }
             } ?>
         </select>

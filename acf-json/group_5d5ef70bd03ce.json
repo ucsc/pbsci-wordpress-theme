@@ -58,6 +58,13 @@
                 "operator": "==",
                 "value": "degree"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "institutes-centers"
+            }
         ]
     ],
     "menu_order": 0,
@@ -68,5 +75,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1567725494
+    "modified": 1568573619
 }

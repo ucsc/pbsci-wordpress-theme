@@ -40,7 +40,7 @@ $taxTerms2 = get_terms($postTax2, ['hide_empty' => false]);
             <option selected="selected" value="clear"><?php echo $taxTitle1 ?></option>
             <?php if ($taxTerms1) {
                 foreach ($taxTerms1 as $taxTerm1) {
-                    echo '<option value="' . $taxTerm1->name . '">' . $taxTerm1->name . '</option>';
+                    echo '<option value="' . $taxTerm1->slug . '">' . $taxTerm1->name . '</option>';
                 }
             } ?>
         </select>
@@ -50,9 +50,32 @@ $taxTerms2 = get_terms($postTax2, ['hide_empty' => false]);
             <option selected="selected" value="clear"><?php echo $taxTitle2 ?></option>
             <?php if ($taxTerms2) {
                 foreach ($taxTerms2 as $taxTerm2) {
-                    echo '<option value="' . $taxTerm2->name . '">' . $taxTerm2->name . '</option>';
+                    echo '<option value="' . $taxTerm2->slug . '">' . $taxTerm2->name . '</option>';
                 }
             } ?>
+        </select>
+    </li>
+    <li>
+        <select class="filter-select" id="researcher-faculty-department-select3">
+            <option selected="selected" value="clear">By department</option>
+            <?php
+            $depargs = array(
+                'post_type' => 'department',
+                'orderby' => 'title',
+                'order' => 'ASC',
+                'posts_per_page' => '-1'
+            );
+            $departmentsList = get_posts($depargs);
+
+            if ($departmentsList) {
+                foreach ($departmentsList as $department) {
+                    $deptSlug = $department->post_name;
+                    $deptTitle = $department->post_title;
+                    echo '<option value="' . $deptSlug . '">' . $deptTitle . '</option>';
+                }
+            }
+            ?>
+
         </select>
     </li>
     <li>

@@ -78,6 +78,7 @@
                         //Terms conditionals
                         if ($postTax1) {
                             $taxTerms1 = get_the_terms($post->ID, $postTax1);
+                            // $taxTerms1a = $taxTerms1;
                         }
                         if ($postTax2) {
                             $taxTerms2 = get_the_terms($post->ID, $postTax2);
@@ -87,7 +88,7 @@
                         }
                     } elseif ($postType == 'institutes-centers') {
                         // get departments ACF
-                        // $departments = get_field('department_link_global');
+                        $departments = get_field('department_link_global');
                         //Post Type Taxonomies
                         $postTax1 = 'resesarch-group-location-tax';
                         $postTax2 = 'resesarch-area-expertise-tax';
@@ -139,6 +140,7 @@
                         //Terms conditionals
                         if ($postTax1) {
                             $taxTerms1 = get_the_terms($post->ID, $postTax1);
+                            $taxTerms1a = get_the_terms($post->ID, $postTax1);
                         }
                         if ($postTax2) {
                             $taxTerms2 = get_the_terms($post->ID, $postTax2);
@@ -165,9 +167,14 @@
                         }
                         echo '<ul class="pbsci-taxonomy flex-wrap">';
                         foreach ($taxTerms1 as $taxTerm1) {
-                            echo '<li class="itemtaxonomy1"  data-' . $itemClass1 . '="' . $taxTerm1->slug . '">' . $taxTerm1->name . '</li>';
+                            echo '<li class=""  data-' . $itemClass1 . '="' . $taxTerm1->slug . '">' . $taxTerm1->name . '</li>';
                         }
                         echo '</ul>';
+                        echo '<p aria-hidden="true" class="itemtaxonomy1 hidden-data">';
+                        foreach ($taxTerms1 as $taxTerm1a) {
+                            echo $taxTerm1a->slug . ' ';
+                        }
+                        echo '</p>';
                     }
                     if (!empty($taxTerms2) && !empty($itemClass2)) {
                         if ($taxLabel2 != '') {
@@ -175,9 +182,14 @@
                         }
                         echo '<ul class="pbsci-taxonomy flex-wrap">';
                         foreach ($taxTerms2 as $taxTerm2) {
-                            echo '<li class="itemtaxonomy2"  data-' . $itemClass2 . '="' . $taxTerm2->slug . '">' . $taxTerm2->name . '</li>';
+                            echo '<li class=""  data-' . $itemClass2 . '="' . $taxTerm2->slug . '">' . $taxTerm2->name . '</li>';
                         }
                         echo '</ul>';
+                        echo '<p aria-hidden="true" class="itemtaxonomy2 hidden-data">';
+                        foreach ($taxTerms2 as $taxTerm2a) {
+                            echo $taxTerm2a->slug . ' ';
+                        }
+                        echo '</p>';
                     }
                     if (!empty($taxTerms3) && !empty($itemClass3)) {
                         if ($taxLabel3 != '') {
@@ -185,9 +197,14 @@
                         }
                         echo '<ul class="pbsci-taxonomy flex-wrap">';
                         foreach ($taxTerms3 as $taxTerm3) {
-                            echo '<li class="itemtaxonomy3"  data-' . $itemClass3 . '="' . $taxTerm3->slug . '">' . $taxTerm3->name . '</li>';
+                            echo '<li class=""  data-' . $itemClass3 . '="' . $taxTerm3->slug . '">' . $taxTerm3->name . '</li>';
                         }
                         echo '</ul>';
+                        echo '<p aria-hidden="true" class="itemtaxonomy3 hidden-data">';
+                        foreach ($taxTerms3 as $taxTerm3a) {
+                            echo $taxTerm3a->slug . ' ';
+                        }
+                        echo '</p>';
                     }
                     // echo '<pre>';
                     // var_dump($current_post_type);
