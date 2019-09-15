@@ -7,6 +7,11 @@
 // multiple-values fields into arrays and loop through them. There are various
 // attempts in this code to solve this issue
 
+// RESOURCES:
+// https://stackoverflow.com/questions/36725580/list-js-filter-with-multiple-values-in-data-attribute/36727838#36727838
+// https://stackoverflow.com/questions/31304796/i-cant-seem-to-get-list-js-to-filter-items-with-multiple-categories
+// https://codepen.io/bjornmeansbear/pen/RPywzN
+
 $(function () {
     //search js
     var degreeOptions = {
@@ -34,59 +39,58 @@ $(function () {
         // this sets the selection term
         // based on value of the <option>
         var selection = this.value;
-        // converts value into string
-        var selectionString = String(selection);
-        console.log(selectionString);
-        // degreeList.search(selection, ['programHidden']);
-        degreeList.filter(function (item) {
-            if (
-                item.values().programHidden.indexOf(selection) >= 0
-            ) {
-                return true;
-            } else {
-                return false;
+        console.log(selection);
+        if (selection != 'clear') {
+            // degreeList.fuzzySearch(selection);
+            // degreeList.search(selection, ['programHidden']);
+            degreeList.filter(function (item) {
+                if (
+                    item.values().programHidden.indexOf(selection) >= 0
+                ) {
+                    return true;
+                } else {
+                    return false;
 
-            }
+                }
+                // runs a filter on the list
 
+                // looks for something with class
+                // of "programHidden"
+                // var toBeSplit = item.values().programHidden;
+                // this turns multiple entries separated
+                // by a space into different
+                // elements in an array
+                // var alreadySplit = toBeSplit.split(' ');
+                // console.log(alreadySplit);
+                // we then loop through the array
+                // for (var i = 0, j = alreadySplit.length; i < j; i++) {
+                // this checks each possible "programHidden"
+                // against the selection
+                // and filters the list based on the
+                // one that matches
+                // console.log(alreadySplit[i]);
+                // if (alreadySplit[i].includes(selection)) {
+                // return true;
+                // return (alreadySplit[i]);
+                // console.log(alreadySplit[i]);
+                // } else {
+                // return false;
+                // }
+                // }
 
-
-            // runs a filter on the list
-
-            // looks for something with class
-            // of "programHidden"
-            // var toBeSplit = item.values().programHidden;
-            // this turns multiple entries separated
-            // by a space into different
-            // elements in an array
-            // var alreadySplit = toBeSplit.split(' ');
-            // console.log(alreadySplit);
-            // we then loop through the array
-            // for (var i = 0, j = alreadySplit.length; i < j; i++) {
-            // this checks each possible "programHidden"
-            // against the selection
-            // and filters the list based on the
-            // one that matches
-            // console.log(alreadySplit[i]);
-            // if (alreadySplit[i].includes(selection)) {
-            // return true;
-            // return (alreadySplit[i]);
-            // console.log(alreadySplit[i]);
-            // } else {
-            // return false;
-            // }
-            // }
-
-        });
+            });
+        } else {
+            degreeList.filter();
+        }
 
     });
 
     $('#department-select').change(function () {
         var selection = this.value;
-        var option = document.getElementById('department-select').value;
-        console.log(selection); console.log(option);
-        // console.log(selection);
+        console.log(selection);
         if (selection != 'clear') {
             // degreeList.fuzzySearch(selection);
+            degreeList.search(selection, ['depts']);
         } else {
             degreeList.search();
         }
@@ -101,64 +105,13 @@ $(function () {
     $('#degree-clear').click(function () {
         /*Clear textarea using ID */
         $('#degree-search').val('');
+        degreeList.filter();
         degreeList.search();
         /* Reset Degree type Dropdown using Class*/
         $('.filter-select').prop('selectedIndex', 0);
     });
 
 });
-
-// $(function () {
-//     //search js
-//     var degreeOptions = {
-//         valueNames: [
-//             'card-title',
-//             // 'program',
-//             'program-hidden',
-//             'depts',
-//             'dept',
-//             'name'
-//         ]
-//     }
-//     var degreeList = new List('degree_cards', degreeOptions);
-//     console.log(degreeList.items);
-//     $('#degreetype-select').change(function () {
-//         var selection = this.value;
-//         // console.log(selection);
-//         if (selection != 'clear') {
-//             degreeList.fuzzySearch(selection);
-//         } else {
-//             degreeList.search();
-//         }
-//     });
-
-//     $('#department-select').change(function () {
-//         var selection = this.value;
-//         var option = document.getElementById('department-select').value;
-//         console.log(selection); console.log(option);
-//         // console.log(selection);
-//         if (selection != 'clear') {
-//             // degreeList.fuzzySearch(selection);
-//         } else {
-//             degreeList.search();
-//         }
-
-//     })
-
-//     $('#degree-search').on('keyup', function () {
-//         var searchString = $(this).val();
-//         degreeList.fuzzySearch(searchString);
-//     });
-
-//     $('#degree-clear').click(function () {
-//         /*Clear textarea using ID */
-//         $('#degree-search').val('');
-//         degreeList.search();
-//         /* Reset Degree type Dropdown using Class*/
-//         $('.filter-select').prop('selectedIndex', 0);
-//     });
-
-// });
 
 $(function () {
     //search js
