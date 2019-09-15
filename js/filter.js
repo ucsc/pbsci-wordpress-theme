@@ -126,7 +126,7 @@ $(function () {
         ]
     }
     var labList = new List('page-faculty-researchers', labOptions);
-    console.log(labList.items);
+    // console.log(labList.items);
     $('#researcher-faculty-labs-tax').change(function () {
         var selection = this.value;
         // console.log(selection);
@@ -177,21 +177,18 @@ $(function () {
             'post-title',
             'itemtaxonomy1',
             'itemtaxonomy2',
-            // 'depts'
-            // { data: ['researcher_faculty_labs'] },
+            'card-blurb',
+            'depts'
         ]
     }
     var instituteList = new List('page-research-groups-facilities', instituteOptions);
-    // console.log(instituteList.items);
-    $('#res-grp-search').on('keyup', function () {
-        var searchString = $(this).val();
-        instituteList.fuzzySearch(searchString);
-    });
+    console.log(instituteList.items);
+
     $('#research-group-location').change(function () {
         var selection = this.value;
-        // console.log(selection);
+        console.log(selection);
         if (selection != 'clear') {
-            instituteList.fuzzySearch(selection);
+            instituteList.search(selection, ['itemtaxonomy1']);
         } else {
             instituteList.search();
         }
@@ -200,15 +197,30 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
-            instituteList.fuzzySearch(selection);
+            instituteList.search(selection, ['itemtaxonomy2']);
         } else {
             instituteList.search();
         }
     })
+    $('#researcher-faculty-department-select3').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            instituteList.search(selection, ['depts']);
+        } else {
+            instituteList.search();
+        }
+    })
+    $('#res-grp-search').on('keyup', function () {
+        var searchString = $(this).val();
+        instituteList.fuzzySearch(searchString);
+        instituteList.search(searchString, ['card-blurb']);
+    });
     $('#res-grp-clear').click(function () {
         /*Clear textarea using ID */
         $('#res-grp-search').val('');
         instituteList.search();
+        instituteList.filter();
         /* Reset Dropdowns*/
         $('.filter-select').prop('selectedIndex', 0);
     });

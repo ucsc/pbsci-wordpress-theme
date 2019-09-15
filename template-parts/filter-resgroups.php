@@ -56,6 +56,29 @@ $taxTerms2 = get_terms($postTax2, ['hide_empty' => false]);
         </select>
     </li>
     <li>
+        <select class="filter-select" id="researcher-faculty-department-select3">
+            <option selected="selected" value="clear">By department</option>
+            <?php
+            $depargs = array(
+                'post_type' => 'department',
+                'orderby' => 'title',
+                'order' => 'ASC',
+                'posts_per_page' => '-1'
+            );
+            $departmentsList = get_posts($depargs);
+
+            if ($departmentsList) {
+                foreach ($departmentsList as $department) {
+                    $deptSlug = $department->post_name;
+                    $deptTitle = $department->post_title;
+                    echo '<option value="' . $deptSlug . '">' . $deptTitle . '</option>';
+                }
+            }
+            ?>
+
+        </select>
+    </li>
+    <li>
         <input type="search" class="search" id="res-grp-search" placeholder="Search by keyword" />
     </li>
     <li>

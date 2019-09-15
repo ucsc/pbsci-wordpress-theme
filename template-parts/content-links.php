@@ -88,7 +88,7 @@
                         }
                     } elseif ($postType == 'institutes-centers') {
                         // get departments ACF
-                        // $departments = get_field('department_link_global');
+                        $departments = get_field('department_link_global');
                         //Post Type Taxonomies
                         $postTax1 = 'resesarch-group-location-tax';
                         $postTax2 = 'resesarch-area-expertise-tax';
