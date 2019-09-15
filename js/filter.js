@@ -314,7 +314,7 @@ $(function () {
         ]
     }
     var supportList = new List('page-student-support', supportOptions);
-    console.log(supportList.items);
+    // console.log(supportList.items);
     $('#student-support-tax').change(function () {
         var selection = this.value;
         // console.log(selection);
