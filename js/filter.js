@@ -131,7 +131,9 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
-            // degreeList.fuzzySearch(selection);
+            $('#resesarch-area-expertise-tax').prop('selectedIndex', 0);
+            $('#researcher-faculty-department-select2').prop('selectedIndex', 0);
+            labList.filter();
             labList.search(selection, ['itemtaxonomy1']);
         } else {
             labList.search();
@@ -141,7 +143,9 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
-            // degreeList.fuzzySearch(selection);
+            $('#researcher-faculty-labs-tax').prop('selectedIndex', 0);
+            $('#researcher-faculty-department-select2').prop('selectedIndex', 0);
+            labList.filter();
             labList.search(selection, ['itemtaxonomy2']);
         } else {
             labList.search();
