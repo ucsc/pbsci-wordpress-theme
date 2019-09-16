@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
-    cssMinify = require('gulp-cssnano'),
+    cssMinify = require('cssnano'),
     sassLint = require('gulp-sass-lint'),
 
     // Utilities
