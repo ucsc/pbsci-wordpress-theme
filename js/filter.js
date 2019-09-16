@@ -41,8 +41,8 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
-            // degreeList.fuzzySearch(selection);
-            // degreeList.search(selection, ['programHidden']);
+            $('#department-select').prop('selectedIndex', 0);
+            degreeList.search();
             degreeList.filter(function (item) {
                 if (
                     item.values().programHidden.indexOf(selection) >= 0
@@ -89,6 +89,8 @@ $(function () {
         var selection = this.value;
         //  console.log(selection);
         if (selection != 'clear') {
+            $('#degreetype-select').prop('selectedIndex', 0);
+            degreeList.filter();
             // degreeList.fuzzySearch(selection);
             degreeList.search(selection, ['depts']);
         } else {
@@ -195,6 +197,9 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
+            $('#research-group-expertise').prop('selectedIndex', 0);
+            $('#researcher-faculty-department-select3').prop('selectedIndex', 0);
+            instituteList.filter();
             instituteList.search(selection, ['itemtaxonomy1']);
         } else {
             instituteList.search();
@@ -204,6 +209,9 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
+            $('#research-group-location').prop('selectedIndex', 0);
+            $('#researcher-faculty-department-select3').prop('selectedIndex', 0);
+            instituteList.filter();
             instituteList.search(selection, ['itemtaxonomy2']);
         } else {
             instituteList.search();
@@ -213,6 +221,9 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
+            $('#research-group-location').prop('selectedIndex', 0);
+            $('#research-group-expertise').prop('selectedIndex', 0);
+            instituteList.filter();
             instituteList.search(selection, ['depts']);
         } else {
             instituteList.search();
@@ -220,8 +231,8 @@ $(function () {
     })
     $('#res-grp-search').on('keyup', function () {
         var searchString = $(this).val();
-        instituteList.fuzzySearch(searchString);
-        instituteList.search(searchString, ['card-blurb']);
+        // instituteList.fuzzySearch(searchString);
+        instituteList.search(searchString);
     });
     $('#res-grp-clear').click(function () {
         /*Clear textarea using ID */
@@ -250,10 +261,14 @@ $(function () {
 
     $('#student-opportunities-tax').change(function () {
         var selection = this.value;
-        var stringSelection = String(selection);
+        // var stringSelection = String(selection);
         // console.log(stringSelection);
         if (selection != 'clear') {
-            opportunityList.search(stringSelection, ['itemtaxonomy1']);
+            $('#student-opp-eligib-tax').prop('selectedIndex', 0);
+            $('#student-opp-avail-tax').prop('selectedIndex', 0);
+            $('#studentopportunities-department-select').prop('selectedIndex', 0);
+            opportunityList.filter();
+            opportunityList.search(selection, ['itemtaxonomy1']);
         } else {
             opportunityList.search();
         }
@@ -263,6 +278,10 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
+            $('#student-opportunities-tax').prop('selectedIndex', 0);
+            $('#student-opp-avail-tax').prop('selectedIndex', 0);
+            $('#studentopportunities-department-select').prop('selectedIndex', 0);
+            opportunityList.filter();
             opportunityList.search(selection, ['itemtaxonomy2']);
         } else {
             opportunityList.search();
@@ -273,6 +292,10 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
+            $('#student-opportunities-tax').prop('selectedIndex', 0);
+            $('#student-opp-eligib-tax').prop('selectedIndex', 0);
+            $('#studentopportunities-department-select').prop('selectedIndex', 0);
+            opportunityList.filter();
             opportunityList.search(selection, ['itemtaxonomy3']);
         } else {
             opportunityList.search();
@@ -283,6 +306,10 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
+            $('#student-opportunities-tax').prop('selectedIndex', 0);
+            $('#student-opp-eligib-tax').prop('selectedIndex', 0);
+            $('#student-opp-avail-tax').prop('selectedIndex', 0);
+            opportunityList.filter();
             opportunityList.search(selection, ['depts']);
         } else {
             opportunityList.search();
@@ -291,12 +318,7 @@ $(function () {
     $('#opportunity-search').on('keyup', function () {
         var searchString = $(this).val();
         opportunityList.fuzzySearch(searchString);
-        // opportunityList.search(searchString, ['post-title']);
-        // opportunityList.search(searchString, ['itemtaxonomy1']);
-        // opportunityList.search(searchString, ['itemtaxonomy2']);
-        // opportunityList.search(searchString, ['itemtaxonomy3']);
-        // opportunityList.search(searchString, ['depts']);
-        opportunityList.search(searchString, ['card-blurb']);
+        opportunityList.search(searchString);
     });
     $('#opportunity-clear').click(function () {
         /*Clear textarea using class */
@@ -327,6 +349,10 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
+            $('#studentsupport-department-select').prop('selectedIndex', 0);
+            $('#student-supp-eligib-tax').prop('selectedIndex', 0);
+            $('#student-supp-avail-tax').prop('selectedIndex', 0);
+            supportList.filter();
             supportList.search(selection, ['itemtaxonomy1']);
         } else {
             supportList.search();
@@ -337,6 +363,10 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
+            $('#studentsupport-department-select').prop('selectedIndex', 0);
+            $('#student-support-tax').prop('selectedIndex', 0);
+            $('#student-supp-avail-tax').prop('selectedIndex', 0);
+            supportList.filter();
             supportList.search(selection, ['itemtaxonomy2']);
         } else {
             supportList.search();
@@ -347,6 +377,10 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
+            $('#studentsupport-department-select').prop('selectedIndex', 0);
+            $('#student-support-tax').prop('selectedIndex', 0);
+            $('#student-supp-eligib-tax').prop('selectedIndex', 0);
+            supportList.filter();
             supportList.search(selection, ['itemtaxonomy3']);
         } else {
             supportList.search();
@@ -357,6 +391,10 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
+            $('#student-supp-avail-tax').prop('selectedIndex', 0);
+            $('#student-support-tax').prop('selectedIndex', 0);
+            $('#student-supp-eligib-tax').prop('selectedIndex', 0);
+            supportList.filter();
             supportList.search(selection, ['depts']);
         } else {
             supportList.search();
@@ -365,8 +403,7 @@ $(function () {
     })
     $('#support-search').on('keyup', function () {
         var searchString = $(this).val();
-        supportList.fuzzySearch(searchString);
-        supportList.search(searchString, ['card-blurb']);
+        supportList.search(searchString);
     });
     $('#support-clear').click(function () {
         /*Clear textarea using class */
