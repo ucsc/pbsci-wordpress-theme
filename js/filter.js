@@ -151,13 +151,16 @@ $(function () {
         var selection = this.value;
         // console.log(selection);
         if (selection != 'clear') {
+            $('#researcher-faculty-labs-tax').prop('selectedIndex', 0);
+            $('#resesarch-area-expertise-tax').prop('selectedIndex', 0);
+            labList.filter();
             labList.search(selection, ['depts']);
         } else {
             labList.search();
         }
     })
     $('#lab-search').on('keyup', function () {
-        // var searchString = $(this).val();
+        var searchString = $(this).val();
         labList.search(searchString);
     });
     $('#lab-clear').click(function () {
