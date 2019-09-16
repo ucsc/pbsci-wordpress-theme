@@ -157,8 +157,8 @@ $(function () {
         }
     })
     $('#lab-search').on('keyup', function () {
-        var searchString = $(this).val();
-        labList.fuzzySearch(searchString);
+        // var searchString = $(this).val();
+        labList.search(searchString);
     });
     $('#lab-clear').click(function () {
         /*Clear textarea using ID */
