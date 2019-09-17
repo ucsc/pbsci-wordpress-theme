@@ -30,7 +30,10 @@
         <header id="masthead" class="site-header">
             <div class="site-branding">
                 <?php
-                $hero = get_the_post_thumbnail_url(get_the_ID(), 'page-hero');
+                if (!is_home()) {
+                    // This is NOT the blog posts index
+                    $hero = get_the_post_thumbnail_url(get_the_ID(), 'page-hero');
+                }
                 $page_blurb = get_field('page_blurb');
                 $degrees_offered = get_field_object('degrees_offered');
                 $degrees = $degrees_offered['value'];
