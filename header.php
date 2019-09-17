@@ -30,7 +30,10 @@
         <header id="masthead" class="site-header">
             <div class="site-branding">
                 <?php
-                $hero = get_the_post_thumbnail_url(get_the_ID(), 'page-hero');
+                if (!is_home()) {
+                    // This is NOT the blog posts index
+                    $hero = get_the_post_thumbnail_url(get_the_ID(), 'page-hero');
+                }
                 $page_blurb = get_field('page_blurb');
                 $degrees_offered = get_field_object('degrees_offered');
                 $degrees = $degrees_offered['value'];
@@ -44,17 +47,17 @@
                 <div class="header-runner">
                     <div class="wrap flex-wrap">
                         <header class="entry-header flex-wrap">
-                            <!-- <div class="entry-header-left">
-                            <span class="entry-header-span-a">Science</span>
-                        </div> -->
                             <div class="entry-header-right">
                                 <?php get_template_part('template-parts/breadcrumbs', 'head'); ?>
                                 <span class="entry-header-span-b flex-wrap">
-                                    <?php the_title('<h1 class="entry-title">', '</h1>') ?>
+                                    <?php if ('post' === get_post_type()) :
+                                        single_post_title('<h1 class="entry-title">', '</h1>');
+                                    else : the_title('<h1 class="entry-title">', '</h1>');
+                                    endif; ?>
                                 </span>
                                 <?php
                                 if ('degree' == get_post_type()) {
-                                    echo '<span class="enhero-page try-header-span-c">';
+                                    echo '<span class="enhero-page try-header-span-c">'; //TODO: Fix this class
                                     if ($degrees) :
                                         echo '<!-- Card Degrees Offered Begin --><div class="card-degrees-offered">';
                                         echo '<ul class="card-list flex-wrap">';
