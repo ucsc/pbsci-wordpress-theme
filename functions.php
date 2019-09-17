@@ -287,6 +287,31 @@ if (class_exists('WooCommerce')) {
 /**
  * Add class to page excerpt
  */
+
+/**
+ * Conditionally Override Yoast SEO Breadcrumb Trail
+ * http://plugins.svn.wordpress.org/wordpress-seo/trunk/frontend/class-breadcrumbs.php
+ * -----------------------------------------------------------------------------------
+ */
+
+add_filter('wpseo_breadcrumb_links', 'ucsc_underscore_override_yoast_breadcrumb_trail');
+
+function ucsc_underscore_override_yoast_breadcrumb_trail($links)
+{
+    global $post;
+
+    if (is_singular('post') || is_archive()) {
+        $breadcrumb[] = array(
+            'url' => get_permalink(get_option('page_for_posts')),
+            // 'text' => 'News',
+            'text' => get_the_title(get_option('page_for_posts')),
+        );
+
+        array_splice($links, 1, -2, $breadcrumb);
+    }
+
+    return $links;
+}
 add_filter("the_excerpt", "ucsc_underscore_add_class_to_excerpt");
 function ucsc_underscore_add_class_to_excerpt($excerpt)
 {
