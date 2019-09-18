@@ -25,13 +25,19 @@
                     .news-hero-copy {
                         flex-basis: 90%;
                         margin: 1em auto;
+                        @media only screen and (min-width: $screen-size--medium) {
+                            margin: 0 auto;
+                        }
                         .entry-header {
                             padding-top: .6rem;
                         }
                         .entry-title a,
                         .news-entry-subtitle,
                         .pbsci-excerpt {
-                            color: $color__white
+                            color: $color__white;
+                            @media only screen and (min-width: $screen-size--medium) {
+                                color: $ucsc--primary-blue;
+                            }
                         }
                         .entry-title {
                             @include font-size(1.5);
@@ -53,6 +59,24 @@
                         // flex-basis: 100%;
                         @media only screen and (min-width: $screen-size--medium) {
                             flex-basis: 48%;
+                        }
+                    }
+                }
+                
+                .featured-header {
+                    width: 100%;
+                    text-align: center;
+                    h2 {
+                        display: inline-block;
+                        text-align: center;
+                        padding: 0;
+                        &:after {
+                            content: '';
+                            height: 2px;
+                            background: #13a5dc;
+                            width: 70%;
+                            display: block;
+                            margin: 10px auto;
                         }
                     }
                 }

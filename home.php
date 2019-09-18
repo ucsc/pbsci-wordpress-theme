@@ -18,27 +18,28 @@ get_header();
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
         <?php
-        echo '<section class="panel news-hero">';
+        echo '<section class="panel news-hero front-page-white-panel">';
             echo     '<div class="wrap">';
 
             echo         '<div class="news-hero-container">';
 
             //Featured loop
             // Call Featured Hero post
+
+            $page_for_posts = get_option('page_for_posts');
+            $ids = get_field('hero_post', $page_for_posts);
+            // var_dump($ids);
             $args = array(
-                'posts_per_page' => '1',
-                'tax_query' => array (
-                    array (
-                        'taxonomy' => 'featured-tax',
-                        'field' => 'slug',
-                        'terms' => 'featured',
-                    )
-                )
+            	'posts_per_page'	=> 1,
+            	'post__in'			=> $ids,
+            	'post_status'		=> 'any',
+            	'orderby'        	=> 'post__in',
             );
+
             $featured = new WP_Query($args);
             while ($featured->have_posts()) : $featured->the_post();
             //Set up the parts
-            $do_not_duplicate[] = $post->ID;
+            // $do_not_duplicate[] = $post->ID;
             // $subtitle = get_field('post_subtitle');
             // output the parts
             echo '<article class="flex-wrap">';
@@ -61,16 +62,54 @@ get_header();
         endwhile;
         echo '</div>';
     echo '</section>';
+    echo '<div class="featured-wrap">';
+// ACF Stuff
+$featuredRows = get_field('featured_posts', $page_for_posts);
+// var_dump($featuredRows);
+if($featuredRows){
+
+    foreach($featuredRows as $featuredRow)
+	{
+        $featPosts = $featuredRow['featposts'];
+        $featHeading = $featuredRow['feattitle'];
+
     echo '<section>';
+    echo '<div class="wrap">';
+    echo '<div class="featured-header"><h2>'.$featHeading.'</h2></div>';
+    echo '<div class="three-col-grid">';
+
+            // var_dump($featPosts);
+            if ($featPosts):foreach ($featPosts as $post):
+                setup_postdata($post);
+                    echo '<div class="card-container">';
+                    echo '<article>';
+                    ucsc_pbsci_post_thumbnail();
+                    // the_post_thumbnail();
+                    ucsc_pbsci_post_cats();
+                    ucsc_pbsci_post_title();
+                    ucsc_pbsci_posted_on();
+                    echo '</article>';
+                    echo '</div>';
+            endforeach;
+            wp_reset_postdata();
+            endif;
+    echo '</div>';
+    echo '</div>';
+    echo '</section>';
+
+    }
+}
+echo '</div>';
+echo '<div class="posts-div">';
+echo '<section>';
     echo '<div class="wrap">';
     echo '<div class="three-col-grid">';
 
         if (have_posts() ) : while (have_posts() ) : the_post();
-        if (in_array($post->ID, $do_not_duplicate)) continue;
+
         echo '<div class="card-container">';
         echo '<article>';
         ucsc_pbsci_post_thumbnail();
-        // the_post_thumbnail();
         ucsc_pbsci_post_cats();
         ucsc_pbsci_post_title();
         ucsc_pbsci_posted_on();
@@ -84,7 +123,7 @@ get_header();
     echo '</div>';
     echo '</section>';
 // End of the loop.
-        ?>
+echo '</div>';       ?>
 
     </main><!-- #main -->
 </div><!-- #primary -->

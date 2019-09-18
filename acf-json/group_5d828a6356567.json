@@ -1,0 +1,134 @@
+{
+    "key": "group_5d828a6356567",
+    "title": "Post Archive",
+    "fields": [
+        {
+            "key": "field_5d82937b67b3a",
+            "label": "Hero Post",
+            "name": "hero_post",
+            "type": "relationship",
+            "instructions": "Select a post for the News Hero.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "post_type": [
+                "post"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": 1,
+            "max": 1,
+            "return_format": "id"
+        },
+        {
+            "key": "field_5d828a71f62a1",
+            "label": "Featured Posts",
+            "name": "featured_posts",
+            "type": "repeater",
+            "instructions": "Add panel of featured posts to Post page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_prefix": 0,
+            "maxlength": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5d82b4c4f2908",
+                    "label": "FeatTitle",
+                    "name": "feattitle",
+                    "type": "text",
+                    "instructions": "Enter a title\/category\/name for this featured panel.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_prefix": 0,
+                    "maxlength": "",
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_5d828b20f62a2",
+                    "label": "FeatPosts",
+                    "name": "featposts",
+                    "type": "relationship",
+                    "instructions": "Add three posts to be featured.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
+                    "post_type": [
+                        "post"
+                    ],
+                    "taxonomy": "",
+                    "filters": [
+                        "search",
+                        "taxonomy"
+                    ],
+                    "elements": [
+                        "featured_image"
+                    ],
+                    "min": 1,
+                    "max": 3,
+                    "return_format": "object"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "posts_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1568847286
+}

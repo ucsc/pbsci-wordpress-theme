@@ -449,3 +449,51 @@ function ucsc_after_header()
 {
     do_action('ucsc_after_header');
 }
+
+function ucsc_disable_content_editor()
+{
+    if (isset($_GET['post'])) {
+        $post_ID = $_GET['post'];
+    } else if (isset($_POST['post_ID'])) {
+        $post_ID = $_POST['post_ID'];
+    }
+
+    if (!isset($post_ID) || empty($post_ID)) {
+        return;
+    }
+
+    /*
+     * Completely disable the WordPress editor for the page with a specific ID (in our example with ID = 15)
+     */
+    $page_for_posts = get_option('page_for_posts');
+    // var_dump($page_for_posts);
+    if ($post_ID == $page_for_posts) {
+        remove_post_type_support('page', 'editor');
+    }
+
+    /*
+     * Fully disable the ability to edit all pages (i.e. all posts with "page" type)
+     */
+    // $post_type = get_post_type($post_ID);
+    // if ($post_type == 'page') {
+    //     return false;
+    // }
+
+    /*
+     * Disable editing for pages with ID 16, 25 and 30 (for cases when you want to disable the editor for several pages at once)
+     */
+    // $disabled_IDs = array(16, 25, 30);
+    // if (in_array($post_ID, $disabled_IDs)) {
+    //     remove_post_type_support('page', 'editor');
+    // }
+
+    /*
+     * Hide the WordPress editor on pages with a specific page template (!!!WARNING!!! you do not need to specify a template name, but the name of its file, for example my_page_template.php)
+     */
+    // $page_template = get_post_meta($post_ID, '_wp_page_template', true);
+    // if ($page_template == 'my_page_template.php') {
+    //     remove_post_type_support('page', 'editor');
+    // }
+}
+
+// add_action('admin_init', 'ucsc_disable_content_editor ');
