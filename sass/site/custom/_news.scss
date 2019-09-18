@@ -3,8 +3,14 @@
 }
 
 .news-hero-container {
+    .flex-wrap {
+        flex-direction: row-reverse;
+    }
     .post-thumbnail,
-    news-hero-copy {
-        flex-basis: 48%;
+    .news-hero-copy {
+        width: 100%;
+        @media only screen and (min-width: $screen-size--small) {
+            flex-basis: 48%;
+        }
     }
 }
