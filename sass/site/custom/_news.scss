@@ -1,0 +1,10 @@
+.news-hero {
+    background: orange;
+}
+
+.news-hero-container {
+    .post-thumbnail,
+    news-hero-copy {
+        flex-basis: 48%;
+    }
+}

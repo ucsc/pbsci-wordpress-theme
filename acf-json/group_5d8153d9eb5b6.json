@@ -1,0 +1,46 @@
+{
+    "key": "group_5d8153d9eb5b6",
+    "title": "Posts",
+    "fields": [
+        {
+            "key": "field_5d8153e5b03c2",
+            "label": "Post Subtitle",
+            "name": "post_subtitle",
+            "type": "text",
+            "instructions": "Enter post subtitle (optional)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_prefix": 0,
+            "maxlength": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1568756732
+}
