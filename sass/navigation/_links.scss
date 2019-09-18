@@ -67,6 +67,11 @@
         }
         
         .cat-links {
+            display: block;
             text-transform: uppercase;
             @include font-size(.96);
+            a {
+                color: $color__white;
+                border-bottom: 2px solid $ucsc--primary-yellow;
+            }
         }

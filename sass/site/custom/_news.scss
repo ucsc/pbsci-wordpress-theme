@@ -1,16 +1,58 @@
-.news-hero {
-    background: orange;
-}
-
-.news-hero-container {
-    .flex-wrap {
-        flex-direction: row-reverse;
-    }
-    .post-thumbnail,
-    .news-hero-copy {
-        width: 100%;
-        @media only screen and (min-width: $screen-size--small) {
-            flex-basis: 48%;
-        }
-    }
-}
+                .news-hero {
+                    background: $ucsc--primary-blue;
+                    padding: 0;
+                    @media only screen and (min-width: $screen-size--medium) {
+                        background: #ddd;
+                        padding: 4.5em 0;
+                    }
+                    .wrap {
+                        width: 100%;
+                    }
+                }
+                
+                .news-hero-container {
+                    .flex-wrap {
+                        // display: block;
+                        @media only screen and (min-width: $screen-size--medium) {
+                            flex-direction: row-reverse;
+                        }
+                    }
+                    .post-thumbnail {
+                        flex-basis: 100%;
+                        // height: auto;
+                        // overflow: hidden;
+                    }
+                    .news-hero-copy {
+                        flex-basis: 90%;
+                        margin: 1em auto;
+                        .entry-header {
+                            padding-top: .6rem;
+                        }
+                        .entry-title a,
+                        .news-entry-subtitle,
+                        .pbsci-excerpt {
+                            color: $color__white
+                        }
+                        .entry-title {
+                            @include font-size(1.5);
+                            margin: 0;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                            font-weight: 700;
+                        }
+                        .news-entry-subtitle {}
+                        .pbsci-excerpt {
+                            margin: 1em 0 0;
+                        }
+                        @media only screen and (min-width: $screen-size--medium) {}
+                    }
+                    .post-thumbnail,
+                    .news-hero-copy {
+                        // margin: 0 -5%;
+                        // width: 100%;
+                        // flex-basis: 100%;
+                        @media only screen and (min-width: $screen-size--medium) {
+                            flex-basis: 48%;
+                        }
+                    }
+                }

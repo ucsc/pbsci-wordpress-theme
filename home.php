@@ -39,18 +39,23 @@ get_header();
             while ($featured->have_posts()) : $featured->the_post();
             //Set up the parts
             $do_not_duplicate[] = $post->ID;
-            $subtitle = get_field('post_subtitle');
+            // $subtitle = get_field('post_subtitle');
             // output the parts
             echo '<article class="flex-wrap">';
             ucsc_pbsci_post_thumbnail('thumbnail');
             echo '<div class="news-hero-copy">';
 
-            echo '<header class="entry-header">';
+
             ucsc_pbsci_post_cats();
+            echo '<header class="entry-header">';
             ucsc_pbsci_post_title();
-            echo '<p class="news-entry-subtitle">'.$subtitle.'</p>';
-            the_excerpt();
+            if ($subtitle){
+                echo '<p class="news-entry-subtitle">'.$subtitle.'</p>';
+            }
+
             echo '</header>';
+            the_excerpt();
+
             echo '</article>';
             echo '</div>';
         endwhile;
