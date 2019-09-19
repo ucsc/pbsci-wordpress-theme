@@ -65,20 +65,15 @@ get_header();
     echo '<div class="featured-wrap">';
 // ACF Stuff
 $featuredRows = get_field('featured_posts', $page_for_posts);
-// var_dump($featuredRows);
 if($featuredRows){
-
     foreach($featuredRows as $featuredRow)
 	{
         $featPosts = $featuredRow['featposts'];
-        $featHeading = $featuredRow['feattitle'];
-
+        $featCategory = $featuredRow['featcat'];
     echo '<section>';
     echo '<div class="wrap">';
-    echo '<div class="featured-header"><h2>'.$featHeading.'</h2></div>';
+    echo '<div class="featured-header"><h2>'.$featCategory->name.'</h2></div>';
     echo '<div class="three-col-grid">';
-
-            // var_dump($featPosts);
             if ($featPosts):foreach ($featPosts as $post):
                 setup_postdata($post);
                     echo '<div class="card-container">';
@@ -94,6 +89,7 @@ if($featuredRows){
             wp_reset_postdata();
             endif;
     echo '</div>';
+        echo '<div class="featured-header"><h2>'.$featCategory->name.'</h2></div>';
     echo '</div>';
     echo '</section>';
 
@@ -103,6 +99,7 @@ echo '</div>';
 echo '<div class="posts-div">';
 echo '<section>';
     echo '<div class="wrap">';
+    echo '<div class="featured-header"><h2>Latest Posts</h2></div>';
     echo '<div class="three-col-grid">';
 
         if (have_posts() ) : while (have_posts() ) : the_post();
