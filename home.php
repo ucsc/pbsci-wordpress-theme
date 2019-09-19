@@ -118,9 +118,11 @@ echo '<section>';
                 echo '</div>';
 
             endwhile;
+
             endif;
 
             echo '</div>';
+            the_posts_navigation();
         echo '
 </div>';
 echo '</section>';
