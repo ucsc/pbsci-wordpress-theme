@@ -92,12 +92,11 @@ if($featuredRows){
                 $category_id = get_cat_ID( $featCategory->name );
                 // Get the URL of this category
                 $category_link = get_category_link( $category_id );
-        echo '<div class="featured-more"><span><a href="'.esc_url( $category_link ).'" title="'.$featCategory->name.'">See more '.$featCategory->name.' news</a></span></div>';
+        echo '<div class="news-more more"><a class="button news-more-button" href="'.esc_url( $category_link ).'" title="'.$featCategory->name.'"><span>See more '.$featCategory->name.' news</span></a></div>';
 
     echo '</div>';
-    echo '<hr>';
     echo '</section>';
-
+    echo '<div class="wrap"><hr></div>';
     }
 }
 echo '</div>';

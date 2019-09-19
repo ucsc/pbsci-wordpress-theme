@@ -418,6 +418,9 @@
             border: 1px solid $ucsc--lighter-blue;
             border-radius: 3px;
             @include font-size(1.25);
+            &::after {
+                background-color: transparent!important;
+            }
             &:hover {
                 background-color: $ucsc--lighter-blue;
                 color: #e7e7e6;

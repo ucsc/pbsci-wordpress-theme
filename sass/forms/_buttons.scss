@@ -11,3 +11,42 @@ input[type="submit"] {
     line-height: 1;
     padding: 0.6em 1em 0.4em;
 }
+
+.button {
+    transition: all 0.3s;
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 1em;
+    padding: 1.1em 1.2em;
+    border: none;
+    background: none;
+    color: $ucsc--primary-blue;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 2px;
+    word-break: keep-all;
+    line-height: 1.4;
+    max-width: 350px;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        height: 3px;
+        background-color: #ffbf00;
+        width: 100%;
+        transition: -webkit-transform 400ms ease-in-out;
+        transition: transform 400ms ease-in-out;
+        transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+        -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+        transform: scaleX(0);
+    }
+    &:hover:after {
+        transform: scaleX(1);
+    }
+}

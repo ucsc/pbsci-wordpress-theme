@@ -44,6 +44,11 @@
             // transition: transform .5s ease;
             transition: transform .5s, filter 1.5s ease-in-out;
         }
+        &:hover,
+        &:focus,
+        &:active {
+            border-bottom: none
+        }
         &:hover img {
             transform: scale(1.1);
         }
