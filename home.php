@@ -79,7 +79,6 @@ if($featuredRows){
                     echo '<div class="card-container">';
                     echo '<article>';
                     ucsc_pbsci_post_thumbnail();
-                    // the_post_thumbnail();
                     ucsc_pbsci_post_cats();
                     ucsc_pbsci_post_title();
                     ucsc_pbsci_posted_on();
@@ -89,8 +88,14 @@ if($featuredRows){
             wp_reset_postdata();
             endif;
     echo '</div>';
-        echo '<div class="featured-header"><h2>'.$featCategory->name.'</h2></div>';
+                // Get the ID of a given category
+                $category_id = get_cat_ID( $featCategory->name );
+                // Get the URL of this category
+                $category_link = get_category_link( $category_id );
+        echo '<div class="featured-more"><span><a href="'.esc_url( $category_link ).'" title="'.$featCategory->name.'">See more '.$featCategory->name.' news</a></span></div>';
+
     echo '</div>';
+    echo '<hr>';
     echo '</section>';
 
     }
@@ -100,27 +105,28 @@ echo '<div class="posts-div">';
 echo '<section>';
     echo '<div class="wrap">';
     echo '<div class="featured-header"><h2>Latest Posts</h2></div>';
-    echo '<div class="three-col-grid">';
+        echo '<div class="three-col-grid">';
 
-        if (have_posts() ) : while (have_posts() ) : the_post();
+            if (have_posts() ) : while (have_posts() ) : the_post();
 
-        echo '<div class="card-container">';
-        echo '<article>';
-        ucsc_pbsci_post_thumbnail();
-        ucsc_pbsci_post_cats();
-        ucsc_pbsci_post_title();
-        ucsc_pbsci_posted_on();
-        echo '</article>';
-        echo '</div>';
+            echo '<div class="card-container">';
+                echo '<article>';
+                    ucsc_pbsci_post_thumbnail();
+                    ucsc_pbsci_post_cats();
+                    ucsc_pbsci_post_title();
+                    ucsc_pbsci_posted_on();
+                    echo '</article>';
+                echo '</div>';
 
-    endwhile;
-    endif;
+            endwhile;
+            endif;
 
-    echo '</div>';
-    echo '</div>';
-    echo '</section>';
+            echo '</div>';
+        echo '
+</div>';
+echo '</section>';
 // End of the loop.
-echo '</div>';       ?>
+echo '</div>'; ?>
 
     </main><!-- #main -->
 </div><!-- #primary -->
