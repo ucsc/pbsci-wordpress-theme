@@ -2,6 +2,13 @@
     display: block;
 }
 
+.single-post {
+    .site-content {
+        position: relative;
+        padding: 4rem 0;
+    }
+}
+
 .post,
 .page {
     // margin: 0 0 1.5em;
@@ -15,13 +22,13 @@
 .page-content,
 .entry-content,
 .entry-summary {
-    margin: 2.5em 0;
+    margin: 0 0 2.5em;
 }
 
 .entry-content {
     @media only screen and (min-width: $screen-size--small) {
         max-width: 52em;
-        margin: 2.5em auto;
+        margin: 2.5em auto 2.5em;
     }
 }
 

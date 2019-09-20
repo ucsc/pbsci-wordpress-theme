@@ -21,6 +21,8 @@ get_header('blog');
 				get_template_part('template-parts/content', get_post_type());
 
 				if ('post' === get_post_type()) :
+					get_template_part('template-parts/social', 'sharing');
+					get_template_part('template-parts/related', 'posts');
 					the_post_navigation();
 				endif;
 
@@ -36,8 +38,8 @@ get_header('blog');
 </div><!-- #primary -->
 
 <?php
-if ('post' === get_post_type()) :
-	get_sidebar();
-	echo 'sidebar here?';
-endif;
+// if ('post' === get_post_type()) :
+// 	get_sidebar();
+// 	echo 'sidebar here?';
+// endif;
 get_footer();

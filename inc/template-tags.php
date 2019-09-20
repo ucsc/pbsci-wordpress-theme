@@ -46,7 +46,7 @@ if (!function_exists('ucsc_pbsci_posted_by')) :
 	{
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x('by %s', 'post author', 'ucsc-pbsci'),
+			esc_html_x('By %s', 'post author', 'ucsc-pbsci'),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
 		);
 
@@ -64,17 +64,17 @@ if (!function_exists('ucsc_pbsci_entry_footer')) :
 		// Hide category and tag text for pages.
 		if ('post' === get_post_type()) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list(esc_html__(', ', 'ucsc-pbsci'));
-			if ($categories_list) {
-				/* translators: 1: list of categories. */
-				printf('<span class="cat-links">' . esc_html__('Posted in %1$s', 'ucsc-pbsci') . '</span>', $categories_list); // WPCS: XSS OK.
-			}
+			// $categories_list = get_the_category_list(esc_html__(', ', 'ucsc-pbsci'));
+			// if ($categories_list) {
+			// 	/* translators: 1: list of categories. */
+			// 	printf('<span class="cat-links">' . esc_html__('Posted in %1$s', 'ucsc-pbsci') . '</span>', $categories_list); // WPCS: XSS OK.
+			// }
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list('', esc_html_x(', ', 'list item separator', 'ucsc-pbsci'));
 			if ($tags_list) {
 				/* translators: 1: list of tags. */
-				printf('<span class="tags-links">' . esc_html__('Tagged %1$s', 'ucsc-pbsci') . '</span>', $tags_list); // WPCS: XSS OK.
+				printf('<span class="tags-links">' . esc_html__('Topics: %1$s', 'ucsc-pbsci') . '</span>', $tags_list); // WPCS: XSS OK.
 			}
 		}
 
@@ -210,5 +210,22 @@ if (!function_exists('ucsc_pbsci_post_title')) :
 	function ucsc_pbsci_post_title()
 	{
 		the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+	};
+endif;
+if (!function_exists('ucsc_pbsci_related_post_title')) :
+	/**
+	 * Displays Post/News Title
+	 *
+	 *
+	 */
+	/**
+	 * Displays an optional post thumbnail.
+	 *
+	 * Wraps the post thumbnail in an anchor element on index views, or a div
+	 * element when on single views.
+	 */
+	function ucsc_pbsci_related_post_title()
+	{
+		the_title('<h4 class="entry-title related-post-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h4>');
 	};
 endif;

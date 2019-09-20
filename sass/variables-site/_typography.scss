@@ -1,4 +1,8 @@
-$font__main: Roboto,
+$font__main: "Roboto",
+"Roboto Condensed",
+sans-serif;
+$font__head: "Roboto Condensed",
+"Roboto",
 sans-serif;
 $font__code: Monaco,
 Consolas,
@@ -8,5 +12,6 @@ monospace;
 $font__pre: "Courier 10 Pitch",
 Courier,
 monospace;
-$font__line-height-body: 1.25;
+$font__line-height-body: 1.5;
+$font__line-height-paragraph: 1.6;
 $font__line-height-pre: 1.6;

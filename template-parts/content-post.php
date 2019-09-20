@@ -25,7 +25,7 @@ $subtitle = get_field('post_subtitle');
                 ucsc_pbsci_posted_by();
                 ucsc_pbsci_posted_on();
                 ?>
-                <h5>Share this story</h5>
+                <h5>Share this story:</h5>
                 <div class="social-sharing top right">
                     <a class="fab fa-twitter" href=""></a>
                     <a class="fab fa-facebook" href=""></a>

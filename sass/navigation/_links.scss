@@ -1,7 +1,7 @@
         a {
             color: $color__link;
             text-decoration: none;
-            border-bottom: 2px solid transparent;
+            border-bottom: 2px solid $ucsc__primary-yellow;
             &:visited {
                 color: $color__link-visited;
             }
@@ -18,6 +18,24 @@
             &:active {
                 outline: 0;
             }
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .posted-on,
+        .social-sharing,
+        .breadcrumbs {
+            a {
+                border-bottom: 2px solid transparent;
+            }
+        }
+        
+        .post-thumbnail,
+        .post-thumbnail:hover {
+            border-bottom: none;
         }
         
         .site-info {
@@ -71,8 +89,19 @@
             text-transform: uppercase;
             padding-top: .75rem;
             @include font-size(.96);
+        }
+        
+        .tags-links {
+            text-transform: capitalize;
+        }
+        
+        .cat-links,
+        .tags-links {
             a {
                 color: $ucsc--primary-blue;
-                border-bottom: 2px solid $ucsc--primary-yellow;
+                border-bottom: 1px solid $ucsc--lighter-blue;
+                @media only screen and (min-width: $screen-size--small) {
+                    border-bottom: 2px solid $ucsc--primary-yellow;
+                }
             }
         }

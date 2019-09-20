@@ -369,14 +369,32 @@
      */
     
     .two-thirds-left {
-        display: grid;
-        grid-template-columns: 75% 25%;
+        width: 100%;
+        padding-top: 10px;
+        padding-top: 0.625rem;
+        @media only screen and (min-width: $screen-size--small) {
+            display: grid;
+            grid-template-columns: 66.6666667% calc(100% - 66.6666667%);
+        }
     }
     
     .byline,
     .posted-on {
         display: block;
         width: 100%;
+    }
+    
+    .blog,
+    .related-posts,
+    .page-degrees,
+    .page-academics,
+    .page-research,
+    .page-departments {
+        .post-thumbnail {
+            .wp-caption .wp-caption-text {
+                display: none;
+            }
+        }
     }
     /**
  * CALL TO ACTION STYLES
