@@ -30,7 +30,9 @@
         <header id="masthead" class="site-header">
             <div class="site-branding">
                 <?php
-                if (!is_home()) {
+                $page_for_posts = get_option('page_for_posts');
+
+                if ((!is_home()) || (is_single() && 'post' != get_post_type())) {
                     // This is NOT the blog posts index
                     $hero = get_the_post_thumbnail_url(get_the_ID(), 'page-hero');
                 }
@@ -51,7 +53,8 @@
                                 <?php get_template_part('template-parts/breadcrumbs', 'head'); ?>
                                 <span class="entry-header-span-b flex-wrap">
                                     <?php if ('post' === get_post_type()) :
-                                        single_post_title('<h1 class="entry-title">', '</h1>');
+                                        // single_post_title('<h1 class="entry-title">', '</h1>');
+                                        echo '<h1 class="entry-title">' . get_the_title($page_for_posts) . '</h1>';
                                     else : the_title('<h1 class="entry-title">', '</h1>');
                                     endif; ?>
                                 </span>
