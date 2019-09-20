@@ -7,19 +7,32 @@
  *
  * @package UCSC_PBSci
  */
-
+$subtitle = get_field('post_subtitle');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
         <?php ucsc_pbsci_post_cats(); ?>
         <div class="two-thirds-left">
-            <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+            <div class="news-title-containers">
+                <?php the_title('<h1 class="entry-title">', '</h1>');
+                if ($subtitle) {
+                    echo '<p class="news-entry-subtitle">' . $subtitle . '</p>';
+                } ?>
+            </div>
             <div class="entry-meta">
                 <?php
-                ucsc_pbsci_posted_on();
                 ucsc_pbsci_posted_by();
+                ucsc_pbsci_posted_on();
                 ?>
+                <h5>Share this story</h5>
+                <div class="social-sharing top right">
+                    <a class="fab fa-twitter" href=""></a>
+                    <a class="fab fa-facebook" href=""></a>
+                    <a class="fab fa-youtube" href=""></a>
+                    <a class="fab fa-linkedin" href=""></a>
+                    <a class="fab fa-reddit" href=""></a>
+                </div>
             </div><!-- .entry-meta -->
         </div>
 

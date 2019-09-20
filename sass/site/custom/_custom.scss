@@ -365,6 +365,20 @@
         color: $color__white;
     }
     /**
+     * Single post
+     */
+    
+    .two-thirds-left {
+        display: grid;
+        grid-template-columns: 75% 25%;
+    }
+    
+    .byline,
+    .posted-on {
+        display: block;
+        width: 100%;
+    }
+    /**
  * CALL TO ACTION STYLES
  *
  */
