@@ -87,7 +87,7 @@
         .cat-links {
             display: block;
             text-transform: uppercase;
-            padding-top: .75rem;
+            padding: .75rem 0;
             @include font-size(.96);
         }
         

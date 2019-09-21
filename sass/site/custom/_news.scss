@@ -2,8 +2,8 @@
     background: $ucsc--primary-blue;
     padding: 0;
     @media only screen and (min-width: $screen-size--medium) {
-        background: #ddd;
-        padding: 4.5em 0;
+        background: #fefefe;
+        padding: 1.5em 0;
     }
     .wrap {
         width: 100%;
@@ -43,7 +43,6 @@
             @include font-size(1.5);
             margin: 0;
             text-transform: uppercase;
-            letter-spacing: 2px;
             font-weight: 700;
         }
         .news-entry-subtitle {}
@@ -59,11 +58,13 @@
             }
         }
     }
+    .post-thumbnail {
+        @media only screen and (min-width: $screen-size--medium) {
+            padding-top: 3.8em;
+        }
+    }
     .post-thumbnail,
     .news-hero-copy {
-        // margin: 0 -5%;
-        // width: 100%;
-        // flex-basis: 100%;
         @media only screen and (min-width: $screen-size--medium) {
             flex-basis: 48%;
         }

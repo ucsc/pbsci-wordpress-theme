@@ -42,13 +42,14 @@ get_header();
             // $do_not_duplicate[] = $post->ID;
             // $subtitle = get_field('post_subtitle');
             // output the parts
+            // echo '<div class="wrap">';
+            // echo '</div>';
             echo '<article class="flex-wrap">';
+
             ucsc_pbsci_post_thumbnail('thumbnail');
             echo '<div class="news-hero-copy">';
-
-
-            ucsc_pbsci_post_cats();
             echo '<header class="entry-header">';
+            ucsc_pbsci_post_cats();
             ucsc_pbsci_post_title();
             if ($subtitle){
                 echo '<p class="news-entry-subtitle">'.$subtitle.'</p>';
@@ -83,6 +84,7 @@ if($featuredRows){
                     ucsc_pbsci_post_title();
                     ucsc_pbsci_posted_on();
                     echo '</article>';
+                    // echo '<div class="wrap post-rule-wrap"><hr class="post-rule"></div>';
                     echo '</div>';
             endforeach;
             wp_reset_postdata();
@@ -115,6 +117,7 @@ echo '<section>';
                     ucsc_pbsci_post_title();
                     ucsc_pbsci_posted_on();
                     echo '</article>';
+                    // echo '<div class="wrap post-rule-wrap"><hr class="post-rule"></div>';
                 echo '</div>';
 
             endwhile;

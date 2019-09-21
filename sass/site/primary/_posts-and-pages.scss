@@ -5,7 +5,10 @@
 .single-post {
     .site-content {
         position: relative;
-        padding: 4rem 0;
+        padding: 1.5em 0;
+        @media only screen and (min-width: $screen-size--medium) {
+            padding: 4rem 0;
+        }
     }
 }
 
