@@ -391,7 +391,10 @@
     .page-research,
     .page-departments {
         .post-thumbnail {
-            .wp-caption .wp-caption-text {
+            .wp-caption {
+                margin-bottom: 0;
+            }
+            .wp-caption-text {
                 display: none;
             }
         }
