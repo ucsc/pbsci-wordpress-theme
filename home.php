@@ -63,6 +63,7 @@ get_header();
         endwhile;
         echo '</div>';
         echo '</section>';
+        echo '<div class="wrap post-desktop"><hr></div>';
         echo '<div class="featured-wrap">';
         // ACF Stuff
         $featuredRows = get_field('featured_posts', $page_for_posts);

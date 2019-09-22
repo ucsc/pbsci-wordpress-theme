@@ -486,3 +486,16 @@ function ucsc_add_post_thumbnail_caption($html, $post_id, $post_thumbnail_id, $s
         return $out;
     }
 }
+
+//archive title
+
+add_filter('get_the_archive_title', function ($title) {
+    if (is_category()) {
+        $title = single_cat_title('Category: ', false);
+    }
+    if (is_tag()) {
+        $title = single_cat_title('Topic: ', false);
+    }
+
+    return $title;
+});
