@@ -21,21 +21,21 @@ hr {
     margin-bottom: 1.5em;
 }
 
-.related-desktop,
-.related-mobile {
+.post-desktop,
+.post-mobile {
     hr {
         margin-top: 1.5em;
     }
 }
 
-.related-desktop {
+.post-desktop {
     display: none;
     @media only screen and (min-width: $screen-size--medium) {
         display: block;
     }
 }
 
-.related-mobile {
+.post-mobile {
     @media only screen and (min-width: $screen-size--medium) {
         display: none;
     }
