@@ -1,7 +1,7 @@
         a {
             color: $color__link;
             text-decoration: none;
-            border-bottom: 2px solid $ucsc__primary-yellow;
+            border-bottom: 2px solid transparent;
             &:visited {
                 color: $color__link-visited;
             }
@@ -20,16 +20,9 @@
             }
         }
         
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        .posted-on,
-        .social-sharing,
-        .breadcrumbs {
+        .entry-content {
             a {
-                border-bottom: 2px solid transparent;
+                border-bottom: 2px solid $ucsc__primary-yellow;
             }
         }
         
