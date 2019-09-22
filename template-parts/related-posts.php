@@ -23,11 +23,13 @@ if ($relatedPosts) :
         ucsc_pbsci_related_post_title();
         // ucsc_pbsci_posted_on();
         echo '</article>';
+        echo '<div class="wrap related-mobile"><hr></div>';
         echo '</div>';
+
     endforeach;
     echo '</div>';
     // echo '</div>';
     echo '</section>';
-    echo '<div class="wrap"><hr></div>';
+    echo '<div class="wrap related-desktop"><hr></div>';
     wp_reset_postdata();
 endif;

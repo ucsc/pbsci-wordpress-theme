@@ -234,233 +234,183 @@ $(function () {
         // instituteList.fuzzySearch(searchString);
         instituteList.search(searchString);
     });
+    $('#res-grp-clear').click(function () {
+        /*Clear textarea using ID */
+        $('#res-grp-search').val('');
+        instituteList.search();
+        instituteList.filter();
+        /* Reset Dropdowns*/
+        $('.filter-select').prop('selectedIndex', 0);
+    });
+});
 
-    $(function () {
-        //search js
-        var opportunityOptions = {
-            valueNames: [
-                'post-title',
-                'itemtaxonomy1',
-                'itemtaxonomy2',
-                'itemtaxonomy3',
-                'card-blurb',
-                'depts',
-            ]
-        }
-        var opportunityList = new List('page-student-research-opportunities', opportunityOptions);
-        // console.log(opportunityList.items);
+$(function () {
+    //search js
+    var opportunityOptions = {
+        valueNames: [
+            'post-title',
+            'itemtaxonomy1',
+            'itemtaxonomy2',
+            'itemtaxonomy3',
+            'card-blurb',
+            'depts',
+        ]
+    }
+    var opportunityList = new List('page-student-research-opportunities', opportunityOptions);
+    // console.log(opportunityList.items);
 
-        $('#student-opportunities-tax').change(function () {
-            var selection = this.value;
-            // var stringSelection = String(selection);
-            // console.log(stringSelection);
-            if (selection != 'clear') {
-                $('#student-opp-eligib-tax').prop('selectedIndex', 0);
-                $('#student-opp-avail-tax').prop('selectedIndex', 0);
-                $('#studentopportunities-department-select').prop('selectedIndex', 0);
-                opportunityList.filter();
-                opportunityList.search(selection, ['itemtaxonomy1']);
-            } else {
-                opportunityList.search();
-            }
-            var opportunityList = new List('page-student-research-opportunities', opportunityOptions);
-            // console.log(opportunityList.items);
-
-        })
-        $('#student-opp-eligib-tax').change(function () {
-            var selection = this.value;
-            // console.log(selection);
-            if (selection != 'clear') {
-                $('#student-opportunities-tax').prop('selectedIndex', 0);
-                $('#student-opp-avail-tax').prop('selectedIndex', 0);
-                $('#studentopportunities-department-select').prop('selectedIndex', 0);
-                opportunityList.filter();
-                opportunityList.search(selection, ['itemtaxonomy2']);
-            } else {
-                opportunityList.search();
-            }
-
-        })
-        $('#student-opp-avail-tax').change(function () {
-            var selection = this.value;
-            // console.log(selection);
-            if (selection != 'clear') {
-                $('#student-opportunities-tax').prop('selectedIndex', 0);
-                $('#student-opp-eligib-tax').prop('selectedIndex', 0);
-                $('#studentopportunities-department-select').prop('selectedIndex', 0);
-                opportunityList.filter();
-                opportunityList.search(selection, ['itemtaxonomy3']);
-            } else {
-                opportunityList.search();
-            }
-
-        })
-        $('#studentopportunities-department-select').change(function () {
-            var selection = this.value;
-            // console.log(selection);
-            if (selection != 'clear') {
-                $('#student-opportunities-tax').prop('selectedIndex', 0);
-                $('#student-opp-eligib-tax').prop('selectedIndex', 0);
-                $('#student-opp-avail-tax').prop('selectedIndex', 0);
-                opportunityList.filter();
-                opportunityList.search(selection, ['depts']);
-            } else {
-                opportunityList.search();
-            }
-        })
-        $('#opportunity-search').on('keyup', function () {
-            var searchString = $(this).val();
-            opportunityList.fuzzySearch(searchString);
-            opportunityList.search(searchString);
-        });
-        $('#opportunity-clear').click(function () {
-            /*Clear textarea using class */
-            $('#opportunity-search').val('');
-            opportunityList.search();
+    $('#student-opportunities-tax').change(function () {
+        var selection = this.value;
+        // var stringSelection = String(selection);
+        // console.log(stringSelection);
+        if (selection != 'clear') {
+            $('#student-opp-eligib-tax').prop('selectedIndex', 0);
+            $('#student-opp-avail-tax').prop('selectedIndex', 0);
+            $('#studentopportunities-department-select').prop('selectedIndex', 0);
             opportunityList.filter();
-            /* Reset Degree type Dropdown*/
-            $('.filter-select').prop('selectedIndex', 0);
-        });
+            opportunityList.search(selection, ['itemtaxonomy1']);
+        } else {
+            opportunityList.search();
+        }
 
-
-        $(function () {
-            //search js
-            var supportOptions = {
-                valueNames: [
-                    'post-title',
-                    'itemtaxonomy1',
-                    'itemtaxonomy2',
-                    'itemtaxonomy3',
-                    'card-blurb',
-                    'depts',
-                ]
-            }
-            var supportList = new List('page-student-support', supportOptions);
-            // console.log(supportList.items);
-            $('#student-support-tax').change(function () {
-                var selection = this.value;
-                // console.log(selection);
-                if (selection != 'clear') {
-                    $('#studentsupport-department-select').prop('selectedIndex', 0);
-                    $('#student-supp-eligib-tax').prop('selectedIndex', 0);
-                    $('#student-supp-avail-tax').prop('selectedIndex', 0);
-                    supportList.filter();
-                    supportList.search(selection, ['itemtaxonomy1']);
-                } else {
-                    supportList.search();
-                }
-                var supportList = new List('page-student-support', supportOptions);
-                // console.log(supportList.items);
-                $('#student-support-tax').change(function () {
-                    var selection = this.value;
-                    // console.log(selection);
-                    if (selection != 'clear') {
-                        supportList.search(selection, ['itemtaxonomy1']);
-                    } else {
-                        supportList.search();
-                    }
-
-<<<<<<< HEAD
-                })
-                $('#student-supp-eligib-tax').change(function () {
-                    var selection = this.value;
-                    // console.log(selection);
-                    if (selection != 'clear') {
-                        $('#studentsupport-department-select').prop('selectedIndex', 0);
-                        $('#student-support-tax').prop('selectedIndex', 0);
-                        $('#student-supp-avail-tax').prop('selectedIndex', 0);
-                        supportList.filter();
-                        supportList.search(selection, ['itemtaxonomy2']);
-                    } else {
-                        supportList.search();
-                    }
-
-                })
-                $('#student-supp-avail-tax').change(function () {
-                    var selection = this.value;
-                    // console.log(selection);
-                    if (selection != 'clear') {
-                        $('#studentsupport-department-select').prop('selectedIndex', 0);
-                        $('#student-support-tax').prop('selectedIndex', 0);
-                        $('#student-supp-eligib-tax').prop('selectedIndex', 0);
-                        supportList.filter();
-                        supportList.search(selection, ['itemtaxonomy3']);
-                    } else {
-                        supportList.search();
-                    }
-
-                })
-                $('#studentsupport-department-select').change(function () {
-                    var selection = this.value;
-                    // console.log(selection);
-                    if (selection != 'clear') {
-                        $('#student-supp-avail-tax').prop('selectedIndex', 0);
-                        $('#student-support-tax').prop('selectedIndex', 0);
-                        $('#student-supp-eligib-tax').prop('selectedIndex', 0);
-                        supportList.filter();
-                        supportList.search(selection, ['depts']);
-                    } else {
-                        supportList.search();
-                    }
-
-                })
-                $('#support-search').on('keyup', function () {
-                    var searchString = $(this).val();
-                    supportList.search(searchString);
-                });
-                $('#support-clear').click(function () {
-                    /*Clear textarea using class */
-                    $('#support-search').val('');
-                    supportList.search();
-                    supportList.filter();
-                    /* Reset Degree type Dropdown*/
-                    $('.filter-select').prop('selectedIndex', 0);
-                });
-            });
-=======
-        })
-        $('#student-supp-eligib-tax').change(function () {
-            var selection = this.value;
-            // console.log(selection);
-            if (selection != 'clear') {
-                supportList.search(selection, ['itemtaxonomy2']);
-            } else {
-                supportList.search();
-            }
-
-        })
-        $('#student-supp-avail-tax').change(function () {
-            var selection = this.value;
-            // console.log(selection);
-            if (selection != 'clear') {
-                supportList.search(selection, ['itemtaxonomy3']);
-            } else {
-                supportList.search();
-            }
-
-        })
-        $('#studentsupport-department-select').change(function () {
-            var selection = this.value;
-            // console.log(selection);
-            if (selection != 'clear') {
-                supportList.search(selection, ['depts']);
-            } else {
-                supportList.search();
-            }
-
-        })
-        $('#support-search').on('keyup', function () {
-            var searchString = $(this).val();
-            supportList.fuzzySearch(searchString);
-            supportList.search(searchString, ['card-blurb']);
-        });
-        $('#support-clear').click(function () {
-            /*Clear textarea using class */
-            $('#support-search').val('');
-            supportList.search();
-            supportList.filter();
-            /* Reset Degree type Dropdown*/
-            $('.filter-select').prop('selectedIndex', 0);
-        });
     })
->>>>>>> news
+    $('#student-opp-eligib-tax').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            $('#student-opportunities-tax').prop('selectedIndex', 0);
+            $('#student-opp-avail-tax').prop('selectedIndex', 0);
+            $('#studentopportunities-department-select').prop('selectedIndex', 0);
+            opportunityList.filter();
+            opportunityList.search(selection, ['itemtaxonomy2']);
+        } else {
+            opportunityList.search();
+        }
+
+    })
+    $('#student-opp-avail-tax').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            $('#student-opportunities-tax').prop('selectedIndex', 0);
+            $('#student-opp-eligib-tax').prop('selectedIndex', 0);
+            $('#studentopportunities-department-select').prop('selectedIndex', 0);
+            opportunityList.filter();
+            opportunityList.search(selection, ['itemtaxonomy3']);
+        } else {
+            opportunityList.search();
+        }
+
+    })
+    $('#studentopportunities-department-select').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            $('#student-opportunities-tax').prop('selectedIndex', 0);
+            $('#student-opp-eligib-tax').prop('selectedIndex', 0);
+            $('#student-opp-avail-tax').prop('selectedIndex', 0);
+            opportunityList.filter();
+            opportunityList.search(selection, ['depts']);
+        } else {
+            opportunityList.search();
+        }
+    })
+    $('#opportunity-search').on('keyup', function () {
+        var searchString = $(this).val();
+        opportunityList.fuzzySearch(searchString);
+        opportunityList.search(searchString);
+    });
+    $('#opportunity-clear').click(function () {
+        /*Clear textarea using class */
+        $('#opportunity-search').val('');
+        opportunityList.search();
+        opportunityList.filter();
+        /* Reset Degree type Dropdown*/
+        $('.filter-select').prop('selectedIndex', 0);
+    });
+});
+
+
+$(function () {
+    //search js
+    var supportOptions = {
+        valueNames: [
+            'post-title',
+            'itemtaxonomy1',
+            'itemtaxonomy2',
+            'itemtaxonomy3',
+            'card-blurb',
+            'depts',
+        ]
+    }
+    var supportList = new List('page-student-support', supportOptions);
+    // console.log(supportList.items);
+    $('#student-support-tax').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            $('#studentsupport-department-select').prop('selectedIndex', 0);
+            $('#student-supp-eligib-tax').prop('selectedIndex', 0);
+            $('#student-supp-avail-tax').prop('selectedIndex', 0);
+            supportList.filter();
+            supportList.search(selection, ['itemtaxonomy1']);
+        } else {
+            supportList.search();
+        }
+
+    })
+    $('#student-supp-eligib-tax').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            $('#studentsupport-department-select').prop('selectedIndex', 0);
+            $('#student-support-tax').prop('selectedIndex', 0);
+            $('#student-supp-avail-tax').prop('selectedIndex', 0);
+            supportList.filter();
+            supportList.search(selection, ['itemtaxonomy2']);
+        } else {
+            supportList.search();
+        }
+
+    })
+    $('#student-supp-avail-tax').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            $('#studentsupport-department-select').prop('selectedIndex', 0);
+            $('#student-support-tax').prop('selectedIndex', 0);
+            $('#student-supp-eligib-tax').prop('selectedIndex', 0);
+            supportList.filter();
+            supportList.search(selection, ['itemtaxonomy3']);
+        } else {
+            supportList.search();
+        }
+
+    })
+    $('#studentsupport-department-select').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            $('#student-supp-avail-tax').prop('selectedIndex', 0);
+            $('#student-support-tax').prop('selectedIndex', 0);
+            $('#student-supp-eligib-tax').prop('selectedIndex', 0);
+            supportList.filter();
+            supportList.search(selection, ['depts']);
+        } else {
+            supportList.search();
+        }
+
+    })
+    $('#support-search').on('keyup', function () {
+        var searchString = $(this).val();
+        supportList.search(searchString);
+    });
+    $('#support-clear').click(function () {
+        /*Clear textarea using class */
+        $('#support-search').val('');
+        supportList.search();
+        supportList.filter();
+        /* Reset Degree type Dropdown*/
+        $('.filter-select').prop('selectedIndex', 0);
+    });
+});

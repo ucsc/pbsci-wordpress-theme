@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying posts
  *
@@ -10,103 +11,94 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+    <header class="entry-header">
         <?php
-        get_template_part( 'template-parts/breadcrumbs', 'all' );
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+        get_template_part('template-parts/breadcrumbs', 'all');
+        if (is_singular()) :
+            the_title('<h1 class="entry-title">', '</h1>');
+        else :
+            the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+        endif;
+        ?>
+    </header><!-- .entry-header -->
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				ucsc_underscore_posted_on();
-                ucsc_underscore_posted_by();
+    <?php ucsc_underscore_post_thumbnail(); ?>
 
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+    <div class="entry-content">
+        <?php
 
-	<?php ucsc_underscore_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-
-        function tabconvert($value) {
-            if ($value==="overview") {
+        function tabconvert($value)
+        {
+            if ($value === "overview") {
                 return "Overview";
-                }
-            if ($value==="ba"){
-                return "Bachelor's";
-                }
-            if ($value==="minor"){
-                return "Minor";
-                }
-            if ($value==="ma"){
-                return "Master's";
-                }
-            if ($value==="phd"){
-                return "Doctoral";
-                }
-            if ($value==="faculty"){
-                return "Faculty";
-                }
-            if ($value==="courses"){
-                return "Courses";
-                }
-            return $value;
             }
+            if ($value === "ba") {
+                return "Bachelor's";
+            }
+            if ($value === "minor") {
+                return "Minor";
+            }
+            if ($value === "ma") {
+                return "Master's";
+            }
+            if ($value === "phd") {
+                return "Doctoral";
+            }
+            if ($value === "faculty") {
+                return "Faculty";
+            }
+            if ($value === "courses") {
+                return "Courses";
+            }
+            return $value;
+        }
         $major_tabs = get_field('major_components');
 
-        if ($major_tabs !=''){
-        $major_tabs_two = array_map("tabconvert",$major_tabs);
+        if ($major_tabs != '') {
+            $major_tabs_two = array_map("tabconvert", $major_tabs);
 
             echo '<div id="major-tabs" class="major-tabs">';
             echo '<ul role="tablist">';
             foreach ($major_tabs as $index => $major_tab) {
-                echo '<li id="'.$major_tab.'-tab"  role="presentation"><a href="#" class="tab-link" data-rel="'.$major_tab.'"role="tab">'.$major_tabs_two[$index].'</a></li>';
-              }
-              echo '</ul>';
-              echo '</div>';
-              echo '<div style="clear:both"></div>';
+                echo '<li id="' . $major_tab . '-tab"  role="presentation"><a href="#" class="tab-link" data-rel="' . $major_tab . '"role="tab">' . $major_tabs_two[$index] . '</a></li>';
+            }
+            echo '</ul>';
+            echo '</div>';
+            echo '<div style="clear:both"></div>';
 
-              echo '<div class="majorcontainers">';
+            echo '<div class="majorcontainers">';
             if (in_array("overview", $major_tabs)) {
-                echo '<div id="overview" class="tab-content">'.get_field('overview').'</div>';
-                }
+                echo '<div id="overview" class="tab-content">' . get_field('overview') . '</div>';
+            }
 
             if (in_array("ba", $major_tabs)) {
-                echo '<div id="ba" class="tab-content">'.get_field('bachelor_degree').'</div>';
-                }
-            if (in_array("ma", $major_tabs)) {
-                echo '<div id="ma" class="tab-content">'.get_field('master_degree').'</div>';
-                }
-            if (in_array("phd", $major_tabs)) {
-                echo '<div id="phd" class="tab-content">'.get_field('doctoral_degree').'</div>';
-                }
-            if (in_array("minor", $major_tabs)) {
-                echo '<div id="minor" class="tab-content">'.get_field('minor').'</div>';
-                }
-            if (in_array("faculty", $major_tabs)) {
-                echo '<div id="faculty" class="tab-content">'.get_field('faculty').'</div>';
-                }
-            if (in_array("courses", $major_tabs)) {
-                echo '<div id="courses" class="tab-content">'.get_field('courses').'</div>';
-                }
-            echo '</div>';
+                echo '<div id="ba" class="tab-content">' . get_field('bachelor_degree') . '</div>';
             }
-            // $meta = get_post_meta($post->ID);
-            // echo '<pre>';
-            // var_dump($major_tabs);
-            // echo '</pre>';
-//
-            // echo '<pre>';
-            // var_dump($meta);
-            // echo '</pre>';
+            if (in_array("ma", $major_tabs)) {
+                echo '<div id="ma" class="tab-content">' . get_field('master_degree') . '</div>';
+            }
+            if (in_array("phd", $major_tabs)) {
+                echo '<div id="phd" class="tab-content">' . get_field('doctoral_degree') . '</div>';
+            }
+            if (in_array("minor", $major_tabs)) {
+                echo '<div id="minor" class="tab-content">' . get_field('minor') . '</div>';
+            }
+            if (in_array("faculty", $major_tabs)) {
+                echo '<div id="faculty" class="tab-content">' . get_field('faculty') . '</div>';
+            }
+            if (in_array("courses", $major_tabs)) {
+                echo '<div id="courses" class="tab-content">' . get_field('courses') . '</div>';
+            }
+            echo '</div>';
+        }
+        // $meta = get_post_meta($post->ID);
+        // echo '<pre>';
+        // var_dump($major_tabs);
+        // echo '</pre>';
+        //
+        // echo '<pre>';
+        // var_dump($meta);
+        // echo '</pre>';
 
         /**
          *
@@ -138,27 +130,27 @@
         /**
          * BEGINNING OF ORIGINAL UNDERSCORES CODE
          */
-		the_content( sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ucsc-pbsci' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
-		) );
+        the_content(sprintf(
+            wp_kses(
+                /* translators: %s: Name of current post. Only visible to screen readers */
+                __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'ucsc-pbsci'),
+                array(
+                    'span' => array(
+                        'class' => array(),
+                    ),
+                )
+            ),
+            get_the_title()
+        ));
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ucsc-pbsci' ),
-			'after'  => '</div>',
-		) );
-		?>
-	</div><!-- .entry-content -->
+        wp_link_pages(array(
+            'before' => '<div class="page-links">' . esc_html__('Pages:', 'ucsc-pbsci'),
+            'after'  => '</div>',
+        ));
+        ?>
+    </div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php ucsc_underscore_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+    <footer class="entry-footer">
+        <?php ucsc_underscore_entry_footer(); ?>
+    </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

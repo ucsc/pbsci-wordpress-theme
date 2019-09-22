@@ -7,8 +7,13 @@
  *
  * @package UCSC_PBSci
  */
+if ('post' === get_post_type()) {
+	get_header('blog');
+} else {
+	get_header();
+}
 
-get_header('blog');
+
 ?>
 
 <div id="primary" class="content-area">
