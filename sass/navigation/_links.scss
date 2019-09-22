@@ -20,6 +20,17 @@
             }
         }
         
+        .entry-content {
+            a {
+                border-bottom: 2px solid $ucsc__primary-yellow;
+            }
+        }
+        
+        .post-thumbnail,
+        .post-thumbnail:hover {
+            border-bottom: none;
+        }
+        
         .site-info {
             a {
                 color: $color__white;
@@ -63,5 +74,27 @@
         .stats-source {
             a {
                 color: $color__white;
+            }
+        }
+        
+        .cat-links {
+            display: block;
+            text-transform: uppercase;
+            padding: .75rem 0;
+            @include font-size(.96);
+        }
+        
+        .tags-links {
+            text-transform: capitalize;
+        }
+        
+        .cat-links,
+        .tags-links {
+            a {
+                color: $ucsc--primary-blue;
+                border-bottom: 1px solid $ucsc--lighter-blue;
+                @media only screen and (min-width: $screen-size--small) {
+                    border-bottom: 2px solid $ucsc--primary-yellow;
+                }
             }
         }

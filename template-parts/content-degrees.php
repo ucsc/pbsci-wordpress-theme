@@ -106,7 +106,7 @@
                         endif;
                         echo '</div><!-- Panel Header End -->';
                         if ($program_subtitle != '') {
-                            echo '<p>' . $program_subtitle . '</p>';
+                            echo '<p class="card-subtitle">' . $program_subtitle . '</p>';
                         }
                         echo '<div aria-hidden="true" class="hidden-data">';
                         if ($departments) :

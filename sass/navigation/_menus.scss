@@ -152,6 +152,34 @@
             text-align: right;
             width: 50%;
         }
+        .nav-next a::after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f105";
+            padding-left: 5px;
+            padding-top: 2px;
+        }
+        .nav-previous a::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f104";
+            padding-right: 5px;
+            padding-top: 2px;
+        }
+        .nav-previous,
+        .nav-next {
+            a {
+                padding: 15px;
+                // background: green;
+                border: 2px solid $ucsc--magenta;
+                display: inline-block;
+                &:hover {
+                    background: $ucsc--primary-blue;
+                    border: 2px solid $ucsc--primary-blue;
+                    color: $color__white;
+                }
+            }
+        }
     }
     /**Flexbox stuff*/
     

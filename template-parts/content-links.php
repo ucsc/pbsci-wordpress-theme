@@ -163,7 +163,7 @@
                     echo '</a>';
                     if (!empty($taxTerms1) && !empty($itemClass1)) {
                         if ($taxLabel1 != '') {
-                            echo '<h4>' . $taxLabel1 . '</h4>';
+                            echo '<p class="taxonomy-label">' . $taxLabel1 . '</p>';
                         }
                         echo '<ul class="pbsci-taxonomy flex-wrap">';
                         foreach ($taxTerms1 as $taxTerm1) {
@@ -178,7 +178,7 @@
                     }
                     if (!empty($taxTerms2) && !empty($itemClass2)) {
                         if ($taxLabel2 != '') {
-                            echo '<h4>' . $taxLabel2 . '</h4>';
+                            echo '<p class="taxonomy-label">' . $taxLabel2 . '</p>';
                         }
                         echo '<ul class="pbsci-taxonomy flex-wrap">';
                         foreach ($taxTerms2 as $taxTerm2) {
@@ -193,7 +193,7 @@
                     }
                     if (!empty($taxTerms3) && !empty($itemClass3)) {
                         if ($taxLabel3 != '') {
-                            echo '<h4>' . $taxLabel3 . '</h4>';
+                            echo '<p class="taxonomy-label">' . $taxLabel3 . '</p>';
                         }
                         echo '<ul class="pbsci-taxonomy flex-wrap">';
                         foreach ($taxTerms3 as $taxTerm3) {

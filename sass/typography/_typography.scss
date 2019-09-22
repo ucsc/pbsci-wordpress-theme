@@ -1,3 +1,43 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    text-rendering: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: $font__main;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    @include font-size(1.875);
+}
+
+h2 {
+    @include font-size(1.75);
+    @media only screen and (min-width: $screen-size--small) {
+        @include font-size(1.75);
+    }
+}
+
+h4 {
+    @include font-size(1.375);
+}
+
+h5 {
+    @include font-size(1.25);
+    font-weight: normal;
+}
+
 body,
 button,
 input,
@@ -11,6 +51,8 @@ textarea {
 
 body {
     color: $color__text-main;
+    font-weight: normal;
+    background: $color__background-body;
 }
 
 button,

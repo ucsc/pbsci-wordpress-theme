@@ -1,0 +1,54 @@
+.social-sharing {
+    a {
+        text-decoration: none;
+        transition: color 300ms ease;
+    }
+    &.top {
+        &.right {
+            font-size: 1.5rem;
+            float: right;
+            margin-top: 0;
+            float: left;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        display: block;
+        float: left;
+        font-size: 1.5rem;
+        a {
+            width: 28px;
+            height: 28px;
+            margin: 0.2em 0.3em;
+            position: relative;
+            top: -16px;
+        }
+    }
+    &.bottom {
+        border-top: 1px solid #e8e5cf;
+        padding-top: 1em;
+        margin: 2em 0 0 0;
+        text-align: center;
+        clear: both;
+        font-size: 1.6rem;
+        margin-bottom: -40px;
+        &::before {
+            content: 'Share this story:';
+            background-color: #fff;
+            display: block;
+            top: -67px;
+            position: relative;
+            margin: 0.5em auto 0;
+            padding: 0.25em;
+            width: 12em;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+        a {
+            width: 28px;
+            height: 28px;
+            margin: 0.25em 0.5em;
+            position: relative;
+            top: -66px;
+        }
+    }
+}

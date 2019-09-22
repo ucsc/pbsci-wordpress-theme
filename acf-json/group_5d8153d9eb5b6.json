@@ -1,0 +1,76 @@
+{
+    "key": "group_5d8153d9eb5b6",
+    "title": "Posts",
+    "fields": [
+        {
+            "key": "field_5d8153e5b03c2",
+            "label": "Post Subtitle",
+            "name": "post_subtitle",
+            "type": "text",
+            "instructions": "Enter post subtitle (optional)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_prefix": 0,
+            "maxlength": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5d850ed0d5604",
+            "label": "Related Posts",
+            "name": "related_posts",
+            "type": "relationship",
+            "instructions": "Add up to three related posts",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "post_type": [
+                "post"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1569004010
+}

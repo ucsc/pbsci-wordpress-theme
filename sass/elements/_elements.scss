@@ -1,33 +1,57 @@
 html {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *,
 *:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
+*:after {
+    /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+    box-sizing: inherit;
 }
 
 body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+    background: $color__background-body;
+    /* Fallback for when there is no custom background color defined. */
 }
 
 hr {
-	background-color: $color__background-hr;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
+    background-color: $color__background-hr;
+    border: 0;
+    height: 1px;
+    margin-bottom: 1.5em;
+}
+
+.post-desktop,
+.post-mobile {
+    hr {
+        margin-top: 1.5em;
+    }
+}
+
+.post-desktop {
+    display: none;
+    @media only screen and (min-width: $screen-size--medium) {
+        display: block;
+    }
+}
+
+.post-mobile {
+    @media only screen and (min-width: $screen-size--medium) {
+        display: none;
+    }
 }
 
 @import "lists";
-
 img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+    height: auto;
+    /* Make sure images are scaled correctly. */
+    max-width: 100%;
+    /* Adhere to container width. */
 }
 
 figure {
-	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+    margin: 1em 0;
+    /* Extra wide images within figure tags don't overflow the content area. */
 }
 
 @import "tables";

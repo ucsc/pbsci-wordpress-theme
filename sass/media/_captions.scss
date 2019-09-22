@@ -1,16 +1,34 @@
 .wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
-
-	img[class*="wp-image-"] {
-		@include center-block;
-	}
-
-	.wp-caption-text {
-		margin: 0.8075em 0;
-	}
+    margin-bottom: 1.5em;
+    max-width: 100%;
+    img[class*="wp-image-"] {
+        @include center-block;
+    }
+    .wp-caption-text {
+        margin: 0.8075em 0;
+    }
 }
 
 .wp-caption-text {
-	text-align: center;
+    text-align: left;
+    color: #666;
+}
+
+.single-post {
+    .post-thumbnail {
+        .wp-caption {
+            .wp-caption-text {
+                margin: 15px 0 1.3rem;
+            }
+        }
+    }
+}
+
+.related-posts {
+    .wp-caption {
+        margin-bottom: 0;
+        @media only screen and (min-width: $screen-size--small) {
+            margin-bottom: 1.5em;
+        }
+    }
 }

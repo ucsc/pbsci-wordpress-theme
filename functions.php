@@ -287,6 +287,31 @@ if (class_exists('WooCommerce')) {
 /**
  * Add class to page excerpt
  */
+
+/**
+ * Conditionally Override Yoast SEO Breadcrumb Trail
+ * http://plugins.svn.wordpress.org/wordpress-seo/trunk/frontend/class-breadcrumbs.php
+ * -----------------------------------------------------------------------------------
+ */
+
+add_filter('wpseo_breadcrumb_links', 'ucsc_underscore_override_yoast_breadcrumb_trail');
+
+function ucsc_underscore_override_yoast_breadcrumb_trail($links)
+{
+    global $post;
+
+    if (is_singular('post') || is_archive()) {
+        $breadcrumb[] = array(
+            'url' => get_permalink(get_option('page_for_posts')),
+            // 'text' => 'News',
+            'text' => get_the_title(get_option('page_for_posts')),
+        );
+
+        array_splice($links, 1, -2, $breadcrumb);
+    }
+
+    return $links;
+}
 add_filter("the_excerpt", "ucsc_underscore_add_class_to_excerpt");
 function ucsc_underscore_add_class_to_excerpt($excerpt)
 {
@@ -423,4 +448,41 @@ function ucsc_before_header()
 function ucsc_after_header()
 {
     do_action('ucsc_after_header');
+}
+
+// filter to show caption, if available, on thumbnail, wrapped with '.wp-caption thumb-caption' div;
+// show just the thumbnail otherwise
+
+is_singular('post'); {
+
+    add_filter('post_thumbnail_html', 'ucsc_add_post_thumbnail_caption', 10, 5);
+}
+
+function ucsc_add_post_thumbnail_caption($html, $post_id, $post_thumbnail_id, $size, $attr)
+{
+
+    if ($html == '') {
+
+        return $html;
+    } else {
+
+        $out = '';
+
+        $thumbnail_image = get_posts(array('p' => $post_thumbnail_id, 'post_type' => 'attachment'));
+
+        if ($thumbnail_image && isset($thumbnail_image[0])) {
+
+            $image = wp_get_attachment_image_src($post_thumbnail_id, $size);
+
+            if ($thumbnail_image[0]->post_excerpt)
+                $out .= '<div class="wp-caption thumb-caption">';
+
+            $out .= $html;
+
+            if ($thumbnail_image[0]->post_excerpt)
+                $out .= '<p class="wp-caption-text thumb-caption-text">' . $thumbnail_image[0]->post_excerpt . '</p></div>';
+        }
+
+        return $out;
+    }
 }
