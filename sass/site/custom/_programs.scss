@@ -10,6 +10,14 @@
     }
 }
 
+.blog,
+.single-post {
+    .card-container {
+        max-width: 100%;
+        ;
+    }
+}
+
 .card-container {
     margin-bottom: 2em;
     max-width: 360px;

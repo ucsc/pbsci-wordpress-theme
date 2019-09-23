@@ -70,6 +70,13 @@
         justify-content: space-between;
     }
     
+    .blog,
+    .single-post {
+        .three-col-grid {
+            grid-template-columns: repeat( auto-fit, minmax(360px, 1fr));
+        }
+    }
+    
     .three-col-grid {
         display: grid;
         grid-template-columns: repeat( auto-fit, minmax(360px, 0fr));
