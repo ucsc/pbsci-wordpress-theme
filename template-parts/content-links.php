@@ -46,6 +46,12 @@
             $itemClass1 = 'student_support';
             $itemClass2 = 'opportunity_eligibility';
             $itemClass3 = 'opportunity_availability';
+        } elseif (is_page('Support')) {
+            echo '<div id="page-' . $pslug . '" class="page-content">';
+            get_template_part('template-parts/filter', 'support');
+            $postType = 'support-science';
+            $itemClass1 = 'support_science_category';
+            $itemClass2 = 'support_science_interest';
         } ?>
         <div class="list three-col-grid">
             <?php
