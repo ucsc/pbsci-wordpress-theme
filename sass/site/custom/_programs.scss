@@ -12,6 +12,8 @@
 
 .card-container {
     margin-bottom: 2em;
+    max-width: 360px;
+    margin: 0 auto;
     .taxonomy-label {
         font-weight: 400;
         @include font-size(.7);
