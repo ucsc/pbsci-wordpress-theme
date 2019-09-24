@@ -507,13 +507,14 @@ add_filter('get_the_archive_title', function ($title) {
  * https://gist.github.com/sciita/43af3f73bc7a0d25c793d8f6e5cba990
  * https://wpvkp.com/add-social-media-sharing-buttons-to-wordpress-without-plugin/
  * @license GNU General Public License 2.0+
+ * TODO Make this a plugin
  */
 // Function to handle the thumbnail request
 function get_the_post_thumbnail_src($img)
 {
     return (preg_match('~\bsrc="([^"]++)"~', $img, $matches)) ? $matches[1] : '';
 }
-function wpvkp_social_buttons($content)
+function ucsc_underscore_social_buttons($content)
 {
     global $post;
     if (is_singular() || is_home()) {
@@ -528,9 +529,10 @@ function wpvkp_social_buttons($content)
         $sb_thumb = get_the_post_thumbnail_src(get_the_post_thumbnail());
 
         // Construct sharing URL without using any script
-        $twitterURL = 'https://twitter.com/intent/tweet?text=' . $sb_title . '&amp;url=' . $sb_url . '&amp;via=wpvkp';
+        $twitterURL = 'https://twitter.com/intent/tweet?text=' . $sb_title . '&amp;url=' . $sb_url;
         $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u=' . $sb_url;
         $bufferURL = 'https://bufferapp.com/add?url=' . $sb_url . '&amp;text=' . $sb_title;
+        $redditURL = 'https://bufferapp.com/add?url=' . $sb_url . '&amp;text=' . $sb_title;
         $whatsappURL = 'whatsapp://send?text=' . $sb_title . ' ' . $sb_url;
         $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $sb_url . '&amp;title=' . $sb_title;
 
@@ -545,15 +547,13 @@ function wpvkp_social_buttons($content)
         $gplusURL = 'https://plus.google.com/share?url=' . $sb_title . '';
 
         // Add sharing button at the end of page/page content
-        $content .= '<div class="social-box"><div class="social-btn">';
-        $content .= '<a class="col-1 sbtn s-twitter" href="' . $twitterURL . '" target="_blank" rel="nofollow"><span>Share on twitter</span></a>';
-        $content .= '<a class="col-1 sbtn s-facebook" href="' . $facebookURL . '" target="_blank" rel="nofollow"><span>Share on facebook</span></a>';
-        $content .= '<a class="col-2 sbtn s-whatsapp" href="' . $whatsappURL . '" target="_blank" rel="nofollow"><span>WhatsApp</span></a>';
-        $content .= '<a class="col-2 sbtn s-googleplus" href="' . $googleURL . '" target="_blank" rel="nofollow"><span>Google+</span></a>';
-        $content .= '<a class="col-2 sbtn s-pinterest" href="' . $pinterestURL . '" data-pin-custom="true" target="_blank" rel="nofollow"><span>Pin It</span></a>';
-        $content .= '<a class="col-2 sbtn s-linkedin" href="' . $linkedInURL . '" target="_blank" rel="nofollow"><span>LinkedIn</span></a>';
-        $content .= '<a class="col-2 sbtn s-buffer" href="' . $bufferURL . '" target="_blank" rel="nofollow"><span>Buffer</span></a>';
-        $content .= '</div></div>';
+        // $content .= '<div class="social-sharing bottom">';
+        $content .= '<a class="fab fa-twitter" href="' . $twitterURL . '" target="_blank" rel="nofollow"></a>';
+        $content .= '<a class="fab fa-facebook" href="' . $facebookURL . '" target="_blank" rel="nofollow"></a>';
+        $content .= '<a class="fab fa-youtube" href="' . $whatsappURL . '" target="_blank" rel="nofollow"></a>';
+        $content .= '<a class="fab fa-linkedin" href="' . $linkedInURL . '" target="_blank" rel="nofollow"></a>';
+        $content .= '<a class="fab fa-reddit" href="' . $redditURL . '" target="_blank" rel="nofollow"></a>';
+        // $content .= '</div>';
 
         return $content;
     } else {
@@ -563,9 +563,9 @@ function wpvkp_social_buttons($content)
 };
 // Enable the_content if you want to automatically show social buttons below your post.
 
-add_filter('the_content', 'wpvkp_social_buttons');
+// add_filter('the_content', 'wpvkp_social_buttons');
 
 // This will create a wordpress shortcode [social].
 // Please it in any widget and social buttons appear their.
 // You will need to enabled shortcode execution in widgets.
-add_shortcode('social', 'wpvkp_social_buttons');
+add_shortcode('social', 'ucsc_underscore_social_buttons');
