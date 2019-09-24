@@ -68,7 +68,7 @@
         padding: 0;
         .footer-top {
             h2 {
-                font-family: 'Helvetica', sans-serif;
+                font-family: $font__head;
                 text-transform: uppercase;
                 font-weight: 300;
                 @include font-size(1.35);
@@ -125,7 +125,7 @@
         }
     }
     .newsletter-cta {
-        font-family: 'Helvetica', sans-serif;
+        font-family: $font__head;
         @include font-size(.75);
         span {
             text-transform: uppercase;

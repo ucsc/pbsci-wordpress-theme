@@ -96,7 +96,7 @@
                 @include font-size(2.25);
             }
             //text-transform: uppercase;
-            font-family: 'Helvetica',
+            font-family: $font__head,
             sans-serif;
             //font-weight: 300;
             margin: 2px 0 0;
@@ -319,7 +319,7 @@
         }
         .entry-header {
             align-items: center;
-            font-family: 'Helvetica', sans-serif;
+            font-family: $font__head;
             h1 {
                 margin: 0;
                 @include font-size(1.35);
