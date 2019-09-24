@@ -46,6 +46,12 @@
             $itemClass1 = 'student_support';
             $itemClass2 = 'opportunity_eligibility';
             $itemClass3 = 'opportunity_availability';
+        } elseif (is_page('support')) {
+            echo '<div id="page-' . $pslug . '" class="page-content">';
+            get_template_part('template-parts/filter', 'support');
+            $postType = 'support-science';
+            $itemClass1 = 'support_science_category';
+            $itemClass2 = 'support_science_interest';
         } ?>
         <div class="list three-col-grid">
             <?php
@@ -147,6 +153,25 @@
                         }
                         if ($postTax3) {
                             $taxTerms3 = get_the_terms($post->ID, $postTax3);
+                        }
+                    } elseif ($postType == 'support-science') {
+                        // get departments ACF
+                        $departments = get_field('department_link_global');
+                        //Post Type Taxonomies
+                        $postTax1 = 'support-science-cat';
+                        $postTax2 = 'support-science-int';
+                        // $postTax3 = 'student-opp-avail-tax';
+                        //Taxonomy Labels
+                        $taxLabel1 = 'Category';
+                        $taxLabel2 = 'Interest';
+
+                        //Terms conditionals
+                        if ($postTax1) {
+                            $taxTerms1 = get_the_terms($post->ID, $postTax1);
+                            $taxTerms1a = get_the_terms($post->ID, $postTax1);
+                        }
+                        if ($postTax2) {
+                            $taxTerms2 = get_the_terms($post->ID, $postTax2);
                         }
                     }
 

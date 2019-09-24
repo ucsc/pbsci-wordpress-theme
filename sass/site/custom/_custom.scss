@@ -70,9 +70,16 @@
         justify-content: space-between;
     }
     
+    .blog,
+    .single-post {
+        .three-col-grid {
+            grid-template-columns: repeat( auto-fit, minmax(360px, 1fr));
+        }
+    }
+    
     .three-col-grid {
         display: grid;
-        grid-template-columns: repeat( auto-fit, minmax(360px, 1fr));
+        grid-template-columns: repeat( auto-fit, minmax(360px, 0fr));
         grid-gap: 1.5rem;
     }
     
@@ -389,7 +396,8 @@
     .page-degrees,
     .page-academics,
     .page-research,
-    .page-departments {
+    .page-departments,
+    .page-support {
         .post-thumbnail {
             .wp-caption {
                 margin-bottom: 0;

@@ -26,7 +26,7 @@
             ],
             "elements": "",
             "min": "",
-            "max": 3,
+            "max": "",
             "return_format": "object"
         }
     ],
@@ -65,6 +65,13 @@
                 "operator": "==",
                 "value": "institutes-centers"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "support-science"
+            }
         ]
     ],
     "menu_order": 0,
@@ -75,5 +82,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1568573619
+    "modified": 1569269458
 }

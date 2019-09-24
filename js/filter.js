@@ -414,3 +414,70 @@ $(function () {
         $('.filter-select').prop('selectedIndex', 0);
     });
 });
+
+$(function () {
+    //search js
+    var supportScienceOptions = {
+        valueNames: [
+            'post-title',
+            'itemtaxonomy1',
+            'itemtaxonomy2',
+            'itemtaxonomy3',
+            'card-blurb',
+            'depts',
+        ]
+    }
+    var supportScienceList = new List('page-support', supportScienceOptions);
+    // console.log(supportList.items);
+    $('#support-science-cat').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            $('#support-science-int').prop('selectedIndex', 0);
+            $('#support-science-department-select').prop('selectedIndex', 0);
+            supportScienceList.filter();
+            supportScienceList.search(selection, ['itemtaxonomy1']);
+        } else {
+            supportScienceList.search();
+        }
+
+    })
+    $('#support-science-int').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            $('#support-science-cat').prop('selectedIndex', 0);
+            $('#support-science-department-select').prop('selectedIndex', 0);
+            supportScienceList.filter();
+            supportScienceList.search(selection, ['itemtaxonomy2']);
+        } else {
+            supportScienceList.search();
+        }
+
+    })
+    $('#support-science-department-select').change(function () {
+        var selection = this.value;
+        // console.log(selection);
+        if (selection != 'clear') {
+            $('#support-science-cat').prop('selectedIndex', 0);
+            $('#support-science-int').prop('selectedIndex', 0);
+            supportScienceList.filter();
+            supportScienceList.search(selection, ['depts']);
+        } else {
+            supportScienceList.search();
+        }
+
+    })
+    $('#support-science-search').on('keyup', function () {
+        var searchString = $(this).val();
+        supportScienceList.search(searchString);
+    });
+    $('#support-science-clear').click(function () {
+        /*Clear textarea using class */
+        $('#support-science-search').val('');
+        supportScienceList.search();
+        supportScienceList.filter();
+        /* Reset Degree type Dropdown*/
+        $('.filter-select').prop('selectedIndex', 0);
+    });
+});

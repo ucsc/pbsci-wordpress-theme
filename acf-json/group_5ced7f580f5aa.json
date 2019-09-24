@@ -47,6 +47,13 @@
                 "operator": "==",
                 "value": "labs"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "support-science"
+            }
         ]
     ],
     "menu_order": 0,
@@ -57,5 +64,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1559069055
+    "modified": 1569281938
 }

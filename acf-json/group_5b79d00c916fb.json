@@ -22,28 +22,6 @@
             "maxlength": ""
         },
         {
-            "key": "field_5d814c650aefb",
-            "label": "Program Subtitle (copy)",
-            "name": "program_subtitle_copy",
-            "type": "text",
-            "instructions": "Enter a subtitle here (optional)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "show_prefix": 0,
-            "maxlength": "",
-            "show_in_rest": 0,
-            "edit_in_rest": 0,
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_5b7ad8159c3d2",
             "label": "Degrees Offered",
             "name": "degrees_offered",
@@ -357,5 +335,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1568754807
+    "modified": 1569269233
 }
