@@ -26,7 +26,7 @@ $postTax2 = 'support-science-int';
 $selectID = 'support_science_list';
 // select value for null / top select drop-down values
 $selectTitle1 = 'Support Categories';
-$selectTitle2 = 'By interest';
+$selectTitle2 = 'Interest';
 
 // all taxonomy terms per taxonomy -- used to build select
 $taxTerms1 = get_terms($postTax1, ['hide_empty' => false]);
@@ -56,7 +56,7 @@ $taxTerms2 = get_terms($postTax2, ['hide_empty' => false]);
     </li>
     <li>
         <select class="filter-select" id="support-science-department-select">
-            <option selected="selected" value="clear">By department</option>
+            <option selected="selected" value="clear">Department</option>
             <?php
             $depargs = array(
                 'post_type' => 'department',
