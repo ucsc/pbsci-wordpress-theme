@@ -98,6 +98,15 @@
                 }
             }
         }
+        
+        .social-sharing {
+            a {
+                color: $ucsc--primary-blue;
+                &:hover {
+                    border-bottom: 2px solid transparent;
+                }
+            }
+        }
         /**
  * Back To Top Button
  */
