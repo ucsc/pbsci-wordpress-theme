@@ -36,7 +36,7 @@ $degreeTypes = array(
 <ul class="filter-list no-list-style">
 
     <li>
-        <span>By: </span> <select name="degreetype" id="degreetype-select" class="filter-select">
+        <select name="degreetype" id="degreetype-select" class="filter-select">
             <option selected="selected" value="clear">Program</option>
             <?php if ($degreeTypes) {
                 foreach ($degreeTypes as $key => $value) {
@@ -46,7 +46,7 @@ $degreeTypes = array(
         </select>
     </li>
     <li>
-        <span>By: </span> <select name="department" id="department-select" class="filter-select">
+        <select name="department" id="department-select" class="filter-select">
             <option selected="selected" value="clear">Department</option>
             <?php
             $depargs = array(
