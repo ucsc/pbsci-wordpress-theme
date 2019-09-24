@@ -21,8 +21,8 @@
 $postTax1 = 'researcher-faculty-labs-tax';
 $postTax2 = 'resesarch-area-expertise-tax';
 $selectID = 'researcher_faculty_labs_list';
-$taxTitle1 = 'Faculty Researchers List';
-$taxTitle2 = 'By expertise';
+$taxTitle1 = 'Affiliation';
+$taxTitle2 = 'Expertise';
 $taxTerms1 = get_terms($postTax1, ['hide_empty' => false]);
 $taxTerms2 = get_terms($postTax2, ['hide_empty' => false]);
 
@@ -51,7 +51,7 @@ $taxTerms2 = get_terms($postTax2, ['hide_empty' => false]);
     </li>
     <li>
         <select class="filter-select" id="researcher-faculty-department-select2">
-            <option selected="selected" value="clear">By department</option>
+            <option selected="selected" value="clear">Department</option>
             <?php
             $depargs = array(
                 'post_type' => 'department',

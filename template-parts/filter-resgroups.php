@@ -26,8 +26,8 @@ $selectID = 'research_groups_list';
 $tax1ID = 'research-group-location';
 $tax2ID = 'research-group-expertise';
 // select value for null / top select drop-down values
-$taxTitle1 = 'Research Groups &#38; Facilities Locations';
-$taxTitle2 = 'By expertise';
+$taxTitle1 = 'Locations';
+$taxTitle2 = 'Expertise';
 // all taxonomy terms per taxonomy -- used to build select
 $taxTerms1 = get_terms($postTax1, ['hide_empty' => false]);
 $taxTerms2 = get_terms($postTax2, ['hide_empty' => false]);
@@ -57,7 +57,7 @@ $taxTerms2 = get_terms($postTax2, ['hide_empty' => false]);
     </li>
     <li>
         <select class="filter-select" id="researcher-faculty-department-select3">
-            <option selected="selected" value="clear">By department</option>
+            <option selected="selected" value="clear">Department</option>
             <?php
             $depargs = array(
                 'post_type' => 'department',

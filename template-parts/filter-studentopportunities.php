@@ -25,9 +25,9 @@ $postTax3 = 'student-opp-avail-tax';
 // id
 $selectID = 'student_opportunities_list';
 // select value for null / top select drop-down values
-$selectTitle1 = 'Student Research Opportunities';
-$selectTitle2 = 'By eligibility';
-$selectTitle3 = 'By availability';
+$selectTitle1 = 'Opportunities';
+$selectTitle2 = 'Eligibility';
+$selectTitle3 = 'Availability';
 // all taxonomy terms per taxonomy -- used to build select
 $taxTerms1 = get_terms($postTax1, ['hide_empty' => false]);
 $taxTerms2 = get_terms($postTax2, ['hide_empty' => false]);
@@ -70,7 +70,7 @@ $taxTerms3 = get_terms($postTax3, ['hide_empty' => false]);
     </li>
     <li>
         <select class="filter-select" id="studentopportunities-department-select">
-            <option selected="selected" value="clear">By department</option>
+            <option selected="selected" value="clear">Department</option>
             <?php
             $depargs = array(
                 'post_type' => 'department',
