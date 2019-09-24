@@ -25,7 +25,7 @@ $postTax2 = 'support-science-int';
 // id for listjs to hook into
 $selectID = 'support_science_list';
 // select value for null / top select drop-down values
-$selectTitle1 = 'Support Categories';
+$selectTitle1 = 'Categories';
 $selectTitle2 = 'Interest';
 
 // all taxonomy terms per taxonomy -- used to build select
