@@ -29,8 +29,9 @@
             //custom arguments
             $labArgs = array(
                 'post_type' => $postType,
-                'orderby' => 'title',
-                'order' => 'ASC',
+                'meta_key' => 'last_name',
+                'orderby' => 'meta_value',
+                'order' => 'DESC',
             );
         } elseif (is_page('research-groups-facilities')) {
             echo '<div id="page-' . $pslug . '" class="page-content">';
@@ -86,7 +87,7 @@
                     if ($postType == 'labs') {
                         // get departments ACF
                         $departments = get_field('department_link_global');
-                        $lastname = get_field('last-name');
+                        $lastname = get_field('last_name');
                         //Post Type Taxonomies
                         $postTax1 = 'researcher-faculty-labs-tax';
                         $postTax2 = 'resesarch-area-expertise-tax';
@@ -266,6 +267,13 @@
                             echo $department->post_name . ' ';
                         endforeach;
                         echo '</p>';
+                        echo '</div>';
+                    endif;
+                    if ($lastname) :
+                        echo '<div aria-hidden="true" class="hidden-data">';
+                        echo '<p class="last-name">';
+                        echo $lastname;
+                        echo '<p>';
                         echo '</div>';
                     endif;
                     echo '</div><!-- card Row End -->'; //end Program Row
