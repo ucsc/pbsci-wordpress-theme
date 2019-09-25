@@ -35,6 +35,7 @@
                 if ((!is_home()) || (is_single() && 'post' != get_post_type())) {
                     // This is NOT the blog posts index
                     $hero = get_the_post_thumbnail_url(get_the_ID(), 'page-hero');
+                    $heroCaption = get_the_post_thumbnail_caption();
                 }
                 $page_blurb = get_field('page_blurb');
                 $degrees_offered = get_field_object('degrees_offered');
@@ -102,8 +103,7 @@
             </div><!-- .site-branding -->
         </header><!-- #masthead -->
         <?php
-        $headerCaption = get_the_post_thumbnail_caption();
-        if ($headerCaption) {
+        if ($heroCaption) {
             echo '<div class="wrap"><p class="wp-caption-text thumb-caption-text">' . $headerCaption . '</p></div>';
         }
         ?>
