@@ -256,7 +256,6 @@
                         echo '</p>';
                         echo '</div>';
                     endif;
-                    echo '<div class="wrap post-mobile"><hr></div>';
                     echo '</div><!-- card Row End -->'; //end Program Row
                     wp_reset_postdata();
                 endwhile;
