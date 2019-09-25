@@ -101,4 +101,10 @@
 
             </div><!-- .site-branding -->
         </header><!-- #masthead -->
+        <?php
+        $headerCaption = get_the_post_thumbnail_caption();
+        if ($headerCaption) {
+            echo '<div class="wrap"><p class="wp-caption-text thumb-caption-text">' . $headerCaption . '</p></div>';
+        }
+        ?>
         <div id="content" class="site-content">
