@@ -101,4 +101,8 @@
 
             </div><!-- .site-branding -->
         </header><!-- #masthead -->
+
         <div id="content" class="site-content">
+            <div class="wrap">
+                <p class="wp-caption-text thumb-caption-text"><?php the_post_thumbnail_caption(); ?></p>
+            </div>
