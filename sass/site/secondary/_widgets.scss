@@ -17,7 +17,6 @@
         color: $color__white;
         // @include font-size(1);
         border-left: 3px solid $ucsc--primary-yellow;
-        padding-left: 10px;
         padding: 5px 0 5px 10px;
         margin: 10px 0 15px;
         box-sizing: border-box;
@@ -26,6 +25,17 @@
         }
         @media only screen and (min-width: $screen-size--large) {
             margin: 30px 0 15px;
+        }
+    }
+
+    .textwidget {
+        padding: 0 0 0 10px;
+        @media only screen and (min-width: $screen-size--large) {
+            padding: 0 0 0 15px;
+        }
+        & > :first-child {
+            padding-left: 0;
+            margin-left: 0;
         }
     }
 }
