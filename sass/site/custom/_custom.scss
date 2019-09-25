@@ -79,7 +79,10 @@
     
     .three-col-grid {
         display: grid;
-        grid-template-columns: repeat( auto-fit, minmax(360px, 0fr));
+        grid-template-columns: repeat( auto-fit, minmax(360px, 1fr));
+        @media only screen and (min-width: $screen-size--medium) {
+            grid-template-columns: repeat( auto-fit, minmax(360px, 0fr));
+        }
         grid-gap: 1.5rem;
     }
     
@@ -217,7 +220,10 @@
         }
         height: 50vh;
         background-size: cover;
-        box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.85);
+        box-shadow: inset 0 0 150px rgba(0,
+        0,
+        0,
+        0.85);
         // min-height: 500px;
         .flex-column.flex-wrap {
             min-height: 50vh;
