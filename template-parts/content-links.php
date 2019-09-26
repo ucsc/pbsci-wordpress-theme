@@ -26,6 +26,13 @@
             $postType = 'labs';
             $itemClass1 = 'researcher_faculty_labs';
             $itemClass2 = 'researcher_faculty_expertise';
+            //custom arguments
+            $labArgs = array(
+                'post_type' => $postType,
+                'meta_key' => 'last_name',
+                'orderby' => 'meta_value',
+                'order' => 'DESC',
+            );
         } elseif (is_page('research-groups-facilities')) {
             echo '<div id="page-' . $pslug . '" class="page-content">';
             get_template_part('template-parts/filter', 'resgroups');
@@ -57,11 +64,16 @@
             <?php
 
             // Call post
-            $args = array(
-                'post_type' => $postType,
-                'orderby' => 'title',
-                'order' => 'ASC',
-            );
+            if (is_page('faculty-researchers')) {
+                $args = $labArgs;
+            } else {
+                $args = array(
+                    'post_type' => $postType,
+                    'orderby' => 'title',
+                    'order' => 'ASC',
+                );
+            }
+
             $post_query = new WP_Query($args);
             if ($post_query->have_posts()) : while ($post_query->have_posts()) : $post_query->the_post();
 
@@ -75,6 +87,7 @@
                     if ($postType == 'labs') {
                         // get departments ACF
                         $departments = get_field('department_link_global');
+                        $lastname = get_field('last_name');
                         //Post Type Taxonomies
                         $postTax1 = 'researcher-faculty-labs-tax';
                         $postTax2 = 'resesarch-area-expertise-tax';
@@ -254,6 +267,13 @@
                             echo $department->post_name . ' ';
                         endforeach;
                         echo '</p>';
+                        echo '</div>';
+                    endif;
+                    if ($lastname) :
+                        echo '<div aria-hidden="true" class="hidden-data">';
+                        echo '<p class="last-name">';
+                        echo $lastname;
+                        echo '<p>';
                         echo '</div>';
                     endif;
                     echo '</div><!-- card Row End -->'; //end Program Row

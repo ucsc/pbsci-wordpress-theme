@@ -1,0 +1,46 @@
+{
+    "key": "group_5d8bb53e2524c",
+    "title": "Faculty & Researchers",
+    "fields": [
+        {
+            "key": "field_5d8bb54d9ee69",
+            "label": "Last Name",
+            "name": "last_name",
+            "type": "text",
+            "instructions": "Enter the faculty or researcher's last name.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_prefix": 0,
+            "maxlength": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "default_value": "",
+            "placeholder": "Miller",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "labs"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1569437337
+}
