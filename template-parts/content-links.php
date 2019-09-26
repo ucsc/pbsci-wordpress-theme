@@ -31,7 +31,7 @@
                 'post_type' => $postType,
                 'meta_key' => 'last_name',
                 'orderby' => 'meta_value',
-                'order' => 'DESC',
+                'order' => 'ASC',
             );
         } elseif (is_page('research-groups-facilities')) {
             echo '<div id="page-' . $pslug . '" class="page-content">';
@@ -85,9 +85,16 @@
                     //Post Type Conditionals
                     //Post Types
                     if ($postType == 'labs') {
+                        // split the title into an array, then get last word of title
+                        $explode_post_title = explode(' ', $post_title);
+                        $last_word_post_title = end($explode_post_title);
                         // get departments ACF
                         $departments = get_field('department_link_global');
                         $lastname = get_field('last_name');
+                        $lastnameObject = get_field_object('last_name');
+                        // Update ACF 'last_name' field with $last_word_post_title
+                        update_field('last_name', $last_word_post_title);
+                        update_field($lastnameObject['key'], $last_word_post_title);
                         //Post Type Taxonomies
                         $postTax1 = 'researcher-faculty-labs-tax';
                         $postTax2 = 'resesarch-area-expertise-tax';
@@ -276,6 +283,13 @@
                         echo '<p>';
                         echo '</div>';
                     endif;
+                    // if ($last_word_post_title) :
+                    //     echo $last_word_post_title;
+                    // endif;
+                    // if ($lastnameObject) :
+                    //     echo $lastnameObject['key'];
+                    //     var_dump($lastnameObject['key']);
+                    // endif;
                     echo '</div><!-- card Row End -->'; //end Program Row
                     wp_reset_postdata();
                 endwhile;
