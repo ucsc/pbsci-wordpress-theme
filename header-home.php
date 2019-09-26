@@ -38,9 +38,9 @@
                 $postID = get_the_ID();
                 $hero = get_field('hero_image', $postID);
                 $slideRows = get_field('hero_stats_slider');
-                // print_r($slideRows);
+                var_dump($slideRows);
                 if ($hero) {
-                    echo '<div class="hero-home"
+                    echo '<div class="hero-home test"
 			    style="background:url(' . $hero . ') no-repeat top; background-size: cover;">';
                 } else {
                     echo '<div class="hero-home">';
