@@ -277,6 +277,8 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "show_in_rest": 0,
+                            "edit_in_rest": 0,
                             "choices": {
                                 "one": "Choose one",
                                 "user-graduate": "Graduate",
@@ -288,9 +290,8 @@
                                 "list-ul": "Bulleted List",
                                 "list-ol": "Numbered List",
                                 "check": "Check Mark",
-                                "cheese": "Hunk O'cheese",
-                                "cat": "Kitty",
-                                "poo": "Mystery"
+                                "binoculars": "Binoculars",
+                                "search-plus": "Search"
                             },
                             "default_value": [],
                             "allow_null": 0,
@@ -379,6 +380,8 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "show_in_rest": 0,
+                            "edit_in_rest": 0,
                             "choices": {
                                 "one": "Choose one",
                                 "user-graduate": "Graduate",
@@ -390,9 +393,8 @@
                                 "list-ul": "Bulleted List",
                                 "list-ol": "Numbered List",
                                 "check": "Check Mark",
-                                "cheese": "Hunk O'cheese",
-                                "cat": "Kitty",
-                                "poo": "Mystery"
+                                "binoculars": "Binoculars",
+                                "search-plus": "Search"
                             },
                             "default_value": [],
                             "allow_null": 0,
@@ -479,6 +481,8 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "show_in_rest": 0,
+                            "edit_in_rest": 0,
                             "choices": {
                                 "one": "Choose one",
                                 "user-graduate": "Graduate",
@@ -490,9 +494,8 @@
                                 "list-ul": "Bulleted List",
                                 "list-ol": "Numbered List",
                                 "check": "Check Mark",
-                                "cheese": "Hunk O'cheese",
-                                "cat": "Kitty",
-                                "poo": "Mystery"
+                                "binoculars": "Binoculars",
+                                "search-plus": "Search"
                             },
                             "default_value": [],
                             "allow_null": 0,
@@ -579,6 +582,8 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "show_in_rest": 0,
+                            "edit_in_rest": 0,
                             "choices": {
                                 "one": "Choose one",
                                 "user-graduate": "Graduate",
@@ -590,9 +595,8 @@
                                 "list-ul": "Bulleted List",
                                 "list-ol": "Numbered List",
                                 "check": "Check Mark",
-                                "cheese": "Hunk O'cheese",
-                                "cat": "Kitty",
-                                "poo": "Mystery"
+                                "binoculars": "Binoculars",
+                                "search-plus": "Search"
                             },
                             "default_value": [],
                             "allow_null": 0,
@@ -1138,5 +1142,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1559942359
+    "modified": 1569532649
 }
