@@ -48,7 +48,7 @@
                     "label": "Hero Stats Slider",
                     "name": "hero_stats_slider",
                     "type": "repeater",
-                    "instructions": "Enter statistical data for the home page slider here.",
+                    "instructions": "Enter statistical data for the home page slider here. Try to find a good one!",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -56,6 +56,8 @@
                         "class": "",
                         "id": ""
                     },
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
                     "collapsed": "",
                     "min": 0,
                     "max": 0,
@@ -1142,5 +1144,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1569532649
+    "modified": 1569541296
 }
