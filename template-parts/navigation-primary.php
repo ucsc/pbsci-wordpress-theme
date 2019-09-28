@@ -4,9 +4,10 @@
  * Primary Navigation Menu
  */
 ?>
+<?php ucsc_before_header(); ?>
 <!-- #site-navigation -->
 <nav id="site-navigation" class="main-navigation">
-    <?php ucsc_before_header(); ?>
+
     <div class="nav-wrap">
         <span class="menu-toggle navbar-toggle" id="js-navbar-toggle" aria-controls="primary-menu"
             aria-expanded="false">
