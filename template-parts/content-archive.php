@@ -10,17 +10,27 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header">
-        <div class="entry-meta">
-            <?php
-            ucsc_pbsci_posted_on();
-            ?>
-        </div><!-- .entry-meta -->
+    <div class="archive-grid">
+        <header class="entry-header">
+            <div class="entry-meta">
+                <?php
+                ucsc_pbsci_posted_on();
+                ucsc_pbsci_posted_by();
+                ?>
+            </div><!-- .entry-meta -->
 
-    </header><!-- .entry-header -->
-    <?php ucsc_pbsci_post_thumbnail();
-    the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-    ?>
+        </header><!-- .entry-header -->
+        <?php ucsc_pbsci_post_thumbnail(); ?>
+        <div class="archive-excerpt">
+            <?php the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>'); ?>
+            <?php the_excerpt(); ?>
+        </div>
 
-
+        <footer class="entry-footer">
+            <?php ucsc_pbsci_entry_footer(); ?>
+        </footer><!-- .entry-footer -->
+    </div>
 </article><!-- #post-<?php the_ID(); ?> -->
+<div class="wrap">
+    <hr>
+</div>

@@ -1,0 +1,33 @@
+.archive,
+.search {
+    .site-content {
+        margin-top: 2.5rem;
+    }
+    .site-main {
+        >.wrap {
+            max-width: 52em;
+        }
+    }
+}
+
+.archive-grid {
+    @media only screen and (min-width: $screen-size--small) {
+        display: grid;
+        grid-template-columns: 25% auto;
+        grid-column-gap: 1em;
+    }
+    .entry-header,
+    .entry-footer {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .entry-meta {
+        margin: 0 0 .5rem;
+    }
+    .post-thumbnail {
+        grid-column-start: 1
+    }
+    .pbsci-excerpt {
+        margin-top: 0;
+    }
+}
