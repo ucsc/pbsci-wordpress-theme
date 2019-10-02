@@ -1,7 +1,7 @@
     .main-navigation {
+        
         clear: both;
         display: block;
-        // float: right;
         width: 100%;
 
         .menu {
@@ -11,74 +11,95 @@
                 display:block;
             }
             margin: 0;
-            padding: 0;
+            padding: 0 0 1em;
             text-align: center;
-
-            * {
-                //border: 1px solid red;
-            }
 
             // Top-level items
             li {
                 cursor: pointer;
                 list-style: none;
-                margin: 0 0 1.5em 0;
+                margin: 0 0 1em 0;
                 padding: 0;
                 text-align: center;
                 font-weight: 600;
                 text-transform: uppercase;
 
                 a {
+                    color: $color__white;
                     display: inline-block;
                     text-decoration: none;
                     padding: .5em .75em;
                     font-weight: 400;
+                    border-bottom: none;
                 }
+                
+            }
+
+            > :last-child {
+                margin-bottom: 0;
+                padding-bottom: 0;
             }
 
             // Second level lists
             ul {
                 list-style: none;
-                margin: 0 0 0.5em 0;
-                padding: 0;
-                border-top: 1px dotted rgba(241, 175, 18, 1.00);
+                margin: 0 0 0.25em 0;
+                padding: .1em;
+                border-top: 2px solid rgba(255, 255, 255, .25);
 
                 // Second level items
                 li {
-                    margin: 0.5em 0;
+                    margin: 0.25em 0;
 
                     a {
                         font-weight: 400;
                         text-transform: none;
+                        font-size: .9rem;
+
+                        &:focus,
+                        &:hover,
+                        &:active {
+                            background-color: $ucsc--light-blue;
+                            color: $color__background-body;
+                            transition: all .20s ease-in-out;
+                        }
                     }
                 }
             }
 
-
-            @media only screen and (min-width: 67.5em) {
+            // Desktop width menu styles
+            @media only screen and (min-width: $screen-size--medium) {
 
                 display: inline;
                 float: right;
+                padding: 0;
 
                 li {
                     display: inline-block;
                     text-align: left;
                     position: relative;
-                    padding-bottom: 0;
-
+                    padding-bottom: .7em;
+                    margin-bottom: -1em;
+                    margin-right: .25em;
+                                        
                     a {
                         color: white;
                     }
 
+                    // Dropdown list
                     ul {
                         position: absolute;
                         right: 2000em;
-                        top: 4em;
-                        width: 12em;
+                        z-index: 1000;
+                        top: 3em;
+                        width: 10em;
                         background-color: white;
-                        box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
+                        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
                         border: none;
+                        transition: opacity .35s ease-in-out;
+                        opacity: 0;
 
+                        // Adds the arrow on the top
                         &:before {
                             display: block;
                             position: absolute;
@@ -96,31 +117,38 @@
                         li {
                             margin: 0;
                             padding: 0;
-                            border-bottom: 1px solid rgba(0, 0, 0, .60);
+                            border-bottom: 1px solid $ucsc--light-blue;
                             display: block;
-                        }
 
-                        &:last-child {
-                            border-bottom: none;
+                            &:last-child {
+                                border-bottom: none;
+                            }
                         }
 
                         a {
-                            padding: .75em .5em;
+                            color: #00458c;
+                            padding: .5em .5em;
+                            display: block;
+                            font-size: .9rem;
                         }
 
                         :focus,
                         :hover,
                         :active {
-                            background-color: #00458c;
+                            background-color: $ucsc--light-blue;
+                            color: $color__background-body;
+                            transition: all .20s ease-in-out;
                         }
                     }
 
+                    // :focus-within allows tab-navigation to reveal the dropdown
                     &:focus ul,
                     &:hover ul,
                     &:active ul,
                     &:focus-within ul {
-                        margin-left: -6em;
+                        margin-left: -5em;
                         left: 50%;
+                        opacity: 1;
                     }
                 }
 
@@ -132,7 +160,6 @@
     }
     
     .secondary-navigation {
-        // display: none;
         list-style: none;
         margin: 0;
         padding-left: 0;
@@ -156,13 +183,14 @@
             }
         }
     }
-    /* Small menu. */
     
+    // Small screen hamburger menu button
     .menu-toggle,
     .main-navigation.toggled ul {
         display: block;
     }
     
+
     @media only screen and (min-width: $screen-size--medium) {
         .menu-toggle {
             display: none;
@@ -214,20 +242,15 @@
             }
         }
     }
-    /**Flexbox stuff*/
     
     .main-navigation {
-        padding: 5px 0;
+        padding: 0;
         text-align: initial;
         right: 0;
         left: 0;
         top: 0;
-        // height: 60px;
-        // padding: 10px 0;
-        // border-bottom: 1px solid #979797;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-        background: linear-gradient(30deg, #003c6c, #006aad);
-        ;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, .35);
+        background: linear-gradient(15deg, #003c6c, #006aad);
         z-index: 100;
         /* Here's the new CSS to add... */
         .admin-bar & {
@@ -236,9 +259,7 @@
         &.stuck {
             position: fixed;
         }
-        // // @media only screen and (min-width: $screen-size--small) {
-        // padding: 10px 0;
-        // }
+
         &>* {
             box-sizing: border-box;
         }
@@ -263,17 +284,17 @@
             }
         }
         .logo {
+
+            border: none;
             @media only screen and (min-width: $screen-size--medium) {
-                flex: 0 0 250px;
+                flex: 0 0 240px;
             }
-            // display: flex;
-            // justify-content: flex-start;
-            // align-items: center;
+
             img {
                 width: 180px;
                 height: auto;
                 @media only screen and (min-width: $screen-size--medium) {
-                    width: 250px;
+                    width: 240px;
                 }
             }
         }
