@@ -37,7 +37,25 @@ if (!function_exists('ucsc_pbsci_posted_on')) :
 
 	}
 endif;
+if (!function_exists('ucsc_pbsci_author_full_name')) :
+	function ucsc_pbsci_author_full_name()
+	{
+		$fname = get_the_author_meta('first_name');
+		$lname = get_the_author_meta('last_name');
+		$full_name = '';
 
+		if (empty($fname)) {
+			$full_name = $lname;
+		} elseif (empty($lname)) {
+			$full_name = $fname;
+		} else {
+			//both first name and last name are present
+			$full_name = "{$fname} {$lname}";
+		}
+
+		echo $full_name;
+	}
+endif;
 if (!function_exists('ucsc_pbsci_posted_by')) :
 	/**
 	 * Prints HTML with meta information for the current author.
@@ -49,7 +67,7 @@ if (!function_exists('ucsc_pbsci_posted_by')) :
 			esc_html_x('By %s', 'post author', 'ucsc-pbsci'),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
 		);
-
+		//get_the_author()
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 	}
