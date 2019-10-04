@@ -71,15 +71,24 @@ if (have_rows('panel_two')) :
     while (have_rows('panel_two')) : the_row();
         $panelTwoHead = get_sub_field('panel_two_heading');
         $panelTwoSubhead = get_sub_field('panel_two_subheading');
+        $panelTwoCellOneConditional = get_sub_field('p2_cell_one_image_or_video');
         $panelTwoCellOneMedia = get_sub_field('p2_cell_one_media');
         $panelTwoCellOneMeta = get_sub_field('p2_cell_one_meta');
         $panelTwoCellOneTeaser = get_sub_field('p2_cell_one_teaser');
+        $panelTwoCellOneImage = get_sub_field('p2_cell_one_image');
+        $panelTwoCellOneLink = get_sub_field('p2_cell_one_link');
+        $panelTwoCellTwoConditional = get_sub_field('p2_cell_two_image_or_video');
         $panelTwoCellTwoMedia = get_sub_field('p2_cell_two_media');
         $panelTwoCellTwoMeta = get_sub_field('p2_cell_two_meta');
         $panelTwoCellTwoTeaser = get_sub_field('p2_cell_two_teaser');
+        $panelTwoCellTwoImage = get_sub_field('p2_cell_two_image');
+        $panelTwoCellTwoLink = get_sub_field('p2_cell_two_link');
+        $panelTwoCellThreeConditional = get_sub_field('p2_cell_three_image_or_video');
         $panelTwoCellThreeMedia = get_sub_field('p2_cell_three_media');
         $panelTwoCellThreeMeta = get_sub_field('p2_cell_three_meta');
         $panelTwoCellThreeTeaser = get_sub_field('p2_cell_three_teaser');
+        $panelTwoCellThreeImage = get_sub_field('p2_cell_three_image');
+        $panelTwoCellThreeLink = get_sub_field('p2_cell_three_link');
     endwhile;
 endif;
 

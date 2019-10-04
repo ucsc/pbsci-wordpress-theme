@@ -15,8 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "show_prefix": 0,
-            "maxlength": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
             "layout": "block",
             "sub_fields": [
                 {
@@ -56,6 +56,8 @@
                         "class": "",
                         "id": ""
                     },
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
                     "collapsed": "",
                     "min": 0,
                     "max": 0,
@@ -729,18 +731,54 @@
                     "endpoint": 1
                 },
                 {
-                    "key": "field_5c549fefdeccc",
-                    "label": "P2 Cell One Media",
-                    "name": "p2_cell_one_media",
-                    "type": "oembed",
-                    "instructions": "Paste media URL here",
-                    "required": 1,
+                    "key": "field_5d97c6f6a7a73",
+                    "label": "P2 Cell One Image or Video",
+                    "name": "p2_cell_one_image_or_video",
+                    "type": "radio",
+                    "instructions": "Is this an image or a video?",
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
+                    "choices": {
+                        "image": "Image",
+                        "video": "Video"
+                    },
+                    "allow_null": 1,
+                    "other_choice": 0,
+                    "default_value": "",
+                    "layout": "vertical",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_5c549fefdeccc",
+                    "label": "P2 Cell One Media",
+                    "name": "p2_cell_one_media",
+                    "type": "oembed",
+                    "instructions": "Paste media URL here",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97c6f6a7a73",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
                     "width": 351,
                     "height": 198
                 },
@@ -750,18 +788,29 @@
                     "name": "p2_cell_one_meta",
                     "type": "text",
                     "instructions": "Something interesting.",
-                    "required": 1,
-                    "conditional_logic": 0,
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97c6f6a7a73",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
+                    "show_prefix": 0,
+                    "maxlength": "",
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "append": ""
                 },
                 {
                     "key": "field_5c54de95886cf",
@@ -769,18 +818,90 @@
                     "name": "p2_cell_one_teaser",
                     "type": "text",
                     "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97c6f6a7a73",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
+                    "show_prefix": 0,
+                    "maxlength": "",
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "append": ""
+                },
+                {
+                    "key": "field_5d97ccdebd845",
+                    "label": "P2 Cell One Image",
+                    "name": "p2_cell_one_image",
+                    "type": "image",
+                    "instructions": "Add Image here",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97c6f6a7a73",
+                                "operator": "==",
+                                "value": "image"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_prefix": 0,
+                    "maxlength": "",
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5d97cdb2bd846",
+                    "label": "P2 Cell One Link",
+                    "name": "p2_cell_one_link",
+                    "type": "link",
+                    "instructions": "Enter the link for the image here.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97c6f6a7a73",
+                                "operator": "==",
+                                "value": "image"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
+                    "return_format": "array"
                 },
                 {
                     "key": "field_5c54a5995fcb1",
@@ -799,18 +920,54 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_5c54ded68a0c9",
-                    "label": "P2 Cell Two Media",
-                    "name": "p2_cell_two_media",
-                    "type": "oembed",
-                    "instructions": "Paste media URL here",
-                    "required": 1,
+                    "key": "field_5d97d0eb2bb63",
+                    "label": "P2 Cell Two Image or Video",
+                    "name": "p2_cell_two_image_or_video",
+                    "type": "radio",
+                    "instructions": "Is this an image or a video?",
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
+                    "choices": {
+                        "image": "Image",
+                        "video": "Video"
+                    },
+                    "allow_null": 1,
+                    "other_choice": 0,
+                    "default_value": "",
+                    "layout": "vertical",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_5c54ded68a0c9",
+                    "label": "P2 Cell Two Media",
+                    "name": "p2_cell_two_media",
+                    "type": "oembed",
+                    "instructions": "Paste media URL here",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97d0eb2bb63",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
                     "width": 351,
                     "height": 198
                 },
@@ -820,18 +977,29 @@
                     "name": "p2_cell_two_meta",
                     "type": "text",
                     "instructions": "Something interesting.",
-                    "required": 1,
-                    "conditional_logic": 0,
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97d0eb2bb63",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
+                    "show_prefix": 0,
+                    "maxlength": "",
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "append": ""
                 },
                 {
                     "key": "field_5c54dee48a0cb",
@@ -839,18 +1007,88 @@
                     "name": "p2_cell_two_teaser",
                     "type": "text",
                     "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97d0eb2bb63",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
+                    "show_prefix": 0,
+                    "maxlength": "",
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "append": ""
+                },
+                {
+                    "key": "field_5d97d10e2bb64",
+                    "label": "P2 Cell Two Image",
+                    "name": "p2_cell_two_image",
+                    "type": "image",
+                    "instructions": "Add Image here",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97d0eb2bb63",
+                                "operator": "==",
+                                "value": "image"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5d97d1272bb65",
+                    "label": "P2 Cell Two Link",
+                    "name": "p2_cell_two_link",
+                    "type": "link",
+                    "instructions": "Enter the link for the image here.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97d0eb2bb63",
+                                "operator": "==",
+                                "value": "image"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
+                    "return_format": "array"
                 },
                 {
                     "key": "field_5c54dfaf8a0cc",
@@ -869,18 +1107,53 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_5c54dfbf8a0cd",
-                    "label": "P2 Cell Three Media",
-                    "name": "p2_cell_three_media",
-                    "type": "oembed",
-                    "instructions": "Paste media URL here",
-                    "required": 1,
+                    "key": "field_5d97d30c2e1f8",
+                    "label": "P2 Cell Three Image or Video",
+                    "name": "p2_cell_three_image_or_video",
+                    "type": "radio",
+                    "instructions": "Is this an image or a video?",
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
+                    "choices": {
+                        "image": "Image",
+                        "video": "Video"
+                    },
+                    "allow_null": 1,
+                    "other_choice": 0,
+                    "default_value": "",
+                    "layout": "vertical",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_5c54dfbf8a0cd",
+                    "label": "P2 Cell Three Media",
+                    "name": "p2_cell_three_media",
+                    "type": "oembed",
+                    "instructions": "Paste media URL here",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97d30c2e1f8",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
                     "width": 351,
                     "height": 198
                 },
@@ -890,18 +1163,29 @@
                     "name": "p2_cell_three_meta",
                     "type": "text",
                     "instructions": "Something interesting.",
-                    "required": 1,
-                    "conditional_logic": 0,
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97d30c2e1f8",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
+                    "show_prefix": 0,
+                    "maxlength": "",
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "append": ""
                 },
                 {
                     "key": "field_5c54dfc88a0cf",
@@ -909,18 +1193,88 @@
                     "name": "p2_cell_three_teaser",
                     "type": "text",
                     "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97d0eb2bb63",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
+                    "show_prefix": 0,
+                    "maxlength": "",
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "append": ""
+                },
+                {
+                    "key": "field_5d97d3142e1f9",
+                    "label": "P2 Cell Three Image",
+                    "name": "p2_cell_three_image",
+                    "type": "image",
+                    "instructions": "Add Image here",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97d30c2e1f8",
+                                "operator": "==",
+                                "value": "image"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5d97d3192e1fa",
+                    "label": "P2 Cell Three Link",
+                    "name": "p2_cell_three_link",
+                    "type": "link",
+                    "instructions": "Enter the link for the image here.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97d30c2e1f8",
+                                "operator": "==",
+                                "value": "image"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_rest": 0,
+                    "edit_in_rest": 0,
+                    "return_format": "array"
                 }
             ]
         },
@@ -1142,5 +1496,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1569532649
+    "modified": 1570231423
 }
