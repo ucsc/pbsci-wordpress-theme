@@ -65,7 +65,7 @@ if (have_rows('panel_one')) :
         endif;
     endwhile;
 endif;
-// var_dump($panelOneCellTwoQuadOneLink);
+
 /** Panel Two Variables*/
 if (have_rows('panel_two')) :
     while (have_rows('panel_two')) : the_row();
@@ -188,7 +188,23 @@ endif;
                 </div>
                 <div class="flex-wrap">
                     <div class="panel-cell-2 display-block">
-                        <?php echo $panelTwoCellOneMedia ?>
+                        <?php 
+                        // var_dump($panelTwoCellOneImage);
+                        if (!empty($panelTwoCellOneConditional)) {
+                            if ($panelTwoCellOneConditional == 'image') {
+                                if ($panelTwoCellOneImage) {
+                                    $size = 'medium';
+                                    echo '<img src="'.$panelTwoCellOneImage['sizes'][$size].'">';
+                                }
+                                
+                            } elseif ($panelTwoCellOneConditional == 'video'){
+                                echo $panelTwoCellOneMedia;
+                            }
+                        } else {
+                            echo '<p>You missed something, partner! Pleae select "Image" or "Video" in the page editor.</p>';
+                        }
+                         
+                        ?>
                         <p class="panel-2-cell-meta"><?php echo $panelTwoCellOneMeta ?></p>
                         <p><?php echo $panelTwoCellOneTeaser ?></p>
                     </div>
