@@ -207,13 +207,12 @@ endif;
                 <div class="flex-wrap">
                     <div class="panel-cell-2 display-block">
                         <?php 
-                        // var_dump($panelTwoCellOneImage);
                         if (!empty($panelTwoCellOneConditional)) {
                             if ($panelTwoCellOneConditional == 'image') {
                                 if ($panelTwoCellOneImage) {
                                     $size = 'home-grid';
                                     echo '<a href="'.esc_url($panelTwoCellOneLinkUrl).'" class="white-cell-link"
-                                    target="'.esc_attr($panelTwoCellOneLinkTarget).'"><img src="'.$panelTwoCellOneImage['sizes'][$size].'"></a>';
+                                    target="'.esc_attr($panelTwoCellOneLinkTarget).'"><img src="'.$panelTwoCellOneImage['sizes'][$size].'" title="'.$panelTwoCellOneImage['title'].'" alt="'.$panelTwoCellOneImage['alt'].'"></a>';
                                 }
                                 
                             } elseif ($panelTwoCellOneConditional == 'video'){
