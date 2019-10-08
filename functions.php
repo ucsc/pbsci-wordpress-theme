@@ -46,7 +46,7 @@ if (!function_exists('ucsc_pbsci_setup')) :
          * Add new image sizes
          */
         add_image_size('page-hero', 1600, 530, false);
-        add_image_size('home-grid', 351, 197, true);
+        add_image_size('home-grid', 560, 315, true);
         /**
          * Register nav menu locations
          * this theme uses wp_nav_menu() in three location.
