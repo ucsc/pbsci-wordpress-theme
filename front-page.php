@@ -211,7 +211,7 @@ endif;
                         if (!empty($panelTwoCellOneConditional)) {
                             if ($panelTwoCellOneConditional == 'image') {
                                 if ($panelTwoCellOneImage) {
-                                    $size = 'large';
+                                    $size = 'home-grid';
                                     echo '<a href="'.esc_url($panelTwoCellOneLinkUrl).'" class="white-cell-link"
                                     target="'.esc_attr($panelTwoCellOneLinkTarget).'"><img src="'.$panelTwoCellOneImage['sizes'][$size].'"></a>';
                                 }
@@ -227,7 +227,7 @@ endif;
                             if ($panelTwoCellOneConditional == 'image') {
                               echo '<a href="'.esc_url($panelTwoCellOneLinkUrl).'"
                             target="'.esc_attr($panelTwoCellOneLinkTarget).'">
-                            <p>'.esc_html($panelTwoCellOneLinkTitle).'</p></a>';
+                            <p class="panel-2-cell-meta">'.esc_html($panelTwoCellOneLinkTitle).'</p></a>';
                             }elseif ($panelTwoCellOneConditional == 'video') {
                                 echo '<p class="panel-2-cell-meta">'.$panelTwoCellOneMeta .'</p>';
                             }
