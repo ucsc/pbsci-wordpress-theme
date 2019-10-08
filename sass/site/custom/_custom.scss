@@ -140,18 +140,6 @@
 
 .panel-cell-2 {
     width: 100%;
-    .cell-meta-link {
-        &:hover {
-            border-bottom: none;
-            text-decoration: underline;
-            text-decoration-color: $ucsc--primary-yellow;
-        }
-    }
-    .panel-2-cell-meta {
-        color: $ucsc--primary-yellow;
-        margin: 15px 0;
-        font-weight: 700;
-    }
     @media only screen and (min-width: $screen-size--small) {
         flex-basis: 30%;
     }

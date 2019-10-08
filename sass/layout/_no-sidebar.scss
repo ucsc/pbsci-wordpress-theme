@@ -34,6 +34,45 @@
         @include clearfix();
         @include clearfix-after();
     }
+    .cell-meta,
+    .cell-meta-link {
+        margin: 15px 0;
+        font-weight: 700;
+    }
+    .cell-image-link {
+        &:hover {
+            border-bottom: 2px solid transparent;
+        }
+    }
+    .cell-meta-link {
+        border-bottom: 2px solid transparent;
+    }
+    .cell-teaser {
+        line-height: inherit;
+    }
+}
+
+.panel-one {}
+
+.panel-two {
+    .cell-meta,
+    .cell-meta-link {
+        color: $ucsc--primary-yellow;
+    }
+    .cell-meta-link {
+        &:hover {
+            border-bottom: none;
+            // text-decoration: underline;
+            color: $ucsc--primary-blue;
+        }
+    }
+}
+
+.panel-three {
+    .cell-meta {
+        color: $ucsc--light-blue;
+    }
+    .cell-teaser {}
 }
 
 .wrap,
