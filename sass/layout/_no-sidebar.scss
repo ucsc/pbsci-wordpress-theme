@@ -46,6 +46,9 @@
     }
     .cell-meta-link {
         border-bottom: 2px solid transparent;
+        &:hover {
+            text-decoration: underline $ucsc--light-blue;
+        }
     }
     .cell-teaser {
         line-height: inherit;
@@ -58,13 +61,6 @@
     .cell-meta,
     .cell-meta-link {
         color: $ucsc--primary-yellow;
-    }
-    .cell-meta-link {
-        &:hover {
-            border-bottom: none;
-            // text-decoration: underline;
-            color: $ucsc--primary-blue;
-        }
     }
 }
 
