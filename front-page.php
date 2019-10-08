@@ -212,7 +212,8 @@ endif;
                             if ($panelTwoCellOneConditional == 'image') {
                                 if ($panelTwoCellOneImage) {
                                     $size = 'large';
-                                    echo '<img src="'.$panelTwoCellOneImage['sizes'][$size].'">';
+                                    echo '<a href="'.esc_url($panelTwoCellOneLinkUrl).'" class="white-cell-link"
+                                    target="'.esc_attr($panelTwoCellOneLinkTarget).'"><img src="'.$panelTwoCellOneImage['sizes'][$size].'"></a>';
                                 }
                                 
                             } elseif ($panelTwoCellOneConditional == 'video'){
@@ -224,9 +225,9 @@ endif;
 
                         if (!empty($panelTwoCellOneConditional)) {
                             if ($panelTwoCellOneConditional == 'image') {
-                              echo '<a href="'.esc_url($panelThreeCellOneLinkUrl).'" class="white-cell-link"
-                            target="'.esc_attr($panelThreeCellOneLinkTarget).'">
-                            <p>'.esc_html($panelThreeCellOneLinkTitle).'</p></a>';
+                              echo '<a href="'.esc_url($panelTwoCellOneLinkUrl).'" class="white-cell-link"
+                            target="'.esc_attr($panelTwoCellOneLinkTarget).'">
+                            <p>'.esc_html($panelTwoCellOneLinkTitle).'</p></a>';
                             }elseif ($panelTwoCellOneConditional == 'video') {
                                 echo '<p class="panel-2-cell-meta">'.$panelTwoCellOneMeta .'</p>';
                             }
