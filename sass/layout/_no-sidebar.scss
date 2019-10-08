@@ -36,8 +36,10 @@
     }
     .cell-meta,
     .cell-meta-link {
-        margin: 15px 0;
         font-weight: 700;
+        @media only screen and (min-width: $screen-size--large) {
+            margin: 0.9375rem 0;
+        }
     }
     .cell-image-link {
         &:hover {
@@ -52,6 +54,8 @@
     }
     .cell-teaser {
         line-height: inherit;
+        margin-bottom: 0.9375rem;
+        margin-bottom: 0.9375rem;
     }
 }
 
