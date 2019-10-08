@@ -225,7 +225,7 @@ endif;
 
                         if (!empty($panelTwoCellOneConditional)) {
                             if ($panelTwoCellOneConditional == 'image') {
-                              echo '<a href="'.esc_url($panelTwoCellOneLinkUrl).'" class="white-cell-link"
+                              echo '<a href="'.esc_url($panelTwoCellOneLinkUrl).'"
                             target="'.esc_attr($panelTwoCellOneLinkTarget).'">
                             <p>'.esc_html($panelTwoCellOneLinkTitle).'</p></a>';
                             }elseif ($panelTwoCellOneConditional == 'video') {
