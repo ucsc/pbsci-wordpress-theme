@@ -48,6 +48,7 @@
     }
     .cell-meta-link {
         border-bottom: 2px solid transparent;
+        display: block;
         &:hover {
             text-decoration: underline $ucsc--light-blue;
         }
