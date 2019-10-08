@@ -904,6 +904,33 @@
                     "return_format": "array"
                 },
                 {
+                    "key": "field_5d9bd63d8284f",
+                    "label": "P2 Cell One Image Teaser",
+                    "name": "p2_cell_one_image_teaser",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97c6f6a7a73",
+                                "operator": "==",
+                                "value": "image"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5c54a5995fcb1",
                     "label": "Panel Two Cell Two",
                     "name": "",
@@ -1091,6 +1118,33 @@
                     "return_format": "array"
                 },
                 {
+                    "key": "field_5d9bd66e82850",
+                    "label": "P2 Cell Two Image Teaser",
+                    "name": "p2_cell_two_image_teaser",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97d0eb2bb63",
+                                "operator": "==",
+                                "value": "image"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5c54dfaf8a0cc",
                     "label": "Panel Two Cell Three",
                     "name": "",
@@ -1275,6 +1329,33 @@
                     "show_in_rest": 0,
                     "edit_in_rest": 0,
                     "return_format": "array"
+                },
+                {
+                    "key": "field_5d9bd67b82851",
+                    "label": "P2 Cell Three Image Teaser",
+                    "name": "p2_cell_three_image_teaser",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d97d0eb2bb63",
+                                "operator": "==",
+                                "value": "image"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         },
@@ -1496,5 +1577,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1570231423
+    "modified": 1570495211
 }

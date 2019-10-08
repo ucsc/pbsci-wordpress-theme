@@ -76,19 +76,37 @@ if (have_rows('panel_two')) :
         $panelTwoCellOneMeta = get_sub_field('p2_cell_one_meta');
         $panelTwoCellOneTeaser = get_sub_field('p2_cell_one_teaser');
         $panelTwoCellOneImage = get_sub_field('p2_cell_one_image');
+        $panelTwoCellOneImageTeaser = get_sub_field('p2_cell_one_image_teaser');
         $panelTwoCellOneLink = get_sub_field('p2_cell_one_link');
+        if ($panelTwoCellOneLink) :
+            $panelTwoCellOneLinkTitle = $panelTwoCellOneLink['title'];
+            $panelTwoCellOneLinkUrl = $panelTwoCellOneLink['url'];
+            $panelTwoCellOneLinkTarget = $panelTwoCellOneLink['target'] ? $panelTwoCellOneLink['target'] : '_self';
+        endif;
         $panelTwoCellTwoConditional = get_sub_field('p2_cell_two_image_or_video');
         $panelTwoCellTwoMedia = get_sub_field('p2_cell_two_media');
         $panelTwoCellTwoMeta = get_sub_field('p2_cell_two_meta');
         $panelTwoCellTwoTeaser = get_sub_field('p2_cell_two_teaser');
         $panelTwoCellTwoImage = get_sub_field('p2_cell_two_image');
+        $panelTwoCellTwoImageTeaser = get_sub_field('p2_cell_two_image_teaser');
         $panelTwoCellTwoLink = get_sub_field('p2_cell_two_link');
+        if ($panelTwoCellTwoLink) :
+            $panelTwoCellTwoLinkTitle = $panelTwoCellTwoLink['title'];
+            $panelTwoCellTwoLinkUrl = $panelTwoCellTwoLink['url'];
+            $panelTwoCellTwoLinkTarget = $panelTwoCellTwoLink['target'] ? $panelTwoCellTwoLink['target'] : '_self';
+        endif;
         $panelTwoCellThreeConditional = get_sub_field('p2_cell_three_image_or_video');
         $panelTwoCellThreeMedia = get_sub_field('p2_cell_three_media');
         $panelTwoCellThreeMeta = get_sub_field('p2_cell_three_meta');
         $panelTwoCellThreeTeaser = get_sub_field('p2_cell_three_teaser');
         $panelTwoCellThreeImage = get_sub_field('p2_cell_three_image');
+        $panelTwoCellThreeImageTeaser = get_sub_field('p2_cell_three_image_teaser');
         $panelTwoCellThreeLink = get_sub_field('p2_cell_three_link');
+        if ($panelTwoCellThreeLink) :
+            $panelTwoCellThreeLinkTitle = $panelTwoCellThreeLink['title'];
+            $panelTwoCellThreeLinkUrl = $panelTwoCellThreeLink['url'];
+            $panelTwoCellThreeLinkTarget = $panelTwoCellThreeLink['target'] ? $panelTwoCellThreeLink['target'] : '_self';
+        endif;
     endwhile;
 endif;
 
@@ -193,7 +211,7 @@ endif;
                         if (!empty($panelTwoCellOneConditional)) {
                             if ($panelTwoCellOneConditional == 'image') {
                                 if ($panelTwoCellOneImage) {
-                                    $size = 'medium';
+                                    $size = 'large';
                                     echo '<img src="'.$panelTwoCellOneImage['sizes'][$size].'">';
                                 }
                                 
@@ -202,11 +220,28 @@ endif;
                             }
                         } else {
                             echo '<p>You missed something, partner! Pleae select "Image" or "Video" in the page editor.</p>';
+                        } 
+
+                        if (!empty($panelTwoCellOneConditional)) {
+                            if ($panelTwoCellOneConditional == 'image') {
+                              echo '<a href="'.esc_url($panelThreeCellOneLinkUrl).'" class="white-cell-link"
+                            target="'.esc_attr($panelThreeCellOneLinkTarget).'">
+                            <p>'.esc_html($panelThreeCellOneLinkTitle).'</p></a>';
+                            }elseif ($panelTwoCellOneConditional == 'video') {
+                                echo '<p class="panel-2-cell-meta">'.$panelTwoCellOneMeta .'</p>';
+                            }
+                        } else {
+                            echo '<p>You missed something, partner! Pleae select "Image" or "Video" in the page editor.</p>';
+                        }
+                        if (!empty($panelTwoCellOneConditional)) {
+                            if ($panelTwoCellOneConditional == 'image') {
+                                echo '<p>'.$panelTwoCellOneImageTeaser.'</p>';
+                            }elseif ($panelTwoCellOneConditional == 'video') {
+                                echo '<p>'.$panelTwoCellOneTeaser.'</p>';
+                            }
                         }
                          
                         ?>
-                        <p class="panel-2-cell-meta"><?php echo $panelTwoCellOneMeta ?></p>
-                        <p><?php echo $panelTwoCellOneTeaser ?></p>
                     </div>
                     <div class="panel-cell-2 display-block">
                         <?php echo $panelTwoCellTwoMedia ?>
