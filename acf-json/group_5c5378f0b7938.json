@@ -1197,7 +1197,8 @@
                         [
                             {
                                 "field": "field_5d97d30c2e1f8",
-                                "operator": "!=empty"
+                                "operator": "==",
+                                "value": "video"
                             }
                         ]
                     ],
@@ -1206,8 +1207,6 @@
                         "class": "",
                         "id": ""
                     },
-                    "show_in_rest": 0,
-                    "edit_in_rest": 0,
                     "width": 351,
                     "height": 198
                 },
@@ -1577,5 +1576,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1570495211
+    "modified": 1570506262
 }
