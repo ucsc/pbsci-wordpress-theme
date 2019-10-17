@@ -48,11 +48,12 @@
     
     .footer-social {
         margin: 0;
+        display: inline-block;
         li {
-            display: inline;
-            flex: 1;
+            display: inline-block;
+            margin-right: 1.2em;
             i {
-                @include font-size(3);
+                @include font-size(2);
             }
         }
     }
