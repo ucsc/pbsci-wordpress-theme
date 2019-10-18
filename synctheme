@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rsync -rvz --progress --delete --exclude-from=/home/jason/public_html/local-pbsci/wp-content/themes/ucsc-pbsci/rsync-exclude.txt ~/public_html/local-pbsci/wp-content/themes/ucsc-pbsci/ ~/public_html/ucsc-pbsci/wp-content/themes/ucsc-pbsci/
+rsync -rvz --progress --delete --exclude-from=/home/jason/Projects/local-pbsci/wp-content/themes/ucsc-pbsci/rsync-exclude.txt ~/Projects/local-pbsci/wp-content/themes/ucsc-pbsci/ ~/Projects/ucsc-pbsci/wp-content/themes/ucsc-pbsci/
