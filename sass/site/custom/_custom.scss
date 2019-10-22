@@ -328,8 +328,9 @@
     .entry-header {
         align-items: center;
         font-family: $font__head;
-        h1 {
+        .entry-title {
             margin: 0;
+            text-transform: uppercase;
             @include font-size(1.35);
             @media only screen and (min-width: $screen-size--small) {
                 @include font-size(2);
