@@ -294,6 +294,8 @@
             line-height: 1;
         }
         .stats-meta {
+            margin-top: 9.6px;
+            margin-top: 0.6rem;
             .stats-source {
                 @include font-size(0.75);
             }
