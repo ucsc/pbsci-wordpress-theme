@@ -104,6 +104,8 @@
         color: $ucsc--primary-blue;
         background: rgba(254, 254, 254, 0.6);
         border: 2px solid #13a5dc;
+        display: block;
+        margin: 0 auto;
         @include font-size(.82);
         @media only screen and (min-width: $screen-size--medium) {
             @include font-size(1);
