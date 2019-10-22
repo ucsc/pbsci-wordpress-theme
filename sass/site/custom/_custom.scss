@@ -214,20 +214,23 @@
 /** HOME PAGE */
 
 .hero-home {
+    height: 50vh;
+    background-size: cover;
+    box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.85);
+    // min-height: 500px;
+    @media only screen and (min-width: $screen-size--small) {
+        height: 75vh;
+    }
     @media only screen and (min-width: $screen-size--large) {
         background-position-y: -20px !important;
         height: 90vh;
     }
-    height: 50vh;
-    background-size: cover;
-    box-shadow: inset 0 0 150px rgba(0,
-    0,
-    0,
-    0.85);
-    // min-height: 500px;
     .flex-column.flex-wrap {
         min-height: 50vh;
         align-items: center;
+        @media only screen and (min-width: $screen-size--small) {
+            min-height: 75vh;
+        }
         @media only screen and (min-width: $screen-size--large) {
             min-height: 90vh;
         }
