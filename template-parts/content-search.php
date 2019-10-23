@@ -15,7 +15,7 @@
         <header class="entry-header">
         <?php 
             if ('post' === get_post_type( get_the_ID() )):
-            $postType = 'a News post';
+            $postType = 'a <b>News</b> post';
             elseif ('student-support' === get_post_type( get_the_ID() )):
                 $postType = 'an <b>Academic Support</b> post';
             elseif ('labs' === get_post_type( get_the_ID() )):
