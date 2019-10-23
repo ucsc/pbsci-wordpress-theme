@@ -1,3 +1,19 @@
+.blog,
+.single-post {
+    .three-col-grid {
+        grid-template-columns: repeat( auto-fit, minmax(360px, 1fr));
+    }
+}
+
+.three-col-grid {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(360px, 1fr));
+    @media only screen and (min-width: $screen-size--medium) {
+        grid-template-columns: repeat( auto-fit, minmax(360px, 0fr));
+    }
+    grid-gap: 1.5rem;
+}
+
 .card-list {
     padding: 0;
     margin: 5px 0 0;
@@ -14,7 +30,6 @@
 .single-post {
     .card-container {
         max-width: 100%;
-        ;
     }
 }
 
@@ -69,7 +84,7 @@
         }
     }
     .card-content {
-        padding: 0 0 10px;
+        padding: 10px 0 0;
         .card-header {
             .card-title {
                 margin: 10px 0;
@@ -77,7 +92,7 @@
         }
     }
     .card-blurb {
-        margin-top: 2rem;
+        margin-top: 0;
          :first-child {
             margin-top: 0;
         }

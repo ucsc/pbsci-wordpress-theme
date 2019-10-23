@@ -19,6 +19,11 @@ hr {
     border: 0;
     height: 1px;
     margin-bottom: 1.5em;
+    &.post-grid {
+        background-color: $ucsc--lighter-blue;
+        width: 90%;
+        margin-top: 1.5em;
+    }
 }
 
 .blog,
