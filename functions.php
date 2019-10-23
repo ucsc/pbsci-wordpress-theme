@@ -312,6 +312,22 @@ function ucsc_underscore_override_yoast_breadcrumb_trail($links)
 
     return $links;
 }
+
+/*
+ * Remove the last breadcrumb, the post name, from the Yoast SEO breadcrumbs
+ * Credit: Jason @ http://thejasonjones.com/wordpress-seo-breadcrumbs-tweaks/
+ * Last Tested: Jun 11 2018 using Yoast SEO 7.6.1 on WordPress 4.9.6
+ */
+// add_filter( 'wpseo_breadcrumb_links', 'ucsc_breadcrumb_remove_postname' );
+// function ucsc_breadcrumb_remove_postname( $links ) {
+// 	if( sizeof($links) > 1 ){
+// 		array_pop($links);
+// 	}
+// 	return $links;
+// }
+/**
+ * Add a class to "the_excerpt"
+ */
 add_filter("the_excerpt", "ucsc_underscore_add_class_to_excerpt");
 function ucsc_underscore_add_class_to_excerpt($excerpt)
 {

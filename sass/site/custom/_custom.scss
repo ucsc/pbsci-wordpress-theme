@@ -475,29 +475,6 @@
         margin: 10px;
         padding: 10px;
     }
-    .button {
-        float: right;
-        padding: 15px 25px;
-        margin-right: 20px;
-        text-align: center;
-        text-transform: uppercase;
-        background-color: #e7e7e6;
-        color: $ucsc--lighter-blue;
-        border: 1px solid $ucsc--lighter-blue;
-        border-radius: 3px;
-        @include font-size(1.25);
-        &::after {
-            background-color: transparent!important;
-        }
-        &:hover {
-            background-color: $ucsc--lighter-blue;
-            color: #e7e7e6;
-            border: 1px solid #e7e7e6;
-        }
-        i {
-            margin-right: 5px;
-        }
-    }
 }
 
 

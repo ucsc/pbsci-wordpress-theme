@@ -24,7 +24,7 @@ if (class_exists('acf')){
     <div class="wrap">
         <div class="cta-container">
         <div class="cta-headline"><p class="cta-p1">do you</p><p class="cta-p2">Love science?</p></div>
-        <p class="cta-p3"><?php echo $ctaBody ?></p><a class="button" href="<?php echo $ctaButtonLink ?>"><i class="fas fa-check"></i><?php echo $ctaButtonText ?></a><div class="clear"></div>
+        <p class="cta-p3"><?php echo $ctaBody ?></p><a class="button cta-button" href="<?php echo $ctaButtonLink ?>"><i class="fas fa-check"></i><?php echo $ctaButtonText ?></a><div class="clear"></div>
         </div>
     </div>
 </aside>
