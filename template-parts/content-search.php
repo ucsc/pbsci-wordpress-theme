@@ -15,23 +15,23 @@
         <header class="entry-header">
         <?php 
             if ('post' === get_post_type( get_the_ID() )):
-            $postType = 'a <b>News</b> post';
+            $postType = 'a <span>News</span> post';
             elseif ('student-support' === get_post_type( get_the_ID() )):
-                $postType = 'an <b>Academic Support</b> post';
+                $postType = 'an <span>Academic Support</span> post';
             elseif ('labs' === get_post_type( get_the_ID() )):
-                $postType = 'a <b>Faculty & Researchers</b> post';
+                $postType = 'a <span>Faculty & Researchers</span> post';
             elseif ('support-science' === get_post_type( get_the_ID() )):
-                $postType = 'a <b>Support Funds</b> post';
+                $postType = 'a <span>Support Funds</span> post';
             elseif ('studentopportunities' === get_post_type( get_the_ID() )):
-                $postType = 'a <b>Research Opportunities</b> post';
+                $postType = 'a <span>Research Opportunities</span> post';
             elseif ('institutes-centers' === get_post_type( get_the_ID() )):
-                $postType = 'a <b>Groups & Facilities</b> post';
+                $postType = 'a <span>Groups & Facilities</span> post';
             elseif ('degree' === get_post_type( get_the_ID() )):
-                $postType = 'a <b>Degree</b> post';
+                $postType = 'a <span>Degree</span> post';
             elseif ('department' === get_post_type( get_the_ID() )):
-                $postType = 'a <b>Department</b> post';
+                $postType = 'a <span>Department</span> post';
             elseif ('page' === get_post_type( get_the_ID() )):
-                $postType = 'a <b>Page</b>';
+                $postType = 'a <span>Page</span>';
             endif;
             ?>
             <p class="archive-meta">This is <?php echo $postType ?></p>
