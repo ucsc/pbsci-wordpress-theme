@@ -1,31 +1,10 @@
-.flex-1 {
-    flex: 1;
-    flex-basis: 100%;
-}
-
-.flex-2 {
-    // flex: 1;
-    // flex-basis: 50%;
-    width: 50%;
-    margin: auto;
-}
-
-//////
-.flex-row {
+.flex-wrap {
+    // width: 100%;
     display: flex;
-    flex: 1;
-    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-@media (max-width:767px) {
-    .flex-col {
-        flex-basis: calc(50% - 12px);
-    }
-}
-
-@media (max-width:460px) {
-    .flex-col {
-        flex-basis: 100%;
-    }
+.flex-column {
+    flex-direction: column;
 }
