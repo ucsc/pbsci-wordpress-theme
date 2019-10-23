@@ -13,6 +13,28 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="archive-grid">
         <header class="entry-header">
+        <?php 
+            if ('post' === get_post_type( get_the_ID() )):
+            $postType = 'a News post';
+            elseif ('student-support' === get_post_type( get_the_ID() )):
+                $postType = 'an <b>Academic Support</b> post';
+            elseif ('labs' === get_post_type( get_the_ID() )):
+                $postType = 'a <b>Faculty & Researchers</b> post';
+            elseif ('support-science' === get_post_type( get_the_ID() )):
+                $postType = 'a <b>Support Funds</b> post';
+            elseif ('studentopportunities' === get_post_type( get_the_ID() )):
+                $postType = 'a <b>Research Opportunities</b> post';
+            elseif ('institutes-centers' === get_post_type( get_the_ID() )):
+                $postType = 'a <b>Groups & Facilities</b> post';
+            elseif ('degree' === get_post_type( get_the_ID() )):
+                $postType = 'a <b>Degree</b> post';
+            elseif ('department' === get_post_type( get_the_ID() )):
+                $postType = 'a <b>Department</b> post';
+            elseif ('page' === get_post_type( get_the_ID() )):
+                $postType = 'a <b>Page</b>';
+            endif;
+            ?>
+            <p class="archive-meta">This is <?php echo $postType ?></p>
             <?php the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
 
             <?php if ('post' === get_post_type()) : ?>
