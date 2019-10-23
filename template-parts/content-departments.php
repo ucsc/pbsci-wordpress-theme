@@ -42,7 +42,7 @@
         echo '</div><!-- card Header End -->';
         echo '</div><!-- card Content End -->';//end Program Content
         echo '<!-- card Blurb Begin --><div id="cardblurb'.$postid.'"class="card-blurb">'.$department_blurb.'</div><!-- card Blurb End -->';
-        echo '</div><!-- card Row End -->';//end Program Row
+        echo '<hr class="post-grid"></div><!-- card Container End -->';//end Program Row
         wp_reset_postdata();
     endwhile; endif;
 

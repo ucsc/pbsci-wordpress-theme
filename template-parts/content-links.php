@@ -290,7 +290,7 @@
                     //     echo $lastnameObject['key'];
                     //     var_dump($lastnameObject['key']);
                     // endif;
-                    echo '</div><!-- card Row End -->'; //end Program Row
+                    echo '<hr class="post-grid"></div><!-- card Container End -->'; //end Program Row
                     wp_reset_postdata();
                 endwhile;
             endif;
