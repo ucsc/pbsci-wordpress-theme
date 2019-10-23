@@ -17,6 +17,13 @@
         grid-template-columns: 25% auto;
         grid-column-gap: 1em;
     }
+    .archive-meta {
+        margin-bottom: 0.75em;
+        span {
+            font-weight: 700;
+            color: $ucsc--primary-blue;
+        }
+    }
     .entry-header,
     .entry-footer {
         grid-column-start: 1;
