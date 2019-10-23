@@ -114,6 +114,44 @@
                     "ui_off_text": ""
                 },
                 {
+                    "key": "field_5db0b93a2d713",
+                    "label": "CTA Heading 1",
+                    "name": "cta_heading_1",
+                    "type": "text",
+                    "instructions": "Enter a first line heading, will be rendered in 24px font size, all caps, no bold.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Do You",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5db0b9fd2d714",
+                    "label": "CTA Heading 2",
+                    "name": "cta_heading_2",
+                    "type": "text",
+                    "instructions": "Enter a first line heading, will be rendered in 28px font size, all caps, bold.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Love Science?",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5d39f9cd54a25",
                     "label": "CTA Body",
                     "name": "cta_body",
@@ -309,5 +347,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1564098471
+    "modified": 1571863136
 }
