@@ -49,10 +49,17 @@ input[type="submit"] {
     &:hover:after {
         transform: scaleX(1);
     }
-    &.news-more-button {
+    &.news-more-button,
+    &.cta-button {
         color: $ucsc--primary-blue;
-        background: rgba(254, 254, 254, 0.6);
         border: 2px solid #13a5dc;
+        &:hover {
+            color: $ucsc--primary-blue;
+            border: 2px solid transparent;
+        }
+    }
+    &.news-more-button {
+        background: rgba(254, 254, 254, 0.6);
         display: block;
         margin: 0 auto;
         @include font-size(.82);
@@ -60,9 +67,25 @@ input[type="submit"] {
             @include font-size(1);
         }
         &:hover {
-            color: $ucsc--primary-blue;
             background: transparent;
-            border: 2px solid transparent;
+        }
+    }
+    &.cta-button {
+        // float: right;
+        padding: 15px 25px;
+        display: block;
+        float: right;
+        max-width: 10em;
+        background: rgba(255, 255, 255, 1);
+        @include font-size(1.25);
+        // &::after {
+        //     background-color: transparent!important;
+        // }
+        &:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+        i {
+            margin-right: 5px;
         }
     }
 }
