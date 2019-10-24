@@ -258,9 +258,9 @@
                         }
                         echo '</p>';
                     }
-                    echo '<pre>';
-                    var_dump($urlSwitch);
-                    echo '</pre>';
+                    // echo '<pre>';
+                    // var_dump($urlSwitch);
+                    // echo '</pre>';
                     // echo '<pre>';
                     // $me = get_post_taxonomies(get_the_ID());
                     // print_r($me);
