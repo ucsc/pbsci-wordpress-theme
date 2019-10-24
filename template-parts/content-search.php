@@ -56,9 +56,18 @@
             <?php endif; ?>
         </header><!-- .entry-header -->
 
-        <?php ucsc_pbsci_post_thumbnail(); ?>
+        <?php 
+        if ( has_post_thumbnail() ) {
+            ucsc_pbsci_post_thumbnail(); 
+            echo '<div class="entry-summary">';
+        }
+        else {
+            echo '<div class="entry-summary-wide">';
+        }
 
-        <div class="entry-summary">
+        ?>
+
+        
             <?php the_excerpt(); ?>
         </div><!-- .entry-summary -->
 
