@@ -9,10 +9,11 @@
  */
 if ('post' === get_post_type()) {
 	get_header('blog');
+} elseif ('studentopportunities' === get_post_type()) {
+	get_header('research');
 } else {
 	get_header();
 }
-
 
 ?>
 

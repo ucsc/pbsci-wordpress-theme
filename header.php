@@ -32,8 +32,8 @@
                 <?php
                 $page_for_posts = get_option('page_for_posts');
 
-                if ((!is_home()) || (is_single() && 'post' != get_post_type())) {
-                    // This is NOT the blog posts index
+                if ((!is_home()) || (is_single() && 'post' != get_post_type()) ) {
+                    // If this is NOT the blog posts index
                     $hero = get_the_post_thumbnail_url(get_the_ID(), 'page-hero');
                     $heroCaption = get_the_post_thumbnail_caption();
                 }
