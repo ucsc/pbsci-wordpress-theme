@@ -60,8 +60,8 @@ input[type="submit"] {
     }
     &.news-more-button {
         background: rgba(254, 254, 254, 0.6);
-        display: block;
         margin: 0 auto;
+        max-width: 400px;
         @include font-size(.82);
         @media only screen and (min-width: $screen-size--medium) {
             @include font-size(1);
