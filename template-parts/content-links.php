@@ -78,8 +78,15 @@
             if ($post_query->have_posts()) : while ($post_query->have_posts()) : $post_query->the_post();
 
                     //Set up the parts
-                    $post_title = get_the_title();
-                    $post_url = get_field('external_url');
+                    $post_title = get_the_title();                    
+                    $urlSwitch = get_field('external_url_switch');
+
+                    if (get_field('external_url_switch')) : 
+                        $post_url = get_field('external_url');
+                    else:
+                        $post_url = get_permalink();
+                    endif;
+
                     $current_post_type = get_post_type();
                     $excerpt_wordcount = '30';
                     //Post Type Conditionals
@@ -252,7 +259,7 @@
                         echo '</p>';
                     }
                     // echo '<pre>';
-                    // var_dump($current_post_type);
+                    // var_dump($urlSwitch);
                     // echo '</pre>';
                     // echo '<pre>';
                     // $me = get_post_taxonomies(get_the_ID());

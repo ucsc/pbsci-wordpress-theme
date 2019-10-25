@@ -284,9 +284,6 @@ if (defined('JETPACK__VERSION')) {
 if (class_exists('WooCommerce')) {
     require get_template_directory() . '/inc/woocommerce.php';
 }
-/**
- * Add class to page excerpt
- */
 
 /**
  * Conditionally Override Yoast SEO Breadcrumb Trail
@@ -325,6 +322,7 @@ function ucsc_underscore_override_yoast_breadcrumb_trail($links)
 // 	}
 // 	return $links;
 // }
+
 /**
  * Add a class to "the_excerpt"
  */
@@ -366,9 +364,12 @@ function ucsc_underscore_hide_editor()
     if (!isset($post_id)) return;
     // Hide the editor on the page titled 'Homepage'
     $pagename = get_the_title($post_id);
-    if ($pagename == 'Student Support' || $pagename == 'Degrees' || $pagename == 'Departments' || $pagename == 'Faculty &#038; Researchers' || $pagename == 'Research Groups &#038; Facilities' || $pagename == 'Student Research Opportunities') {
+    if ( in_array($pagename, array('Student Support', 'Degrees', 'Departments', 'Faculty &#038; researchers', 'Research groups &#038; facilities', 'Student research opportunities')) ){
         remove_post_type_support('page', 'editor');
     }
+    // if ($pagename == 'Student Support' || $pagename == 'Degrees' || $pagename == 'Departments' || $pagename == 'Faculty &#038; Researchers' || $pagename == 'Research Groups &#038; Facilities' || $pagename == 'Student Research Opportunities') {
+    //     remove_post_type_support('page', 'editor');
+    // }
     // Hide the editor on a page with a specific page template
     // Get the name of the Page Template file.
     //   $template_file = get_post_meta($post_id, '_wp_page_template', true);

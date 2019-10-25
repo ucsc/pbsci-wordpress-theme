@@ -3,13 +3,40 @@
     "title": "External Link",
     "fields": [
         {
+            "key": "field_5db1e034748de",
+            "label": "External URL Switch",
+            "name": "external_url_switch",
+            "type": "true_false",
+            "instructions": "Is this an external link post?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Is this an external link post?",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5ced7fd29b44b",
             "label": "External URL",
             "name": "external_url",
             "type": "url",
             "instructions": "Enter the external URL of this resource.",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5db1e034748de",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -64,5 +91,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1569281938
+    "modified": 1571939977
 }
