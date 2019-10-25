@@ -9,8 +9,8 @@
  */
 if ('post' === get_post_type()) {
 	get_header('blog');
-} elseif ('studentopportunities' === get_post_type()) {
-	get_header('research');
+} elseif ( in_array(get_post_type(), array('studentopportunities', 'student-support', 'institutes-centers', 'labs', 'support-science')) ) {
+	get_header('utility');
 } else {
 	get_header();
 }
@@ -23,7 +23,12 @@ if ('post' === get_post_type()) {
             <?php
 			while (have_posts()) :
 				the_post();
-				get_template_part('template-parts/content', get_post_type());
+				if ( in_array(get_post_type(), array('studentopportunities', 'student-support', 'institutes-centers', 'labs', 'support-science')) ) {
+					get_template_part('template-parts/content', 'utility');
+				} else {
+					get_template_part('template-parts/content', get_post_type());
+				}
+				
 				if ('post' === get_post_type()) :
 					get_template_part('template-parts/social', 'sharing');
 					get_template_part('template-parts/related', 'posts');
