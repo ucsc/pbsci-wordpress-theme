@@ -7,6 +7,12 @@
  *
  * @package UCSC_PBSci
  */
+// $linkAuthor = get_field('post_author');
+// if (!empty($linkAuthor)) {
+//     $postAuthor = '<span class="byline">By <span class="author vcard"><a class="url fn n" href="'.$linkAuthor['url'].'">'.$linkAuthor['title'].'</a></span>';
+// } else {
+//     $postAuthor = ucsc_pbsci_posted_by();
+// }
 $subtitle = get_field('post_subtitle');
 ?>
 
@@ -22,6 +28,7 @@ $subtitle = get_field('post_subtitle');
             </div>
             <div class="entry-meta">
                 <?php
+                // echo $postAuthor;
                 ucsc_pbsci_posted_by();
                 ucsc_pbsci_posted_on();
                 ?>
