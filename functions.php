@@ -367,15 +367,11 @@ function ucsc_underscore_hide_editor()
     if ( in_array($pagename, array('Student Support', 'Degrees', 'Departments', 'Faculty &#038; researchers', 'Research groups &#038; facilities', 'Student research opportunities')) ){
         remove_post_type_support('page', 'editor');
     }
-    // if ($pagename == 'Student Support' || $pagename == 'Degrees' || $pagename == 'Departments' || $pagename == 'Faculty &#038; Researchers' || $pagename == 'Research Groups &#038; Facilities' || $pagename == 'Student Research Opportunities') {
-    //     remove_post_type_support('page', 'editor');
-    // }
-    // Hide the editor on a page with a specific page template
-    // Get the name of the Page Template file.
-    //   $template_file = get_post_meta($post_id, '_wp_page_template', true);
-    //   if($template_file == 'my-page-template.php'){ // the filename of the page template
-    // remove_post_type_support('page', 'editor');
-    //   }
+
+/**
+ * Redirect Custom Post Type Archives to their page
+ *
+ */
 }
 /**
  * @param [type] $num

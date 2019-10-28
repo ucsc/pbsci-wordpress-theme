@@ -201,14 +201,14 @@ endif;
                     </div>
                     <div class="panel-cell-1">
                         <div class="flex-wrap panel-cell-quarter-top">
-                            <div class="panel-cell-1 flex-wrap panel-cell-quarter">
+                            <div class="panel-cell-1 flex-wrap panel-cell-quarter display-block">
                                 <a class="" href="<?php echo esc_url($panelOneCellTwoQuadOneLinkUrl); ?>">
                                     <i class="fas fa-<?php echo $panelOneCellTwoQuadOneIcon ?>"
                                         style="color:<?php echo $panelOneCellTwoQuadOneIconColor ?>"></i>
                                     <p><?php echo $panelOneCellTwoQuadOneLinkTitle; ?></p>
                                 </a>
                             </div>
-                            <div class="panel-cell-1 flex-wrap panel-cell-quarter">
+                            <div class="panel-cell-1 flex-wrap panel-cell-quarter display-block">
                                 <a class="" href="<?php echo esc_url($panelOneCellTwoQuadTwoLinkUrl); ?>">
                                     <i class="fas fa-<?php echo $panelOneCellTwoQuadTwoIcon ?>"
                                         style="color:<?php echo $panelOneCellTwoQuadTwoIconColor ?>"></i>
@@ -217,14 +217,14 @@ endif;
                             </div>
                         </div>
                         <div class="flex-wrap">
-                            <div class="panel-cell-1 flex-wrap panel-cell-quarter">
+                            <div class="panel-cell-1 flex-wrap panel-cell-quarter display-block">
                                 <a class="" href="<?php echo esc_url($panelOneCellTwoQuadThreeLinkUrl); ?>">
                                     <i class="fas fa-<?php echo $panelOneCellTwoQuadThreeIcon ?>"
                                         style="color:<?php echo $panelOneCellTwoQuadThreeIconColor ?>"></i>
                                     <p><?php echo $panelOneCellTwoQuadThreeLinkTitle; ?></p>
                                 </a>
                             </div>
-                            <div class="panel-cell-1 flex-wrap panel-cell-quarter">
+                            <div class="panel-cell-1 flex-wrap panel-cell-quarter display-block">
                                 <a class="" href="<?php echo esc_url($panelOneCellTwoQuadFourLinkUrl); ?>">
                                     <i class="fas fa-<?php echo $panelOneCellTwoQuadFourIcon ?>"
                                         style="color:<?php echo $panelOneCellTwoQuadFourIconColor ?>"></i>
@@ -356,7 +356,7 @@ endif;
                     </div>
                 </div>
                 <div class="flex-wrap">
-                    <div class="panel-cell-1">
+                    <div class="panel-cell-1 display-block">
                     <?php
                     if (!empty($panelThreeCellOneConditional)) {
                             if ($panelThreeCellOneConditional == 'image') {
@@ -390,7 +390,7 @@ endif;
                         }
                         ?>
                     </div>
-                    <div class="panel-cell-1">
+                    <div class="panel-cell-1 display-block">
                     <?php
                     if (!empty($panelThreeCellTwoConditional)) {
                             if ($panelThreeCellTwoConditional == 'image') {
