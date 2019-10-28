@@ -26,7 +26,8 @@
     }
     .entry-header,
     .entry-footer,
-    .entry-summary-wide {
+    .entry-summary-wide,
+    .archive-excerpt-wide {
         grid-column-start: 1;
         grid-column-end: 3;
     }

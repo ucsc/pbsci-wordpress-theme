@@ -20,12 +20,21 @@
             </div><!-- .entry-meta -->
 
         </header><!-- .entry-header -->
-        <?php ucsc_pbsci_post_thumbnail(); ?>
-        <div class="archive-excerpt">
-            <?php the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>'); ?>
-            <?php the_excerpt(); ?>
-        </div>
-
+        <?php 
+        if (has_post_thumbnail()) {
+            ucsc_pbsci_post_thumbnail();
+            echo '<div class="archive-excerpt">';
+            the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+            the_excerpt();
+            echo '</div>';
+        } else {
+            echo '<div class="archive-excerpt-wide">';
+            the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+            the_excerpt();
+            echo '</div>';
+        }
+        
+        ?>
         <footer class="entry-footer">
             <?php ucsc_pbsci_entry_footer(); ?>
         </footer><!-- .entry-footer -->
