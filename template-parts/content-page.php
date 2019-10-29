@@ -20,7 +20,7 @@ $page_blurb = get_field('page_blurb');
     if (is_page('research')) {
         $secondaryMenu = 'menu-2';
     }
-    if (is_page('academics') || is_page('research')) {
+    if (is_page(array('academics','research'))){
         $secondaryNavCustomRows = get_field('secondary_navigation_customization');
         if ($secondaryNavCustomRows) {
             $customRowsCount = count($secondaryNavCustomRows);
@@ -29,7 +29,6 @@ $page_blurb = get_field('page_blurb');
                 $customRowTwo = $secondaryNavCustomRows[1];
                 $customRowThree = $secondaryNavCustomRows[2];
             }
-            // for($i=0;$i<$customRowsCount;$i++){}
         }
         $secondaryNav1 = $customRowOne['secondary_navigation_label'];
         $secondaryIcon1 = $customRowOne['secondary_navigation_icon'];
@@ -77,7 +76,7 @@ $page_blurb = get_field('page_blurb');
     }
     // debug
     // echo '<pre>';
-    // var_dump($secondaryNav3);
+    // var_dump($secondaryNav2);
     // echo '</pre>';
     // end debug
     ?>
