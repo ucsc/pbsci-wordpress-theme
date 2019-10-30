@@ -21,7 +21,8 @@
     max-width: 48em;
     line-height: 1.6;
     @include font-size(1.2);
-    color: #585858
+    color: #585858;
+    margin: 1.5em auto;
 }
 
 .panel {
@@ -102,6 +103,7 @@
     clear: both;
     width: $size__site-main;
     background-color: $ucsc--primary-blue;
+    padding: 1em 0;
     .panel {
         background-color: $ucsc--primary-yellow;
         padding: 0;
