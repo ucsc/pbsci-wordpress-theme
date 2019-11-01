@@ -1,10 +1,9 @@
-.blog,
-.single-post {
-    .three-col-grid {
-        grid-template-columns: repeat( auto-fit, minmax(360px, 1fr));
-    }
-}
-
+// .blog,
+// .single-post {
+//     .three-col-grid {
+//         grid-template-columns: repeat( auto-fit, minmax(360px, 1fr));
+//     }
+// }
 .three-col-grid {
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(360px, 1fr));
@@ -30,13 +29,15 @@
 .single-post {
     .card-container {
         max-width: 100%;
+        .post-thumbnail {
+            margin: 0 auto;
+        }
     }
 }
 
 .card-container {
-    margin-bottom: 2em;
+    margin: 0 auto 2em;
     max-width: 360px;
-    margin: 0 auto;
     .taxonomy-label {
         font-weight: 400;
         @include font-size(.7);
