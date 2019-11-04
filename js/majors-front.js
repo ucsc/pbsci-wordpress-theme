@@ -1,15 +1,19 @@
-$("#overview").show();
-$('#overview-tab').addClass('active');
-$('#overview-tab a').attr('aria-selected','true');
-
-$(document).ready(function($){
+$(document).ready(function($) {
+    $("#overview").show();
+    $('#overview-tab').addClass('active');
+    $('#overview-tab a').attr('aria-selected', 'true');
     $(".tab-link").click(function(e) {
-    e.preventDefault();
-    $(this).parent('li').addClass('active');
-    $(this).attr('aria-selected','true');
-    $("#major-tabs li").not($(this).parent('li')).removeClass("active");
-    $("#major-tabs li a").not($(this).parent('li')).attr("aria-selected","false");
+        e.preventDefault();
+        var elm = $(this);
+        switchTabs(elm);
+    });
+});
+
+function switchTabs(tar) {
+    $(tar).parent('li').addClass('active');
+    $(tar).attr('aria-selected', 'true');
+    $("#major-tabs li").not($(tar).parent('li')).removeClass("active");
+    $("#major-tabs li a").not($(tar).parent('li')).attr("aria-selected", "false");
     $('.majorcontainers section').hide();
-    $('#' + $(this).data('rel')).show();
-});
-});
+    $('#' + $(tar).data('rel')).show();
+}
