@@ -7,7 +7,7 @@ $(document).ready(function($) {
         if ($("a[href='" + hashTar + "']").length) {
             var elmTar = $("a[href='" + hashTar + "']");
             switchTabs(elmTar);
-
+            setTimeout(function() { $(window).scrollTop(0); }, 100);
         }
     }
 
@@ -28,5 +28,5 @@ function switchTabs(tar) {
     $("#major-tabs li a").not($(tar).parent('li')).attr("aria-selected", "false");
     $('.majorcontainers section').hide();
     $('#' + $(tar).data('rel')).show();
-    setTimeout(function() { $(window).scrollTop(0); }, 100);
+
 }
