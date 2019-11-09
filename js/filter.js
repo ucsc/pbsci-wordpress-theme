@@ -12,472 +12,474 @@
 // https://stackoverflow.com/questions/31304796/i-cant-seem-to-get-list-js-to-filter-items-with-multiple-categories
 // https://codepen.io/bjornmeansbear/pen/RPywzN
 
-$(function () {
-    //search js
-    var degreeOptions = {
-        valueNames: [
-            'card-title',
-            'program',
-            'programHidden',
-            'depts',
-            // 'dept',
-            // 'name',
-            // 'phd',
-            // 'ma',
-            // 'ms',
-            // 'designatedemphasis',
-            // 'contig',
-            // 'ba',
-            // 'bs',
-            // 'undergradminor',
-            // 'designatedemphasis',
-        ]
-    }
-    var degreeList = new List('degree_cards', degreeOptions);
-    // console.log(degreeList.items);
-    $('#degreetype-select').change(function () {
-        // this sets the selection term
-        // based on value of the <option>
+// $(function() {
+//     //search js
+//     var degreeOptions = {
+//         valueNames: [
+//             'card-title',
+//             'program',
+//             'programHidden',
+//             'depts',
+//             // 'dept',
+//             // 'name',
+//             // 'phd',
+//             // 'ma',
+//             // 'ms',
+//             // 'designatedemphasis',
+//             // 'contig',
+//             // 'ba',
+//             // 'bs',
+//             // 'undergradminor',
+//             // 'designatedemphasis',
+//         ]
+//     }
+//     var degreeList = new List('degree_cards', degreeOptions);
+//     // console.log(degreeList.items);
+//     $('#degreetype-select').change(function() {
+//         // this sets the selection term
+//         // based on value of the <option>
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#department-select').prop('selectedIndex', 0);
+//             degreeList.search();
+//             degreeList.filter(function(item) {
+//                 if (
+//                     item.values().programHidden.indexOf(selection) >= 0
+//                 ) {
+//                     return true;
+//                 } else {
+//                     return false;
+
+//                 }
+
+
+//             });
+//         } else {
+//             degreeList.filter();
+//         }
+
+//     });
+
+//     $('#department-select').change(function() {
+//         var selection = this.value;
+//         //  console.log(selection);
+//         if (selection != 'clear') {
+//             $('#degreetype-select').prop('selectedIndex', 0);
+//             degreeList.filter();
+//             // degreeList.fuzzySearch(selection);
+//             degreeList.search(selection, ['depts']);
+//         } else {
+//             degreeList.search();
+//         }
+
+//     })
+
+//     $('#degree-search').on('keyup', function() {
+//         var searchString = $(this).val();
+//         degreeList.fuzzySearch(searchString);
+//     });
+
+//     $('#degree-clear').click(function() {
+//         /*Clear textarea using ID */
+//         $('#degree-search').val('');
+//         degreeList.filter();
+//         degreeList.search();
+//         /* Reset Degree type Dropdown using Class*/
+//         $('.filter-select').prop('selectedIndex', 0);
+//     });
+
+// });
+
+// $(function() {
+//     //search js
+//     var labOptions = {
+//         valueNames: [
+//             'post-title',
+//             'itemtaxonomy1',
+//             'itemtaxonomy2',
+//             'depts',
+//             'card-blurb'
+
+//         ]
+//     }
+//     var labList = new List('page-faculty-researchers', labOptions);
+//     // console.log(labList.items);
+//     $('#researcher-faculty-labs-tax').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#resesarch-area-expertise-tax').prop('selectedIndex', 0);
+//             $('#researcher-faculty-department-select2').prop('selectedIndex', 0);
+//             labList.filter();
+//             labList.search(selection, ['itemtaxonomy1']);
+//         } else {
+//             labList.search();
+//         }
+//     })
+//     $('#resesarch-area-expertise-tax').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#researcher-faculty-labs-tax').prop('selectedIndex', 0);
+//             $('#researcher-faculty-department-select2').prop('selectedIndex', 0);
+//             labList.filter();
+//             labList.search(selection, ['itemtaxonomy2']);
+//         } else {
+//             labList.search();
+//         }
+//     })
+//     $('#researcher-faculty-department-select2').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#researcher-faculty-labs-tax').prop('selectedIndex', 0);
+//             $('#resesarch-area-expertise-tax').prop('selectedIndex', 0);
+//             labList.filter();
+//             labList.search(selection, ['depts']);
+//         } else {
+//             labList.search();
+//         }
+//     })
+//     $('#lab-search').on('keyup', function() {
+//         var searchString = $(this).val();
+//         labList.search(searchString);
+//     });
+//     $('#lab-clear').click(function() {
+//         /*Clear textarea using ID */
+//         $('#lab-search').val('');
+//         labList.search();
+//         labList.filter();
+//         /* Reset Degree type Dropdown*/
+//         $('.filter-select').prop('selectedIndex', 0);
+//     });
+// });
+
+// $(function() {
+//     //search js
+//     var instituteOptions = {
+//         valueNames: [
+//             'post-title',
+//             'itemtaxonomy1',
+//             'itemtaxonomy2',
+//             'card-blurb',
+//             'depts'
+//         ]
+//     }
+//     var instituteList = new List('page-research-groups-facilities', instituteOptions);
+//     // console.log(instituteList.items);
+
+//     $('#research-group-location').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#research-group-expertise').prop('selectedIndex', 0);
+//             $('#researcher-faculty-department-select3').prop('selectedIndex', 0);
+//             instituteList.filter();
+//             instituteList.search(selection, ['itemtaxonomy1']);
+//         } else {
+//             instituteList.search();
+//         }
+//     })
+//     $('#research-group-expertise').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#research-group-location').prop('selectedIndex', 0);
+//             $('#researcher-faculty-department-select3').prop('selectedIndex', 0);
+//             instituteList.filter();
+//             instituteList.search(selection, ['itemtaxonomy2']);
+//         } else {
+//             instituteList.search();
+//         }
+//     })
+//     $('#researcher-faculty-department-select3').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#research-group-location').prop('selectedIndex', 0);
+//             $('#research-group-expertise').prop('selectedIndex', 0);
+//             instituteList.filter();
+//             instituteList.search(selection, ['depts']);
+//         } else {
+//             instituteList.search();
+//         }
+//     })
+//     $('#res-grp-search').on('keyup', function() {
+//         var searchString = $(this).val();
+//         // instituteList.fuzzySearch(searchString);
+//         instituteList.search(searchString);
+//     });
+//     $('#res-grp-clear').click(function() {
+//         /*Clear textarea using ID */
+//         $('#res-grp-search').val('');
+//         instituteList.search();
+//         instituteList.filter();
+//         /* Reset Dropdowns*/
+//         $('.filter-select').prop('selectedIndex', 0);
+//     });
+// });
+
+// $(function() {
+//     //search js
+//     var opportunityOptions = {
+//         valueNames: [
+//             'post-title',
+//             'itemtaxonomy1',
+//             'itemtaxonomy2',
+//             'itemtaxonomy3',
+//             'card-blurb',
+//             'depts',
+//         ]
+//     }
+//     var opportunityList = new List('page-student-research-opportunities', opportunityOptions);
+//     // console.log(opportunityList.items);
+
+//     $('#student-opportunities-tax').change(function() {
+//         var selection = this.value;
+//         // var stringSelection = String(selection);
+//         // console.log(stringSelection);
+//         if (selection != 'clear') {
+//             $('#student-opp-eligib-tax').prop('selectedIndex', 0);
+//             $('#student-opp-avail-tax').prop('selectedIndex', 0);
+//             $('#studentopportunities-department-select').prop('selectedIndex', 0);
+//             opportunityList.filter();
+//             opportunityList.search(selection, ['itemtaxonomy1']);
+//         } else {
+//             opportunityList.search();
+//         }
+
+//     })
+//     $('#student-opp-eligib-tax').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#student-opportunities-tax').prop('selectedIndex', 0);
+//             $('#student-opp-avail-tax').prop('selectedIndex', 0);
+//             $('#studentopportunities-department-select').prop('selectedIndex', 0);
+//             opportunityList.filter();
+//             opportunityList.search(selection, ['itemtaxonomy2']);
+//         } else {
+//             opportunityList.search();
+//         }
+
+//     })
+//     $('#student-opp-avail-tax').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#student-opportunities-tax').prop('selectedIndex', 0);
+//             $('#student-opp-eligib-tax').prop('selectedIndex', 0);
+//             $('#studentopportunities-department-select').prop('selectedIndex', 0);
+//             opportunityList.filter();
+//             opportunityList.search(selection, ['itemtaxonomy3']);
+//         } else {
+//             opportunityList.search();
+//         }
+
+//     })
+//     $('#studentopportunities-department-select').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#student-opportunities-tax').prop('selectedIndex', 0);
+//             $('#student-opp-eligib-tax').prop('selectedIndex', 0);
+//             $('#student-opp-avail-tax').prop('selectedIndex', 0);
+//             opportunityList.filter();
+//             opportunityList.search(selection, ['depts']);
+//         } else {
+//             opportunityList.search();
+//         }
+//     })
+//     $('#opportunity-search').on('keyup', function() {
+//         var searchString = $(this).val();
+//         opportunityList.fuzzySearch(searchString);
+//         opportunityList.search(searchString);
+//     });
+//     $('#opportunity-clear').click(function() {
+//         /*Clear textarea using class */
+//         $('#opportunity-search').val('');
+//         opportunityList.search();
+//         opportunityList.filter();
+//         /* Reset Degree type Dropdown*/
+//         $('.filter-select').prop('selectedIndex', 0);
+//     });
+// });
+
+
+// $(function() {
+//     //search js
+//     var supportOptions = {
+//         valueNames: [
+//             'post-title',
+//             'itemtaxonomy1',
+//             'itemtaxonomy2',
+//             'itemtaxonomy3',
+//             'card-blurb',
+//             'depts',
+//         ]
+//     }
+//     var supportList = new List('page-student-support', supportOptions);
+//     // console.log(supportList.items);
+//     $('#student-support-tax').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#studentsupport-department-select').prop('selectedIndex', 0);
+//             $('#student-supp-eligib-tax').prop('selectedIndex', 0);
+//             $('#student-supp-avail-tax').prop('selectedIndex', 0);
+//             supportList.filter();
+//             supportList.search(selection, ['itemtaxonomy1']);
+//         } else {
+//             supportList.search();
+//         }
+
+//     })
+//     $('#student-supp-eligib-tax').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#studentsupport-department-select').prop('selectedIndex', 0);
+//             $('#student-support-tax').prop('selectedIndex', 0);
+//             $('#student-supp-avail-tax').prop('selectedIndex', 0);
+//             supportList.filter();
+//             supportList.search(selection, ['itemtaxonomy2']);
+//         } else {
+//             supportList.search();
+//         }
+
+//     })
+//     $('#student-supp-avail-tax').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#studentsupport-department-select').prop('selectedIndex', 0);
+//             $('#student-support-tax').prop('selectedIndex', 0);
+//             $('#student-supp-eligib-tax').prop('selectedIndex', 0);
+//             supportList.filter();
+//             supportList.search(selection, ['itemtaxonomy3']);
+//         } else {
+//             supportList.search();
+//         }
+
+//     })
+//     $('#studentsupport-department-select').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#student-supp-avail-tax').prop('selectedIndex', 0);
+//             $('#student-support-tax').prop('selectedIndex', 0);
+//             $('#student-supp-eligib-tax').prop('selectedIndex', 0);
+//             supportList.filter();
+//             supportList.search(selection, ['depts']);
+//         } else {
+//             supportList.search();
+//         }
+
+//     })
+//     $('#support-search').on('keyup', function() {
+//         var searchString = $(this).val();
+//         supportList.search(searchString);
+//     });
+//     $('#support-clear').click(function() {
+//         /*Clear textarea using class */
+//         $('#support-search').val('');
+//         supportList.search();
+//         supportList.filter();
+//         /* Reset Degree type Dropdown*/
+//         $('.filter-select').prop('selectedIndex', 0);
+//     });
+// });
+
+// $(function() {
+//     //search js
+//     var supportScienceOptions = {
+//         valueNames: [
+//             'post-title',
+//             'itemtaxonomy1',
+//             'itemtaxonomy2',
+//             'itemtaxonomy3',
+//             'card-blurb',
+//             'depts',
+//         ]
+//     }
+//     var supportScienceList = new List('page-support', supportScienceOptions);
+//     // console.log(supportList.items);
+//     $('#support-science-cat').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#support-science-int').prop('selectedIndex', 0);
+//             $('#support-science-department-select').prop('selectedIndex', 0);
+//             supportScienceList.filter();
+//             supportScienceList.search(selection, ['itemtaxonomy1']);
+//         } else {
+//             supportScienceList.search();
+//         }
+
+//     })
+//     $('#support-science-int').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#support-science-cat').prop('selectedIndex', 0);
+//             $('#support-science-department-select').prop('selectedIndex', 0);
+//             supportScienceList.filter();
+//             supportScienceList.search(selection, ['itemtaxonomy2']);
+//         } else {
+//             supportScienceList.search();
+//         }
+
+//     })
+//     $('#support-science-department-select').change(function() {
+//         var selection = this.value;
+//         // console.log(selection);
+//         if (selection != 'clear') {
+//             $('#support-science-cat').prop('selectedIndex', 0);
+//             $('#support-science-int').prop('selectedIndex', 0);
+//             supportScienceList.filter();
+//             supportScienceList.search(selection, ['depts']);
+//         } else {
+//             supportScienceList.search();
+//         }
+
+//     })
+//     $('#support-science-search').on('keyup', function() {
+//         var searchString = $(this).val();
+//         supportScienceList.search(searchString);
+//     });
+//     $('#support-science-clear').click(function() {
+//         /*Clear textarea using class */
+//         $('#support-science-search').val('');
+//         supportScienceList.search();
+//         supportScienceList.filter();
+//         /* Reset Degree type Dropdown*/
+//         $('.filter-select').prop('selectedIndex', 0);
+//     });
+// });
+
+$('.filter-list select').change(function() {
+    $(".card-container").hide();
+    // console.log("changed");
+    var selectArray = [];
+
+    $('.filter-list select').each(function(index, value) {
         var selection = this.value;
-        // console.log(selection);
         if (selection != 'clear') {
-            $('#department-select').prop('selectedIndex', 0);
-            degreeList.search();
-            degreeList.filter(function (item) {
-                if (
-                    item.values().programHidden.indexOf(selection) >= 0
-                ) {
-                    return true;
-                } else {
-                    return false;
-
-                }
-                // runs a filter on the list
-
-                // looks for something with class
-                // of "programHidden"
-                // var toBeSplit = item.values().programHidden;
-                // this turns multiple entries separated
-                // by a space into different
-                // elements in an array
-                // var alreadySplit = toBeSplit.split(' ');
-                // console.log(alreadySplit);
-                // we then loop through the array
-                // for (var i = 0, j = alreadySplit.length; i < j; i++) {
-                // this checks each possible "programHidden"
-                // against the selection
-                // and filters the list based on the
-                // one that matches
-                // console.log(alreadySplit[i]);
-                // if (alreadySplit[i].includes(selection)) {
-                // return true;
-                // return (alreadySplit[i]);
-                // console.log(alreadySplit[i]);
-                // } else {
-                // return false;
-                // }
-                // }
-
-            });
-        } else {
-            degreeList.filter();
-        }
-
-    });
-
-    $('#department-select').change(function () {
-        var selection = this.value;
-        //  console.log(selection);
-        if (selection != 'clear') {
-            $('#degreetype-select').prop('selectedIndex', 0);
-            degreeList.filter();
-            // degreeList.fuzzySearch(selection);
-            degreeList.search(selection, ['depts']);
-        } else {
-            degreeList.search();
+            selectArray.push(selection);
+            console.log(selectArray);
         }
 
     })
-
-    $('#degree-search').on('keyup', function () {
-        var searchString = $(this).val();
-        degreeList.fuzzySearch(searchString);
-    });
-
-    $('#degree-clear').click(function () {
-        /*Clear textarea using ID */
-        $('#degree-search').val('');
-        degreeList.filter();
-        degreeList.search();
-        /* Reset Degree type Dropdown using Class*/
-        $('.filter-select').prop('selectedIndex', 0);
-    });
-
+    var items = $(".card-container:contains(" + selectArray[0] + ")");
+    for (i = 1; i < selectArray.length; i++) {
+        items = $(items).filter(".card-container:contains(" + selectArray[i] + ")");
+    }
+    $(items).show();
 });
 
-$(function () {
-    //search js
-    var labOptions = {
-        valueNames: [
-            'post-title',
-            'itemtaxonomy1',
-            'itemtaxonomy2',
-            'depts',
-            'card-blurb'
-
-        ]
-    }
-    var labList = new List('page-faculty-researchers', labOptions);
-    // console.log(labList.items);
-    $('#researcher-faculty-labs-tax').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#resesarch-area-expertise-tax').prop('selectedIndex', 0);
-            $('#researcher-faculty-department-select2').prop('selectedIndex', 0);
-            labList.filter();
-            labList.search(selection, ['itemtaxonomy1']);
-        } else {
-            labList.search();
-        }
-    })
-    $('#resesarch-area-expertise-tax').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#researcher-faculty-labs-tax').prop('selectedIndex', 0);
-            $('#researcher-faculty-department-select2').prop('selectedIndex', 0);
-            labList.filter();
-            labList.search(selection, ['itemtaxonomy2']);
-        } else {
-            labList.search();
-        }
-    })
-    $('#researcher-faculty-department-select2').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#researcher-faculty-labs-tax').prop('selectedIndex', 0);
-            $('#resesarch-area-expertise-tax').prop('selectedIndex', 0);
-            labList.filter();
-            labList.search(selection, ['depts']);
-        } else {
-            labList.search();
-        }
-    })
-    $('#lab-search').on('keyup', function () {
-        var searchString = $(this).val();
-        labList.search(searchString);
-    });
-    $('#lab-clear').click(function () {
-        /*Clear textarea using ID */
-        $('#lab-search').val('');
-        labList.search();
-        labList.filter();
-        /* Reset Degree type Dropdown*/
-        $('.filter-select').prop('selectedIndex', 0);
-    });
-});
-
-$(function () {
-    //search js
-    var instituteOptions = {
-        valueNames: [
-            'post-title',
-            'itemtaxonomy1',
-            'itemtaxonomy2',
-            'card-blurb',
-            'depts'
-        ]
-    }
-    var instituteList = new List('page-research-groups-facilities', instituteOptions);
-    // console.log(instituteList.items);
-
-    $('#research-group-location').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#research-group-expertise').prop('selectedIndex', 0);
-            $('#researcher-faculty-department-select3').prop('selectedIndex', 0);
-            instituteList.filter();
-            instituteList.search(selection, ['itemtaxonomy1']);
-        } else {
-            instituteList.search();
-        }
-    })
-    $('#research-group-expertise').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#research-group-location').prop('selectedIndex', 0);
-            $('#researcher-faculty-department-select3').prop('selectedIndex', 0);
-            instituteList.filter();
-            instituteList.search(selection, ['itemtaxonomy2']);
-        } else {
-            instituteList.search();
-        }
-    })
-    $('#researcher-faculty-department-select3').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#research-group-location').prop('selectedIndex', 0);
-            $('#research-group-expertise').prop('selectedIndex', 0);
-            instituteList.filter();
-            instituteList.search(selection, ['depts']);
-        } else {
-            instituteList.search();
-        }
-    })
-    $('#res-grp-search').on('keyup', function () {
-        var searchString = $(this).val();
-        // instituteList.fuzzySearch(searchString);
-        instituteList.search(searchString);
-    });
-    $('#res-grp-clear').click(function () {
-        /*Clear textarea using ID */
-        $('#res-grp-search').val('');
-        instituteList.search();
-        instituteList.filter();
-        /* Reset Dropdowns*/
-        $('.filter-select').prop('selectedIndex', 0);
-    });
-});
-
-$(function () {
-    //search js
-    var opportunityOptions = {
-        valueNames: [
-            'post-title',
-            'itemtaxonomy1',
-            'itemtaxonomy2',
-            'itemtaxonomy3',
-            'card-blurb',
-            'depts',
-        ]
-    }
-    var opportunityList = new List('page-student-research-opportunities', opportunityOptions);
-    // console.log(opportunityList.items);
-
-    $('#student-opportunities-tax').change(function () {
-        var selection = this.value;
-        // var stringSelection = String(selection);
-        // console.log(stringSelection);
-        if (selection != 'clear') {
-            $('#student-opp-eligib-tax').prop('selectedIndex', 0);
-            $('#student-opp-avail-tax').prop('selectedIndex', 0);
-            $('#studentopportunities-department-select').prop('selectedIndex', 0);
-            opportunityList.filter();
-            opportunityList.search(selection, ['itemtaxonomy1']);
-        } else {
-            opportunityList.search();
-        }
-
-    })
-    $('#student-opp-eligib-tax').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#student-opportunities-tax').prop('selectedIndex', 0);
-            $('#student-opp-avail-tax').prop('selectedIndex', 0);
-            $('#studentopportunities-department-select').prop('selectedIndex', 0);
-            opportunityList.filter();
-            opportunityList.search(selection, ['itemtaxonomy2']);
-        } else {
-            opportunityList.search();
-        }
-
-    })
-    $('#student-opp-avail-tax').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#student-opportunities-tax').prop('selectedIndex', 0);
-            $('#student-opp-eligib-tax').prop('selectedIndex', 0);
-            $('#studentopportunities-department-select').prop('selectedIndex', 0);
-            opportunityList.filter();
-            opportunityList.search(selection, ['itemtaxonomy3']);
-        } else {
-            opportunityList.search();
-        }
-
-    })
-    $('#studentopportunities-department-select').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#student-opportunities-tax').prop('selectedIndex', 0);
-            $('#student-opp-eligib-tax').prop('selectedIndex', 0);
-            $('#student-opp-avail-tax').prop('selectedIndex', 0);
-            opportunityList.filter();
-            opportunityList.search(selection, ['depts']);
-        } else {
-            opportunityList.search();
-        }
-    })
-    $('#opportunity-search').on('keyup', function () {
-        var searchString = $(this).val();
-        opportunityList.fuzzySearch(searchString);
-        opportunityList.search(searchString);
-    });
-    $('#opportunity-clear').click(function () {
-        /*Clear textarea using class */
-        $('#opportunity-search').val('');
-        opportunityList.search();
-        opportunityList.filter();
-        /* Reset Degree type Dropdown*/
-        $('.filter-select').prop('selectedIndex', 0);
-    });
-});
-
-
-$(function () {
-    //search js
-    var supportOptions = {
-        valueNames: [
-            'post-title',
-            'itemtaxonomy1',
-            'itemtaxonomy2',
-            'itemtaxonomy3',
-            'card-blurb',
-            'depts',
-        ]
-    }
-    var supportList = new List('page-student-support', supportOptions);
-    // console.log(supportList.items);
-    $('#student-support-tax').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#studentsupport-department-select').prop('selectedIndex', 0);
-            $('#student-supp-eligib-tax').prop('selectedIndex', 0);
-            $('#student-supp-avail-tax').prop('selectedIndex', 0);
-            supportList.filter();
-            supportList.search(selection, ['itemtaxonomy1']);
-        } else {
-            supportList.search();
-        }
-
-    })
-    $('#student-supp-eligib-tax').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#studentsupport-department-select').prop('selectedIndex', 0);
-            $('#student-support-tax').prop('selectedIndex', 0);
-            $('#student-supp-avail-tax').prop('selectedIndex', 0);
-            supportList.filter();
-            supportList.search(selection, ['itemtaxonomy2']);
-        } else {
-            supportList.search();
-        }
-
-    })
-    $('#student-supp-avail-tax').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#studentsupport-department-select').prop('selectedIndex', 0);
-            $('#student-support-tax').prop('selectedIndex', 0);
-            $('#student-supp-eligib-tax').prop('selectedIndex', 0);
-            supportList.filter();
-            supportList.search(selection, ['itemtaxonomy3']);
-        } else {
-            supportList.search();
-        }
-
-    })
-    $('#studentsupport-department-select').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#student-supp-avail-tax').prop('selectedIndex', 0);
-            $('#student-support-tax').prop('selectedIndex', 0);
-            $('#student-supp-eligib-tax').prop('selectedIndex', 0);
-            supportList.filter();
-            supportList.search(selection, ['depts']);
-        } else {
-            supportList.search();
-        }
-
-    })
-    $('#support-search').on('keyup', function () {
-        var searchString = $(this).val();
-        supportList.search(searchString);
-    });
-    $('#support-clear').click(function () {
-        /*Clear textarea using class */
-        $('#support-search').val('');
-        supportList.search();
-        supportList.filter();
-        /* Reset Degree type Dropdown*/
-        $('.filter-select').prop('selectedIndex', 0);
-    });
-});
-
-$(function () {
-    //search js
-    var supportScienceOptions = {
-        valueNames: [
-            'post-title',
-            'itemtaxonomy1',
-            'itemtaxonomy2',
-            'itemtaxonomy3',
-            'card-blurb',
-            'depts',
-        ]
-    }
-    var supportScienceList = new List('page-support', supportScienceOptions);
-    // console.log(supportList.items);
-    $('#support-science-cat').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#support-science-int').prop('selectedIndex', 0);
-            $('#support-science-department-select').prop('selectedIndex', 0);
-            supportScienceList.filter();
-            supportScienceList.search(selection, ['itemtaxonomy1']);
-        } else {
-            supportScienceList.search();
-        }
-
-    })
-    $('#support-science-int').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#support-science-cat').prop('selectedIndex', 0);
-            $('#support-science-department-select').prop('selectedIndex', 0);
-            supportScienceList.filter();
-            supportScienceList.search(selection, ['itemtaxonomy2']);
-        } else {
-            supportScienceList.search();
-        }
-
-    })
-    $('#support-science-department-select').change(function () {
-        var selection = this.value;
-        // console.log(selection);
-        if (selection != 'clear') {
-            $('#support-science-cat').prop('selectedIndex', 0);
-            $('#support-science-int').prop('selectedIndex', 0);
-            supportScienceList.filter();
-            supportScienceList.search(selection, ['depts']);
-        } else {
-            supportScienceList.search();
-        }
-
-    })
-    $('#support-science-search').on('keyup', function () {
-        var searchString = $(this).val();
-        supportScienceList.search(searchString);
-    });
-    $('#support-science-clear').click(function () {
-        /*Clear textarea using class */
-        $('#support-science-search').val('');
-        supportScienceList.search();
-        supportScienceList.filter();
-        /* Reset Degree type Dropdown*/
-        $('.filter-select').prop('selectedIndex', 0);
-    });
+$('.filter-list .search').on('keyup', function() {
+    var searchString = $(this).val();
+    $(".card-container").hide();
+    $(".card-container:contains(" + searchString + ")").show();
 });

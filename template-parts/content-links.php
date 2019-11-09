@@ -219,7 +219,7 @@
                         }
                         echo '<ul class="pbsci-taxonomy flex-wrap">';
                         foreach ($taxTerms1 as $taxTerm1) {
-                            echo '<li class=""  data-' . $itemClass1 . '="' . $taxTerm1->slug . '">' . $taxTerm1->name . '</li>';
+                            echo '<li class="'.$taxTerm1->slug.'"  data-' . $itemClass1 . '="' . $taxTerm1->slug . '">' . $taxTerm1->name . '</li>';
                         }
                         echo '</ul>';
                         echo '<p aria-hidden="true" class="itemtaxonomy1 hidden-data">';
@@ -234,7 +234,7 @@
                         }
                         echo '<ul class="pbsci-taxonomy flex-wrap">';
                         foreach ($taxTerms2 as $taxTerm2) {
-                            echo '<li class=""  data-' . $itemClass2 . '="' . $taxTerm2->slug . '">' . $taxTerm2->name . '</li>';
+                            echo '<li class="'.$taxTerm2->slug.'"  data-' . $itemClass2 . '="' . $taxTerm2->slug . '">' . $taxTerm2->name . '</li>';
                         }
                         echo '</ul>';
                         echo '<p aria-hidden="true" class="itemtaxonomy2 hidden-data">';
