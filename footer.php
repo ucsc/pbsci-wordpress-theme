@@ -41,7 +41,7 @@ get_template_part('template-parts/to', 'top');
     <?php
     $footerLinks = get_field('footer_links', 'option');
     if ($footerLinks) {
-        echo '<div class="site-info"><div class="wrap"><div class="footer-legal"><img src="' . IMAGES . '/science-logo.svg" alt=""/><ul>';
+        echo '<div class="site-info"><div class="wrap"><div class="footer-legal"><a href="https://science.ucsc.edu"><img src="' . IMAGES . '/science-logo.svg" alt="Science at UC Santa Cruz"/></a><ul>';
         foreach ($footerLinks as $footerLink) {
             echo '<li><a href="' . $footerLink['footer_link_url'] . '">' . $footerLink['footer_link_text'] . '</a></li>';
         }
