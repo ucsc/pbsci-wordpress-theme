@@ -548,7 +548,7 @@ function ucsc_underscore_social_buttons($content)
         $twitterURL = 'https://twitter.com/intent/tweet?text=' . $sb_title . '&amp;url=' . $sb_url;
         $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u=' . $sb_url;
         $bufferURL = 'https://bufferapp.com/add?url=' . $sb_url . '&amp;text=' . $sb_title;
-        $redditURL = 'https://bufferapp.com/add?url=' . $sb_url . '&amp;text=' . $sb_title;
+        $redditURL = 'https://www.reddit.com/submit?url=' . $sb_url . '&amp;text=' . $sb_title . '&amp;ref=share';
         $whatsappURL = 'whatsapp://send?text=' . $sb_title . ' ' . $sb_url;
         $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $sb_url . '&amp;title=' . $sb_title;
 
@@ -566,7 +566,6 @@ function ucsc_underscore_social_buttons($content)
         // $content .= '<div class="social-sharing bottom">';
         $content .= '<a class="fab fa-twitter" href="' . $twitterURL . '" target="_blank" rel="nofollow"></a>';
         $content .= '<a class="fab fa-facebook" href="' . $facebookURL . '" target="_blank" rel="nofollow"></a>';
-        $content .= '<a class="fab fa-youtube" href="' . $whatsappURL . '" target="_blank" rel="nofollow"></a>';
         $content .= '<a class="fab fa-linkedin" href="' . $linkedInURL . '" target="_blank" rel="nofollow"></a>';
         $content .= '<a class="fab fa-reddit" href="' . $redditURL . '" target="_blank" rel="nofollow"></a>';
         // $content .= '</div>';
@@ -585,3 +584,7 @@ function ucsc_underscore_social_buttons($content)
 // Please it in any widget and social buttons appear their.
 // You will need to enabled shortcode execution in widgets.
 add_shortcode('social', 'ucsc_underscore_social_buttons');
+
+http://www.reddit.com/submit?url=http://news.ucsc.edu/2019/11/aau.html?ref=share
+
+https://twitter.com/intent/tweet?text=Coral%20study%20traces%20excess%20nitrogen%20to%20Maui%20wastewater%20treatment%20facility&url=https%3A%2F%2Fpbsci-local.lndo.site%2F%3Fp%3D2942
