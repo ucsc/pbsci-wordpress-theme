@@ -332,7 +332,7 @@ function ucsc_underscore_add_class_to_excerpt($excerpt)
     return str_replace('<p', '<p class="pbsci-excerpt"', $excerpt);
 }
 /**
- * add page title slug to body class
+ * add page title slug to body class and add body class to custom post types
  */
 add_filter('body_class', 'ucsc_underscore_body_classes');
 function ucsc_underscore_body_classes($classes)
@@ -340,6 +340,9 @@ function ucsc_underscore_body_classes($classes)
     global $post;
     if (isset($post)) {
         $classes[] = $post->post_type . '-' . $post->post_name;
+    }
+    if ((isset($post)) && (is_singular(array('department','degree','academic-support','student-support','studentopportunities','institutes-centers')))) {
+        $classes[] = cpt;
     }
     return $classes;
 }
