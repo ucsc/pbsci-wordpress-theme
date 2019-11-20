@@ -186,17 +186,24 @@ function ucsc_pbsci_custom_sizes($sizes)
 /**
  * Deregister WordPress JQuery and register Google JQuThese are some wordsery library
  */
-function ucsc_pbsci_modify_jquery()
-{
-    if (!is_admin()) {
-        // deregister WordPress JQuery
-        wp_deregister_script('jquery');
-        //register and enqueue jquery
-        wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', null, true); // register the external file
+// function ucsc_pbsci_modify_jquery()
+// {
+//     if (!is_admin()) {
+//         // deregister WordPress JQuery
+//         wp_deregister_script('jquery');
+//         //register and enqueue jquery
+//         wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', null, true); // register the external file
+//         wp_enqueue_script('jquery'); // enqueue the external file
+//     }
+// }
+// add_action('init', 'ucsc_pbsci_modify_jquery');
+
+add_action( 'wp_enqueue_scripts', function(){
+    if (is_admin()) return; // don't dequeue on the backend
+    wp_deregister_script( 'jquery' );
+    wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', null, true); // register the external file
         wp_enqueue_script('jquery'); // enqueue the external file
-    }
-}
-add_action('init', 'ucsc_pbsci_modify_jquery');
+});
 /**
  * Enqueue scripts and styles.
  */

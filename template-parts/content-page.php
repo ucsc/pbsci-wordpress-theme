@@ -8,6 +8,7 @@
  * @package UCSC_PBSci
  */
 $page_blurb = get_field('page_blurb');
+
 ?>
 
 <div class="wrap">
@@ -74,11 +75,7 @@ $page_blurb = get_field('page_blurb');
         }
         echo '</div>';
     }
-    // debug
-    // echo '<pre>';
-    // var_dump($secondaryNav2);
-    // echo '</pre>';
-    // end debug
+    
     ?>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
