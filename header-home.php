@@ -36,8 +36,12 @@
                  * Hero code for home page
                  */
                 $postID = get_the_ID();
-                $hero = get_field('hero_image', $postID);
-                $slideRows = get_field('hero_stats_slider');
+                $homeHero = get_field('home_hero');
+                // $hero = get_field('hero_image', $postID);
+                $hero = $homeHero['hero_image'];
+                // $slideRows = get_field('hero_stats_slider');
+                $slideRows = $homeHero['hero_stats_slider'];
+                
                 // print_r($slideRows);
                 if ($hero) {
                     echo '<div class="hero-home"
@@ -52,6 +56,7 @@
                     }
                     echo '</ul></div></div>';
                 }
+                
                 ?>
             </div>
     </div>
@@ -60,5 +65,6 @@
     <!-- .site-branding -->
     </header>
     <!-- #masthead -->
-
+<?php 
+?>
     <div id="content" class="site-content">

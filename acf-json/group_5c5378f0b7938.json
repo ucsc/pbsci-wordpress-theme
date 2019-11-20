@@ -279,24 +279,28 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "show_in_rest": 0,
+                            "edit_in_rest": 0,
                             "choices": {
-                                "search": "Research 1 (Magnifying Glass)",
-                                "binoculars": "Research 2 (Binoculars)",
-                                "microscope": "Research 3 (Microscope)",
-                                "user-graduate": "Student",
+                                "one": "Choose one",
+                                "user-graduate": "Graduate",
                                 "graduation-cap": "Graduation Cap",
-                                "sitemap": "Research Groups & Facilities 1 (Sitemap)",
-                                "atom": "Research Groups & Facilities 2 (Atom)",
-                                "landmark": "Departments",
-                                "user-friends": "Faculty & Researchers",
-                                "life-ring": "Student Support (Life Ring)"
+                                "chart-line": "Line Graph",
+                                "thumbs-up": "Thumbs Up",
+                                "thumbs-down": "Thumbs Down",
+                                "tasks": "To Do List",
+                                "list-ul": "Bulleted List",
+                                "list-ol": "Numbered List",
+                                "check": "Check Mark",
+                                "binoculars": "Binoculars",
+                                "search-plus": "Search"
                             },
                             "default_value": [],
-                            "allow_null": 1,
+                            "allow_null": 0,
                             "multiple": 0,
-                            "ui": 1,
-                            "ajax": 1,
+                            "ui": 0,
                             "return_format": "value",
+                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -313,6 +317,7 @@
                                 "id": ""
                             },
                             "choices": {
+                                "one": "Choose one",
                                 "#003c6c": "UCSC Primary Blue",
                                 "#fdc700": "UCSC Primary Yellow",
                                 "#006aad": "UCSC Light Blue",
@@ -324,11 +329,11 @@
                                 "#da216d": "UCSC Reddish"
                             },
                             "default_value": [],
-                            "allow_null": 1,
+                            "allow_null": 0,
                             "multiple": 0,
-                            "ui": 1,
-                            "ajax": 1,
+                            "ui": 0,
                             "return_format": "value",
+                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -377,24 +382,28 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "show_in_rest": 0,
+                            "edit_in_rest": 0,
                             "choices": {
-                                "search": "Research 1 (Magnifying Glass)",
-                                "binoculars": "Research 2 (Binoculars)",
-                                "microscope": "Research 3 (Microscope)",
-                                "user-graduate": "Student",
+                                "one": "Choose one",
+                                "user-graduate": "Graduate",
                                 "graduation-cap": "Graduation Cap",
-                                "sitemap": "Research Groups & Facilities 1 (Sitemap)",
-                                "atom": "Research Groups & Facilities 2 (Atom)",
-                                "landmark": "Departments",
-                                "user-friends": "Faculty & Researchers",
-                                "life-ring": "Student Support (Life Ring)"
+                                "chart-line": "Line Graph",
+                                "thumbs-up": "Thumbs Up",
+                                "thumbs-down": "Thumbs Down",
+                                "tasks": "To Do List",
+                                "list-ul": "Bulleted List",
+                                "list-ol": "Numbered List",
+                                "check": "Check Mark",
+                                "binoculars": "Binoculars",
+                                "search-plus": "Search"
                             },
                             "default_value": [],
-                            "allow_null": 1,
+                            "allow_null": 0,
                             "multiple": 0,
-                            "ui": 1,
-                            "ajax": 1,
+                            "ui": 0,
                             "return_format": "value",
+                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -411,6 +420,7 @@
                                 "id": ""
                             },
                             "choices": {
+                                "one": "Choose one",
                                 "#003c6c": "UCSC Primary Blue",
                                 "#fdc700": "UCSC Primary Yellow",
                                 "#006aad": "UCSC Light Blue",
@@ -422,11 +432,11 @@
                                 "#da216d": "UCSC Reddish"
                             },
                             "default_value": [],
-                            "allow_null": 1,
+                            "allow_null": 0,
                             "multiple": 0,
-                            "ui": 1,
-                            "ajax": 1,
+                            "ui": 0,
                             "return_format": "value",
+                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -473,24 +483,28 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "show_in_rest": 0,
+                            "edit_in_rest": 0,
                             "choices": {
-                                "search": "Research 1 (Magnifying Glass)",
-                                "binoculars": "Research 2 (Binoculars)",
-                                "microscope": "Research 3 (Microscope)",
-                                "user-graduate": "Student",
+                                "one": "Choose one",
+                                "user-graduate": "Graduate",
                                 "graduation-cap": "Graduation Cap",
-                                "sitemap": "Research Groups & Facilities 1 (Sitemap)",
-                                "atom": "Research Groups & Facilities 2 (Atom)",
-                                "landmark": "Departments",
-                                "user-friends": "Faculty & Researchers",
-                                "life-ring": "Student Support (Life Ring)"
+                                "chart-line": "Line Graph",
+                                "thumbs-up": "Thumbs Up",
+                                "thumbs-down": "Thumbs Down",
+                                "tasks": "To Do List",
+                                "list-ul": "Bulleted List",
+                                "list-ol": "Numbered List",
+                                "check": "Check Mark",
+                                "binoculars": "Binoculars",
+                                "search-plus": "Search"
                             },
                             "default_value": [],
-                            "allow_null": 1,
+                            "allow_null": 0,
                             "multiple": 0,
-                            "ui": 1,
-                            "ajax": 1,
+                            "ui": 0,
                             "return_format": "value",
+                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -507,6 +521,7 @@
                                 "id": ""
                             },
                             "choices": {
+                                "one": "Choose one",
                                 "#003c6c": "UCSC Primary Blue",
                                 "#fdc700": "UCSC Primary Yellow",
                                 "#006aad": "UCSC Light Blue",
@@ -518,11 +533,11 @@
                                 "#da216d": "UCSC Reddish"
                             },
                             "default_value": [],
-                            "allow_null": 1,
+                            "allow_null": 0,
                             "multiple": 0,
-                            "ui": 1,
-                            "ajax": 1,
+                            "ui": 0,
                             "return_format": "value",
+                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -569,24 +584,28 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "show_in_rest": 0,
+                            "edit_in_rest": 0,
                             "choices": {
-                                "search": "Research 1 (Magnifying Glass)",
-                                "binoculars": "Research 2 (Binoculars)",
-                                "microscope": "Research 3 (Microscope)",
-                                "user-graduate": "Student",
+                                "one": "Choose one",
+                                "user-graduate": "Graduate",
                                 "graduation-cap": "Graduation Cap",
-                                "sitemap": "Research Groups & Facilities 1 (Sitemap)",
-                                "atom": "Research Groups & Facilities 2 (Atom)",
-                                "landmark": "Departments",
-                                "user-friends": "Faculty & Researchers",
-                                "life-ring": "Student Support (Life Ring)"
+                                "chart-line": "Line Graph",
+                                "thumbs-up": "Thumbs Up",
+                                "thumbs-down": "Thumbs Down",
+                                "tasks": "To Do List",
+                                "list-ul": "Bulleted List",
+                                "list-ol": "Numbered List",
+                                "check": "Check Mark",
+                                "binoculars": "Binoculars",
+                                "search-plus": "Search"
                             },
                             "default_value": [],
-                            "allow_null": 1,
+                            "allow_null": 0,
                             "multiple": 0,
-                            "ui": 1,
-                            "ajax": 1,
+                            "ui": 0,
                             "return_format": "value",
+                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -614,11 +633,11 @@
                                 "#da216d": "UCSC Reddish"
                             },
                             "default_value": [],
-                            "allow_null": 1,
+                            "allow_null": 0,
                             "multiple": 0,
-                            "ui": 1,
-                            "ajax": 1,
+                            "ui": 0,
                             "return_format": "value",
+                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -1825,5 +1844,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1572377242
+    "modified": 1574278156
 }
