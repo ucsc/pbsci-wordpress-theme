@@ -1,8 +1,7 @@
 {
     "key": "group_5c5378f0b7938",
     "title": "Home Page",
-    "fields": [
-        {
+    "fields": [{
             "key": "field_5cf02ba77357c",
             "label": "Home Hero",
             "name": "home_hero",
@@ -18,8 +17,7 @@
             "show_in_rest": 0,
             "edit_in_rest": 0,
             "layout": "block",
-            "sub_fields": [
-                {
+            "sub_fields": [{
                     "key": "field_5c5379886a0b0",
                     "label": "Hero Image",
                     "name": "hero_image",
@@ -63,8 +61,7 @@
                     "max": 0,
                     "layout": "table",
                     "button_label": "",
-                    "sub_fields": [
-                        {
+                    "sub_fields": [{
                             "key": "field_5c81a1b1dcfee",
                             "label": "Stat Rank",
                             "name": "stat_rank",
@@ -157,8 +154,7 @@
             "show_prefix": 0,
             "maxlength": "",
             "layout": "block",
-            "sub_fields": [
-                {
+            "sub_fields": [{
                     "key": "field_5c549711b1a47",
                     "label": "Panel One Heading",
                     "name": "panel_one_heading",
@@ -212,24 +208,22 @@
                     "show_prefix": 0,
                     "maxlength": "",
                     "layout": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5c549837405b0",
-                            "label": "P1 Cell One Media",
-                            "name": "p1_cell_one_media",
-                            "type": "oembed",
-                            "instructions": "Paste Panel One media URL here",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "width": 561,
-                            "height": 421
-                        }
-                    ]
+                    "sub_fields": [{
+                        "key": "field_5c549837405b0",
+                        "label": "P1 Cell One Media",
+                        "name": "p1_cell_one_media",
+                        "type": "oembed",
+                        "instructions": "Paste Panel One media URL here",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "width": 561,
+                        "height": 421
+                    }]
                 },
                 {
                     "key": "field_5cf03d7f55b64",
@@ -247,8 +241,7 @@
                     "show_prefix": 0,
                     "maxlength": "",
                     "layout": "block",
-                    "sub_fields": [
-                        {
+                    "sub_fields": [{
                             "key": "field_5cf022620e43a",
                             "label": "Panel One Cell Two Quad One",
                             "name": "",
@@ -279,28 +272,24 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "show_in_rest": 0,
-                            "edit_in_rest": 0,
                             "choices": {
-                                "one": "Choose one",
-                                "user-graduate": "Graduate",
+                                "search": "Research 1 (Magnifying Glass)",
+                                "binoculars": "Research 2 (Binoculars)",
+                                "microscope": "Research 3 (Microscope)",
+                                "user-graduate": "Student",
                                 "graduation-cap": "Graduation Cap",
-                                "chart-line": "Line Graph",
-                                "thumbs-up": "Thumbs Up",
-                                "thumbs-down": "Thumbs Down",
-                                "tasks": "To Do List",
-                                "list-ul": "Bulleted List",
-                                "list-ol": "Numbered List",
-                                "check": "Check Mark",
-                                "binoculars": "Binoculars",
-                                "search-plus": "Search"
+                                "sitemap": "Research Groups & Facilities 1 (Sitemap)",
+                                "atom": "Research Groups & Facilities 2 (Atom)",
+                                "landmark": "Departments",
+                                "user-friends": "Faculty & Researchers",
+                                "life-ring": "Student Support (Life Ring)"
                             },
                             "default_value": [],
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "multiple": 0,
-                            "ui": 0,
+                            "ui": 1,
+                            "ajax": 1,
                             "return_format": "value",
-                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -317,7 +306,6 @@
                                 "id": ""
                             },
                             "choices": {
-                                "one": "Choose one",
                                 "#003c6c": "UCSC Primary Blue",
                                 "#fdc700": "UCSC Primary Yellow",
                                 "#006aad": "UCSC Light Blue",
@@ -329,11 +317,11 @@
                                 "#da216d": "UCSC Reddish"
                             },
                             "default_value": [],
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "multiple": 0,
-                            "ui": 0,
+                            "ui": 1,
+                            "ajax": 1,
                             "return_format": "value",
-                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -382,28 +370,24 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "show_in_rest": 0,
-                            "edit_in_rest": 0,
                             "choices": {
-                                "one": "Choose one",
-                                "user-graduate": "Graduate",
+                                "search": "Research 1 (Magnifying Glass)",
+                                "binoculars": "Research 2 (Binoculars)",
+                                "microscope": "Research 3 (Microscope)",
+                                "user-graduate": "Student",
                                 "graduation-cap": "Graduation Cap",
-                                "chart-line": "Line Graph",
-                                "thumbs-up": "Thumbs Up",
-                                "thumbs-down": "Thumbs Down",
-                                "tasks": "To Do List",
-                                "list-ul": "Bulleted List",
-                                "list-ol": "Numbered List",
-                                "check": "Check Mark",
-                                "binoculars": "Binoculars",
-                                "search-plus": "Search"
+                                "sitemap": "Research Groups & Facilities 1 (Sitemap)",
+                                "atom": "Research Groups & Facilities 2 (Atom)",
+                                "landmark": "Departments",
+                                "user-friends": "Faculty & Researchers",
+                                "life-ring": "Student Support (Life Ring)"
                             },
                             "default_value": [],
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "multiple": 0,
-                            "ui": 0,
+                            "ui": 1,
+                            "ajax": 1,
                             "return_format": "value",
-                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -420,7 +404,6 @@
                                 "id": ""
                             },
                             "choices": {
-                                "one": "Choose one",
                                 "#003c6c": "UCSC Primary Blue",
                                 "#fdc700": "UCSC Primary Yellow",
                                 "#006aad": "UCSC Light Blue",
@@ -432,11 +415,11 @@
                                 "#da216d": "UCSC Reddish"
                             },
                             "default_value": [],
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "multiple": 0,
-                            "ui": 0,
+                            "ui": 1,
+                            "ajax": 1,
                             "return_format": "value",
-                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -483,28 +466,24 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "show_in_rest": 0,
-                            "edit_in_rest": 0,
                             "choices": {
-                                "one": "Choose one",
-                                "user-graduate": "Graduate",
+                                "search": "Research 1 (Magnifying Glass)",
+                                "binoculars": "Research 2 (Binoculars)",
+                                "microscope": "Research 3 (Microscope)",
+                                "user-graduate": "Student",
                                 "graduation-cap": "Graduation Cap",
-                                "chart-line": "Line Graph",
-                                "thumbs-up": "Thumbs Up",
-                                "thumbs-down": "Thumbs Down",
-                                "tasks": "To Do List",
-                                "list-ul": "Bulleted List",
-                                "list-ol": "Numbered List",
-                                "check": "Check Mark",
-                                "binoculars": "Binoculars",
-                                "search-plus": "Search"
+                                "sitemap": "Research Groups & Facilities 1 (Sitemap)",
+                                "atom": "Research Groups & Facilities 2 (Atom)",
+                                "landmark": "Departments",
+                                "user-friends": "Faculty & Researchers",
+                                "life-ring": "Student Support (Life Ring)"
                             },
                             "default_value": [],
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "multiple": 0,
-                            "ui": 0,
+                            "ui": 1,
+                            "ajax": 1,
                             "return_format": "value",
-                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -521,7 +500,6 @@
                                 "id": ""
                             },
                             "choices": {
-                                "one": "Choose one",
                                 "#003c6c": "UCSC Primary Blue",
                                 "#fdc700": "UCSC Primary Yellow",
                                 "#006aad": "UCSC Light Blue",
@@ -533,11 +511,11 @@
                                 "#da216d": "UCSC Reddish"
                             },
                             "default_value": [],
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "multiple": 0,
-                            "ui": 0,
+                            "ui": 1,
+                            "ajax": 1,
                             "return_format": "value",
-                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -584,28 +562,24 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "show_in_rest": 0,
-                            "edit_in_rest": 0,
                             "choices": {
-                                "one": "Choose one",
-                                "user-graduate": "Graduate",
+                                "search": "Research 1 (Magnifying Glass)",
+                                "binoculars": "Research 2 (Binoculars)",
+                                "microscope": "Research 3 (Microscope)",
+                                "user-graduate": "Student",
                                 "graduation-cap": "Graduation Cap",
-                                "chart-line": "Line Graph",
-                                "thumbs-up": "Thumbs Up",
-                                "thumbs-down": "Thumbs Down",
-                                "tasks": "To Do List",
-                                "list-ul": "Bulleted List",
-                                "list-ol": "Numbered List",
-                                "check": "Check Mark",
-                                "binoculars": "Binoculars",
-                                "search-plus": "Search"
+                                "sitemap": "Research Groups & Facilities 1 (Sitemap)",
+                                "atom": "Research Groups & Facilities 2 (Atom)",
+                                "landmark": "Departments",
+                                "user-friends": "Faculty & Researchers",
+                                "life-ring": "Student Support (Life Ring)"
                             },
                             "default_value": [],
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "multiple": 0,
-                            "ui": 0,
+                            "ui": 1,
+                            "ajax": 1,
                             "return_format": "value",
-                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -633,11 +607,11 @@
                                 "#da216d": "UCSC Reddish"
                             },
                             "default_value": [],
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "multiple": 0,
-                            "ui": 0,
+                            "ui": 1,
+                            "ajax": 1,
                             "return_format": "value",
-                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -675,8 +649,7 @@
             "show_prefix": 0,
             "maxlength": "",
             "layout": "block",
-            "sub_fields": [
-                {
+            "sub_fields": [{
                     "key": "field_5c549d2c8dc60",
                     "label": "Panel Two Heading",
                     "name": "panel_two_heading",
@@ -764,13 +737,11 @@
                     "instructions": "Paste media URL here",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97c6f6a7a73",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97c6f6a7a73",
+                            "operator": "==",
+                            "value": "video"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -790,13 +761,11 @@
                     "instructions": "Something interesting.",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97c6f6a7a73",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97c6f6a7a73",
+                            "operator": "==",
+                            "value": "video"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -820,13 +789,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97c6f6a7a73",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97c6f6a7a73",
+                            "operator": "==",
+                            "value": "video"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -850,13 +817,11 @@
                     "instructions": "Add Image here",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97c6f6a7a73",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97c6f6a7a73",
+                            "operator": "==",
+                            "value": "image"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -886,13 +851,11 @@
                     "instructions": "Enter the link for the image here.",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97c6f6a7a73",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97c6f6a7a73",
+                            "operator": "==",
+                            "value": "image"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -911,13 +874,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97c6f6a7a73",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97c6f6a7a73",
+                            "operator": "==",
+                            "value": "image"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -980,13 +941,11 @@
                     "instructions": "Paste media URL here",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97d0eb2bb63",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97d0eb2bb63",
+                            "operator": "==",
+                            "value": "video"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1006,13 +965,11 @@
                     "instructions": "Something interesting.",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97d0eb2bb63",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97d0eb2bb63",
+                            "operator": "==",
+                            "value": "video"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1036,13 +993,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97d0eb2bb63",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97d0eb2bb63",
+                            "operator": "==",
+                            "value": "video"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1066,13 +1021,11 @@
                     "instructions": "Add Image here",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97d0eb2bb63",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97d0eb2bb63",
+                            "operator": "==",
+                            "value": "image"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1100,13 +1053,11 @@
                     "instructions": "Enter the link for the image here.",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97d0eb2bb63",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97d0eb2bb63",
+                            "operator": "==",
+                            "value": "image"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1125,13 +1076,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97d0eb2bb63",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97d0eb2bb63",
+                            "operator": "==",
+                            "value": "image"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1194,13 +1143,11 @@
                     "instructions": "Paste media URL here",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97d30c2e1f8",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97d30c2e1f8",
+                            "operator": "==",
+                            "value": "video"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1218,13 +1165,11 @@
                     "instructions": "Something interesting.",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97d30c2e1f8",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97d30c2e1f8",
+                            "operator": "==",
+                            "value": "video"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1248,13 +1193,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97d0eb2bb63",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97d0eb2bb63",
+                            "operator": "==",
+                            "value": "video"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1278,13 +1221,11 @@
                     "instructions": "Add Image here",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97d30c2e1f8",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97d30c2e1f8",
+                            "operator": "==",
+                            "value": "image"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1312,13 +1253,11 @@
                     "instructions": "Enter the link for the image here.",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97d30c2e1f8",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97d30c2e1f8",
+                            "operator": "==",
+                            "value": "image"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1337,13 +1276,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d97d30c2e1f8",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d97d30c2e1f8",
+                            "operator": "==",
+                            "value": "image"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1374,8 +1311,7 @@
             "show_prefix": 0,
             "maxlength": "",
             "layout": "block",
-            "sub_fields": [
-                {
+            "sub_fields": [{
                     "key": "field_5c58b9f234768",
                     "label": "Panel Three Heading",
                     "name": "panel_three_heading",
@@ -1461,13 +1397,11 @@
                     "instructions": "Paste media URL here",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d9ca29770c60",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d9ca29770c60",
+                            "operator": "==",
+                            "value": "video"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1485,13 +1419,11 @@
                     "instructions": "Add Image here",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d9ca29770c60",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d9ca29770c60",
+                            "operator": "==",
+                            "value": "image"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1517,13 +1449,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d9ca29770c60",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d9ca29770c60",
+                            "operator": "==",
+                            "value": "image"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1540,13 +1470,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d9ca29770c60",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d9ca29770c60",
+                            "operator": "==",
+                            "value": "video"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1567,13 +1495,11 @@
                     "instructions": "Something interesting.",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d9ca29770c60",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d9ca29770c60",
+                            "operator": "==",
+                            "value": "video"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1594,13 +1520,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d9ca29770c60",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d9ca29770c60",
+                            "operator": "==",
+                            "value": "image"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1661,13 +1585,11 @@
                     "instructions": "Paste media URL here",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d9ca31c70c61",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d9ca31c70c61",
+                            "operator": "==",
+                            "value": "video"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1685,13 +1607,11 @@
                     "instructions": "Add Image here",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d9ca31c70c61",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d9ca31c70c61",
+                            "operator": "==",
+                            "value": "image"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1717,13 +1637,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d9ca31c70c61",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d9ca31c70c61",
+                            "operator": "==",
+                            "value": "image"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1740,13 +1658,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d9ca31c70c61",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d9ca31c70c61",
+                            "operator": "==",
+                            "value": "video"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1767,13 +1683,11 @@
                     "instructions": "Something interesting.",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d9ca31c70c61",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d9ca31c70c61",
+                            "operator": "==",
+                            "value": "video"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1794,13 +1708,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5d9ca31c70c61",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
+                        [{
+                            "field": "field_5d9ca31c70c61",
+                            "operator": "==",
+                            "value": "image"
+                        }]
                     ],
                     "wrapper": {
                         "width": "",
@@ -1817,13 +1729,11 @@
         }
     ],
     "location": [
-        [
-            {
-                "param": "page",
-                "operator": "==",
-                "value": "132"
-            }
-        ]
+        [{
+            "param": "page",
+            "operator": "==",
+            "value": "132"
+        }]
     ],
     "menu_order": 0,
     "position": "normal",
@@ -1844,5 +1754,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1574278156
+    "modified": 1572377242
 }
