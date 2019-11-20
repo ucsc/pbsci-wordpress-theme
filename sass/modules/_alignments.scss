@@ -1,35 +1,35 @@
-        .aligncenter,
-        .alignleft,
-        .alignright {
-            width: 100%;
-            display: block;
-            margin: 0 auto;
-        }
-        
-        .alignleft {
-            @media only screen and (min-width: $screen-size--medium) {
-                width: auto;
-                display: inline;
-                float: left;
-                // margin-right: 1.5em;
-                margin: 0 1.5em 1.5em 0;
-            }
-        }
-        
-        .alignright {
-            @media only screen and (min-width: $screen-size--medium) {
-                width: auto;
-                display: inline;
-                float: right;
-                // margin-left: 1.5em;
-                margin: 0 0 1.5em 1.5em;
-            }
-        }
-        
-        .aligncenter {
-            @media only screen and (min-width: $screen-size--medium) {
-                width: auto;
-                clear: both;
-                @include center-block;
-            }
-        }
+.aligncenter,
+.alignleft,
+.alignright {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.alignleft {
+    @media only screen and (min-width: $screen-size--medium) {
+        width: auto;
+        display: inline;
+        float: left;
+        // margin-right: 1.5em;
+        margin: 0 1.5em 1.5em 0;
+    }
+}
+
+.alignright {
+    @media only screen and (min-width: $screen-size--medium) {
+        width: auto;
+        display: inline;
+        float: right;
+        // margin-left: 1.5em;
+        margin: 0 0 1.5em 1.5em;
+    }
+}
+
+.aligncenter {
+    @media only screen and (min-width: $screen-size--medium) {
+        width: auto;
+        clear: both;
+        @include center-block;
+    }
+}

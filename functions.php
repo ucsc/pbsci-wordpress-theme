@@ -584,7 +584,3 @@ function ucsc_underscore_social_buttons($content)
 // Please it in any widget and social buttons appear their.
 // You will need to enabled shortcode execution in widgets.
 add_shortcode('social', 'ucsc_underscore_social_buttons');
-
-http://www.reddit.com/submit?url=http://news.ucsc.edu/2019/11/aau.html?ref=share
-
-https://twitter.com/intent/tweet?text=Coral%20study%20traces%20excess%20nitrogen%20to%20Maui%20wastewater%20treatment%20facility&url=https%3A%2F%2Fpbsci-local.lndo.site%2F%3Fp%3D2942
