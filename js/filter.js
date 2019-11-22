@@ -17,11 +17,6 @@ $('.filter-list select').change(function() {
     $(items).show();
 });
 
-// $('.filter-list .search').on('keyup', function() {
-//     const searchString = $(this).val();
-//     $('.card-container').hide();
-//     $(`.card-container:contains(${  searchString  })`).show();
-// });
 $('.filter-list .search').keyup(function(e) {
     // create the regular expression
     const regEx = new RegExp(
