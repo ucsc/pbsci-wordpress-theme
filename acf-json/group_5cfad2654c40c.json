@@ -55,16 +55,21 @@
                         "id": ""
                     },
                     "choices": {
-                        "search": "Research 1 (Magnifying Glass)",
-                        "binoculars": "Research 2 (Binoculars)",
-                        "microscope": "Research 3 (Microscope)",
-                        "user-graduate": "Student",
-                        "graduation-cap": "Graduation Cap",
-                        "sitemap": "Research Groups & Facilities 1 (Sitemap)",
-                        "atom": "Research Groups & Facilities 2 (Atom)",
-                        "landmark": "Departments",
-                        "user-friends": "Faculty & Researchers",
-                        "life-ring": "Student Support (Life Ring)"
+                        "tasks": "To Do List",
+                        "question": "Question Mark",
+                        "heart": "Heart",
+                        "info-circle": "Information",
+                        "external-link-alt": "External Link",
+                        "share-alt": "Share",
+                        "user-friends": "Users",
+                        "clipboard-check": "Clipboard Check",
+                        "filter": "Filter",
+                        "flask": "Flask",
+                        "university": "University",
+                        "exclamation-triangle": "Exclamation Triangle",
+                        "search": "Search",
+                        "file-alt": "File",
+                        "play": "Play Button"
                     },
                     "default_value": [],
                     "allow_null": 1,
@@ -133,5 +138,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1572375916
+    "modified": 1576189534
 }

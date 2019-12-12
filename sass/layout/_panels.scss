@@ -79,6 +79,9 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+        &:hover {
+            border-bottom: 2px solid transparent;
+        }
         .fas {
             @include font-size(3);
         }
