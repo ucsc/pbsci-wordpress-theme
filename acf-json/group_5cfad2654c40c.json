@@ -55,6 +55,15 @@
                         "id": ""
                     },
                     "choices": {
+                        "user-graduate": "Student",
+                        "graduation-cap": "Graduation Cap",
+                        "list-ul": "Bulleted List",
+                        "list-ol": "Numbered List",
+                        "clipboard-check": "Clipboard Check",
+                        "check": "Check Mark",
+                        "search": "Research 1 (Magnifying Glass)",
+                        "binoculars": "Research 2 (Binoculars)",
+                        "microscope": "Research 3 (Microscope)",
                         "tasks": "To Do List",
                         "question": "Question Mark",
                         "heart": "Heart",
@@ -62,14 +71,19 @@
                         "external-link-alt": "External Link",
                         "share-alt": "Share",
                         "user-friends": "Users",
-                        "clipboard-check": "Clipboard Check",
                         "filter": "Filter",
                         "flask": "Flask",
                         "university": "University",
                         "exclamation-triangle": "Exclamation Triangle",
-                        "search": "Search",
                         "file-alt": "File",
-                        "play": "Play Button"
+                        "play": "Play Button",
+                        "chart-line": "Line Graph",
+                        "thumbs-up": "Thumbs Up",
+                        "thumbs-down": "Thumbs Down",
+                        "sitemap": "Sitemap",
+                        "atom": "Atom",
+                        "landmark": "Departments",
+                        "life-ring": "Life Ring"
                     },
                     "default_value": [],
                     "allow_null": 1,
@@ -138,5 +152,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1576189534
+    "modified": 1576192329
 }
