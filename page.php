@@ -26,11 +26,12 @@ get_header();
             the_post();
             // $postSlug = get_post_field('post_name', get_the_ID());
             // var_dump($postSlug);
-            if (is_page('degrees')) {
+            if (is_page( 104 )) {
                 get_template_part('template-parts/content', 'degrees');
-            } else if (is_page('departments')) {
+            } else if (is_page( 7 )) {
                 get_template_part('template-parts/content', 'departments');
-            } else if (is_page(array('faculty-researchers', 'research-groups-facilities', 'student-research-opportunities', 'student-support', 'support'))) {
+            // } else if (is_page(array( 444,440,442, 'student-support', 'support'))) {
+            } else if (is_page('rob')) {
                 get_template_part('template-parts/content', 'links');
             } else {
                 get_template_part('template-parts/content', 'page');
