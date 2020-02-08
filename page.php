@@ -21,7 +21,7 @@ get_header();
     <main id="main" class="site-main">
 
         <?php
-
+global $post;
         while (have_posts()) :
             the_post();
             // $postSlug = get_post_field('post_name', get_the_ID());
@@ -30,8 +30,8 @@ get_header();
                 get_template_part('template-parts/content', 'degrees');
             } else if (is_page( 7 )) {
                 get_template_part('template-parts/content', 'departments');
-            // } else if (is_page(array( 444,440,442, 'student-support', 'support'))) {
-            } else if (is_page('rob')) {
+            // } else if (is_page(array('faculty-researchers', 'research-groups-facilities', 'student-research-opportunities', 'student-support', 'support'))) {
+            } else if (is_page( 444 ) ) {
                 get_template_part('template-parts/content', 'links');
             } else {
                 get_template_part('template-parts/content', 'page');
