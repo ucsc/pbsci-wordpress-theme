@@ -20,7 +20,7 @@
         global $post;
         $pslug = $post->post_name;
         //Set up posts based on page slug and pull in filters
-        if (is_page('faculty-researchers')) {
+        if (is_page(444)) {
             echo '<div id="page-' . $pslug . '" class="page-content">';
             get_template_part('template-parts/filter', 'labs');
             $postType = 'labs';
@@ -33,27 +33,27 @@
                 'orderby' => 'meta_value',
                 'order' => 'ASC',
             );
-        } elseif (is_page('research-groups-facilities')) {
+        } elseif (is_page(440)) {
             echo '<div id="page-' . $pslug . '" class="page-content">';
             get_template_part('template-parts/filter', 'resgroups');
             $postType = 'institutes-centers';
             $itemClass1 = 'research_group_location';
             $itemClass2 = 'researcher_faculty_expertise';
-        } elseif (is_page('student-research-opportunities')) {
+        } elseif (is_page(442)) {
             echo '<div id="page-' . $pslug . '" class="page-content">';
             get_template_part('template-parts/filter', 'studentopportunities');
             $postType = 'studentopportunities';
             $itemClass1 = 'student_opportunities';
             $itemClass2 = 'opportunity_eligibility';
             $itemClass3 = 'opportunity_availability';
-        } elseif (is_page('student-support')) {
+        } elseif (is_page(438)) {
             echo '<div id="page-' . $pslug . '" class="page-content">';
             get_template_part('template-parts/filter', 'studentsupport');
             $postType = 'student-support';
             $itemClass1 = 'student_support';
             $itemClass2 = 'opportunity_eligibility';
             $itemClass3 = 'opportunity_availability';
-        } elseif (is_page('support')) {
+        } elseif (is_page(204)) {
             echo '<div id="page-' . $pslug . '" class="page-content">';
             get_template_part('template-parts/filter', 'support');
             $postType = 'support-science';
