@@ -212,14 +212,14 @@ function ucsc_pbsci_scripts()
 {
     $theme = wp_get_theme();
     wp_enqueue_style( 'ucsc-pbsci-style', get_stylesheet_uri(), [], $theme->get( 'Version' ) );
-    // wp_enqueue_script( 'ucsc-pbsci-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-    wp_enqueue_script('ucsc-pbsci-navigation-2', get_template_directory_uri() . '/js/navigation2.js', array(), '', true);
-    wp_enqueue_script('ucsc-pbsci-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
+    // wp_enqueue_script( 'ucsc-pbsci-navigation', get_template_directory_uri() . '/js/navigation.js', [], $theme->get( 'Version' ), true );
+    wp_enqueue_script('ucsc-pbsci-navigation-2', get_template_directory_uri() . '/js/navigation2.js', [], $theme->get( 'Version' ), true);
+    wp_enqueue_script('ucsc-pbsci-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', [], $theme->get( 'Version' ), true);
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
     // Enqueue custom Localist widget script
-    wp_enqueue_script('localist-widget-fix', get_template_directory_uri() . '/js/localist-widget-fix.js', '', null, true);
+    wp_enqueue_script('localist-widget-fix', get_template_directory_uri() . '/js/localist-widget-fix.js', [], $theme->get( 'Version' ), true);
     //Enqueue FontAwesome
     wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css');
     //Enqueue list.js
@@ -227,10 +227,10 @@ function ucsc_pbsci_scripts()
     //Enqueue Google Fonts
     wp_enqueue_style('roboto-condensed-garamond', 'https://fonts.googleapis.com/css?family=EB+Garamond:400,500,700|Roboto+Condensed:300,400,700|Roboto:300,400,600,700', array(), false);
     // Back To Top
-    wp_enqueue_script('back-to-top', get_template_directory_uri() . '/js/back-to-top.js', '', null, true);
+    wp_enqueue_script('back-to-top', get_template_directory_uri() . '/js/back-to-top.js', [], $theme->get( 'Version' ), true);
 
     // Enqueue <span></span> adder
-    // wp_enqueue_script( 'span-adder', get_template_directory_uri() . '/js/span-add.js', '',null, true );
+    // wp_enqueue_script( 'span-adder', get_template_directory_uri() . '/js/span-add.js', [], $theme->get( 'Version' ), true );
     //Enqueue Flexslider and its parts on home page
     if (is_front_page()) {
         //main Flexslider js
@@ -238,17 +238,17 @@ function ucsc_pbsci_scripts()
         //main Flexslider css
         wp_enqueue_style('flexstyles', get_template_directory_uri() . '/flexslider/flexslider.css');
         //Home custom slider/carousel js
-        wp_enqueue_script('homeflex', get_template_directory_uri() . '/js/flex-home.js');
+        wp_enqueue_script('homeflex', get_template_directory_uri() . '/js/flex-home.js', [], $theme->get( 'Version' ));
         //scroll-to-here js
-        // wp_enqueue_script('scroll-to-here', get_template_directory_uri() . '/js/home-page-scroll-to-here.js', '', null, true);
+        // wp_enqueue_script('scroll-to-here', get_template_directory_uri() . '/js/home-page-scroll-to-here.js', [], $theme->get( 'Version' ), true);
     }
     // Enqueue custom Majors front end script
     if (is_singular() && ('degree' === get_post_type())) {
-        wp_enqueue_script('majors-front', get_template_directory_uri() . '/js/majors-front.js', '', null, true);
+        wp_enqueue_script('majors-front', get_template_directory_uri() . '/js/majors-front.js', [], $theme->get( 'Version' ), true);
     }
     // Enqueue degree parse script --- temporary
     if (is_page(array('degrees', 'support', 'faculty-researchers', 'student-research-opportunities', 'institutes-and-centers', 'student-support', 'research-groups-facilities'))) {
-        wp_enqueue_script('filter-js', get_template_directory_uri() . '/js/filter.js', '', null, true);
+        wp_enqueue_script('filter-js', get_template_directory_uri() . '/js/filter.js', [], $theme->get( 'Version' ), true);
     }
 }
 add_action('wp_enqueue_scripts', 'ucsc_pbsci_scripts');
