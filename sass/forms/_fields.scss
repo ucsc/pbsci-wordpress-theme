@@ -41,3 +41,16 @@ select {
 textarea {
     width: 100%;
 }
+input.search-field {
+    padding: 0 4px;
+    width: calc(100% - 85px); 
+    margin: 20px 0;
+    @media screen and (min-width: $screen-size--medium) {
+        max-width: 150px;
+        margin: 0 0 0 20px;
+    }
+}
+input.search-field::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}

@@ -89,3 +89,30 @@ input[type="submit"] {
         }
     }
 }
+button.search-submit {
+    background:transparent;
+    font-family: $font__head;
+    border: 1px solid transparent; 
+    padding: 4px 5px;
+    transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+    span {
+        display: inline-block;
+        margin-left: 3px;
+        color: $ucsc--primary-yellow;
+    }
+    &:hover, &:focus {
+        border-color: $ucsc--primary-blue;
+        background-color: rgba($ucsc--primary-blue, .8);
+    }
+}
+body.alternate-header {
+    button.search-submit {
+        color: $ucsc--primary-blue; 
+        &:hover, &:focus {
+            color: #fff;
+        }
+        @media screen and (min-width: $screen-size--medium) {
+            color: #fff;    
+        }
+    }
+}

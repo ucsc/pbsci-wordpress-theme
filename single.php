@@ -7,14 +7,8 @@
  *
  * @package UCSC_PBSci
  */
-if ('post' === get_post_type()) {
-	get_header('blog');
-} elseif ( in_array(get_post_type(), array('studentopportunities', 'student-support', 'institutes-centers', 'labs', 'support-science')) ) {
-	get_header('utility');
-} else {
-	get_header();
-}
 
+get_header();
 ?>
 
 <div id="primary" class="content-area">

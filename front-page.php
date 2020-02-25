@@ -13,7 +13,7 @@
  * @package UCSC_PBSci
  */
 
-get_header('home');
+get_header();
 
 /**
  *

@@ -8,7 +8,7 @@
  * @package UCSC_PBSci
  */
 
-get_header('archive');
+get_header();
 ?>
 
 <div id="primary" class="content-area">
