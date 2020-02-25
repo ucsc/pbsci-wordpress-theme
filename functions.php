@@ -55,6 +55,7 @@ if (!function_exists('ucsc_pbsci_setup')) :
             'menu-1' => esc_html__('Primary', 'ucsc-pbsci'),
             'menu-2' => esc_html__('Impactful Research', 'ucsc-pbsci'),
             'menu-3' => esc_html__('Impactful Academics', 'ucsc-pbsci'),
+            'menu-global' => esc_html__('Global Header Menu', 'ucsc-pbsci'),
         ));
         /**
          * Restrict Impctful Research and Impactful Academics
@@ -349,7 +350,10 @@ function ucsc_underscore_body_classes($classes)
         $classes[] = $post->post_type . '-' . $post->post_name;
     }
     if ((isset($post)) && (is_singular(array('department','degree','academic-support','student-support','studentopportunities','institutes-centers')))) {
-        $classes[] = cpt;
+        $classes[] = 'cpt';
+    }
+    if (get_theme_mod('alternate_header_style_active', 0)) {
+        $classes[] = 'alternate-header';
     }
     return $classes;
 }
@@ -591,3 +595,28 @@ function ucsc_underscore_social_buttons($content)
 // Please it in any widget and social buttons appear their.
 // You will need to enabled shortcode execution in widgets.
 add_shortcode('social', 'ucsc_underscore_social_buttons');
+
+/**
+ * Helper function to detect presence of custom logo.
+ *
+ * @return bool
+ */
+function ucsc_has_custom_logo() {
+    return !! get_theme_mod( 'custom_logo' );
+}
+
+/**
+ * Custom output for the customizer define theme logo.
+ *
+ * @link https://codex.wordpress.org/Theme_Logo
+ *
+ * @return string
+ */
+function ucsc_the_custom_logo_url( $size = 'full' ) {
+    $url = '';
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+    if ( $custom_logo_id ) {
+        $url = wp_get_attachment_image_url( $custom_logo_id , $size );
+    }
+    return esc_url( $url );
+}

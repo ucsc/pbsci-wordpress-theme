@@ -25,6 +25,22 @@ function ucsc_pbsci_customize_register( $wp_customize ) {
 			'render_callback' => 'ucsc_pbsci_customize_partial_blogdescription',
 		) );
 	}
+
+	// Toggle alternate header
+	$wp_customize->add_setting( 'alternate_header_style_active', array(
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'default' => 0,
+		'transport' => 'refresh',
+		'sanitize_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'alternate_header_style_active', array(
+		'type' => 'checkbox',
+		'priority' => 50,
+		'section' => 'title_tagline',
+		'label' => __( 'Alternate Header Style' ),
+		'description' => __( 'Enable the alternate header style. (White header)' ),
+	) );
 }
 add_action( 'customize_register', 'ucsc_pbsci_customize_register' );
 

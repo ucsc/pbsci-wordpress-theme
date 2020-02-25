@@ -1,3 +1,4 @@
+    .global-navigation,
     .main-navigation {
         
         clear: both;
@@ -7,23 +8,16 @@
         .menu {
 
             display: none;
-            &.active {
-                display:block;
-            }
             margin: 0;
             padding: 0 0 1em;
-            text-align: center;
 
             // Top-level items
             li {
-                cursor: pointer;
                 list-style: none;
                 margin: 0 0 1em 0;
                 padding: 0;
-                text-align: center;
                 font-weight: 600;
                 text-transform: uppercase;
-
                 a {
                     color: $color__white;
                     display: inline-block;
@@ -31,6 +25,11 @@
                     padding: .5em .75em;
                     font-weight: 400;
                     border-bottom: none;
+                    display: block;
+                    &:focus {
+                        background: $ucsc--light-blue;
+                        outline: none;
+                    }
                 }
                 
             }
@@ -46,17 +45,16 @@
                 list-style: none;
                 margin: 0 0 0.25em 0;
                 padding: .1em;
-                border-top: 2px solid rgba(255, 255, 255, .25);
-
+                display: none;
                 // Second level items
                 li {
                     margin: 0.25em 0;
-
+                    border: none;
                     a {
                         font-weight: 400;
                         text-transform: none;
                         font-size: .9rem;
-
+                        display: block;
                         &:focus,
                         &:hover,
                         &:active {
@@ -67,12 +65,13 @@
                     }
                 }
             }
+            li.show-submenu ul {
+                display: block;
+            }
 
             // Desktop width menu styles
             @media only screen and (min-width: $screen-size--medium) {
-
                 display: inline;
-                float: right;
                 padding: 0;
 
                 li {
@@ -99,6 +98,7 @@
                         border: none;
                         transition: opacity .35s ease-in-out;
                         opacity: 0;
+                        display: none;
 
                         // Adds the arrow on the top
                         &:before {
@@ -133,23 +133,13 @@
                             font-size: .9rem;
                         }
 
-                        :focus,
-                        :hover,
-                        :active {
-                            background-color: $ucsc--light-blue;
-                            color: $color__background-body;
-                            transition: all .20s ease-in-out;
-                        }
                     }
 
-                    // :focus-within allows tab-navigation to reveal the dropdown
-                    &:focus ul,
-                    &:hover ul,
-                    &:active ul,
-                    &:focus-within ul {
+                    &.show-submenu ul {
                         margin-left: -5em;
                         left: 50%;
                         opacity: 1;
+                        display: block;
                     }
                 }
 
@@ -250,8 +240,6 @@
         right: 0;
         left: 0;
         top: 0;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, .35);
-        background: linear-gradient(15deg, #003c6c, #006aad);
         z-index: 100;
         /* Here's the new CSS to add... */
         .admin-bar & {
@@ -264,26 +252,7 @@
         &>* {
             box-sizing: border-box;
         }
-        .nav-wrap {
-            @media only screen and (min-width: $screen-size--medium) {
-                display: flex;
-                justify-content: space-between;
-                padding-bottom: 0;
-                height: 70px;
-                align-items: center;
-            }
-        }
-        .navbar-toggle {
-            position: relative;
-            float: right;
-            padding-top: 10px;
-            cursor: pointer;
-            color: $color__white;
-            font-size: 24px;
-            @media only screen and (min-width: $screen-size--medium) {
-                display: none;
-            }
-        }
+
         .logo {
 
             border: none;
@@ -306,13 +275,17 @@
 // Since there is no way to target it directly, these styles target the last
 // menu item. If the last menu item changes, this will break the convention. :-(;    
 #primary-menu > li.menu-item:last-child {        
-    margin: 0;
+    margin: 40px 0 0 0;
     padding: 0;
+    text-align: center;
+    @media only screen and (min-width: $screen-size--medium) {
+        margin: 0;
+        text-align: left;
+    }
     a {
         color: $ucsc--primary-yellow !important;
         margin: 0;
         padding: 8px;
-        border: 2px solid $ucsc--primary-yellow;
         border-radius: 3px;
         &:focus,
         &:hover,
@@ -320,5 +293,314 @@
             color: $ucsc--primary-blue !important;
             background-color: $ucsc--primary-yellow;
         }
+    }
+}
+.header {
+    background: $ucsc-gradient-ltr; 
+    position: relative;
+    &:before {
+        content:'';
+        position: absolute;
+        top:100px;
+        bottom:0;
+        left:0;
+        right:0;
+        background-image: url(images/mobile-bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top right;
+        display: block;
+        z-index: 0;
+        @media only screen and (min-width: $screen-size--medium) {
+            display: none;
+        }
+    }
+    .wrap {
+        display: block;
+        @media only screen and (min-width: $screen-size--medium) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-image: none;
+        }
+        .header-left {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            img {
+                width: 200px;
+            }
+            a {
+                border: none;
+                display: block;
+            }
+            .menu-toggle {
+                color: #fff;
+                font-size: 24px;
+            }
+            @media screen and (min-width: $screen-size--medium) {
+                max-width: 250px;
+                img {
+                    width: 240px;
+                }
+            }
+        }
+        .header-right {
+            display: flex;
+            flex-direction: column-reverse;
+            position: relative;
+            z-index: 1;
+            &.menu-active {
+                padding-top: 30px;
+                min-height: 100vh;
+                justify-content: flex-end;
+            }
+            @media screen and (min-width: $screen-size--medium) {
+                flex-direction: column;
+                padding: 5px 0 10px 0 !important;
+                min-height: 0 !important;
+            }
+        }
+    }
+}
+.main-navigation {
+    .menu-active & .menu {
+        display: block;
+    }
+    #primary-menu > li > a {
+        border-bottom: 2px solid rgba(255, 255, 255, .25);
+        @media screen and (min-width: $screen-size--medium) {
+            border-bottom: none;
+        }
+    }
+    #primary-menu > li.menu-item-has-children > a {
+        display: flex;
+        justify-content: space-between;
+        &:after {
+          content: "+";  
+          font-weight: bold;
+          display: inline-block;
+          color: $ucsc--primary-yellow;
+          font-size: 18px;
+        }
+        @media screen and (min-width: $screen-size--medium) {
+            display: block;
+            &:after {
+                content: '' !important;
+                border: 6px solid $ucsc--primary-yellow;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-bottom: 6px solid transparent;
+                margin: 3px 0 -3px 5px;
+            }
+        }
+    }
+    #primary-menu > li.show-submenu > a:after {
+        content:'\2013';
+    }
+    #primary-menu > li.menu-item:last-of-type a {
+        display: inline-block;
+        margin: 0 auto;
+        border: 2px solid $ucsc--primary-yellow;
+        &:after {
+            content: "";
+        }
+    }
+}
+.global-navigation {
+    display: none;
+    .menu-active & {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    @media only screen and (min-width: $screen-size--medium) {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        @media only screen and (min-width: $screen-size--medium) {
+            display: block;
+        }
+        li {
+            padding-bottom: 0;
+        }
+        a {
+            text-transform: none;
+            font-family: $font__head;
+            font-size: 14px;
+            &:hover, 
+            &:focus {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.navbar-toggle {
+    position: relative;
+    float: right;
+    cursor: pointer;
+    color: $color__white;
+    font-size: 24px;
+    margin-left: 30px;
+    @media only screen and (min-width: $screen-size--medium) {
+        display: none;
+    }
+}
+
+body.alternate-header {
+    .header {
+        background: #fff;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        @media only screen and (min-width: $screen-size--medium) {
+            display: block;
+        }
+        &:before {
+            content:'';
+            position: absolute;
+            top:100px;
+            bottom:0;
+            left:0;
+            right:0;
+            background-image: url(images/mobile-bg.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top right;
+            display: block;
+            z-index: 0;
+            opacity: .7;
+            @media only screen and (min-width: $screen-size--medium) {
+                display: none;
+            }
+        }
+        &.menu-active {
+            min-height: 100vh;
+            @media only screen and (min-width: $screen-size--medium) {
+               min-height: 0; 
+            }
+            &.menu-active .header-right {
+                padding-top: 30px;
+            }
+        }
+        .top-bar {
+            position: relative;
+            z-index: 1;
+            @media only screen and (min-width: $screen-size--medium) {
+                background: $ucsc-gradient-ltr; 
+            }
+            .parent-logo img {
+                display: none;
+                @media only screen and (min-width: $screen-size--medium) {
+                    display: block;
+                    width: 150px;
+                }
+            }
+        }
+        .nav-wrap {
+            display: block;
+            position: relative;
+            z-index: 1;
+            @media only screen and (min-width: $screen-size--medium) {
+                display: flex; 
+                justify-content: space-between;
+                align-items: center;
+            }
+            .header-left {
+                a {
+                    display: block;
+                }
+                a.custom-logo {
+                    padding: 30px 0;
+                    border: none;
+                    img {
+                        max-height: 60px;
+                    }
+                }
+                a.no-logo {
+                    padding: 40px 0;
+                }
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                @media only screen and (min-width: $screen-size--medium) {
+                    display: block;
+                    width: auto;
+                }
+            }
+            .menu {
+                @media only screen and (min-width: $screen-size--medium) {
+                    display: flex;
+                }
+            }
+            .menu > li > a {
+                color: $ucsc--primary-blue;
+                white-space: nowrap;
+            }
+            .menu > li  li a {
+                @media only screen and (max-width: $screen-size--medium) {
+                    color: $ucsc--primary-blue;
+                    &:hover, 
+                    &:focus {
+                        color: #fff;
+                    }
+                }
+            }
+            .site-title {
+                font-size: 24px;
+                text-transform: uppercase;
+                font-weight: bold;
+                line-height: 1;
+                @media only screen and (min-width: $screen-size--medium) {
+                    font-size: 36px;
+                }
+            }
+        }
+        .menu-active .global-navigation {
+            @media only screen and (min-width: $screen-size--medium) {
+                flex-direction: row;
+            }
+        }
+        .main-navigation #primary-menu > li > a {
+            border-color: rgba($ucsc--primary-blue, .5);
+        }
+        #primary-menu > li.menu-item:last-child a {
+            color: $ucsc--primary-blue !important;
+            background: $ucsc--primary-yellow;
+            padding: 4px 12px;
+            font-weight: bold;
+            &:focus,
+            &:hover {
+                background-color: #fff;
+            }
+        }
+        .main-navigation .menu > li > a:focus {
+            background: #efefef;
+        }
+        .global-navigation {
+            margin: 0;
+            a {
+                color: $ucsc--primary-blue;
+                @media only screen and (min-width: $screen-size--medium) {
+                    color: #fff;
+                }
+            }
+        }
+        .main-navigation #primary-menu > li.menu-item-has-children > a:after {
+            @media only screen and (min-width: $screen-size--medium) {
+                content: '';
+            }
+        }
+    }
+    .navbar-toggle {
+        color: $ucsc--primary-blue;
     }
 }
