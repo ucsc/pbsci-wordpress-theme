@@ -40,11 +40,14 @@
             if (is_archive()) {
                 get_header('archive');
             }
-            else if ('post' === get_post_type()) {
-                get_header('blog');
+            else if (is_search()) {
+                get_header('utility');
             }
             else if (in_array(get_post_type(), array('studentopportunities', 'student-support', 'institutes-centers', 'labs', 'support-science'))) {
                 get_header('utility');
+            }
+            else if ('post' === get_post_type()) {
+                get_header('blog');
             }
             else if (is_front_page()) {
                 get_header('home');
