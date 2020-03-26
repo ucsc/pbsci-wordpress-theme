@@ -16,7 +16,7 @@
                 "id": ""
             },
             "message": "Is this an external link post?",
-            "default_value": 1,
+            "default_value": 0,
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
@@ -81,6 +81,20 @@
                 "operator": "==",
                 "value": "support-science"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "department"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "degree"
+            }
         ]
     ],
     "menu_order": 0,
@@ -91,5 +105,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1571939977
+    "modified": 1583238256
 }

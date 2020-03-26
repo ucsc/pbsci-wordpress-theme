@@ -47,6 +47,8 @@ if (!function_exists('ucsc_pbsci_setup')) :
          */
         add_image_size('page-hero', 1600, 530, false);
         add_image_size('home-grid', 560, 315, true);
+        add_image_size('filterable-thumb', 720, 248, true);
+
         /**
          * Register nav menu locations
          * this theme uses wp_nav_menu() in three location.
@@ -250,6 +252,11 @@ function ucsc_pbsci_scripts()
     if (is_page(array('degrees', 'support', 'faculty-researchers', 'student-research-opportunities', 'institutes-and-centers', 'student-support', 'research-groups-facilities'))) {
         wp_enqueue_script('filter-js', get_template_directory_uri() . '/js/filter.js', [], $theme->get( 'Version' ), true);
     }
+
+    wp_enqueue_script('isotope', get_template_directory_uri() . '/js/isotope.js', '', null, true);
+    wp_enqueue_script('select2', get_template_directory_uri() . '/js/select2.js', '', null, true);
+    wp_enqueue_script('filters', get_template_directory_uri() . '/js/filters.js', '', null, true);
+
 }
 add_action('wp_enqueue_scripts', 'ucsc_pbsci_scripts');
 /**
@@ -620,4 +627,32 @@ function ucsc_the_custom_logo_url( $size = 'full' ) {
         $url = wp_get_attachment_image_url( $custom_logo_id , $size );
     }
     return esc_url( $url );
+}
+
+/**
+ * Breadcrumbs
+ * 
+ * @link https://github.com/justintadlock/breadcrumb-trail
+ */
+function ucsc_breadcrumb_trail_args( $args ) {
+    $args['show_browse'] = false;
+    $args['show_on_front'] = false;
+    $args['separator'] = '';
+    $args['post_taxonomy']['post'] = 'category';
+    $args['post_taxonomy']['labs'] = 'researcher-faculty-labs';
+    $args['post_taxonomy']['labs'] = 'research-area-expertise-tax';
+    $args['post_taxonomy']['studentopportunities'] = 'student-opportunities-tax';
+    $args['post_taxonomy']['studentopportunities'] = 'student-opp-avail-tax';
+    $args['post_taxonomy']['studentopportunities'] = 'student-opp-eligib-tax';
+    $args['post_taxonomy']['student-support'] = 'student-support-tax';
+    $args['post_taxonomy']['institutes-centers'] = 'resesarch-group-location-tax';
+    $args['post_taxonomy']['support-science'] = 'support-science-cat';
+    $args['post_taxonomy']['support-science'] = 'support-science-int';
+
+    return $args;
+}
+add_filter( 'breadcrumb_trail_args', 'ucsc_breadcrumb_trail_args' );
+
+function ucsc_make_slug($string) {
+	return preg_replace("/[^a-z0-9]/", "", str_replace(' ', '-', strtolower($string)));
 }

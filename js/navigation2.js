@@ -29,6 +29,23 @@ navBarToggle.addEventListener("click", function() {
         e.stopPropagation();  
     });
 
+    var c = 0, 
+    currentScrollTop = 0,
+    navbar = $('.header'),
+    b = $(navbar).height();
+    $('#masthead').css('padding-top',b);
+
+    $(window).scroll(function () {
+      var a = $(window).scrollTop();
+      currentScrollTop = a;
+  
+      if (c < currentScrollTop && a > b + 20) {
+        $(navbar).addClass("scrollUp");
+      } else if (c > currentScrollTop && !(a <= b)) {
+        $(navbar).removeClass("scrollUp");
+      }
+      c = currentScrollTop;
+    });
   });
 })(jQuery);
 

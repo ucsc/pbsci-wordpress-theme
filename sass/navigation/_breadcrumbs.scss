@@ -6,8 +6,16 @@
             color: $ucsc--primary-yellow;
         }
     }
-}
-
-.breadcrumb_last {
-    display: none;
+    .trail-end {
+        display: none !important;
+    }
+    .trail-items {
+        li::after {
+            content: "\000BB"!important;
+            padding: 0 0.25em;
+        }
+        li:nth-last-child(2n)::after {
+            display: none;
+        }
+    }
 }

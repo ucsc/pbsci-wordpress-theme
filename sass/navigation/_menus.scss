@@ -368,10 +368,20 @@
     .menu-active & .menu {
         display: block;
     }
+    #primary-menu {
+        @media screen and (min-width: $screen-size--medium) {
+            display: flex;
+        }
+    }
     #primary-menu > li > a {
         border-bottom: 2px solid rgba(255, 255, 255, .25);
         @media screen and (min-width: $screen-size--medium) {
+            font-size: .9rem;
             border-bottom: none;
+            white-space: nowrap;
+        }
+        @media screen and (min-width: $screen-size--large) {
+            font-size: inherit;
         }
     }
     #primary-menu > li.menu-item-has-children > a {
@@ -602,5 +612,21 @@ body.alternate-header {
     }
     .navbar-toggle {
         color: $ucsc--primary-blue;
+    }
+}
+.header  {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+    transition: transform .2s ease-out;
+    &.scrollUp {
+        transform: translateY(-200px)
+    }
+}
+#masthead {
+    background-color: $ucsc--primary-blue;
+    body.alternate-header & {
+        background-color: white;
     }
 }

@@ -1,0 +1,272 @@
+{
+    "key": "group_5e60fd5eed84c",
+    "title": "Filterable Content Builder",
+    "fields": [
+        {
+            "key": "field_5e60fd85db468",
+            "label": "Post Type",
+            "name": "fc_query_post_type",
+            "type": "select",
+            "instructions": "Select the type of content that should be displayed on the page.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "post": "Posts",
+                "page": "Pages",
+                "attachment": "Media",
+                "department": "Departments",
+                "degree": "Degrees",
+                "student-support": "Academic Support Resources",
+                "studentopportunities": "Research Opportunities",
+                "institutes-centers": "Groups & Facilities",
+                "labs": "Researchers & Faculty",
+                "support-science": "Support Science"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "array",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5e6111ae60b30",
+            "label": "Department Relationship Filter",
+            "name": "fc_filter_department",
+            "type": "true_false",
+            "instructions": "Enable this option to allow content to be filtered by their relationship to departments using the \"department_link\" field.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enable Department relationship filter.",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5e6112243023d",
+            "label": "Search Filter",
+            "name": "fc_filter_search",
+            "type": "true_false",
+            "instructions": "Enable this option to allow content to be searchable.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enable search box.",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5e73e64279503",
+            "label": "Field Filters",
+            "name": "fc_filter_field",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5e73e66b79504",
+                    "label": "Label",
+                    "name": "filter_label",
+                    "type": "text",
+                    "instructions": "The human readable label for this filter.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5e73e68579505",
+                    "label": "Field",
+                    "name": "filter_field",
+                    "type": "select",
+                    "instructions": "Select the field that this filter will use for its values.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "day_from": "Day from",
+                        "day_to": "Day to",
+                        "degrees_offered": "Degrees Offered",
+                        "p1_cell_two_quad_four_icon": "P1 Cell Two Quad Four Icon",
+                        "p1_cell_two_quad_four_icon_color": "P1 Cell Two Quad Four Icon Color",
+                        "p1_cell_two_quad_one_icon": "P1 Cell Two Quad One Icon",
+                        "p1_cell_two_quad_one_icon_color": "P1 Cell Two Quad One Icon Color",
+                        "p1_cell_two_quad_three_icon": "P1 Cell Two Quad Three Icon",
+                        "p1_cell_two_quad_three_icon_color": "P1 Cell Two Quad Three Icon Color",
+                        "p1_cell_two_quad_two_icon": "P1 Cell Two Quad Two Icon",
+                        "p1_cell_two_quad_two_icon_color": "P1 Cell Two Quad Two Icon Color",
+                        "p2_cell_one_image_or_video": "P2 Cell One Image or Video",
+                        "p2_cell_three_image_or_video": "P2 Cell Three Image or Video",
+                        "p2_cell_two_image_or_video": "P2 Cell Two Image or Video",
+                        "p3_cell_one_image_or_video": "P3 Cell One Image or Video",
+                        "p3_cell_two_image_or_video": "P3 Cell Two Image or Video",
+                        "fc_query_post_type": "Post Type",
+                        "secondary_navigation_icon": "Secondary Navigation Icon",
+                        "secondary_navigation_icon_color": "Secondary Navigation Icon Color",
+                        "social_media_site": "Social Media Site",
+                        "filter_taxonomy": "Taxonomy",
+                        "cta_visibility_post_type": "Visibility by Post Types"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5e610e7e6e529",
+            "label": "Taxonomy Filters",
+            "name": "fc_filter_taxonomy",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5e610eb26e52a",
+                    "label": "Label",
+                    "name": "filter_label",
+                    "type": "text",
+                    "instructions": "The human readable label for this filter.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5e610ec76e52b",
+                    "label": "Taxonomy",
+                    "name": "filter_taxonomy",
+                    "type": "select",
+                    "instructions": "The taxonomy associated with this filter.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "researcher-faculty-labs-tax": "Labs Category",
+                        "student-opportunities-tax": "Research Opportunities Category",
+                        "student-support-tax": "Academic Support Type",
+                        "student-opp-eligib-tax": "Academic Support Eligibility",
+                        "student-opp-avail-tax": "Academic Support Availability",
+                        "resesarch-group-location-tax": "Research Facility Locations",
+                        "resesarch-area-expertise-tax": "Areas of Expertise",
+                        "support-science-cat": "Support Science Category",
+                        "support-science-int": "Support Science Interest",
+                        "unit-category": "Unit Categories"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5e61128089ed9",
+            "label": "Reset Filters Button",
+            "name": "fc_filter_reset",
+            "type": "true_false",
+            "instructions": "Enable this option to show a button that allows visitors to reset all filters.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enable reset button.",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-filterable-content.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1584658136
+}
