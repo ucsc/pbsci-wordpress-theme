@@ -8,7 +8,7 @@
     <div class="top-bar">
         <div class="wrap">
             <div class="top-left">
-                <?php echo '<a href="/" class="parent-logo"><img src="' . IMAGES . '/science-logo.svg" alt="" /></a>'; ?>
+                <?php echo '<a href="https://science.ucsc.edu/" class="parent-logo"><img src="' . IMAGES . '/science-logo.svg" alt="" /></a>'; ?>
             </div>
             <div class="top-right">
             <?php if (has_nav_menu('menu-global')) { ?>

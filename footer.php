@@ -14,6 +14,11 @@
 
 </div><!-- #content -->
 <?php
+
+if ( !empty( ucsc_cta_get_visible_ctas() ) ) {
+    get_template_part( 'template-parts/ctas' );
+}
+
 if (class_exists('acf')) {
     $cta = get_field('call_to_action', 'option');
     if ($cta['cta_switch']) : get_template_part('template-parts/footer', 'cta');

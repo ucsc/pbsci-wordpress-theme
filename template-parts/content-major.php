@@ -13,7 +13,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
         <?php
-        get_template_part('template-parts/breadcrumbs', 'all');
+        get_template_part('template-parts/breadcrumbs');
         if (is_singular()) :
             the_title('<h1 class="entry-title">', '</h1>');
         else :

@@ -1,0 +1,115 @@
+{
+    "key": "group_5e5a5884eda7c",
+    "title": "CTA Visibility",
+    "fields": [
+        {
+            "key": "field_5e5ec07e1cb2e",
+            "label": "Global",
+            "name": "cta_visibility_global",
+            "type": "true_false",
+            "instructions": "Select this for the CTA to appear on all pages.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Show this CTA on all pages throughout the site.",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5e5a560e7c95e",
+            "label": "Visibility by Post Types",
+            "name": "cta_visibility_post_type",
+            "type": "checkbox",
+            "instructions": "If this CTA should appear on all pages of specific post types, use this option to select the desired post types.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e5ec07e1cb2e",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "post": "Posts",
+                "page": "Pages",
+                "attachment": "Media",
+                "department": "Departments",
+                "degree": "Degrees",
+                "student-support": "Academic Support Resources",
+                "studentopportunities": "Research Opportunities",
+                "institutes-centers": "Groups & Facilities",
+                "labs": "Researchers & Faculty",
+                "support-science": "Support Science"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_5e5a5e4d00606",
+            "label": "Visibility by Page",
+            "name": "cta_visibility_page",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e5ec07e1cb2e",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "cta"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "Allow admins to select where a CTA appears throughout the site.",
+    "modified": 1583268083
+}

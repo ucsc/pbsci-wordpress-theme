@@ -5,7 +5,7 @@
                 <div class="wrap flex-wrap">
                     <header class="entry-header flex-wrap">
                         <div class="entry-header-right">
-                            <?php get_template_part('template-parts/breadcrumbs', 'head'); ?>
+                            <?php get_template_part('template-parts/breadcrumbs'); ?>
                             <span class="entry-header-span-b flex-wrap">
                                 <?php $page_for_posts = get_option('page_for_posts');
                                 echo '<h1 class="entry-title">' . get_the_title($page_for_posts) . '</h1>'; ?>

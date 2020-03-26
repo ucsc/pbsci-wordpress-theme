@@ -38,7 +38,8 @@
         ucsc_pbsci_post_thumbnail();
         echo '<!-- card Content Begin --><div class="card-content">';
         echo '<!-- card Header Begin --><div class="card-header">';
-        echo '<a href="'.esc_url($department_url).'"><h3>'.$department_title.'</h3></a>';
+        // echo '<a href="'.esc_url($department_url).'"><h3>'.$department_title.'</h3></a>';
+        echo '<a href="'.esc_url(get_permalink()).'"><h3>'.$department_title.'</h3></a>';
         echo '</div><!-- card Header End -->';
         echo '</div><!-- card Content End -->';//end Program Content
         echo '<!-- card Blurb Begin --><div id="cardblurb'.$postid.'"class="card-blurb">'.$department_blurb.'</div><!-- card Blurb End -->';
