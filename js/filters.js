@@ -253,7 +253,7 @@ Isotope.LayoutMode.create('none');
 
   // Reset everything and run isotope again
   $('#filter-reset').on('click', function() {
-    $('#filter-search').val();
+    $('#filter-search').val('');
     $('.select-filter').each(function() {
       $(this).val(null).trigger('change');
     });

@@ -18,13 +18,19 @@ if ( !empty( $field_filters )) {
 }
 // Create a new WP_Query on the desired post type.
 $post_type = get_field( 'fc_query_post_type' );
-$query = new WP_Query( [
+$args = [
 	'post_type' => $post_type['value'],
 	'posts_per_page' => -1,
-	'orderby' => 'title',
 	'order' => 'ASC',
 	'ignore_sticky_posts' => true,
-] );
+	'orderby' => 'title',
+];
+
+if ($post_type['value'] == 'labs') {
+	$args['orderby'] = 'meta_value';
+	$args['meta_key'] = 'last_name';
+}
+$query = new WP_Query( $args );
 
 // Get all post IDs in the query results.
 $post_ids = array_map( function( $post ) { return $post->ID; }, $query->posts );
