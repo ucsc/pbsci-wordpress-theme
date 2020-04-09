@@ -41,6 +41,101 @@ function ucsc_pbsci_customize_register( $wp_customize ) {
 		'label' => __( 'Alternate Header Style' ),
 		'description' => __( 'Enable the alternate header style. (White header)' ),
 	) );
+
+    // Alert Bar
+    $wp_customize->add_section('alert_bar', array(
+        'title' => 'Alert Bar',
+        'description' => '',
+        'priority' => 20,
+    ));
+    $wp_customize->add_setting( 'alert_bar_active', array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => 0,
+        'transport' => 'refresh',
+        'sanitize_callback' => 'absint',
+    ) );
+    $wp_customize->add_control( 'alert_bar_active', array(
+        'type' => 'checkbox',
+        'priority' => 10,
+        'section' => 'alert_bar',
+        'label' => __( 'Alert Bar Active' ),
+        'description' => __( 'Enable the alert bar.' ),
+    ) );
+    $wp_customize->add_setting( 'alert_bar_text', array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'alert_bar_text', array(
+        'type' => 'textarea',
+        'priority' => 20,
+        'section' => 'alert_bar',
+        'label' => __( 'Alert Message' ),
+        'description' => __( '' ),
+    ) );
+    $wp_customize->add_setting( 'alert_url', array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => '',
+        'sanitize_callback' => 'esc_url',
+    ) );
+    $wp_customize->add_control( 'alert_url', array(
+        'type' => 'url',
+        'priority' => 30,
+        'section' => 'alert_bar',
+        'label' => __( 'Call to Action URL', 'textdomain' ),
+        'description' => '',
+    ) );
+    $wp_customize->add_setting( 'alert_cta', array(
+        'default' => 'View Details',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'alert_cta', array(
+        'type' => 'text',
+        'priority' => 40,
+        'section' => 'alert_bar',
+        'label' => __( 'Call to Action Button Text' ),
+        'description' => '',
+    ) );
+    $wp_customize->add_setting( 'alert_cta', array(
+        'default' => 'View Details',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'alert_cta', array(
+        'type' => 'text',
+        'priority' => 40,
+        'section' => 'alert_bar',
+        'label' => __( 'Call to Action Button Text' ),
+        'description' => '',
+    ) );
+    $wp_customize->add_setting( 'alert_type', array(
+            'default' => 'notice',
+            'transport' => 'refresh',
+     ) );
+
+    $wp_customize->add_control( 'alert_type',
+        array(
+            'label' => __( 'Alert Type' ),
+            'description' => esc_html__( 'This will affect the color scheme of the alert' ),
+            'section' => 'alert_bar',
+            'priority' => 50,
+            'type' => 'select',
+            'choices' => array( // Optional.
+                'notice' => __( 'Notice' ),
+                'emergency' => __( 'Emergency' ),
+            )
+        )
+    );
 }
 add_action( 'customize_register', 'ucsc_pbsci_customize_register' );
 

@@ -27,8 +27,11 @@
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'ucsc-pbsci'); ?></a>
         <?php
             ucsc_before_header();
-
-            // Swap nagivation template if alternate header is used.
+            // See if there is an active alert bar
+            if (get_theme_mod('alert_bar_active', 0)) {
+                get_template_part('template-parts/alert-bar');
+            }
+        // Swap nagivation template if alternate header is used.
             if (get_theme_mod('alternate_header_style_active', 0)) {
                 get_template_part('template-parts/navigation', 'alternate');
             }

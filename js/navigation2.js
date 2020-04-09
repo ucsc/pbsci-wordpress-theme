@@ -1,52 +1,69 @@
 // window.onscroll = function() {scrollStuck()};
-var navBar = document.getElementById("site-navigation");
-var menuContainer = document.getElementById("menu-container");
-var navBarToggle = document.getElementById("js-navbar-toggle");
-var sticky = 650;
+const navBar = document.getElementById('site-navigation');
+const menuContainer = document.getElementById('menu-container');
+const navBarToggle = document.getElementById('js-navbar-toggle');
+const sticky = 650;
 
-navBarToggle.addEventListener("click", function() {
-  menuContainer.classList.toggle("menu-active");
+navBarToggle.addEventListener('click', function() {
+    menuContainer.classList.toggle('menu-active');
 });
 
 (function($) {
-  $(document).ready(function() {
-    $('#primary-menu > li > a').on('click', function(e) { 
-      var parent = $(this).parent('li');
-        if ($(parent).hasClass('menu-item-has-children')) {
-          e.preventDefault();
-          $(this).parent('li').siblings('li').removeClass('show-submenu'); 
-          $(this).parent('li').toggleClass('show-submenu');
-          $(document).one('click', function closeMenu (e){
-            if($('#primary-menu').has(e.target).length === 0){
-                $('#primary-menu').find('li').removeClass('show-submenu');
-            } else {
-                $(document).one('click', closeMenu);
+    $(document).ready(function() {
+        $('#primary-menu > li > a').on('click', function(e) {
+            const parent = $(this).parent('li');
+            if ($(parent).hasClass('menu-item-has-children')) {
+                e.preventDefault();
+                $(this)
+                    .parent('li')
+                    .siblings('li')
+                    .removeClass('show-submenu');
+                $(this)
+                    .parent('li')
+                    .toggleClass('show-submenu');
+                $(document).one('click', function closeMenu(e) {
+                    if ($('#primary-menu').has(e.target).length === 0) {
+                        $('#primary-menu')
+                            .find('li')
+                            .removeClass('show-submenu');
+                    } else {
+                        $(document).one('click', closeMenu);
+                    }
+                });
             }
-          });
-        } 
-    });
-    $('#primary-menu > li > ul > li').click(function(e) {
-        e.stopPropagation();  
-    });
+        });
+        $('#primary-menu > li > ul > li').click(function(e) {
+            e.stopPropagation();
+        });
 
-    var c = 0, 
-    currentScrollTop = 0,
-    navbar = $('.header'),
-    b = $(navbar).height();
-    $('#masthead').css('padding-top',b);
+        let c = 0;
+        let currentScrollTop = 0;
+        const navbar = $('.header');
+        const alertHeight = $('.alert-bar').height() + $('#wpadminbar').height();
+        const adminHeight = $('#wpadminbar').height();
+        const b = $(navbar).height();
 
-    $(window).scroll(function () {
-      var a = $(window).scrollTop();
-      currentScrollTop = a;
-  
-      if (c < currentScrollTop && a > b + 20) {
-        $(navbar).addClass("scrollUp");
-      } else if (c > currentScrollTop && !(a <= b)) {
-        $(navbar).removeClass("scrollUp");
-      }
-      c = currentScrollTop;
+        $('#masthead').css('padding-top', b - 5);
+
+        $(window).scroll(function() {
+            const a = $(window).scrollTop();
+            currentScrollTop = a;
+            if (currentScrollTop < alertHeight) {
+                $(navbar).css('top', alertHeight - currentScrollTop + 5);
+            }
+            if (c < currentScrollTop && a > b) {
+                $(navbar).addClass('scrollUp');
+            } else if (c > currentScrollTop && !(a <= b)) {
+                $(navbar).removeClass('scrollUp');
+                if (adminHeight > 0) {
+                    $(navbar).css('top', adminHeight);
+                } else {
+                    $(navbar).css('top', 0);
+                }
+            }
+            c = currentScrollTop;
+        });
     });
-  });
 })(jQuery);
 
 // function scrollStuck() {
