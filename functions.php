@@ -212,16 +212,15 @@ add_action( 'wp_enqueue_scripts', function(){
  */
 function ucsc_pbsci_scripts()
 {
-    $theme = wp_get_theme();
-    wp_enqueue_style( 'ucsc-pbsci-style', get_stylesheet_uri(), [], $theme->get( 'Version' ) );
-    // wp_enqueue_script( 'ucsc-pbsci-navigation', get_template_directory_uri() . '/js/navigation.js', [], $theme->get( 'Version' ), true );
-    wp_enqueue_script('ucsc-pbsci-navigation-2', get_template_directory_uri() . '/js/navigation2.js', [], $theme->get( 'Version' ), true);
-    wp_enqueue_script('ucsc-pbsci-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', [], $theme->get( 'Version' ), true);
+    wp_enqueue_style( 'ucsc-pbsci-style', get_stylesheet_uri(), [], null );
+    // wp_enqueue_script( 'ucsc-pbsci-navigation', get_template_directory_uri() . '/js/navigation.js', [], null, true );
+    wp_enqueue_script('ucsc-pbsci-navigation-2', get_template_directory_uri() . '/js/navigation2.js', [], null, true);
+    wp_enqueue_script('ucsc-pbsci-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', [], null, true);
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
     // Enqueue custom Localist widget script
-    wp_enqueue_script('localist-widget-fix', get_template_directory_uri() . '/js/localist-widget-fix.js', [], $theme->get( 'Version' ), true);
+    wp_enqueue_script('localist-widget-fix', get_template_directory_uri() . '/js/localist-widget-fix.js', [], null, true);
     //Enqueue FontAwesome
     wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css');
     //Enqueue list.js
@@ -229,10 +228,10 @@ function ucsc_pbsci_scripts()
     //Enqueue Google Fonts
     wp_enqueue_style('roboto-condensed-garamond', 'https://fonts.googleapis.com/css?family=EB+Garamond:400,500,700|Roboto+Condensed:300,400,700|Roboto:300,400,600,700', array(), false);
     // Back To Top
-    wp_enqueue_script('back-to-top', get_template_directory_uri() . '/js/back-to-top.js', [], $theme->get( 'Version' ), true);
+    wp_enqueue_script('back-to-top', get_template_directory_uri() . '/js/back-to-top.js', [], null, true);
 
     // Enqueue <span></span> adder
-    // wp_enqueue_script( 'span-adder', get_template_directory_uri() . '/js/span-add.js', [], $theme->get( 'Version' ), true );
+    // wp_enqueue_script( 'span-adder', get_template_directory_uri() . '/js/span-add.js', [], null, true );
     //Enqueue Flexslider and its parts on home page
     if (is_front_page()) {
         //main Flexslider js
@@ -240,17 +239,17 @@ function ucsc_pbsci_scripts()
         //main Flexslider css
         wp_enqueue_style('flexstyles', get_template_directory_uri() . '/flexslider/flexslider.css');
         //Home custom slider/carousel js
-        wp_enqueue_script('homeflex', get_template_directory_uri() . '/js/flex-home.js', [], $theme->get( 'Version' ));
+        wp_enqueue_script('homeflex', get_template_directory_uri() . '/js/flex-home.js', [], null);
         //scroll-to-here js
-        // wp_enqueue_script('scroll-to-here', get_template_directory_uri() . '/js/home-page-scroll-to-here.js', [], $theme->get( 'Version' ), true);
+        // wp_enqueue_script('scroll-to-here', get_template_directory_uri() . '/js/home-page-scroll-to-here.js', [], null, true);
     }
     // Enqueue custom Majors front end script
     if (is_singular() && ('degree' === get_post_type())) {
-        wp_enqueue_script('majors-front', get_template_directory_uri() . '/js/majors-front.js', [], $theme->get( 'Version' ), true);
+        wp_enqueue_script('majors-front', get_template_directory_uri() . '/js/majors-front.js', [], null, true);
     }
     // Enqueue degree parse script --- temporary
     if (is_page(array('degrees', 'support', 'faculty-researchers', 'student-research-opportunities', 'institutes-and-centers', 'student-support', 'research-groups-facilities'))) {
-        wp_enqueue_script('filter-js', get_template_directory_uri() . '/js/filter.js', [], $theme->get( 'Version' ), true);
+        wp_enqueue_script('filter-js', get_template_directory_uri() . '/js/filter.js', [], null, true);
     }
 
     wp_enqueue_script('isotope', get_template_directory_uri() . '/js/isotope.js', '', null, true);
@@ -656,3 +655,51 @@ add_filter( 'breadcrumb_trail_args', 'ucsc_breadcrumb_trail_args' );
 function ucsc_make_slug($string) {
 	return preg_replace("/[^a-z0-9]/", "", str_replace(' ', '-', strtolower($string)));
 }
+
+/**
+ * Cache busting to get updated versions of js and css
+ *
+ * @link https://www.recolize.com/en/blog/wordpress-cache-busting-design-changes/
+ * @param string $src
+ *
+ * @return string
+ */
+function set_custom_ver_css_js($src) {
+    // Don't touch admin scripts.
+    if (is_admin()) {
+        return $src;
+    }
+
+    $_src = $src;
+    if (strpos($_src, '//') === 0) {
+        $_src = 'http:' . $_src;
+    }
+
+    $_src = parse_url($_src);
+
+    // Give up if malformed URL.
+    if (false === $_src) {
+        return $src;
+    }
+
+    // Check if it's a local URL.
+    $wordPressUrl = parse_url(home_url());
+    if (isset($_src['host']) && $_src['host'] !== $wordPressUrl['host']) {
+        return $src;
+    }
+
+    $filePath = ABSPATH . $_src['path'];
+	$theme = wp_get_theme();
+	if (file_exists($filePath) && strpos($src, $theme->get_stylesheet_directory_uri()) !== false) {
+        $src = add_query_arg('ver', filemtime($filePath), $src);
+    }
+
+    return $src;
+}
+
+function css_js_versioning() {
+    add_filter('style_loader_src', 'set_custom_ver_css_js', 9999);
+    add_filter('script_loader_src', 'set_custom_ver_css_js', 9999);
+}
+
+add_action('init', 'css_js_versioning');

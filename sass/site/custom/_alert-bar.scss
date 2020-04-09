@@ -1,0 +1,39 @@
+.alert-bar {
+  padding: 5px 15px;
+  text-align: center;
+  a.button {
+    display: inline-block;
+    padding: 4px 20px;
+    font-size: 13px;
+    letter-spacing:0;
+    border: 1px solid;
+    &:after,
+    &:hover:after {
+      display: none;
+    }
+  }
+  &.emergency {
+    background: #f8cfe0;
+    transition: background-color .2s ease-in-out, color .2s ease-in-out;
+    a.button {
+      color: white;
+      background-color: #770c16;
+      border-color: #770c16;
+      &:hover {
+        background-color: #fff;
+        color: #770c16;
+      }
+    }
+  }
+  &.notice {
+    background: #eee;
+    transition: background-color .2s ease-in-out;
+    a.button {
+      background: #fff;
+      border-color: $ucsc--lighter-blue;
+      &:hover {
+        background-color: $ucsc--primary-yellow;
+      }
+    }
+  }
+}
