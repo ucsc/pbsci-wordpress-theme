@@ -35,6 +35,9 @@ navBarToggle.addEventListener('click', function() {
         $('#primary-menu > li > ul > li').click(function(e) {
             e.stopPropagation();
         });
+        $('.mobile-menu-toggle').on('click touch', function() {
+            $('.mobile-menu-expandable').slideToggle('fast');
+        })
 
         const $adminBar = $('#wpadminbar');
         const $alertBar = $('.alert-bar');

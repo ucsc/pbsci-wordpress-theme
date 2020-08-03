@@ -10,6 +10,14 @@
 define('THEMEROOT', get_stylesheet_directory_uri());
 define('TEMPLATE', get_template_directory_uri());
 define('IMAGES', THEMEROOT . '/images');
+
+/*
+ *
+ */
+require get_template_directory() . '/inc/post-types.php';
+require get_template_directory() . '/inc/shortcodes.php';
+
+
 if (!function_exists('ucsc_pbsci_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
@@ -250,6 +258,12 @@ function ucsc_pbsci_scripts()
     // Enqueue degree parse script --- temporary
     if (is_page(array('degrees', 'support', 'faculty-researchers', 'student-research-opportunities', 'institutes-and-centers', 'student-support', 'research-groups-facilities'))) {
         wp_enqueue_script('filter-js', get_template_directory_uri() . '/js/filter.js', [], null, true);
+    }
+    if (is_singular() && ('department' === get_post_type()) ) {
+        wp_enqueue_script('slick-js', get_template_directory_uri() . '/slick/slick.js', array('jquery'), null, true);
+        wp_enqueue_script('hero-carousel', get_template_directory_uri() . '/js/hero-carousel.js', array('slick-js'), null, true);
+        wp_enqueue_style('slick-css', get_template_directory_uri() . '/slick/slick.css');
+        wp_enqueue_style('slick-theme', get_template_directory_uri() . '/slick/slick-theme.css');
     }
 
     wp_enqueue_script('isotope', get_template_directory_uri() . '/js/isotope.js', '', null, true);
