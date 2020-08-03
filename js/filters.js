@@ -153,8 +153,14 @@ Isotope.LayoutMode.create('none');
         newHash.push(filterGroup + "=" + filterState[filterGroup]);
       }
     });
-
-    window.location.hash = (newHash.length > 0) ? newHash.join("&") : "";
+    // If there aren't any parameters on the URL, remove the "#"
+    // if there are params, append to the URL
+    if (newHash.length > 0) {
+      window.location.hash = newHash.join("&");
+    } else {
+      history.pushState("", document.title, window.location.pathname
+      + window.location.search);
+    }
   }
 
   /**

@@ -328,6 +328,84 @@
                     "placeholder": "Footer link url"
                 }
             ]
+        },
+        {
+            "key": "field_5eda2ec2cf9dc",
+            "label": "Breadcrumb Adjustments",
+            "name": "breadcrumb_adjustments",
+            "type": "repeater",
+            "instructions": "This set of fields is used to fix breadcrumbs by searching and replacing links within the list of breadcrumbs before they are output. Developer note: This field is used in the filter \"breadcrumb_trail_items\" filter.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5eda2efacf9dd",
+                    "label": "Search",
+                    "name": "search",
+                    "type": "text",
+                    "instructions": "Provide the breadcrumb URL path to find. Example: \"\/research-opportunities\"",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5eda2fd1cf9de",
+                    "label": "Replace URL",
+                    "name": "replace_url",
+                    "type": "text",
+                    "instructions": "Provide the new URL path to take the place of the \"search\" URL path. Example, \"\/student-support\/awards-research\"",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5eda300bcf9df",
+                    "label": "Replace Text",
+                    "name": "replace_text",
+                    "type": "text",
+                    "instructions": "(Optional) Provide a new link text to use for the replaced breadcrumb.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -347,5 +425,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582923522
+    "modified": 1591357588
 }

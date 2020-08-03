@@ -36,52 +36,42 @@ navBarToggle.addEventListener('click', function() {
             e.stopPropagation();
         });
 
-        let c = 0;
-        let currentScrollTop = 0;
-        const navbar = $('.header');
-        const alertHeight = $('.alert-bar').height() + $('#wpadminbar').height();
-        const adminHeight = $('#wpadminbar').height();
-        const b = $(navbar).height();
+        const $adminBar = $('#wpadminbar');
+        const $alertBar = $('.alert-bar');
+        const $header = $('.header');
+        const $headerSibling = $('.header + *');
+        let top = 0;
+        let topNoAlert = 0;
 
-        $('#masthead').css('padding-top', b - 5);
+        if ($adminBar.length) {
+            top += $adminBar.height();
+            topNoAlert = top;
+        }
+        if ($alertBar.length) {
+            top += $alertBar.height();
+        }
 
+        let lastPosition = 0;
         $(window).scroll(function() {
-            const a = $(window).scrollTop();
-            currentScrollTop = a;
-            if (currentScrollTop < alertHeight) {
-                $(navbar).css('top', alertHeight - currentScrollTop + 5);
+            const position = $(window).scrollTop();
+
+            // Scrolling up.
+            if (position < lastPosition) {
+                $header.css({
+                    top: topNoAlert,
+                    position: 'fixed',
+                });
+                $headerSibling.css('margin-top', top);
             }
-            if (c < currentScrollTop && a > b) {
-                $(navbar).addClass('scrollUp');
-            } else if (c > currentScrollTop && !(a <= b)) {
-                $(navbar).removeClass('scrollUp');
-                if (adminHeight > 0) {
-                    $(navbar).css('top', adminHeight);
-                } else {
-                    $(navbar).css('top', 0);
-                }
+            if (position <= top) {
+                $header.css({
+                    top: 0,
+                    position: 'relative',
+                });
+                $headerSibling.css('margin-top', 0);
             }
-            c = currentScrollTop;
+
+            lastPosition = $(window).scrollTop();
         });
     });
 })(jQuery);
-
-// function scrollStuck() {
-//   if (window.pageYOffset > sticky && window.matchMedia("(min-width: 48em)") ) {
-//     navBar.classList.add("stuck");
-//   } else {
-//     navBar.classList.remove("stuck");
-//   }
-// }
-
-// function myFunction(x) {
-//   if (x.matches) { // If media query matches
-//     navBar.classList.remove("stuck");
-//   } else {
-//     navBar.classList.add("stuck");
-//   }
-// }
-
-// var x = window.matchMedia("(min-width: 47em)")
-// myFunction(x) // Call listener function at run time
-// x.addListener(myFunction) // Attach listener function on state changes

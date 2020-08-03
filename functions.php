@@ -652,6 +652,55 @@ function ucsc_breadcrumb_trail_args( $args ) {
 }
 add_filter( 'breadcrumb_trail_args', 'ucsc_breadcrumb_trail_args' );
 
+/**
+ * Implement hook breadcrumb_trail_items();
+ * @link https://github.com/justintadlock/breadcrumb-trail
+ *
+ * Allow site admins to alter breadcrumbs. The UI for this is in "Theme Options" ACF fields.
+ * The reason for this approach is because there is no predictable way to know what the
+ * desired breadcrumb path/hierarchy should be, so we may as well let the admins decide.
+ *
+ * If this theme removes the use of the breadcrumb_trail plugin in the future, this
+ * functionality can be removed.
+ *
+ * @param array $items
+ * @return array
+ */
+add_filter( 'breadcrumb_trail_items', function( $items ) {
+	$replacements = get_field( 'breadcrumb_adjustments', 'options' );
+	if ( empty( $replacements ) || count( $replacements ) < 1 ) {
+		return $items;
+	}
+
+	$searches = array_column( $replacements, 'search' );
+	$searches = array_map( function( $string ) {
+		return '/'.trim( $string, '/' ).'/';
+	}, $searches );
+
+	foreach( $items as $item_index => $item ) {
+		foreach( $searches as $search_index => $search ) {
+			// Match at the end of the link href to ensure we have an exact path match
+			// and not a partial path match.
+			$pattern = '/'.preg_quote( $search, '/' ).'"/';
+			if ( preg_match( $pattern, $item ) ) {
+				$replacement = $replacements[ $search_index ];
+				// If text is provided, we need to replace the entire link
+				if ( !empty( $replacement['replace_text'] ) ) {
+					$items[ $item_index ] = "<a href='{$replacement['replace_url']}'>{$replacement['replace_text']}</a>";
+				}
+				// If no text is provided, just string replace, hoping to get the url the URL.
+				else {
+					$items[ $item_index ] = str_replace( $search, $replacement['replace_url'], $item );
+				}
+
+				break;
+			}
+		}
+	}
+
+	return $items;
+} );
+
 function ucsc_make_slug($string) {
 	return preg_replace("/[^a-z0-9]/", "", str_replace(' ', '-', strtolower($string)));
 }
