@@ -6,15 +6,18 @@
             color: $ucsc--primary-yellow;
         }
     }
-    .trail-end {
-        display: none !important;
-    }
     .trail-items {
-        li::after {
-            content: "\000BB"!important;
-            padding: 0 0.25em;
+        li:after {
+            display: none;
         }
-        li:nth-last-child(2n)::after {
+        li:before {
+            content: "\000BB";
+            padding: 0 6px;
+        }
+        li.trail-begin:before {
+            display: none;
+        }
+        li.trail-end {
             display: none;
         }
     }

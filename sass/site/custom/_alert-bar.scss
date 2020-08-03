@@ -1,12 +1,26 @@
 .alert-bar {
-  padding: 5px 15px;
+  padding: 10px 15px;
   text-align: center;
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+  }
+  .alert-wrapper {
+    line-height: 1.1;
+    @media screen and (min-width: 768px) {
+      display: inline-block;
+    }
+  }
   a.button {
     display: inline-block;
     padding: 4px 20px;
     font-size: 13px;
     letter-spacing:0;
     border: 1px solid;
+    margin: 10px 0 10px 20px;
+    @media screen and (max-width: 767px) {
+      font-size: 11px;
+      margin: 10px 0 0 0;
+    }
     &:after,
     &:hover:after {
       display: none;

@@ -615,14 +615,12 @@ body.alternate-header {
     }
 }
 .header  {
-    position: fixed;
+    position: relative;
     z-index: 1000;
     left: 0;
     right: 0;
+    width: 100%;
     transition: transform .2s ease-out;
-    &.scrollUp {
-        transform: translateY(-200px)
-    }
 }
 #masthead {
     background-color: $ucsc--primary-blue;

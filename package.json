@@ -51,6 +51,7 @@
         "> 1%"
     ],
     "dependencies": {
+        "gulp-cli": "^2.3.0",
         "semantic-ui-dropdown": "^2.4.1",
         "semantic-ui-transition": "^2.3.1"
     }
