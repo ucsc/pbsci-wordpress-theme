@@ -47,6 +47,10 @@
 			'class' => 'minor',
 		],
 	];
+
+if ( !isset( $row_classes ) ) {
+	$row_classes = [];
+}
 ?>
 <div class="card-container <?php echo implode(' ', $row_classes); ?>">
     <?php the_post_thumbnail('filterable-thumb'); ?>

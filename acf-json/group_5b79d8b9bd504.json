@@ -3,6 +3,25 @@
     "title": "Departments",
     "fields": [
         {
+            "key": "field_5ee9364a0626d",
+            "label": "Department Menu Label",
+            "name": "department_menu_label",
+            "type": "text",
+            "instructions": "Change the text used for the top-most menu item that appears on department child pages.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5b79d939a4ca2",
             "label": "Department Location",
             "name": "department_location",
@@ -427,6 +446,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "department"
+            },
+            {
+                "param": "post_template",
+                "operator": "!=",
+                "value": "template-department-child-page.php"
             }
         ]
     ],
@@ -438,5 +462,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1563482031
+    "modified": 1592342383
 }

@@ -16,7 +16,7 @@
                 "id": ""
             },
             "message": "Is this an external link post?",
-            "default_value": 0,
+            "default_value": 1,
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
@@ -87,6 +87,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "department"
+            },
+            {
+                "param": "post_template",
+                "operator": "!=",
+                "value": "template-department-child-page.php"
             }
         ],
         [
@@ -105,5 +110,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583238256
+    "modified": 1591370532
 }

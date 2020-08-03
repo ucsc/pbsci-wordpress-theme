@@ -10,6 +10,9 @@
  * --- Variables
  * $row_classes | array css class names (terms and whatnot).
  */
+if ( !isset( $row_classes ) ) {
+	$row_classes = [];
+}
 ?>
 <div class="card-container <?php echo implode(' ', $row_classes); ?>">
     <?php the_post_thumbnail('filterable-thumb'); ?>

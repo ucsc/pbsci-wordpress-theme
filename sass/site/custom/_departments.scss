@@ -1,14 +1,336 @@
 .dept-info {
-    @media only screen and (min-width: $screen-size--small) {
-        flex-basis: 50%;
+  @media only screen and (min-width: $screen-size--small) {
+    flex-basis: 50%;
+  }
+  ul {
+    list-style-type: none;
+  }
+  li {
+    line-height: 1.5;
+  }
+  h3 {
+    margin: 5px 0;
+  }
+  .dept-lable {
+    font-weight: 700;
+  }
+}
+.single-department {
+  #masthead {
+    background-color: #fefefe;
+  }
+  .hero-page {
+    align-items: flex-start;
+    height: auto;
+    background-position: center !important;
+    .header-runner {
+      background: #fff;
+      padding: 20px 0;
     }
-    ul {
-        list-style-type: none;
+    .header-runner .entry-header .entry-header-right {
+      padding-left: 0;
+      border-color: transparent;
     }
-    li {
-        line-height: 1.5;
+    .breadcrumbs,
+    .breadcrumbs a {
+      color: $ucsc--light-blue;
     }
-    .dept-lable {
-        font-weight: 700;
+    .entry-title {
+      color: $ucsc--primary-blue;
+      font-weight: bold;
+      font-family: $font__main;
     }
+    .hero-slideshow {
+      min-height: 40vh;
+      .slick-prev {
+        left: 10px;
+        z-index: 100;
+      }
+      .slick-next {
+        right: 10px;
+        z-index: 100;
+      }
+      .slick-prev:before, .slick-next:before {
+        color: $ucsc--primary-yellow;
+        font-family: "ShortcodesUltimateIcons";
+        font-size: 50px;
+      }
+      .slick-prev:before {
+        content:'\f104';
+      }
+      .slick-next:before {
+        content:'\f105';
+      }
+      .slide-content {
+        height: 100%;
+        min-height: 40vh;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 40px 80px;
+        .content-wrap {
+          text-align: center;
+          @media only screen and (min-width: $screen-size--small) {
+            width: 50%;
+            text-align: right;
+          }
+          h2, p, div {
+            color: #fff;
+            text-shadow: 1px 1px 2px black;
+          }
+          .slide-text {
+            font-size: 20px;
+          }
+          a {
+            padding: 5px 20px;
+            font-weight: bold;
+            color: $ucsc--primary-yellow;
+            text-transform: uppercase;
+            display: inline-block;
+            border: 2px solid $ucsc--primary-yellow;
+            margin-top: 20px;
+            background: rgba(0,0,0,.5);
+          }
+        }
+      }
+    }
+    .slide,
+    .hero-bg {
+      min-height: 40vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      box-shadow: inset 0 0 150px black;
+    }
+  }
+  .entry-content {
+    max-width: 100%;
+    margin-bottom: 0;
+    .su-spoiler-style-default > .su-spoiler-title {
+      padding: 10px 0px 10px 30px;
+      &:hover {
+        font-weight: normal !important;
+      }
+    }
+    .su-spoiler-closed:hover {
+      border-width: 1px;
+    }
+    .su-spoiler>.su-spoiler-content {
+      padding-top: 10px;
+    }
+    .su-spoiler-icon {
+      top: 16px;
+    }
+    .card-container .card-blurb {
+      font-size: .8rem;
+    }
+    .content-wrapper {
+      display: flex;
+      align-items:flex-start;
+      flex-direction: column-reverse;
+      color: #676767;
+      @media only screen and (min-width: $screen-size--small) {
+        flex-direction: row;
+      }
+      h1.entry-title {
+        color: $ucsc--primary-blue;
+      }
+    }
+    .content.show-submenu {
+      width: 100%;
+      @media only screen and (min-width: $screen-size--small) {
+        width: 70%;
+        margin-right: auto;
+      }
+    }
+    .sidebar.show-submenu {
+      width: 100%;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      @media only screen and (min-width: $screen-size--small) {
+        width: 20%;
+        margin-left: auto;
+      }
+      .mobile-menu-expandable {
+        display: none;
+        @media only screen and (min-width: $screen-size--small) {
+          display: block !important;
+        }
+      }
+      .mobile-menu-toggle {
+        text-transform: uppercase;
+        color: $ucsc--primary-blue;
+        border-bottom: 1px solid #dedede;
+        padding-bottom: 2px;
+        margin-bottom: 10px;
+        position: relative;
+        @media only screen and (max-width: $screen-size--small) {
+          cursor: pointer;
+        }
+        @media only screen and (min-width: $screen-size--small) {
+          pointer-events: none;
+        }
+        &:after {
+          content: '+';
+          position: absolute;
+          right: 0;
+          color: $ucsc--primary-yellow;
+          font-size: larger;
+          font-weight: bold;
+        }
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        a {
+          text-decoration: none;
+          border-color:transparent;
+          position: relative;
+          padding: 8px 0;
+          display: inline-block;
+          color: $ucsc--primary-blue;
+          &:hover, &:focus {
+            color: $ucsc--light-blue;
+          }
+          &:after {
+            content: '❯';
+            color: $ucsc--primary-yellow;
+            display: inline-block;
+            margin-left: 5px;
+          }
+        }
+        &.active a {
+          font-weight: bold;
+          &:after {
+            content: '';
+          }
+          &:before {
+            position: absolute;
+            content: '';
+            color: $ucsc--primary-yellow;
+            font-weight: bold;
+            left: -8px;
+          }
+        }
+      }
+    }
+    .query {
+      margin-bottom: 20px;
+    }
+    .pbsci-excerpt {
+      max-width: 900px;
+      margin: 50px auto;
+    }
+    h2 {
+      font-size: 1.95rem;
+      color: $ucsc--primary-blue;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    .row-flex {
+      display: flex;
+      justify-content: space-between;
+      .column-third {
+        width: 30%;
+      }
+      .column-two-thirds {
+        width: 60%;
+      }
+      .column-half {
+        width: 48%;
+      }
+      .column.constrained {
+        max-width: 40em;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    #buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-row-gap: 20px;
+      grid-column-gap: 20px;
+      a {
+        padding: 20px;
+        text-align: center;
+        font-size: .95rem;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        border: 1px solid $ucsc--lighter-blue;
+        transition: all .2s ease-in-out;
+        position: relative;
+        i.fas {
+          font-size: 3rem;
+        }
+        .button-text {
+          line-height: 1.2;
+          margin: 30px 0 0 0;
+        }
+        &:hover, &:focus {
+          box-shadow: 4px 3px 5px -4px rgba(0,0,0,0.5);
+          &:after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: $ucsc--primary-yellow;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+          }
+        }
+      }
+    }
+    .dept-info {
+      display: flex;
+      h3:nth-of-type(2) {
+        margin-top: 20px;
+      }
+      .dept-label {
+        font-weight: bold;
+        display: block;
+        color: #333;
+      }
+    }
+    .generic-bg {
+      position: relative;
+      margin: 3em 0;
+      background-image: $ucsc-gradient-ltr;
+      padding: 3em 0;
+      color: #fff;
+      text-align: center;
+      &:before {
+        content: '';
+        background-image: url(images/impact-ring-optimized-right.svg);
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: .5;
+        z-index: 0;
+      }
+      .wrap {
+        position: relative;
+      }
+      h2 {
+        text-transform: uppercase;
+        color: #fff;
+        span {
+          color: $ucsc--primary-yellow;
+        }
+      }
+    }
+  }
 }
