@@ -10,7 +10,6 @@
 		<div class="hero-page wrap">
     		<div class="header-runner">
                 <div class="entry-header">
-					<?php get_template_part('template-parts/breadcrumbs'); ?>
 					<div class="dept-title">
                         <?php
                         if ($parent > 0) : ?>

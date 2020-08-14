@@ -56,8 +56,9 @@ if (!function_exists('ucsc_pbsci_setup')) :
         add_image_size('page-hero', 1600, 530, false);
         add_image_size('home-grid', 560, 315, true);
         add_image_size('filterable-thumb', 720, 248, true);
+	    add_image_size('news-thumb', 360, 240, true);
 
-        /**
+	    /**
          * Register nav menu locations
          * this theme uses wp_nav_menu() in three location.
          */
@@ -241,7 +242,7 @@ function ucsc_pbsci_scripts()
     // Enqueue <span></span> adder
     // wp_enqueue_script( 'span-adder', get_template_directory_uri() . '/js/span-add.js', [], null, true );
     //Enqueue Flexslider and its parts on home page
-    if (is_front_page()) {
+    if (is_page_template('template-homepage.php')) {
         //main Flexslider js
         wp_enqueue_script('flexslider', get_template_directory_uri() . '/flexslider/jquery.flexslider-min.js', '', null, true);
         //main Flexslider css
@@ -259,7 +260,7 @@ function ucsc_pbsci_scripts()
     if (is_page(array('degrees', 'support', 'faculty-researchers', 'student-research-opportunities', 'institutes-and-centers', 'student-support', 'research-groups-facilities'))) {
         wp_enqueue_script('filter-js', get_template_directory_uri() . '/js/filter.js', [], null, true);
     }
-    if (is_singular() && ('department' === get_post_type()) ) {
+    if ( (is_singular() && ('department' === get_post_type()) ) || (is_page_template('template-alt-homepage.php'))) {
         wp_enqueue_script('slick-js', get_template_directory_uri() . '/slick/slick.js', array('jquery'), null, true);
         wp_enqueue_script('hero-carousel', get_template_directory_uri() . '/js/hero-carousel.js', array('slick-js'), null, true);
         wp_enqueue_style('slick-css', get_template_directory_uri() . '/slick/slick.css');
@@ -400,6 +401,10 @@ function ucsc_underscore_hide_editor()
     // Hide the editor on the page titled 'Homepage'
     $pagename = get_the_title($post_id);
     if ( in_array($pagename, array('Student Support', 'Degrees', 'Departments', 'Faculty &#038; researchers', 'Research groups &#038; facilities', 'Student research opportunities')) ){
+        remove_post_type_support('page', 'editor');
+    }
+    $template_file = get_post_meta($post_id, '_wp_page_template', true);
+    if($template_file == 'template-alt-homepage.php'){ // the filename of the page template
         remove_post_type_support('page', 'editor');
     }
 

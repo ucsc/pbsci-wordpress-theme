@@ -324,6 +324,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "degree"
+            },
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "default"
             }
         ]
     ],
@@ -335,5 +340,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1569269233
+    "modified": 1596825612
 }

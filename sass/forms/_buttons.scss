@@ -143,3 +143,48 @@ body.alternate-header {
         transform: scaleX(0);
     }
 }
+
+a.yellow-outline {
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #fdc700 !important;
+    border: 2px solid #fdc700 !important;
+    text-align: center;
+    span {
+        border: none;
+        color: $ucsc--primary-yellow !important;
+        font-size: 1rem !important;
+        line-height: inherit !important;
+        padding: 0 !important;
+    }
+    &:focus,
+    &:hover {
+        border: 2px solid transparent !important;
+        background: #fff !important;
+        opacity: 1 !important;
+        color: $ucsc--primary-blue !important;
+        span {
+            color: $ucsc--primary-blue !important;
+        }
+    }
+}
+a.blue-outline {
+    background: rgba(254, 254, 254, 0.6) !important;
+    max-width: 400px;
+    border: 2px solid $ucsc--lighter-blue !important;
+    border-radius: 0 !important;
+    padding: 1.1em 1.2em !important;
+    span {
+        border: none;
+        color: $ucsc--primary-blue !important;
+        font-size: 1rem !important;
+        line-height: inherit !important;
+        padding: 0 !important;
+    }
+    &:hover,
+    &:focus {
+        border-color: transparent !important;
+        background-color: transparent !important;
+        opacity: 1 !important;
+    }
+}

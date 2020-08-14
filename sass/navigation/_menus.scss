@@ -1,6 +1,6 @@
     .global-navigation,
     .main-navigation {
-        
+
         clear: both;
         display: block;
         width: 100%;
@@ -31,7 +31,7 @@
                         outline: none;
                     }
                 }
-                
+
             }
 
             > :last-child {
@@ -81,7 +81,7 @@
                     padding-bottom: .7em;
                     margin-bottom: -1em;
                     margin-right: .25em;
-                                        
+
                     a {
                         color: white;
                     }
@@ -149,7 +149,7 @@
 
 
     }
-    
+
     .secondary-navigation {
         list-style: none;
         margin: 0;
@@ -174,20 +174,20 @@
             }
         }
     }
-    
+
     // Small screen hamburger menu button
     .menu-toggle,
     .main-navigation.toggled ul {
         display: block;
     }
-    
+
 
     @media only screen and (min-width: $screen-size--medium) {
         .menu-toggle {
             display: none;
         }
     }
-    
+
     .comment-navigation,
     .posts-navigation,
     .post-navigation {
@@ -233,7 +233,7 @@
             }
         }
     }
-    
+
     .main-navigation {
         padding: 0;
         text-align: initial;
@@ -254,18 +254,10 @@
         }
 
         .logo {
-
             border: none;
-            @media only screen and (min-width: $screen-size--medium) {
-                flex: 0 0 240px;
-            }
 
             img {
-                width: 180px;
                 height: auto;
-                @media only screen and (min-width: $screen-size--medium) {
-                    width: 240px;
-                }
             }
         }
 
@@ -273,8 +265,8 @@
 
 // The Giving button in the main navigation is the last button in the menu
 // Since there is no way to target it directly, these styles target the last
-// menu item. If the last menu item changes, this will break the convention. :-(;    
-#primary-menu > li.menu-item:last-child {        
+// menu item. If the last menu item changes, this will break the convention. :-(;
+#primary-menu > li.menu-item:last-child {
     margin: 40px 0 0 0;
     padding: 0;
     text-align: center;
@@ -296,7 +288,7 @@
     }
 }
 .header {
-    background: $ucsc-gradient-ltr; 
+    background: $ucsc-gradient-ltr;
     position: relative;
     &:before {
         content:'';
@@ -328,9 +320,6 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            img {
-                width: 200px;
-            }
             a {
                 border: none;
                 display: block;
@@ -341,9 +330,6 @@
             }
             @media screen and (min-width: $screen-size--medium) {
                 max-width: 250px;
-                img {
-                    width: 240px;
-                }
             }
         }
         .header-right {
@@ -388,7 +374,7 @@
         display: flex;
         justify-content: space-between;
         &:after {
-          content: "+";  
+          content: "+";
           font-weight: bold;
           display: inline-block;
           color: $ucsc--primary-yellow;
@@ -445,7 +431,7 @@
             text-transform: none;
             font-family: $font__head;
             font-size: 14px;
-            &:hover, 
+            &:hover,
             &:focus {
                 text-decoration: underline;
             }
@@ -494,7 +480,7 @@ body.alternate-header {
         &.menu-active {
             min-height: 100vh;
             @media only screen and (min-width: $screen-size--medium) {
-               min-height: 0; 
+               min-height: 0;
             }
             &.menu-active .header-right {
                 padding-top: 30px;
@@ -504,7 +490,7 @@ body.alternate-header {
             position: relative;
             z-index: 1;
             @media only screen and (min-width: $screen-size--medium) {
-                background: $ucsc-gradient-ltr; 
+                background: $ucsc-gradient-ltr;
             }
             .parent-logo img {
                 display: none;
@@ -519,7 +505,7 @@ body.alternate-header {
             position: relative;
             z-index: 1;
             @media only screen and (min-width: $screen-size--medium) {
-                display: flex; 
+                display: flex;
                 justify-content: space-between;
                 align-items: center;
             }
@@ -554,11 +540,12 @@ body.alternate-header {
             .menu > li > a {
                 color: $ucsc--primary-blue;
                 white-space: nowrap;
+                text-transform: none;
             }
             .menu > li  li a {
                 @media only screen and (max-width: $screen-size--medium) {
                     color: $ucsc--primary-blue;
-                    &:hover, 
+                    &:hover,
                     &:focus {
                         color: #fff;
                     }
@@ -587,6 +574,8 @@ body.alternate-header {
             background: $ucsc--primary-yellow;
             padding: 4px 12px;
             font-weight: bold;
+            border-color: $ucsc--primary-yellow;
+            text-transform: uppercase;
             &:focus,
             &:hover {
                 background-color: #fff;
@@ -622,9 +611,19 @@ body.alternate-header {
     width: 100%;
     transition: transform .2s ease-out;
 }
-#masthead {
-    background-color: $ucsc--primary-blue;
-    body.alternate-header & {
-        background-color: white;
+.header .header-left .no-logo,
+.header .header-left .custom-logo {
+  color: #fff;
+    img {
+        min-height: 50px;
+        max-height: 65px;
+        max-width: 250px;
+        height: 100%;
+    }
+    .site-title {
+        position: relative;
+        font-size: 24px;
+        font-weight: bold;
+        display: inline-block;
     }
 }

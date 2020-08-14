@@ -3,6 +3,9 @@
 }
 
 .single-post {
+    .entry-title {
+        color: $ucsc--primary-blue;
+    }
     .site-content {
         position: relative;
         padding: 1.5em 0;
@@ -32,11 +35,118 @@
 .entry-content {
     @media only screen and (min-width: $screen-size--small) {
         max-width: 52em;
-        margin: 2.5em auto 2.5em;
+        margin: 2.5em 0;
     }
 }
 
 .page-links {
     clear: both;
     margin: 0 0 1.5em;
+}
+.degree-template-default,
+.degree-template,
+.page-template-page-with-menu,
+.page-template-default {
+    .entry-content {
+        @media only screen and (min-width: $screen-size--small) {
+            max-width: 100%;
+            margin: 2em 0;
+        }
+    }
+    .content-wrapper {
+        display: flex;
+        align-items:flex-start;
+        flex-direction: column-reverse;
+        color: #676767;
+        @media only screen and (min-width: $screen-size--small) {
+            flex-direction: row;
+        }
+        h1.entry-title {
+            color: $ucsc--primary-blue;
+        }
+    }
+    .content {
+        max-width: 52em;
+    }
+    .content.show-submenu {
+        width: 100%;
+        @media only screen and (min-width: $screen-size--small) {
+            width: 70%;
+            margin-right: auto;
+        }
+    }
+    .sidebar.show-submenu {
+        width: 100%;
+        margin-top: 30px;
+        @media only screen and (min-width: $screen-size--small) {
+            width: 20%;
+            margin-left: auto;
+            margin-bottom: 30px;
+        }
+        .mobile-menu-expandable {
+            display: none;
+            @media only screen and (min-width: $screen-size--small) {
+                display: block !important;
+            }
+        }
+        .mobile-menu-toggle {
+            text-transform: uppercase;
+            color: $ucsc--primary-blue;
+            border-bottom: 1px solid #dedede;
+            padding-bottom: 2px;
+            margin-bottom: 10px;
+            position: relative;
+            @media only screen and (max-width: $screen-size--small) {
+                cursor: pointer;
+            }
+            @media only screen and (min-width: $screen-size--small) {
+                pointer-events: none;
+            }
+            &:after {
+                content: '+';
+                position: absolute;
+                right: 0;
+                color: $ucsc--primary-yellow;
+                font-size: larger;
+                font-weight: bold;
+            }
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+            a {
+                text-decoration: none;
+                border-color:transparent;
+                position: relative;
+                padding: 8px 0;
+                display: inline-block;
+                color: $ucsc--primary-blue;
+                &:hover, &:focus {
+                    color: $ucsc--light-blue;
+                }
+                &:after {
+                    content: '❯';
+                    color: $ucsc--primary-yellow;
+                    display: inline-block;
+                    margin-left: 5px;
+                }
+            }
+            &.active a {
+                font-weight: bold;
+                &:after {
+                    content: '';
+                }
+                &:before {
+                    position: absolute;
+                    content: '';
+                    color: $ucsc--primary-yellow;
+                    font-weight: bold;
+                    left: -8px;
+                }
+            }
+        }
+    }
 }

@@ -1,9 +1,8 @@
 .news-hero {
-    background: $ucsc--primary-blue;
     padding: 0;
+    position: relative;
     @media only screen and (min-width: $screen-size--medium) {
-        background: #fefefe;
-        padding: 1.5em 0;
+        padding: 3em 0;
     }
     .wrap {
         width: 100%;
@@ -135,4 +134,24 @@
             margin: 0;
         }
     }
+}
+.news-navigation {
+    padding: 40px;
+    background: $ucsc-gradient-ltr;
+    h2 {
+        color: #fff;
+        text-transform: uppercase;
+    }
+    .button {
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 20px;
+    }
+}
+.blog a.external:after {
+    content: '\f360';
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    margin-left: 5px;
+    font-size: .6em;
 }

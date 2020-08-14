@@ -23,7 +23,6 @@
 			<div class="wrap flex-wrap">
 				<header class="entry-header flex-wrap">
 					<div class="entry-header-right">
-						<?php get_template_part('template-parts/breadcrumbs'); ?>
 						<span class="entry-header-span-b flex-wrap">
 							<?php if ('post' === get_post_type()) :
 								// single_post_title('<h1 class="entry-title">', '</h1>');
