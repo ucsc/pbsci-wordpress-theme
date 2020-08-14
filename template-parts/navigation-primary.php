@@ -7,7 +7,18 @@
 <div class="header">
     <div class="wrap">
         <div class="header-left">
-            <?php echo '<a href="/" class="logo"><img src="' . IMAGES . '/science-logo.svg" alt="" /></a>'; ?>
+	        <?php if (ucsc_has_custom_logo()) { ?>
+                <a href="/" class="custom-logo">
+                    <img src="<?php echo ucsc_the_custom_logo_url(); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" />
+			        <?php if (get_theme_mod('custom_logo_with_title', 0)) : ?>
+                        <span class="site-title"><?php echo esc_attr(get_bloginfo('name')); ?></span>
+			        <?php endif; ?>
+                </a>
+	        <?php } else { ?>
+                <a href="/" class="no-logo">
+                    <div class="site-title"><?php echo esc_attr(get_bloginfo('name')); ?> </div>
+                </a>
+	        <?php } ?>
             <span class="menu-toggle navbar-toggle" id="js-navbar-toggle" aria-controls="primary-menu"
                     aria-expanded="false">
                     <i class="fas fa-bars"></i>

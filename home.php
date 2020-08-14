@@ -17,12 +17,14 @@ get_header();
 ?>
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
+        <section class="news-hero">
+	        <?php if (get_theme_mod('watermark', '')) : ?>
+                <span class="background watermark" style="background-image: url(<?php print get_theme_mod('watermark', ''); ?>)"></span>
+	        <?php endif; ?>
+            <div class="wrap">
+                <div class="news-hero-container">
+
         <?php
-        echo '<section class="panel news-hero front-page-white-panel">';
-        echo     '<div class="wrap">';
-
-        echo         '<div class="news-hero-container">';
-
         //Featured loop
         // Call Featured Hero post
 
@@ -46,7 +48,7 @@ get_header();
             // echo '</div>';
             echo '<article class="flex-wrap">';
 
-            ucsc_pbsci_post_thumbnail('thumbnail');
+            ucsc_pbsci_post_thumbnail('post-thumbnail');
             echo '<div class="news-hero-copy">';
             echo '<header class="entry-header">';
             ucsc_pbsci_post_cats();
@@ -63,23 +65,45 @@ get_header();
         endwhile;
         echo '</div>';
         echo '</section>';
-        echo '<div class="wrap post-desktop"><hr></div>';
+        ?>
+        <div class="news-navigation">
+            <div class="wrap">
+                <h2>Explore News Topics</h2>
+            <?php
+            $featuredRows = get_field('featured_posts', $page_for_posts);
+            if ($featuredRows): ?>
+                <?php foreach ($featuredRows as $featuredRow): ?>
+                <?php
+	                $category = $featuredRow['featcat'];
+	                $name     = $category->name;
+		            $cat_key  = $category->slug;
+		            ?>
+                <a class="button yellow-outline" href="#<?php print $cat_key; ?>"><?php print $name; ?></a>
+                <?php endforeach; ?>
+	        <?php endif; ?>
+            </div>
+        </div>
+        <?php
         echo '<div class="featured-wrap">';
         // ACF Stuff
-        $featuredRows = get_field('featured_posts', $page_for_posts);
         if ($featuredRows) {
             foreach ($featuredRows as $featuredRow) {
                 $featPosts = $featuredRow['featposts'];
                 $featCategory = $featuredRow['featcat'];
+	            $name     = $featCategory->name;
+	            $cat_key = $featCategory->slug;
+            ?>
+
+            <?php
                 echo '<section>';
                 echo '<div class="wrap">';
-                echo '<div class="featured-header"><h2>' . $featCategory->name . '</h2></div>';
+                echo '<div class="featured-header"><h2 id="'. $cat_key .'">' . $featCategory->name . '</h2></div>';
                 echo '<div class="three-col-grid">';
                 if ($featPosts) : foreach ($featPosts as $post) :
                         setup_postdata($post);
                         echo '<div class="card-container">';
                         echo '<article>';
-                        ucsc_pbsci_post_thumbnail();
+	                    ucsc_pbsci_post_thumbnail('news-thumb');
                         ucsc_pbsci_post_cats();
                         ucsc_pbsci_post_title();
                         ucsc_pbsci_posted_on();
@@ -98,7 +122,6 @@ get_header();
 
                 echo '</div>';
                 echo '</section>';
-                echo '<div class="wrap post-desktop"><hr></div>';
             }
         }
         echo '</div>';
@@ -112,7 +135,7 @@ get_header();
 
                 echo '<div class="card-container">';
                 echo '<article>';
-                ucsc_pbsci_post_thumbnail();
+	            ucsc_pbsci_post_thumbnail('news-thumb');
                 ucsc_pbsci_post_cats();
                 ucsc_pbsci_post_title();
                 ucsc_pbsci_posted_on();

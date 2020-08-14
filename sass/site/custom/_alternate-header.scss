@@ -1,0 +1,29 @@
+body.alternate-header {
+  background: #eee;
+  .site-title {
+    position: relative;
+  }
+  .header .nav-wrap .header-left a.custom-logo {
+    display: flex;
+    align-items: center;
+    .site-title {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 18px;
+      color: $ucsc--primary-blue;
+      @media only screen and (min-width: $screen-size--small) {
+        font-size: 28px;
+        margin-left: 20px;
+      }
+    }
+  }
+  .cta {
+    .cta-container {
+      background: rgba(0,0,0,.6);
+      padding: 20px;
+      .cta-headline {
+        border: none;
+      }
+    }
+  }
+}

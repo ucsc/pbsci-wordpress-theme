@@ -24,7 +24,7 @@
             </div>
             <?php if (!empty ($children)) : ?>
             <div class="sidebar <?php print $class; ?>">
-                <?php get_template_part( 'template-parts/page-submenu' ) ?>
+                <?php get_template_part( 'template-parts/department-submenu' ) ?>
             </div>
             <?php endif; ?>
         </div>

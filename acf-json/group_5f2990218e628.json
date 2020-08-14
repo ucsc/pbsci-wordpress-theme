@@ -1,13 +1,13 @@
 {
-    "key": "group_5e8dea6e1cc03",
-    "title": "Hero Slideshow",
+    "key": "group_5f2990218e628",
+    "title": "Alt Homepage Hero Slideshow",
     "fields": [
         {
-            "key": "field_5e8dead879b66",
+            "key": "field_5f299021946aa",
             "label": "Slide",
             "name": "slideshow_slide",
             "type": "repeater",
-            "instructions": "",
+            "instructions": "Upload one image for a hero background, multiple for a slideshow.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -22,7 +22,7 @@
             "button_label": "Add Slide",
             "sub_fields": [
                 {
-                    "key": "field_5e8f67427c095",
+                    "key": "field_5f29902196fa4",
                     "label": "Slide Image",
                     "name": "slide_image",
                     "type": "image",
@@ -46,26 +46,7 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_5e8f6cd2e3b76",
-                    "label": "Slide Text",
-                    "name": "slide_text",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 3,
-                    "new_lines": ""
-                },
-                {
-                    "key": "field_5ede6001e2ecb",
+                    "key": "field_5f29902197107",
                     "label": "Slide Heading",
                     "name": "slide_heading",
                     "type": "text",
@@ -84,9 +65,28 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5ede600ee2ecc",
-                    "label": "Slide Button Link",
-                    "name": "slide_button_link",
+                    "key": "field_5f29902197056",
+                    "label": "Slide Text",
+                    "name": "slide_text",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_5f29902197269",
+                    "label": "Slide Button Text",
+                    "name": "slide_button_text",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -103,9 +103,9 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5ede6028e2ecd",
-                    "label": "Slide Button Text",
-                    "name": "slide_button_text",
+                    "key": "field_5f299021971b8",
+                    "label": "Slide Button Link",
+                    "name": "slide_button_link",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -127,9 +127,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "page_template",
                 "operator": "==",
-                "value": "department"
+                "value": "template-alt-homepage.php"
             }
         ]
     ],
@@ -140,6 +140,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
-    "description": "",
-    "modified": 1596559366
+    "description": "You may upload a single slide for a hero image",
+    "modified": 1597345520
 }

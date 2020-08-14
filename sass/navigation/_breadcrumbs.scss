@@ -1,9 +1,12 @@
-.breadcrumbs {
-    color: $ucsc--primary-yellow;
+.breadcrumbs-container {
+    background-color: #fff;
+    color: #888;
+    padding: 5px 0;
+    border-top: 1px solid #ccc;
     a {
-        color: $ucsc--primary-yellow;
+        color: $ucsc--primary-blue;
         &:visited {
-            color: $ucsc--primary-yellow;
+            color: $ucsc--primary-blue;
         }
     }
     .trail-items {
@@ -11,13 +14,10 @@
             display: none;
         }
         li:before {
-            content: "\000BB";
+            content: "/";
             padding: 0 6px;
         }
         li.trail-begin:before {
-            display: none;
-        }
-        li.trail-end {
             display: none;
         }
     }

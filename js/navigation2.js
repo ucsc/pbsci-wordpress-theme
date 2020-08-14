@@ -76,5 +76,24 @@ navBarToggle.addEventListener('click', function() {
 
             lastPosition = $(window).scrollTop();
         });
+        $('.news-navigation a').on('click touch', function(e) {
+            e.preventDefault();
+            const headerVisibility = $('.header').css('position');
+            var offset;
+            if (headerVisibility !== 'fixed') {
+                offset = 50;
+            } else {
+                offset = $('.header').height() + 50;
+            }
+            $('html, body').animate({ scrollTop: $(this.hash).offset().top - offset }, 1000);
+        });
+        $(document.links)
+            .filter(function() {
+                return this.hostname !== window.location.hostname;
+            })
+            .parent('.entry-title')
+            .find('a')
+            .addClass('external')
+            .attr('target', '_blank');
     });
 })(jQuery);
