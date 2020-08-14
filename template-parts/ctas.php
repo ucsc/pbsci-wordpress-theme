@@ -30,7 +30,7 @@ foreach ( $ctas as $ID => $cta ) {
 					<p class="cta-p3"><?php echo $ctaGroup['cta_body'] ?></p>
 				<?php endif ?>
 				<?php if ( !empty($ctaGroup['cta_button']) ) : ?>
-					<a class="button cta-button" href="<?php echo $ctaGroup['cta_button']['url'] ?>"><i class="fas fa-check"></i><?php echo $ctaGroup['cta_button']['title'] ?></a>
+					<a class="button yellow-outline cta-button" href="<?php echo $ctaGroup['cta_button']['url'] ?>"><i class="fas fa-check"></i><?php echo $ctaGroup['cta_button']['title'] ?></a>
 				<?php endif ?>
 				<div class="clear"></div>
 			</div>

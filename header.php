@@ -38,7 +38,9 @@
             else {
                 get_template_part('template-parts/navigation', 'primary');
             }
-
+            if ( !(is_front_page() ) ) {
+	            get_template_part( 'template-parts/breadcrumbs' );
+            }
             // Swap out hero section based on current query context.
             if (is_archive()) {
                 get_header('archive');
@@ -55,8 +57,11 @@
             else if ('post' === get_post_type()) {
                 get_header('blog');
             }
-            else if (is_front_page()) {
+            else if (is_page_template('template-homepage.php')) {
                 get_header('home');
+            }
+            else if (is_page_template('template-alt-homepage.php')) {
+                get_header('home-alt');
             }
             else {
                 get_header('default');

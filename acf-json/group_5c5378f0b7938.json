@@ -1879,9 +1879,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "132"
+                "value": "template-homepage.php"
             }
         ]
     ],
@@ -1897,12 +1897,11 @@
         "comments",
         "revisions",
         "author",
-        "featured_image",
         "categories",
         "tags",
         "send-trackbacks"
     ],
     "active": 1,
     "description": "",
-    "modified": 1576192257
+    "modified": 1596557932
 }

@@ -42,6 +42,43 @@ function ucsc_pbsci_customize_register( $wp_customize ) {
 		'description' => __( 'Enable the alternate header style. (White header)' ),
 	) );
 
+	// Toggle to show both custom logo and site title
+    $wp_customize->add_setting( 'custom_logo_with_title', array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => 0,
+        'transport' => 'refresh',
+        'sanitize_callback' => 'absint',
+    ) );
+    $wp_customize->add_control( 'custom_logo_with_title', array(
+        'type' => 'checkbox',
+        'priority' => 49,
+        'section' => 'title_tagline',
+        'label' => __( 'Show logo and site title' ),
+        'description' => __( 'If custom logo is uploaded, it will replace site title unless this box is checked' ),
+    ) );
+
+    // Custom Watermark
+    $wp_customize->add_setting( 'watermark', array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => '',
+    ) );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'watermark',
+            array(
+                'label'      => __( 'Upload a Watermark'),
+                'section'    => 'title_tagline',
+                'settings'   => 'watermark',
+            )
+        )
+    );
+
+    // remove the stock "show title" checkbox
+    $wp_customize->remove_control('display_header_text');
+
     // Alert Bar
     $wp_customize->add_section('alert_bar', array(
         'title' => 'Alert Bar',
